@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — Buddies SOTY & AOTY</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:       #1B2A4A;
+    --deep-navy:  #0F1B33;
+    --blue:       #2E75B6;
+    --light-blue: #D5E8F0;
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale:  #FDF6E3;
+    --white:      #FFFFFF;
+    --off-white:  #F7F5F0;
+    --text-dark:  #0F1B33;
+    --text-mid:   #4A5568;
+    --text-light: #8896A6;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 34px; width: 34px; object-fit: contain; }
+  .nav-logo-text { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .nav-logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    padding: 7px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+  .nav-cta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--deep-navy); background: var(--gold);
+    padding: 8px 18px; border-radius: 4px; text-decoration: none; margin-left: 10px;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2);
+    flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    padding: 12px 16px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--deep-navy); padding: 140px 48px 80px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-header-bg {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  }
+  .page-header-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .page-eyebrow { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 22px; }
+  .page-eyebrow::before, .page-eyebrow::after { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); }
+  .page-eyebrow span { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .page-header h1 {
+    font-family: var(--serif); font-size: clamp(38px, 5vw, 62px);
+    font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 18px;
+  }
+  .page-header h1 em { color: var(--gold); font-style: italic; }
+  .page-header p {
+    font-size: 16px; font-weight: 300; line-height: 1.75;
+    color: rgba(255,255,255,0.55); margin-bottom: 36px;
+  }
+
+  /* Search box */
+  .faq-search-wrap { position: relative; max-width: 440px; margin: 0 auto; }
+  .faq-search {
+    width: 100%; padding: 14px 48px 14px 18px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px; color: var(--white); font-size: 14px; font-family: var(--sans);
+    outline: none; transition: border-color 0.2s;
+  }
+  .faq-search::placeholder { color: rgba(255,255,255,0.35); }
+  .faq-search:focus { border-color: rgba(201,168,76,0.5); }
+  .faq-search-icon {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    color: rgba(255,255,255,0.3); pointer-events: none;
+    font-size: 16px;
+  }
+
+  /* Stats strip */
+  .faq-stats {
+    display: flex; gap: 32px; justify-content: center; margin-top: 36px;
+    padding-top: 32px; border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .faq-stat-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .faq-stat-label { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+
+  /* ── MARQUEE ── */
+  .marquee-strip { background: var(--gold); overflow: hidden; height: 40px; display: flex; align-items: center; }
+  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 30s linear infinite; }
+  .marquee-inner span { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--deep-navy); padding: 0 28px; }
+  .marquee-inner span::after { content: '◆'; margin-left: 28px; opacity: 0.5; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── LAYOUT ── */
+  .faq-layout { max-width: 900px; margin: 0 auto; padding: 56px 48px 96px; }
+
+  /* Category filter tabs */
+  .faq-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .faq-tab {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 8px 16px; border-radius: 4px; border: 1px solid rgba(27,42,74,0.12);
+    background: var(--white); color: var(--text-mid); cursor: pointer;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .faq-tab:hover { border-color: var(--navy); color: var(--navy); }
+  .faq-tab.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+  /* No results message */
+  .faq-no-results {
+    display: none; text-align: center; padding: 48px 24px;
+    color: var(--text-light); font-size: 14px;
+  }
+  .faq-no-results.show { display: block; }
+
+  /* ── FAQ CATEGORY ── */
+  .faq-category { margin-bottom: 48px; }
+  .faq-category.hidden { display: none; }
+  .faq-category-label {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px;
+  }
+  .faq-category-label::before { content: ''; display: block; width: 4px; height: 22px; background: var(--gold); border-radius: 2px; }
+  .faq-category-label span {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .faq-category-label .cat-count {
+    font-size: 10px; font-weight: 600; background: rgba(201,168,76,0.12);
+    color: var(--gold); padding: 2px 8px; border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  /* ── FAQ ITEM ── */
+  .faq-item {
+    background: var(--white); border-radius: 8px; margin-bottom: 8px;
+    border: 1px solid rgba(27,42,74,0.08);
+    overflow: hidden; transition: box-shadow 0.2s;
+  }
+  .faq-item.hidden { display: none; }
+  .faq-item:hover { box-shadow: 0 2px 16px rgba(27,42,74,0.07); }
+  .faq-item.open { border-color: rgba(201,168,76,0.3); box-shadow: 0 4px 20px rgba(27,42,74,0.08); }
+
+  .faq-question {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px; padding: 18px 20px; cursor: pointer;
+    background: none; border: none; width: 100%; text-align: left;
+    transition: background 0.2s;
+  }
+  .faq-question:hover { background: rgba(27,42,74,0.02); }
+  .faq-item.open .faq-question { background: rgba(201,168,76,0.04); }
+
+  .faq-q-left { display: flex; align-items: flex-start; gap: 14px; flex: 1; min-width: 0; }
+  .faq-q-icon {
+    width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; margin-top: 1px;
+    background: var(--off-white); transition: background 0.2s;
+  }
+  .faq-item.open .faq-q-icon { background: rgba(201,168,76,0.1); }
+
+  .faq-q-text {
+    font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.4;
+    padding-top: 4px;
+  }
+  .faq-item.open .faq-q-text { color: var(--navy); }
+
+  .faq-chevron {
+    width: 18px; height: 18px; stroke: var(--text-light); fill: none;
+    stroke-width: 2; flex-shrink: 0; margin-top: 5px;
+    transition: transform 0.3s, stroke 0.2s;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); stroke: var(--gold); }
+
+  .faq-answer {
+    display: none; padding: 0 20px 20px 62px;
+    font-size: 14px; line-height: 1.85; color: var(--text-mid);
+  }
+  .faq-answer.open { display: block; }
+  .faq-answer p { margin-bottom: 12px; }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  .faq-answer strong { color: var(--navy); font-weight: 600; }
+  .faq-answer ul { margin: 10px 0 10px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .faq-answer li { list-style: none; display: flex; align-items: flex-start; gap: 8px; }
+  .faq-answer li::before { content: '›'; color: var(--gold); font-size: 15px; line-height: 1.3; flex-shrink: 0; }
+  .faq-answer .callout {
+    background: var(--gold-pale); border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0; padding: 12px 14px; margin: 12px 0;
+    font-size: 13px; line-height: 1.7; color: var(--text-mid);
+  }
+
+  /* ── STILL HAVE QUESTIONS ── */
+  .contact-cta {
+    background: var(--navy); border-radius: 12px; padding: 48px 44px;
+    text-align: center; margin-top: 56px;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .contact-cta h3 {
+    font-family: var(--serif); font-size: 26px; font-weight: 700;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .contact-cta h3 em { color: var(--gold); font-style: italic; }
+  .contact-cta p { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-gold {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--deep-navy); background: var(--gold);
+    padding: 12px 24px; border-radius: 4px; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-outline {
+    display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+    padding: 11px 24px; border-radius: 4px; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 40px 48px 24px; }
+  .footer-bottom { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .page-header-inner > * { animation: fadeUp 0.6s both; }
+  .page-eyebrow { animation-delay: 0.08s; }
+  .page-header h1 { animation-delay: 0.18s; }
+  .page-header p { animation-delay: 0.28s; }
+  .faq-search-wrap { animation-delay: 0.38s; }
+  .faq-stats { animation-delay: 0.46s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { top: 60px; }
+    .nav-logo-text { font-size: 14px; }
+    .page-header { padding: 100px 20px 56px; }
+    .page-header h1 { font-size: clamp(30px, 8vw, 44px); }
+    .faq-layout { padding: 36px 16px 72px; }
+    .faq-tabs { gap: 6px; }
+    .faq-tab { font-size: 11px; padding: 7px 12px; }
+    .faq-answer { padding: 0 16px 18px 16px; }
+    .faq-q-icon { display: none; }
+    .faq-stats { gap: 20px; }
+    .contact-cta { padding: 32px 24px; }
+    footer { padding: 32px 20px 20px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .marquee-inner span { font-size: 10px; padding: 0 18px; }
+    .faq-tabs { gap: 5px; }
+    .faq-tab { font-size: 10px; padding: 6px 10px; }
+    .cta-buttons { flex-direction: column; align-items: stretch; }
+    .btn-gold, .btn-outline { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
+    <div>
+      <span class="nav-logo-text">Buddies SOTY & AOTY</span>
+      <span class="nav-logo-sub">Annual Competitions</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="soty-about.html">About</a>
+    <a href="faqs.html" class="active">FAQs</a>
+    <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="soty-2025.html">SOTY 2025</a>
+    <a href="aoty-2025.html">AOTY 2025</a>
+    <a href="https://episodebuddies.netlify.app" class="nav-cta" target="_blank">Main Site</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="soty-about.html">About</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="https://episodebuddies.netlify.app/hall-of-fame.html" target="_blank">Hall of Fame</a>
+  <a href="soty-2025.html">SOTY 2025</a>
+  <a href="aoty-2025.html">AOTY 2025</a>
+  <a href="https://episodebuddies.netlify.app" target="_blank">← Main Site</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="page-header-inner">
+    <div class="page-eyebrow"><span>Help & Information</span></div>
+    <h1>Frequently Asked <em>Questions</em></h1>
+    <p>Everything you've ever wanted to know about SOTY, AOTY, qualification, voting, and more - answered.</p>
+    <div class="faq-search-wrap">
+      <input class="faq-search" type="text" id="faqSearch" placeholder="Search questions…" autocomplete="off">
+      <span class="faq-search-icon">⌕</span>
+    </div>
+    <div class="faq-stats">
+      <div>
+        <div class="faq-stat-num">30</div>
+        <div class="faq-stat-label">Questions</div>
+      </div>
+      <div>
+        <div class="faq-stat-num">6</div>
+        <div class="faq-stat-label">Categories</div>
+      </div>
+      <div>
+        <div class="faq-stat-num">Est. 2022</div>
+        <div class="faq-stat-label">Since</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Qualifying for SOTY</span><span>AOTY Lifetime Title</span><span>Voting & Scoring</span>
+    <span>Competition Stages</span><span>Prizes & Awards</span><span>Rules & Eligibility</span>
+    <span>Qualifying for SOTY</span><span>AOTY Lifetime Title</span><span>Voting & Scoring</span>
+    <span>Competition Stages</span><span>Prizes & Awards</span><span>Rules & Eligibility</span>
+  </div>
+</div>
+
+<!-- FAQ LAYOUT -->
+<div class="faq-layout">
+
+  <!-- FILTER TABS -->
+  <div class="faq-tabs">
+    <button class="faq-tab active" onclick="filterCat('all', this)">All</button>
+    <button class="faq-tab" onclick="filterCat('qualifying', this)">Qualifying</button>
+    <button class="faq-tab" onclick="filterCat('soty', this)">SOTY</button>
+    <button class="faq-tab" onclick="filterCat('aoty', this)">AOTY</button>
+    <button class="faq-tab" onclick="filterCat('voting', this)">Voting & Scoring</button>
+    <button class="faq-tab" onclick="filterCat('awards', this)">Awards & Prizes</button>
+    <button class="faq-tab" onclick="filterCat('general', this)">General</button>
+  </div>
+
+  <div class="faq-no-results" id="noResults">No questions match your search. Try different keywords.</div>
+
+  <!-- ═══ CATEGORY: QUALIFYING ═══ -->
+  <div class="faq-category" data-cat="qualifying">
+    <div class="faq-category-label">
+      <span>Qualifying</span>
+      <span class="cat-count">6</span>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📋</div>
+          <div class="faq-q-text">As a new author, how do I qualify for SOTY and AOTY?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Qualifying for SOTY starts with writing a story that keeps readers engaged. Once you have that, there are four routes in:</p>
+        <ul>
+          <li><strong>Monthly Contest Score:</strong> Enter any Buddies monthly contest and score 90 or above. Contest winners also automatically qualify.</li>
+          <li><strong>Story Review:</strong> Submit your story for an official review by the Buddies team. Stories that meet the required standard of quality, creativity, and impact qualify.</li>
+          <li><strong>Team Nomination:</strong> Our team evaluates standout authors throughout the year. If your work has made a strong impression, you may be nominated directly.</li>
+          <li><strong>Special Opportunity Slot:</strong> Introduced in 2025, this gives authors a direct application route even if they missed other opportunities.</li>
+        </ul>
+        <p>Once you qualify for SOTY, you are automatically eligible for AOTY; no separate application needed.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📖</div>
+          <div class="faq-q-text">Is there a read count limit to compete?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Stories must have <strong>400,000 reads or fewer</strong> at the time the competition officially opens each October. Stories that exceed this cap are not eligible to enter, regardless of how they qualified.</p>
+        <p>This rule exists to give lesser-known stories a fair chance against more established ones, and to keep the competition focused on discovering hidden gems rather than crowning already popular stories.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🔁</div>
+          <div class="faq-q-text">Can a story that has already competed in SOTY enter again?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>No. A story that has already competed in any previous SOTY season cannot re-enter in a future season. However, the <strong>author</strong> is free to enter with a brand new story in a future year, as long as that new story qualifies through the standard routes.</p>
+        <p>This keeps the competition fresh and ensures each season surfaces new stories rather than revisiting the same ones.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🔄</div>
+          <div class="faq-q-text">What if I was a runner-up last season, can I try again?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. Runner-ups are more than welcome to compete in the next season with a new story, and who knows, next time the title could be yours. Many past runner-ups have gone on to become strong contenders and even winners in subsequent seasons.</p>
+        <div class="callout">The only restriction is that a story cannot re-enter. The author, however, can always come back with a new project.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📅</div>
+          <div class="faq-q-text">When does the qualification window open and close?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Qualification for SOTY opens in <strong>February</strong> each year when the first monthly contest of the season launches and closes at the end of <strong>September</strong>. The competition season itself then runs from <strong>October through December</strong>.</p>
+        <p>Special Opportunity Slot applications open at a separate time during the year and are announced on our Instagram page when they become available.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="qualifying">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">✏️</div>
+          <div class="faq-q-text">Does my story need to be completed to qualify?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Your story does not need to be fully completed to qualify or compete in SOTY. However, it must have at least the minimum number of episodes required for the qualifying method you are using; contest entries and reviews both evaluate the first three episodes as a baseline.</p>
+        <p>During the competition itself, judges and voters assess what is available, so the more polished and complete your published chapters are, the stronger your standing will be.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CATEGORY: SOTY ═══ -->
+  <div class="faq-category" data-cat="soty">
+    <div class="faq-category-label">
+      <span>Story of the Year — SOTY</span>
+      <span class="cat-count">6</span>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📚</div>
+          <div class="faq-q-text">How is SOTY different from AOTY?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p><strong>SOTY is about a single story.</strong> Judges and the community evaluate the story itself, its plot, directing, interactivity, and visual design. If your story wins SOTY but you don't take home the AOTY award, you can still enter a future season with a brand-new project.</p>
+        <p><strong>AOTY is about the author as a whole,</strong> their Q&A responses, Instagram presence, community impact, and dedication to their craft. The AOTY title is a lifetime honour, meaning past winners cannot re-enter in future seasons.</p>
+        <p>Both competitions run simultaneously during October–December, and every SOTY qualifier is automatically eligible for AOTY.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🗺️</div>
+          <div class="faq-q-text">How many stages are in the SOTY competition?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>SOTY runs across four main stages after a pre-competition Popularity Vote:</p>
+        <ul>
+          <li><strong>Stage 1 (38 → 24):</strong> Author's Interview, 1st Feed Vote, 1st Poll Vote, and Author's Vote all run simultaneously.</li>
+          <li><strong>Stage 2 (24 → 12):</strong> Save-2-Stories (S2S) Vote; stories compete in pairs, and a vote for one counts for both.</li>
+          <li><strong>Stage 3 / Semifinals (12 → 8):</strong> Head-to-Head Challenge; exclusive pairs, where votes are not shared.</li>
+          <li><strong>Stage 4 / Finals (8 → Winner):</strong> Final Feed Vote, Author's Messages, and Winner Announcement.</li>
+        </ul>
+        <p>Fast Track spots from special award winners allow some stories to skip ahead to the Top 24 or Top 12 without going through earlier voting stages.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">⚡</div>
+          <div class="faq-q-text">What are Fast Track spots and how do they work?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Fast Track spots allow stories or authors to skip directly to a later stage of the competition based on winning a special award earlier in the season.</p>
+        <p>For SOTY, winning <strong>Best Story Cover, Best Directing, Best Interactivity, or Best Plot</strong> earns a story a direct spot in the <strong>Top 24</strong>. Winning the <strong>Most Popular Story award</strong> or the <strong>S2S Vote</strong> earns a direct spot in the <strong>Top 12</strong>.</p>
+        <p>Fast Tracked stories still participate in remaining voting events, they just don't have to fight through earlier elimination rounds to get there.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🏆</div>
+          <div class="faq-q-text">Can a SOTY winner win again in a future season?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes - but not with the same story. A winning story is permanently retired from future competitions. However, the author behind it is free to qualify again with an entirely new story in a later season. This is intentional, it ensures SOTY continually discovers fresh narratives rather than cycling the same titles.</p>
+        <p>This is one key difference from AOTY, where a win permanently retires the author from future competition regardless of what they write next.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📊</div>
+          <div class="faq-q-text">What criteria do the judges use to score stories?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>SOTY judges evaluate stories across four main areas:</p>
+        <ul>
+          <li><strong>Plot & Writing:</strong> Narrative structure, originality, pacing, emotional depth, and character development.</li>
+          <li><strong>Directing:</strong> Scene composition, camera work, overlays, transitions, and visual creativity.</li>
+          <li><strong>Interactivity:</strong> Quality of choices, branching, tappables, and use of Episode's interactive features.</li>
+          <li><strong>Story Cover:</strong> Visual impact, originality, and relevance of the cover design.</li>
+        </ul>
+        <p>Judge scores account for <strong>60%</strong> of a story's final result. Community voting accounts for the remaining <strong>40%</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="soty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🎂</div>
+          <div class="faq-q-text">How long has SOTY been running?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>SOTY launched in <strong>2022</strong> as the Buddies Support Hub's first major annual competition. The inaugural winner was <em>Boarding Incomplete</em> by Nadi. Since then, a new Story of the Year has been crowned every December, making 2026 the <strong>5th season</strong> of the competition.</p>
+        <p>Each season has grown in scale, with more entries, more voting events, and a more structured judging system than the year before.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CATEGORY: AOTY ═══ -->
+  <div class="faq-category" data-cat="aoty">
+    <div class="faq-category-label">
+      <span>Author of the Year — AOTY</span>
+      <span class="cat-count">5</span>
+    </div>
+
+    <div class="faq-item" data-cat="aoty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🏅</div>
+          <div class="faq-q-text">Can an AOTY winner enter the competition again?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p><strong>No.</strong> Once an author wins Author of the Year, they cannot compete again in any future AOTY season. AOTY is a lifetime title; think of it as being permanently inducted into the Buddies Laureates Hall of Fame.</p>
+        <p>Winning AOTY comes with exclusive ongoing perks: continued author promotion, spotlighting across our platforms, and a permanent place in Buddies history. The retirement rule exists to ensure the title always goes to someone new, and to keep the legacy of Laureates growing year after year.</p>
+        <div class="callout">Past AOTY winners: Fern (2023) · Ryan Graye (2024) · R. Lewis (2025). None of them can re-enter.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="aoty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🎤</div>
+          <div class="faq-q-text">What is the Q&A Round in AOTY and how is it judged?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The Q&A Round is one of AOTY's most important events. Each author answers a curated set of questions about their writing journey, their SOTY story, personal values, and why they believe they should win AOTY.</p>
+        <p>Responses are judged <strong>privately by the selection committee,</strong> there is no public voting in this round. Judges score each author on five criteria:</p>
+        <ul>
+          <li><strong>Clarity & Expression:</strong> How clearly and fluently the author communicates.</li>
+          <li><strong>Authenticity:</strong> Genuine, personal, and sincere reflections rather than rehearsed answers.</li>
+          <li><strong>Impact & Vision:</strong> How the author plans to inspire or contribute to the community.</li>
+          <li><strong>Creativity:</strong> Unique perspectives and engaging storytelling even in their responses.</li>
+          <li><strong>Relevance:</strong> Staying on topic and fully addressing the questions asked.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="aoty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📸</div>
+          <div class="faq-q-text">Does having a great Instagram profile actually matter for AOTY?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes - significantly. AOTY evaluates the <em>author</em>, not just the story. Your Instagram presence is assessed through two specific awards: <strong>Best Profile Picture</strong> (judged by the committee and the community) and <strong>Best Instagram Aesthetics</strong> (judged by the committee based on your profile's visual cohesion, consistency, and branding).</p>
+        <p>Winning either of these earns a Fast Track spot into the Top 24. So a polished, well-maintained Instagram feed can give you a meaningful head start before the main voting rounds even begin.</p>
+        <p>Beyond awards, community voting throughout AOTY rewards authors who have an active, engaged following; so maintaining a strong Instagram presence throughout the qualification window matters.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="aoty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">⚖️</div>
+          <div class="faq-q-text">How is AOTY scored; judges or community?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>AOTY uses a <strong>50/50 split</strong> between judge panel scores and community voting, giving the audience equal weight to the selection committee in determining the winner. This is different from SOTY, which uses a 60/40 split in favour of judges.</p>
+        <p>The equal split reflects AOTY's community-first philosophy; the author who wins should be someone the entire Episode community recognizes and celebrates, not just someone who scored well behind closed doors.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="aoty">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🌟</div>
+          <div class="faq-q-text">What are the Special Honours in AOTY?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Alongside the main AOTY title, six Special Honours are awarded each season to recognize contributions that go beyond a single competition result:</p>
+        <ul>
+          <li><strong>Rising Star Award:</strong> A new or emerging author whose debut story shows exceptional potential.</li>
+          <li><strong>Lifetime Achievement Award:</strong> A long-standing author whose years of contribution have shaped the community.</li>
+          <li><strong>Community Service Award:</strong> An author who goes above and beyond to support and unite others.</li>
+          <li><strong>Creative Excellence Award:</strong> Consistently innovative creators setting new benchmarks on Episode.</li>
+          <li><strong>Honorary Recognition:</strong> Authors whose quiet dedication behind the scenes strengthens the community.</li>
+          <li><strong>Most Devoted Author Award:</strong> An author whose unwavering consistency and passion shine through every project.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CATEGORY: VOTING ═══ -->
+  <div class="faq-category" data-cat="voting">
+    <div class="faq-category-label">
+      <span>Voting & Scoring</span>
+      <span class="cat-count">5</span>
+    </div>
+
+    <div class="faq-item" data-cat="voting">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🗳️</div>
+          <div class="faq-q-text">How does the Poll Vote work and how do I earn the most points?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The Poll Vote runs on Instagram Stories. Stories or authors are grouped in fours, and voters pick their favourite from each group. Each story appears in three different polls throughout the round for equal exposure.</p>
+        <ul>
+          <li><strong>Follower vote:</strong> 8 points per vote</li>
+          <li><strong>Non-follower vote:</strong> 2 points per vote</li>
+        </ul>
+        <p>To maximise your points: encourage your readers to <strong>follow the @episode_buddies page before voting,</strong> this is the single most impactful thing you can do, as it converts their 2-point votes into 8-point ones.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="voting">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">❤️</div>
+          <div class="faq-q-text">How does the Feed Vote scoring work?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The Feed Vote is scored based on engagement, likes, comments, and shares on the official @episode_buddies Instagram post featuring your story or author card.</p>
+        <ul>
+          <li><strong>Like from follower:</strong> 4 points · <strong>Like from non-follower:</strong> 1 point</li>
+          <li><strong>Comment from follower:</strong> 8 points · <strong>Comment from non-follower:</strong> 2 points</li>
+          <li><strong>Share (any user):</strong> 3 points</li>
+        </ul>
+        <p>Comments are the highest-value action. Encourage your readers to leave genuine comments with the correct hashtag for voting and to share the post to reach new voters.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="voting">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🤝</div>
+          <div class="faq-q-text">What makes the Save-2-Stories vote different from other events?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The S2S Vote is unique because voting for one story also benefits its paired partner. The Top 24 stories are paired into 12 duos, and when someone engages with a post to support their favourite, both stories in that pair receive the same points.</p>
+        <p>This means your result depends not just on your own fanbase, but also on who you're paired with. Stories paired with high-engagement partners benefit significantly, making S2S a round where cross-promotion and partnership awareness really matter.</p>
+        <div class="callout">Two pairs from the S2S Vote earn Fast Track spots directly into the Top 12.</div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="voting">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">⚔️</div>
+          <div class="faq-q-text">How is the Head-to-Head Challenge different from other voting rounds?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The Head-to-Head Challenge is a direct, exclusive matchup. Unlike the S2S Vote where supporting one story also helps the other, in H2H a vote for one story or author is a vote <em>against</em> the other; the points are not shared.</p>
+        <p>Voting happens via <strong>Instagram feed comments</strong> (where voters state which story they support) and <strong>Instagram Story polls</strong>. Both are scored using the same weighted point system and combined for the final H2H result.</p>
+        <p>It is the most direct and intense voting round in the competition, the story or author with more community support survives, and the other may be eliminated.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="voting">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">👥</div>
+          <div class="faq-q-text">Can someone vote more than once in the same event?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>For <strong>Instagram Story polls</strong>, Instagram only allows one vote per account per poll; so duplicate voting from the same account is not possible.</p>
+        <p>For <strong>feed vote events</strong>, each account can only like a post once. Multiple comments from the same account are not counted, only the first valid comment is scored. The same applies to the H2H Challenge comment vote.</p>
+        <p>The scoring system is designed to reward genuine, broad community support rather than mass repeat engagement from a small group.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CATEGORY: AWARDS ═══ -->
+  <div class="faq-category" data-cat="awards">
+    <div class="faq-category-label">
+      <span>Awards & Prizes</span>
+      <span class="cat-count">4</span>
+    </div>
+
+    <div class="faq-item" data-cat="awards">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🎨</div>
+          <div class="faq-q-text">Does the Best Story Cover ranking affect SOTY or AOTY scores?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p><strong>No.</strong> The Best Story Cover and Best Profile Picture rankings are completely separate from SOTY and AOTY scoring. They exist purely as awards to celebrate the visual creativity within the community - covers that instantly catch the eye and profile pictures that leave a lasting impression.</p>
+        <p>These awards are placed before the main competition events begin, almost like a warm-up to spotlight authors' incredible designs. Winning one earns you a <strong>Fast Track spot</strong> into the Top 24, but it does not add or remove points from your actual SOTY or AOTY score.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="awards">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">💎</div>
+          <div class="faq-q-text">What prizes does the SOTY winner receive?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The SOTY winner receives:</p>
+        <ul>
+          <li><strong>300 Gems</strong> - the top prize in the competition</li>
+          <li>A dedicated <strong>profile page</strong> on the Buddies WordPress website</li>
+          <li><strong>One year</strong> of Instagram highlight showcase with story link</li>
+          <li><strong>Two years</strong> of website showcase with story link</li>
+          <li>A screenshots post collage shared across the Buddies platforms</li>
+          <li><strong>One year</strong> of ongoing story promotion on Buddies Stories, feed, and reels</li>
+          <li>Permanent induction into <strong>The Buddies Laureates Hall of Fame</strong></li>
+        </ul>
+        <p>Runners-up (1st through 3rd) also receive Gems, highlight showcases, website features, and promotion - scaled by placement.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="awards">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🌟</div>
+          <div class="faq-q-text">What prizes does the AOTY winner receive?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The AOTY winner receives:</p>
+        <ul>
+          <li><strong>300 Gems</strong> plus a surprise gift prize</li>
+          <li>A digital <strong>Winner Certificate</strong></li>
+          <li>A dedicated <strong>profile page</strong> on the Buddies WordPress website</li>
+          <li><strong>One year</strong> of Instagram highlight showcase</li>
+          <li><strong>Two years</strong> of website showcase with profile link</li>
+          <li><strong>One year</strong> of author promotion across Buddies platforms</li>
+          <li>Permanent induction into <strong>The Buddies Laureates</strong> — a lifetime honour</li>
+        </ul>
+        <p>The Laureates title means the winner's name is permanently etched in Buddies history, with continued spotlighting of their work even in future seasons.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="awards">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🏅</div>
+          <div class="faq-q-text">What are the special category awards and who decides them?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Special awards run alongside the main SOTY and AOTY competitions. Each winner receives 100 Gems, an Award Badge, and one year of Instagram highlight and website showcase.</p>
+        <p><strong>SOTY Special Awards</strong> (judging committee): Best Directing, Best Interactivity, Best Plot, Best Story Cover (Judges' Choice), Best Dialogue & Characterization, Most Innovative Concept.</p>
+        <p><strong>SOTY Community Awards</strong>: Most Popular Story (public website vote), Best Story Cover (Voters' Choice), Reader's Choice, Qualifier's Choice.</p>
+        <p><strong>AOTY Special Awards</strong>: Best Instagram Aesthetics, Best Profile Picture (both Judges' and Community vote), Most Popular Author, Best Q&A Response, plus the six Special Honours (Rising Star, Lifetime Achievement, Community Service, Creative Excellence, Honorary Recognition, Most Devoted Author).</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CATEGORY: GENERAL ═══ -->
+  <div class="faq-category" data-cat="general">
+    <div class="faq-category-label">
+      <span>General</span>
+      <span class="cat-count">4</span>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📱</div>
+          <div class="faq-q-text">Where do I follow competition updates?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>All competition updates, qualification announcements, voting posts, and result reveals are shared on the official <strong>@episode_buddies</strong> Instagram page. This is the primary platform for everything SOTY and AOTY, from the first nomination call in February right through to the winner announcement in December.</p>
+        <p>Following the page is also essential for voting, follower votes are worth significantly more than non-follower votes in every round. So following @episode_buddies isn't just about staying informed, it directly benefits the authors you want to support.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">🌍</div>
+          <div class="faq-q-text">Is SOTY and AOTY affiliated with Episode Interactive?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p><strong>No.</strong> SOTY and AOTY are entirely community-organized competitions run independently by the Buddies Support Hub. We have no official affiliation with Episode Interactive the company or platform.</p>
+        <p>Everything - the judging, the voting, the prizes, the events — is organized, funded, and managed by the Buddies team as a community initiative. Episode Interactive does not sponsor, endorse, or have any involvement in these competitions.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">📧</div>
+          <div class="faq-q-text">How do I contact the Buddies team with a question not covered here?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>You can reach us through the following channels:</p>
+        <ul>
+          <li><strong>Instagram DM:</strong> @episode_buddies — the fastest way to get a response during the competition season.</li>
+          <li><strong>Email:</strong> episodebuddies3@gmail.com — for formal enquiries or detailed questions.</li>
+          <li><strong>Threads:</strong> @episode_buddies — for casual questions and community discussion.</li>
+        </ul>
+        <p>Our operating hours are <strong>Sunday – Saturday, 6:00 AM – 10:00 PM GMT+1</strong>. We aim to respond to all enquiries within 48 hours during the season.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="general">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <div class="faq-q-left">
+          <div class="faq-q-icon">👤</div>
+          <div class="faq-q-text">Who organizes and judges the competitions?</div>
+        </div>
+        <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>SOTY and AOTY are organized by <strong>Xavier</strong>, the founder of Buddies Support Hub, and the wider Buddies administration team including Tali, Penny, and Sofia.</p>
+        <p>The judging panel, called the Selection Committee is assembled fresh each season and typically includes the most recent AOTY winner alongside invited judges. The 2025 Selection Committee, for example, included Ryan Graye (2024 AOTY Winner), Samantha, Emily, Xavier, and Scarlett.</p>
+        <p>By rotating the committee, the team ensures fresh perspectives and impartial evaluation each season, no single set of judges has repeated influence over consecutive years.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT CTA -->
+  <div class="contact-cta">
+    <h3>Still have a <em>question</em>?</h3>
+    <p>If your question wasn't covered above, reach out to us directly on Instagram or by email. We respond to all enquiries within 48 hours during the season.</p>
+    <div class="cta-buttons">
+      <a href="https://www.instagram.com/episode_buddies/" target="_blank" class="btn-gold">Message us on Instagram</a>
+      <a href="mailto:episodebuddies3@gmail.com" class="btn-outline">Send an Email</a>
+    </div>
+  </div>
+
+</div><!-- end faq-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Buddies Support Hub · Not affiliated with Episode Interactive.</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="soty-about.html">About</a>
+      <a href="https://episodebuddies.netlify.app/hall-of-fame.html" target="_blank">Hall of Fame</a>
+      <a href="https://www.instagram.com/episode_buddies/" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  // Toggle individual FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').classList.remove('open');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+  // Category filter
+  function filterCat(cat, btn) {
+    document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    const categories = document.querySelectorAll('.faq-category');
+    const items = document.querySelectorAll('.faq-item');
+
+    categories.forEach(c => {
+      if (cat === 'all' || c.dataset.cat === cat) {
+        c.classList.remove('hidden');
+      } else {
+        c.classList.add('hidden');
+      }
+    });
+
+    items.forEach(i => i.classList.remove('hidden'));
+
+    // Clear search
+    document.getElementById('faqSearch').value = '';
+    document.getElementById('noResults').classList.remove('show');
+  }
+
+  // Search
+  document.getElementById('faqSearch').addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+
+    // Reset tab filter
+    document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector('.faq-tab').classList.add('active');
+
+    const categories = document.querySelectorAll('.faq-category');
+    const items = document.querySelectorAll('.faq-item');
+
+    if (!q) {
+      categories.forEach(c => c.classList.remove('hidden'));
+      items.forEach(i => i.classList.remove('hidden'));
+      document.getElementById('noResults').classList.remove('show');
+      return;
+    }
+
+    let anyVisible = false;
+    items.forEach(item => {
+      const text = item.querySelector('.faq-q-text').textContent.toLowerCase() +
+                   item.querySelector('.faq-answer').textContent.toLowerCase();
+      if (text.includes(q)) {
+        item.classList.remove('hidden');
+        anyVisible = true;
+      } else {
+        item.classList.add('hidden');
+        if (item.classList.contains('open')) {
+          item.classList.remove('open');
+          item.querySelector('.faq-answer').classList.remove('open');
+        }
+      }
+    });
+
+    // Show categories that have visible items
+    categories.forEach(cat => {
+      const hasVisible = [...cat.querySelectorAll('.faq-item')].some(i => !i.classList.contains('hidden'));
+      if (hasVisible) {
+        cat.classList.remove('hidden');
+      } else {
+        cat.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('noResults').classList.toggle('show', !anyVisible);
+  });
+</script>
+</body>
+</html>

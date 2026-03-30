@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AOTY 2025 Competition — Buddies SOTY & AOTY</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:       #1B2A4A;
+    --deep-navy:  #0F1B33;
+    --blue:       #2E75B6;
+    --light-blue: #D5E8F0;
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale:  #FDF6E3;
+    --white:      #FFFFFF;
+    --off-white:  #F7F5F0;
+    --text-dark:  #0F1B33;
+    --text-mid:   #4A5568;
+    --text-light: #8896A6;
+    --green:      #1E6B3C;
+    --light-green:#D6F0E0;
+    --purple:     #6C3483;
+    --light-purple:#EDE0F5;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 34px; width: 34px; object-fit: contain; }
+  .nav-logo-text { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .nav-logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    padding: 7px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+  .nav-cta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--deep-navy); background: var(--gold);
+    padding: 8px 18px; border-radius: 4px; text-decoration: none; margin-left: 10px;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2);
+    flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    padding: 12px 16px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--deep-navy); padding: 120px 48px 72px;
+    position: relative; overflow: hidden;
+  }
+  .page-header-bg {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  }
+  .page-header-inner {
+    position: relative; z-index: 1; max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+  }
+  .post-breadcrumb {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .post-breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .post-breadcrumb a:hover { color: var(--gold); }
+  .post-breadcrumb span { color: rgba(255,255,255,0.2); }
+  .page-header h1 {
+    font-family: var(--serif); font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700; line-height: 1.08; color: var(--white); margin-bottom: 16px;
+  }
+  .page-header h1 em { color: var(--gold); font-style: italic; }
+  .post-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .post-meta-item { font-size: 12px; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: 6px; }
+  .post-meta-item strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+  .post-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+
+  .header-winner-card {
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px; padding: 20px 24px; text-align: center; min-width: 180px;
+  }
+  .header-winner-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .header-winner-photo {
+    width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: top;
+    display: block; margin: 0 auto 12px; border: 3px solid rgba(201,168,76,0.4);
+  }
+  .header-winner-name { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+  .header-winner-handle { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ── MARQUEE ── */
+  .marquee-strip { background: var(--gold); overflow: hidden; height: 40px; display: flex; align-items: center; }
+  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 32s linear infinite; }
+  .marquee-inner span {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--deep-navy); padding: 0 28px;
+  }
+  .marquee-inner span::after { content: '◆'; margin-left: 28px; opacity: 0.5; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── LAYOUT ── */
+  .blog-layout { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: start; }
+  .blog-main { min-width: 0; }
+
+  /* ── OVERVIEW CARD ── */
+  .overview-card { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid rgba(27,42,74,0.08); margin-bottom: 24px; }
+  .overview-header { background: var(--navy); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .overview-header-title { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .overview-header-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-navy); background: var(--gold); padding: 3px 10px; border-radius: 3px; }
+  .overview-table { width: 100%; border-collapse: collapse; }
+  .overview-table tr { border-bottom: 1px solid rgba(27,42,74,0.05); }
+  .overview-table tr:last-child { border-bottom: none; }
+  .overview-table td { padding: 11px 20px; font-size: 13px; vertical-align: top; }
+  .overview-table td:first-child { font-weight: 600; color: var(--text-light); width: 40%; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .overview-table tr:nth-child(even) td { background: rgba(27,42,74,0.02); }
+
+  /* ── ACCORDION ── */
+  .accordion { margin-bottom: 12px; }
+  .accordion-btn {
+    width: 100%; background: var(--white); border: 1px solid rgba(27,42,74,0.09);
+    border-radius: 8px; padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; text-align: left; transition: background 0.2s, border-color 0.2s; gap: 12px;
+  }
+  .accordion-btn:hover { background: var(--gold-pale); border-color: rgba(201,168,76,0.3); }
+  .accordion-btn.open { background: var(--navy); border-color: var(--navy); border-radius: 8px 8px 0 0; }
+  .accordion-btn.open .accordion-title { color: var(--white); }
+  .accordion-btn.open .accordion-sub { color: rgba(255,255,255,0.4); }
+  .accordion-btn.open .accordion-chevron { transform: rotate(180deg); stroke: var(--gold); }
+  .accordion-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+  .accordion-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .accordion-icon.gold { background: rgba(201,168,76,0.12); }
+  .accordion-icon.blue { background: var(--light-blue); }
+  .accordion-icon.navy { background: rgba(27,42,74,0.08); }
+  .accordion-icon.green { background: var(--light-green); }
+  .accordion-icon.purple { background: var(--light-purple); }
+  .accordion-btn.open .accordion-icon.gold { background: rgba(201,168,76,0.15); }
+  .accordion-btn.open .accordion-icon.blue { background: rgba(46,117,182,0.15); }
+  .accordion-btn.open .accordion-icon.navy { background: rgba(255,255,255,0.08); }
+  .accordion-btn.open .accordion-icon.green { background: rgba(30,107,60,0.2); }
+  .accordion-btn.open .accordion-icon.purple { background: rgba(108,52,131,0.2); }
+  .accordion-text { flex: 1; min-width: 0; }
+  .accordion-title { font-size: 14px; font-weight: 600; color: var(--navy); display: block; line-height: 1.3; }
+  .accordion-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .accordion-chevron { width: 18px; height: 18px; stroke: var(--text-light); fill: none; stroke-width: 2; flex-shrink: 0; transition: transform 0.3s, stroke 0.2s; }
+  .accordion-body { display: none; background: var(--white); border: 1px solid rgba(27,42,74,0.09); border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+  .accordion-body.open { display: block; }
+  .accordion-body-inner { padding: 24px; }
+
+  .accordion-group-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); margin: 28px 0 10px; padding-left: 4px; }
+  .accordion-group-label:first-child { margin-top: 0; }
+
+  /* Sub-accordion */
+  .sub-accordion { margin-bottom: 8px; }
+  .sub-accordion-btn {
+    width: 100%; background: var(--off-white); border: 1px solid rgba(27,42,74,0.07);
+    border-radius: 6px; padding: 12px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; text-align: left; transition: background 0.2s;
+  }
+  .sub-accordion-btn:hover { background: var(--light-blue); }
+  .sub-accordion-btn.open { background: var(--light-blue); border-radius: 6px 6px 0 0; }
+  .sub-accordion-title { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .sub-chevron { width: 14px; height: 14px; stroke: var(--text-light); fill: none; stroke-width: 2; transition: transform 0.25s; }
+  .sub-accordion-btn.open .sub-chevron { transform: rotate(180deg); }
+  .sub-accordion-body { display: none; border: 1px solid rgba(27,42,74,0.07); border-top: none; border-radius: 0 0 6px 6px; padding: 16px; background: var(--white); }
+  .sub-accordion-body.open { display: block; }
+
+  /* ── CONTENT ── */
+  .ac-p { font-size: 14px; line-height: 1.8; color: var(--text-mid); margin-bottom: 14px; }
+  .ac-p:last-child { margin-bottom: 0; }
+  .ac-h { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 8px; margin-top: 16px; }
+  .ac-h:first-child { margin-top: 0; }
+  .ac-list { display: flex; flex-direction: column; gap: 7px; margin: 10px 0; }
+  .ac-list-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: var(--text-mid); }
+  .ac-list-item::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+  .ac-callout { border-left: 3px solid var(--gold); background: var(--gold-pale); border-radius: 0 6px 6px 0; padding: 12px 16px; margin: 12px 0; font-size: 13px; line-height: 1.7; color: var(--text-mid); }
+
+  /* Tables */
+  .ac-table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid rgba(27,42,74,0.08); margin: 14px 0; }
+  .ac-table { width: 100%; border-collapse: collapse; min-width: 380px; }
+  .ac-table thead tr { background: var(--navy); }
+  .ac-table thead th { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); padding: 11px 16px; text-align: left; white-space: nowrap; }
+  .ac-table tbody tr { border-bottom: 1px solid rgba(27,42,74,0.05); }
+  .ac-table tbody tr:last-child { border-bottom: none; }
+  .ac-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .ac-table tbody tr:hover { background: var(--light-blue); }
+  .ac-table tbody td { font-size: 13px; color: var(--text-dark); padding: 10px 16px; vertical-align: middle; }
+  .td-winner { font-family: var(--serif); font-weight: 700; color: var(--navy); }
+  .td-gold { font-weight: 700; color: #b8942a; }
+  .td-handle { font-size: 12px; color: var(--blue); font-weight: 500; }
+
+  .place-badge-sm { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; margin-right: 4px; white-space: nowrap; }
+  .pb-gold { background: var(--gold); color: var(--deep-navy); }
+  .pb-navy { background: var(--navy); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+  .pb-gray { background: rgba(27,42,74,0.07); color: var(--text-mid); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 84px; }
+  .sidebar-card { background: var(--white); border-radius: 10px; border: 1px solid rgba(27,42,74,0.08); overflow: hidden; margin-bottom: 16px; }
+  .sidebar-card-header { background: var(--navy); padding: 12px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .sidebar-card-body { padding: 16px; }
+  .sidebar-winner-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: top; display: block; margin: 0 auto 12px; border: 3px solid rgba(201,168,76,0.35); }
+  .sidebar-winner-name { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 2px; text-align: center; }
+  .sidebar-winner-handle { font-size: 12px; color: var(--blue); margin-bottom: 10px; text-align: center; }
+  .sidebar-winner-desc { font-size: 13px; line-height: 1.7; color: var(--text-mid); }
+
+  .placement-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(27,42,74,0.05); font-size: 13px; }
+  .placement-row:last-child { border-bottom: none; }
+  .placement-num { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--gold); min-width: 20px; }
+  .placement-info { flex: 1; }
+  .placement-name { font-weight: 600; color: var(--navy); line-height: 1.3; }
+  .placement-handle { font-size: 11px; color: var(--text-light); }
+
+  .quick-nav-link { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--text-mid); text-decoration: none; padding: 8px 0; border-bottom: 1px solid rgba(27,42,74,0.05); transition: color 0.2s; }
+  .quick-nav-link:last-child { border-bottom: none; }
+  .quick-nav-link:hover { color: var(--blue); }
+  .quick-nav-link::after { content: '→'; font-size: 12px; color: var(--text-light); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 48px 48px 28px; }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .page-header-inner { animation: fadeUp 0.6s both; }
+
+  /* ── TABLET ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 28px; }
+    .page-header { padding: 100px 28px 56px; }
+    .blog-layout { padding: 36px 28px 64px; grid-template-columns: 1fr; }
+    .sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .page-header-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-winner-card { display: flex; align-items: center; gap: 16px; text-align: left; max-width: 360px; }
+    .header-winner-photo { width: 60px; height: 60px; margin: 0; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { top: 60px; }
+    .nav-logo-text { font-size: 14px; }
+    .page-header { padding: 88px 20px 48px; }
+    .page-header h1 { font-size: clamp(26px, 7vw, 38px); }
+    .blog-layout { padding: 24px 16px 52px; }
+    .sidebar { grid-template-columns: 1fr; }
+    .accordion-btn { padding: 13px 16px; }
+    .accordion-body-inner { padding: 18px; }
+    .post-meta { flex-direction: column; gap: 6px; }
+    footer { padding: 32px 20px 20px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .marquee-inner span { font-size: 10px; padding: 0 18px; }
+    .ac-table { min-width: unset; width: 100%; }
+    .ac-table td, .ac-table th { padding: 8px 10px; font-size: 12px; }
+    .hide-mobile { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
+    <div>
+      <span class="nav-logo-text">Buddies SOTY & AOTY</span>
+      <span class="nav-logo-sub">Annual Competitions</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="soty-about.html">About</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="soty-2025.html">SOTY 2025</a>
+    <a href="aoty-2025.html" class="active">AOTY 2025</a>
+    <a href="https://episodebuddies.netlify.app/" class="nav-cta">Main Site</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="soty-about.html">About</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="soty-2025.html">SOTY 2025</a>
+  <a href="aoty-2025.html">AOTY 2025</a>
+  <a href="https://episodebuddies.netlify.app/">← Main Site</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="page-header-inner">
+    <div>
+      <div class="post-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="aoty-2025.html">AOTY 2025</a>
+        <span>/</span>
+        Competition
+      </div>
+      <h1>A.O.T.Y 2025 <em>Competition</em></h1>
+      <div class="post-meta">
+        <div class="post-meta-item">📅 <strong>Sept 1 – Dec 30, 2025</strong></div>
+        <div class="post-meta-dot"></div>
+        <div class="post-meta-item">👤 <strong>38 entries</strong></div>
+        <div class="post-meta-dot"></div>
+        <div class="post-meta-item">🏆 <strong>R. Lewis</strong> won</div>
+        <div class="post-meta-dot"></div>
+        <div class="post-meta-item">Theme: <strong>Legacy in Motion</strong></div>
+      </div>
+    </div>
+    <div class="header-winner-card">
+      <div class="header-winner-label">2025 AOTY Winner</div>
+      <img class="header-winner-photo"
+        src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/r.-lewis.png"
+        alt="R. Lewis">
+      <div class="header-winner-name">R. Lewis</div>
+      <div class="header-winner-handle">@rlewiswrites</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>AOTY 2025</span><span>38 Entries</span><span>Winner: R. Lewis</span>
+    <span>Legacy in Motion</span><span>Sept–Dec 2025</span><span>3rd Annual AOTY</span>
+    <span>AOTY 2025</span><span>38 Entries</span><span>Winner: R. Lewis</span>
+    <span>Legacy in Motion</span><span>Sept–Dec 2025</span><span>3rd Annual AOTY</span>
+  </div>
+</div>
+
+<!-- BLOG LAYOUT -->
+<div class="blog-layout">
+<div class="blog-main">
+
+  <!-- Overview -->
+  <div class="overview-card">
+    <div class="overview-header">
+      <span class="overview-header-title">Competition Overview</span>
+      <span class="overview-header-tag">3rd Annual AOTY</span>
+    </div>
+    <table class="overview-table">
+      <tr><td>Event Date</td><td>1st September 2025 – 30th December 2025</td></tr>
+      <tr><td>Theme</td><td>Legacy in Motion</td></tr>
+      <tr><td>Organizer</td><td>Buddies Support Hub</td></tr>
+      <tr><td>Platform</td><td>Instagram · Instagram Channel</td></tr>
+      <tr><td>Total Entries</td><td>38 authors</td></tr>
+      <tr><td>Withdrawals</td><td>Saiga · Talina · Amber J. · Tay.creates · Ciate</td></tr>
+      <tr><td>Stage Structure</td><td>40 → 24 → 12 → 8 → 4 → Winner</td></tr>
+      <tr><td>Fast Track (Top 24)</td><td>Best PFP · Most Devoted Author · Best Aesthetics · Best Q&A Round</td></tr>
+      <tr><td>Fast Track (Top 12)</td><td>Most Popular Author</td></tr>
+      <tr><td>Winner</td><td><strong>R. Lewis</strong> — @rlewiswrites</td></tr>
+      <tr><td>Instagram</td><td>@episode_buddies</td></tr>
+      <tr><td>Email</td><td>episodebuddies3@gmail.com</td></tr>
+    </table>
+  </div>
+
+  <!-- ── ENTRY & STRUCTURE ── -->
+  <div class="accordion-group-label">Entry & Structure</div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon gold">📋</div>
+        <div class="accordion-text">
+          <span class="accordion-title">How to Enter — Qualification</span>
+          <span class="accordion-sub">All SOTY 2025 qualifiers are eligible</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">To qualify for AOTY, your story must be entered into the 2025 Story of the Year competition. Every SOTY qualifier is automatically eligible to compete in AOTY — no separate application is needed.</p>
+        <div class="ac-callout">AOTY evaluates the author as a whole — their Q&A responses, Instagram presence, community impact, and dedication — not just the story. The title is a lifetime honour; past winners cannot re-enter.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon blue">🗺️</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Competition Events & Stages</span>
+          <span class="accordion-sub">Popularity Vote → Feed Vote → Poll Vote → H2H → Finals</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+
+        <div class="sub-accordion">
+          <button class="sub-accordion-btn" onclick="toggleSub(this)">
+            <span class="sub-accordion-title">Popularity Vote</span>
+            <svg class="sub-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="sub-accordion-body">
+            <p class="ac-p">All 40 authors enter an online website poll. The public votes for their favourite author. The author with the most votes automatically advances to the Top 12, skipping all earlier stages.</p>
+          </div>
+        </div>
+
+        <div class="sub-accordion">
+          <button class="sub-accordion-btn" onclick="toggleSub(this)">
+            <span class="sub-accordion-title">Stage 1 — Full Field (Feed Vote · Poll Vote · Q&A · Aesthetics)</span>
+            <svg class="sub-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="sub-accordion-body">
+            <p class="ac-p">Stage 1 runs four events simultaneously. The Instagram Feed Vote (authors in groups of 4, scored by likes/comments/shares) and Instagram Poll Vote (same groups, Stories) determine community popularity. The Q&A Round has authors answer curated questions scored by the judging panel on clarity, authenticity, impact, creativity, and relevance. The Best Aesthetics Contest has judges evaluate each author's Instagram profile cohesion and visual branding.</p>
+          </div>
+        </div>
+
+        <div class="sub-accordion">
+          <button class="sub-accordion-btn" onclick="toggleSub(this)">
+            <span class="sub-accordion-title">Stage 2 — Top 24 (24 → 12)</span>
+            <svg class="sub-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="sub-accordion-body">
+            <p class="ac-p">The Top 24 are announced — 20 from Stage 1 scores plus 4 Fast Track spots (Best PFP, Most Devoted Author, Best Aesthetics, Best Q&A). A 2nd Poll Vote runs to determine which 12 advance, alongside the Most Popular Author vote which grants an additional Fast Track to the Top 12.</p>
+          </div>
+        </div>
+
+        <div class="sub-accordion">
+          <button class="sub-accordion-btn" onclick="toggleSub(this)">
+            <span class="sub-accordion-title">Stage 3 — Semifinals (12 → 8)</span>
+            <svg class="sub-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="sub-accordion-body">
+            <p class="ac-p">The Top 12 are announced. Authors are paired into 6 head-to-head matchups. Each author writes and shares an impactful message for their fans and the Episode community. The community votes via comments on the feed post, and the judging panel separately scores each message on impact, clarity, originality, and community value. Combined scores determine which 8 advance.</p>
+          </div>
+        </div>
+
+        <div class="sub-accordion">
+          <button class="sub-accordion-btn" onclick="toggleSub(this)">
+            <span class="sub-accordion-title">Stage 4 — Finals (8 → Winner)</span>
+            <svg class="sub-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="sub-accordion-body">
+            <p class="ac-p">The Top 8 are announced. Each remaining author answers one final question in a private interview. Scores from the final interview are added to cumulative totals. A final poll vote runs. The Top 4 are revealed before the overall winner and all special award winners are announced.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESULTS ── -->
+  <div class="accordion-group-label">Results</div>
+
+  <!-- FINAL PLACEMENTS -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon gold">🏆</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Final Placements</span>
+          <span class="accordion-sub">Winner through Top 24 — all individual rows</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Placement</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td><span class="place-badge-sm pb-gold">Winner ▼</span></td><td class="td-winner">R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td><span class="place-badge-sm pb-navy">1st Runner Up</span></td><td class="td-winner">Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td><span class="place-badge-sm pb-navy">2nd Runner Up △</span></td><td class="td-winner">Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td><span class="place-badge-sm pb-navy">3rd Runner Up</span></td><td class="td-winner">Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">4th Runner Up ▽</span></td><td>Alessandra</td><td class="td-handle">@alessandra.write</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">5th Runner Up</span></td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">6th Runner Up</span></td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">7th Runner Up</span></td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 12</span></td><td>BD</td><td class="td-handle">@xbr.eex</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 12</span></td><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 12</span></td><td>Em_stories14</td><td class="td-handle">@em_stories14</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 12</span></td><td>Lulu Majestic</td><td class="td-handle">@lulu_majestic</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>A.K Gray</td><td class="td-handle">@alistoriez</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Bunny Lin</td><td class="td-handle">@bunnylin.episode</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Daze Meadly</td><td class="td-handle">@dazemeadly.epi</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24 ▲</span></td><td>Eysenck</td><td class="td-handle">@eys.writes</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Harly</td><td class="td-handle">@harlywritess</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Janb</td><td class="td-handle">@janb.stories</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Jmstoriesxx</td><td class="td-handle">@jmstoriesxx</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Lumiere</td><td class="td-handle">@vers_de_lumiere</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Nadi</td><td class="td-handle">@nadi_stories</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Odessa</td><td class="td-handle">@odessa_episode</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24 ◆</span></td><td>Rumi</td><td class="td-handle">@rumiwritess</td></tr>
+              <tr><td><span class="place-badge-sm pb-gray">Top 24</span></td><td>Song</td><td class="td-handle">@song.epi</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ac-callout" style="margin-top:16px;">▲ Best Q&A Round · △ Best Profile Picture · ▼ Best Instagram Aesthetics · ▽ Most Devoted Author — Fast Track spots to Top 24. ◆ Most Popular Author — Fast Track to Top 24.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEED VOTE -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon blue">❤️</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Feed Vote Results</span>
+          <span class="accordion-sub">Winner: Charlie Seb · Instagram Feed · Top 8</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Authors posted on the Instagram feed in groups. The audience showed support by liking, commenting, and sharing each post. Scored by weighted points from followers and non-followers.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td>2nd</td><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>3rd</td><td>Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td>4th</td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td>5th</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td>6th</td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td>7th</td><td>Alessandra</td><td class="td-handle">@alessandra.write</td></tr>
+              <tr><td>8th</td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLL VOTE -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon blue">📊</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Poll Vote Results</span>
+          <span class="accordion-sub">Winner: R. Lewis · Instagram Stories · Top 8</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Authors placed in groups of 4 per poll. Each author appeared in 3 different polls for equal exposure. Followers worth 8 points, non-followers worth 2 points.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>2nd</td><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td>3rd</td><td>Em_stories14</td><td class="td-handle">@em_stories14</td></tr>
+              <tr><td>4th</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td>5th</td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td>6th</td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td>7th</td><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td></tr>
+              <tr><td>8th</td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUALIFIER'S CHOICE -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">✍️</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Qualifier's Choice Vote</span>
+          <span class="accordion-sub">Winner: R. Lewis · Voted by competing authors</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Decided by all official qualifiers. Authors vote for the competitor they feel stands out most — based on quality, creativity, or impact — excluding themselves.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>2nd</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td>3rd</td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+              <tr><td>4th</td><td>Daze Meadly</td><td class="td-handle">@dazemeadly.epi</td></tr>
+              <tr><td>5th</td><td>Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td>6th</td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td>7th</td><td>BD</td><td class="td-handle">@xbr.eex</td></tr>
+              <tr><td>8th</td><td>Em_stories14</td><td class="td-handle">@em_stories14</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q&A ROUND -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">🎤</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Q&A Round Results</span>
+          <span class="accordion-sub">Winner: Eysenck · Judged by selection committee</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Authors answered curated questions about their writing journey, their SOTY story, personal values, and why they should win AOTY. Responses were scored privately by the selection committee on clarity, authenticity, impact, creativity, and relevance. No public voting — judges only.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">Eysenck</td><td class="td-handle">@eys.writes</td></tr>
+              <tr><td>2nd</td><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>3rd</td><td>Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td>4th</td><td>Alessandra</td><td class="td-handle">@alessandra.write</td></tr>
+              <tr><td>5th</td><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td>6th</td><td>Em_stories14</td><td class="td-handle">@em_stories14</td></tr>
+              <tr><td>7th</td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td>8th</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEAD-TO-HEAD -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon blue">⚔️</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Head-to-Head Challenge</span>
+          <span class="accordion-sub">Winner: Nas · Top 12 · Impactful community messages</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">12 authors paired in 6 matchups. Each author wrote and shared a heartfelt message for their fans and the Episode community. Community voted via Instagram feed comments — one vote per person. Judging panel also scored each message privately on impact, clarity, originality, and community value. Scores combined for final result.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td>2nd</td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td>3rd</td><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>4th</td><td>Alessandra</td><td class="td-handle">@alessandra.write</td></tr>
+              <tr><td>5th</td><td>Nelson</td><td class="td-handle">@nelsonepisode</td></tr>
+              <tr><td>6th</td><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPECIAL AWARDS ── -->
+  <div class="accordion-group-label">Special Awards</div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon gold">⭐</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Most Popular Author Award</span>
+          <span class="accordion-sub">Winner: Rumi · Community Instagram vote · Fast Track to Top 12</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Decided by community votes on the official Buddies Instagram page. The winner earns a Fast Track spot directly into the Top 12 semifinals.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">Rumi</td><td class="td-handle">@rumiwritess</td></tr>
+              <tr><td>2nd</td><td>BD</td><td class="td-handle">@xbr.eex</td></tr>
+              <tr><td>3rd</td><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td>4th</td><td>L. Kennedy</td><td class="td-handle">@l.kennedy_episode</td></tr>
+              <tr><td>5th</td><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>6th</td><td>Em_stories14</td><td class="td-handle">@em_stories14</td></tr>
+              <tr><td>7th</td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td>8th</td><td>Lulu Majestic</td><td class="td-handle">@lulu_majestic</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon blue">✨</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Best Instagram Aesthetics Award</span>
+          <span class="accordion-sub">Winner: R. Lewis · Judging committee · Fast Track to Top 24</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">Judges visit each author's Instagram profile and assess the visual cohesion, consistency of theme and colour, quality of graphics, and overall professionalism of the page.</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>2nd</td><td>Alessandra</td><td class="td-handle">@alessandra.write</td></tr>
+              <tr><td>3rd</td><td>Lulu Majestic</td><td class="td-handle">@lulu_majestic</td></tr>
+              <tr><td>4th</td><td>Nas</td><td class="td-handle">@nxx._epy</td></tr>
+              <tr><td>5th</td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+              <tr><td>6th</td><td>Bunny Lin</td><td class="td-handle">@bunnylin.episode</td></tr>
+              <tr><td>7th</td><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td></tr>
+              <tr><td>8th</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon gold">📸</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Best Profile Picture Award</span>
+          <span class="accordion-sub">Community: Tali · Judges: R. Lewis · Two winners</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-p">This award has two winners — one decided by community vote and one by the judging committee. It recognises the most creative, professional, and visually appealing profile picture used during the competition.</p>
+        <div class="ac-callout"><strong>Community Vote Winner:</strong> Tali (@taliberry.scripted) &nbsp;·&nbsp; <strong>Judges' Choice Winner:</strong> R. Lewis (@rlewiswrites)</div>
+        <p class="ac-h">Community Vote — Top 8</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td>2nd</td><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td></tr>
+              <tr><td>3rd</td><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td></tr>
+              <tr><td>4th</td><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>5th</td><td>Viper</td><td class="td-handle">@viper.episode</td></tr>
+              <tr><td>6th</td><td>BD</td><td class="td-handle">@xbr.eex</td></tr>
+              <tr><td>7th</td><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td></tr>
+              <tr><td>8th</td><td>Rumi</td><td class="td-handle">@rumiwritess</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ac-h" style="margin-top:16px;">Judges' Choice — Top 8</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Place</th><th>Author</th><th>IG Handle</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">1st</td><td class="td-winner">R. Lewis</td><td class="td-handle">@rlewiswrites</td></tr>
+              <tr><td>2nd</td><td>BD</td><td class="td-handle">@xbr.eex</td></tr>
+              <tr><td>3rd</td><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td></tr>
+              <tr><td>4th</td><td>Eysenck</td><td class="td-handle">@eys.writes</td></tr>
+              <tr><td>5th</td><td>Tali</td><td class="td-handle">@taliberry.scripted</td></tr>
+              <tr><td>6th</td><td>Jmstoriesxx</td><td class="td-handle">@jmstoriesxx</td></tr>
+              <tr><td>7th</td><td>Lulu Majestic</td><td class="td-handle">@lulu_majestic</td></tr>
+              <tr><td>8th</td><td>Nelly</td><td class="td-handle">@nellyy.epi</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOMINATION AWARDS -->
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon green">🏅</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Nomination Honours</span>
+          <span class="accordion-sub">Rising Star · Lifetime Achievement · Community Service · Creative Excellence · Honorary Recognition · Most Devoted</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+
+        <p class="ac-h">🕊️ Rising Star Award — Winner: Charlie Seb</p>
+        <p class="ac-p">Honors a new or emerging author whose debut or breakout story demonstrates exceptional potential, originality, and creativity.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: Alessandra · Bunny Lin · Charlie Seb · Daze Meadly · Harly · Nas · Nelson · Tali</p>
+
+        <p class="ac-h" style="margin-top:20px;">🏅 Lifetime Achievement Award — Winner: A.K Gray</p>
+        <p class="ac-p">Celebrates long-standing authors whose continuous contributions, mentorship, and artistic evolution have defined the community over the years.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: A.K Gray · Daphne De Carter · Em_stories14 · Eysenck · Honey · Lulu Majestic · Nadi · Nelly</p>
+
+        <p class="ac-h" style="margin-top:20px;">💖 Community Service Award — Winner: Ivy</p>
+        <p class="ac-p">Acknowledges those who go above and beyond to support, empower, and unite the community through events, initiatives, and mentorship.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: Alessandra · Ivy · Janb · Kath · Nas · Nelson · Tali · Viper</p>
+
+        <p class="ac-h" style="margin-top:20px;">✨ Creative Excellence Award — Winner: R. Lewis</p>
+        <p class="ac-p">Given to creators who consistently demonstrate innovation in writing, direction, or visual storytelling, setting new artistic benchmarks on Episode.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: BD · Charlie Seb · Daphne De Carter · Janb · Nas · Nelly · R. Lewis · Viper</p>
+
+        <p class="ac-h" style="margin-top:20px;">🌺 Honorary Recognition — Winner: Lisa Melz</p>
+        <p class="ac-p">Awarded to authors whose leadership, mentorship, or dedication behind the scenes has strengthened the creative bonds within the community.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: Blackhearts · Bunny Lin · Charlie Seb · Daze Meadly · Em_stories14 · Ivy · Lisa Melz · Lulu Majestic</p>
+
+        <p class="ac-h" style="margin-top:20px;">🕯️ Most Devoted Author Award — Winner: Alessandra</p>
+        <p class="ac-p">Honoring an author whose unwavering dedication, consistency, and love for storytelling shine through every project, update, and interaction.</p>
+        <p class="ac-p" style="color:var(--text-light); font-size:12px;">Nominees: Alessandra · Blackhearts · Em_stories14 · Ivy · Lulu Majestic · Nas · Nelson · R. Lewis</p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FULL RECORDS ── -->
+  <div class="accordion-group-label">Full Records</div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">👤</div>
+        <div class="accordion-text">
+          <span class="accordion-title">All 38 Entrants</span>
+          <span class="accordion-sub">Author · Instagram Handle · Followers before competition</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <div class="ac-callout">NOFBC = Number of Followers Before Competition</div>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Author</th><th>IG Handle</th><th class="hide-mobile">NOFBC</th></tr></thead>
+            <tbody>
+              <tr><td>A.K Gray</td><td class="td-handle">@alistoriez</td><td class="hide-mobile">3.6K</td></tr>
+              <tr><td>Alessandra</td><td class="td-handle">@alessandra.write</td><td class="hide-mobile">1.4K</td></tr>
+              <tr><td>Augen</td><td class="td-handle">@night_black_episode</td><td class="hide-mobile">671</td></tr>
+              <tr><td>BD</td><td class="td-handle">@xbr.eex</td><td class="hide-mobile">2.2K</td></tr>
+              <tr><td>Blackhearts</td><td class="td-handle">@heartsepi.write</td><td class="hide-mobile">1.2K</td></tr>
+              <tr><td>Bunny Lin</td><td class="td-handle">@bunnylin.episode</td><td class="hide-mobile">1.6K</td></tr>
+              <tr><td>Chanel</td><td class="td-handle">@chanel.stories</td><td class="hide-mobile">6.4K</td></tr>
+              <tr><td>Charlie Seb</td><td class="td-handle">@charlieseb.writes</td><td class="hide-mobile">4.1K</td></tr>
+              <tr><td>Chriswrite_episode</td><td class="td-handle">@chriswrites_episode</td><td class="hide-mobile">267</td></tr>
+              <tr><td>Daphne De Carter</td><td class="td-handle">@daphnedecarter.episode</td><td class="hide-mobile">1.4K</td></tr>
+              <tr><td>Daze Meadly</td><td class="td-handle">@dazemeadly.epi</td><td class="hide-mobile">823</td></tr>
+              <tr><td>Em_stories14</td><td class="td-handle">@em_stories14</td><td class="hide-mobile">2.2K</td></tr>
+              <tr><td>Eysenck</td><td class="td-handle">@eys.writes</td><td class="hide-mobile">5.7K</td></tr>
+              <tr><td>Fern</td><td class="td-handle">@fables_by_fern</td><td class="hide-mobile">1.1K</td></tr>
+              <tr><td>Harly</td><td class="td-handle">@harlywritess</td><td class="hide-mobile">701</td></tr>
+              <tr><td>Honeyy</td><td class="td-handle">@episode.honeyy</td><td class="hide-mobile">6.3K</td></tr>
+              <tr><td>Ivy</td><td class="td-handle">@ivy.epiwrites</td><td class="hide-mobile">1.9K</td></tr>
+              <tr><td>Janb</td><td class="td-handle">@janb.stories</td><td class="hide-mobile">2.0K</td></tr>
+              <tr><td>Jmstoriesxx</td><td class="td-handle">@jmstoriesxx</td><td class="hide-mobile">1.1K</td></tr>
+              <tr><td>Kath</td><td class="td-handle">@kath.stories</td><td class="hide-mobile">724</td></tr>
+              <tr><td>Kimberly V</td><td class="td-handle">@k.v.stories</td><td class="hide-mobile">275</td></tr>
+              <tr><td>L. Kennedy</td><td class="td-handle">@l.kennedy_episode</td><td class="hide-mobile">1.7K</td></tr>
+              <tr><td>Lisa Melz</td><td class="td-handle">@lisa.writess</td><td class="hide-mobile">3.7K</td></tr>
+              <tr><td>Lulu Majestic</td><td class="td-handle">@lulu_majestic</td><td class="hide-mobile">1.9K</td></tr>
+              <tr><td>Lum0s</td><td class="td-handle">@lum0s_writes</td><td class="hide-mobile">1.0K</td></tr>
+              <tr><td>Lumiere</td><td class="td-handle">@vers_de_lumiere</td><td class="hide-mobile">1.0K</td></tr>
+              <tr><td>Nadi</td><td class="td-handle">@nadi_stories</td><td class="hide-mobile">3.0K</td></tr>
+              <tr><td>Nas</td><td class="td-handle">@nxx._epy</td><td class="hide-mobile">1.3K</td></tr>
+              <tr><td>Nelly</td><td class="td-handle">@nellyy.epi</td><td class="hide-mobile">4.8K</td></tr>
+              <tr><td>Nelson</td><td class="td-handle">@nelsonepisode</td><td class="hide-mobile">1.0K</td></tr>
+              <tr><td>Odessa</td><td class="td-handle">@odessa_episode</td><td class="hide-mobile">2.0K</td></tr>
+              <tr><td>R. Lewis</td><td class="td-handle">@rlewiswrites</td><td class="hide-mobile">3.1K</td></tr>
+              <tr><td>Rumi</td><td class="td-handle">@rumiwritess</td><td class="hide-mobile">1.9K</td></tr>
+              <tr><td>Sarai</td><td class="td-handle">@saraii.episode</td><td class="hide-mobile">1.5K</td></tr>
+              <tr><td>Song</td><td class="td-handle">@song.epi</td><td class="hide-mobile">389</td></tr>
+              <tr><td>Tali</td><td class="td-handle">@taliberry.scripted</td><td class="hide-mobile">906</td></tr>
+              <tr><td>Veni</td><td class="td-handle">@veni.writes</td><td class="hide-mobile">1.1K</td></tr>
+              <tr><td>Viper</td><td class="td-handle">@viper.episode</td><td class="hide-mobile">3.0K</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">📅</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Event Schedule</span>
+          <span class="accordion-sub">Sept 3 – Dec 30, 2025 · Full timeline</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Date</th><th>Event</th><th class="hide-mobile">Platform</th></tr></thead>
+            <tbody>
+              <tr><td>Sept 3</td><td>Group A authors announcement</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Sept 4</td><td>Group B authors announcement</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Sept 5 – 24</td><td>Authors Q&A Round</td><td class="hide-mobile">Instagram Chat</td></tr>
+              <tr><td>Sept 14</td><td>Popularity Vote opens</td><td class="hide-mobile">WordPress site</td></tr>
+              <tr><td>Sept 24</td><td>Popularity Vote ends</td><td class="hide-mobile">WordPress site</td></tr>
+              <tr><td>Oct 16 – Nov 4</td><td>Feed Vote</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Nov 17 – 26</td><td>1st Poll Vote</td><td class="hide-mobile">Instagram Story</td></tr>
+              <tr><td>Nov 29 – 30</td><td>Top 20 announcement — Best PFP, Most Devoted Author, Best Aesthetics</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 3 – 4</td><td>Qualifier's Choice Vote</td><td class="hide-mobile">Instagram Chat</td></tr>
+              <tr><td>Dec 5</td><td>Top 24 announcement</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 11 – 15</td><td>2nd Feed Vote</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 18 – 19</td><td>2nd Poll Vote</td><td class="hide-mobile">Instagram Story</td></tr>
+              <tr><td>Dec 20</td><td>Top 12 announcement</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 21 – 22</td><td>Head-to-Head Challenge</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 26</td><td>Final Poll Vote</td><td class="hide-mobile">Instagram Story</td></tr>
+              <tr><td>Dec 26</td><td>Top 8 announcement from special awards</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 27</td><td>Top 8 announcement</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 28</td><td>Top 8 authors Q&A</td><td class="hide-mobile">Instagram Chat</td></tr>
+              <tr><td>Dec 29</td><td>Buddies message and closing remark</td><td class="hide-mobile">Instagram Feed</td></tr>
+              <tr><td>Dec 30</td><td>Winners announcement and awarding</td><td class="hide-mobile">Both platforms</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">🎁</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Prizes</span>
+          <span class="accordion-sub">Awards, events, and competition placements</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <p class="ac-h">Competition Placements</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Placement</th><th>Prizes</th><th>Winner</th></tr></thead>
+            <tbody>
+              <tr><td class="td-gold">AOTY Winner</td><td>300 Gems <br> Surprise gift <br> Winner Certificate <br> Profile page <br> 1 year highlight <br> 2 years website showcase <br> 1 year author promotion</td><td class="td-winner">R. Lewis</td></tr>
+              <tr><td>1st Runner Up</td><td>200 Gems <br> Winner Certificate <br> Profile page <br> 1 year highlight <br> 1 year website showcase <br> 1 year promotion</td><td>Charlie Seb</td></tr>
+              <tr><td>2nd Runner Up</td><td>100 Gems <br> Winner Certificate <br> Profile page <br> 1 year highlight <br> 1 year website showcase <br> 1 year promotion</td><td>Tali</td></tr>
+              <tr><td>3rd Runner Up</td><td>50 Gems <br> Winner Certificate <br> Profile page <br> 1 year highlight <br> 1 year website showcase <br> 1 year promotion</td><td>Nas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ac-h" style="margin-top:20px;">Special Award Prizes (each)</p>
+        <p class="ac-p" style="font-size:13px;">100 Gems <br> Award Certificate (digital) <br> 1 year Instagram highlight <br> 1 year website showcase</p>
+        <p class="ac-h">Event Prizes</p>
+        <div class="ac-table-wrap">
+          <table class="ac-table">
+            <thead><tr><th>Event</th><th>Prize</th><th>Winner</th></tr></thead>
+            <tbody>
+              <tr><td>Best Q&A Response</td><td>100 Gems <br> 1 year highlight <br> 1 year website showcase</td><td>Eysenck</td></tr>
+              <tr><td>Feed Vote</td><td>100 Gems <br> Website showcase</td><td>Charlie Seb</td></tr>
+              <tr><td>Poll Vote</td><td>100 Gems <br> Website showcase</td><td>R. Lewis</td></tr>
+              <tr><td>Qualifier's Choice</td><td>50 Gems <br> Website showcase</td><td>R. Lewis</td></tr>
+              <tr><td>Head-to-Head</td><td>50 Gems <br> Website showcase</td><td>Nas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn" onclick="toggleAcc(this)">
+      <div class="accordion-left">
+        <div class="accordion-icon navy">👥</div>
+        <div class="accordion-text">
+          <span class="accordion-title">Selection Committee</span>
+          <span class="accordion-sub">5 members · 2025 judging panel</span>
+        </div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <div class="ac-list">
+          <div class="ac-list-item"><strong>Ryan Graye</strong> — 2024 AOTY Winner</div>
+          <div class="ac-list-item"><strong>Samantha</strong></div>
+          <div class="ac-list-item"><strong>Emily</strong></div>
+          <div class="ac-list-item"><strong>Xavier</strong></div>
+          <div class="ac-list-item"><strong>Scarlett</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end blog-main -->
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-header">2025 AOTY Winner</div>
+    <div class="sidebar-card-body">
+      <img class="sidebar-winner-photo"
+        src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/r.-lewis.png"
+        alt="R. Lewis">
+      <div class="sidebar-winner-name">R. Lewis</div>
+      <div class="sidebar-winner-handle">@rlewiswrites</div>
+      <div class="sidebar-winner-desc">The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression.</div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-header">Final Top 8</div>
+    <div class="sidebar-card-body">
+      <div class="placement-row"><div class="placement-num">🥇</div><div class="placement-info"><div class="placement-name">R. Lewis</div><div class="placement-handle">@rlewiswrites</div></div></div>
+      <div class="placement-row"><div class="placement-num">2</div><div class="placement-info"><div class="placement-name">Charlie Seb</div><div class="placement-handle">@charlieseb.writes</div></div></div>
+      <div class="placement-row"><div class="placement-num">3</div><div class="placement-info"><div class="placement-name">Tali</div><div class="placement-handle">@taliberry.scripted</div></div></div>
+      <div class="placement-row"><div class="placement-num">4</div><div class="placement-info"><div class="placement-name">Nas</div><div class="placement-handle">@nxx._epy</div></div></div>
+      <div class="placement-row"><div class="placement-num">5</div><div class="placement-info"><div class="placement-name">Alessandra</div><div class="placement-handle">@alessandra.write</div></div></div>
+      <div class="placement-row"><div class="placement-num">6</div><div class="placement-info"><div class="placement-name">Nelson</div><div class="placement-handle">@nelsonepisode</div></div></div>
+      <div class="placement-row"><div class="placement-num">7</div><div class="placement-info"><div class="placement-name">Ivy</div><div class="placement-handle">@ivy.epiwrites</div></div></div>
+      <div class="placement-row"><div class="placement-num">8</div><div class="placement-info"><div class="placement-name">Viper</div><div class="placement-handle">@viper.episode</div></div></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-header">Quick Navigation</div>
+    <div class="sidebar-card-body">
+      <a href="https://episodebuddies.netlify.app/hall-of-fame.html" class="quick-nav-link">Hall of Fame</a>
+      <a href="soty-2025.html" class="quick-nav-link">SOTY 2025</a>
+      <a href="index.html" class="quick-nav-link">SOTY Homepage</a>
+      <a href="faqs.html" class="quick-nav-link">FAQs</a>
+      <a href="https://episodebuddies.netlify.app/" target="_blank" rel="noopener noreferrer" class="quick-nav-link">Main Buddies Site</a>
+    </div>
+  </div>
+
+</div><!-- end sidebar -->
+
+</div><!-- end blog-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Buddies Support Hub · Not affiliated with Episode Interactive.</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+      <a href="https://www.instagram.com/episode_buddies/" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  function toggleAcc(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.accordion-btn.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      body.classList.add('open');
+      setTimeout(() => {
+        if (window.innerWidth < 769) btn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }
+
+  function toggleSub(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
