@@ -989,46 +989,51 @@
   .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
   .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
 
-    /* ============================
-       RESPONSIVE
-    ============================ */
-    @media (max-width: 1024px) {
-      .highlights-grid  { grid-template-columns: 1fr 1fr; }
-      .archive-grid     { grid-template-columns: 1fr 1fr; }
-      .season-phases    { grid-template-columns: 1fr 1fr; }
-    }
+  /* ============================
+      RESPONSIVE
+  ============================ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 1024px) {
+    .highlights-grid  { grid-template-columns: 1fr 1fr; }
+    .archive-grid     { grid-template-columns: 1fr 1fr; }
+    .season-phases    { grid-template-columns: 1fr 1fr; }
+  }
 
-    @media (max-width: 768px) {
-      nav { padding: 0 20px; height: 60px; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .mobile-menu { top: 60px; }
-      .nav-logo-text { font-size: 14px; }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { top: 60px; }
+    .nav-logo-text { font-size: 14px; }
 
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .announce-grid { grid-template-columns: 1fr; }
-      .announce-card.featured { grid-column: 1; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
-      .footer-brand { grid-column: 1 / -1; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .announce-grid { grid-template-columns: 1fr; }
+    .announce-card.featured { grid-column: 1; }
+    .footer-top { grid-template-columns: 1fr ; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
+    footer { padding: 44px 20px 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
     }
 
     @media (max-width: 640px) {
-      .nav-links   { display: none; }
-      .nav-hamburger { display: flex; }
-      .section { padding: 56px 20px; }
-      .hero { padding: 64px 20px 60px; }
-      .highlights-grid  { grid-template-columns: 1fr; }
-      .archive-grid     { grid-template-columns: 1fr; }
-      .season-phases    { grid-template-columns: 1fr; }
-      .tl-item { grid-template-columns: 90px 1fr; }
-      .about-cards { grid-template-columns: 1fr 1fr; }
-      .status-banner { flex-direction: column; gap: 16px; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .hero-buttons, .cta-btn-group { flex-direction: column; align-items: center; }
-    }
-  </style>
+    .nav-links   { display: none; }
+    .nav-hamburger { display: flex; }
+    .section { padding: 56px 20px; }
+    .hero { padding: 64px 20px 60px; }
+    .highlights-grid  { grid-template-columns: 1fr; }
+    .archive-grid     { grid-template-columns: 1fr; }
+    .season-phases    { grid-template-columns: 1fr; }
+    .tl-item { grid-template-columns: 90px 1fr; }
+    .about-cards { grid-template-columns: 1fr 1fr; }
+    .status-banner { flex-direction: column; gap: 16px; }
+    .footer-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
+    footer { padding: 44px 20px 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-buttons, .cta-btn-group { flex-direction: column; align-items: center; }
+  }
+</style>
 </head>
 <body>
 
@@ -1036,7 +1041,7 @@
        NAV
   ============================ -->
   <nav>
-  <a href="soty-index.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
     <div>
       <span class="nav-logo-text">Buddies SOTY & AOTY</span>
