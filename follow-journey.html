@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Follow the Journey — Buddies SOTY & AOTY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================
+       RESET & VARIABLES
+    ============================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+    --navy:       #1B2A4A;
+    --deep-navy:  #0F1B33;
+    --blue:       #2E75B6;
+    --light-blue: #D5E8F0;
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale:  #FDF6E3;
+    --white:      #FFFFFF;
+    --off-white:  #F7F5F0;
+    --text-dark:  #0F1B33;
+    --text-mid:   #4A5568;
+    --text-light: #8896A6;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+    h4 {
+      font-family: var(--sans);
+      line-height: 1.2;
+    }
+    em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ============================
+       NAV
+    ============================ */
+    nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,18,34,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 34px; width: 34px; object-fit: contain; }
+    .nav-logo-text { font-family: var(--serif); font-size: 16px; color: var(--white); letter-spacing: 0.02em; line-height: 1.2; }
+    .nav-logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      padding: 7px 12px; border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+  .nav-cta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--deep-navy); background: var(--gold);
+    padding: 8px 18px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s; margin-left: 10px;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.15);
+    flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    padding: 12px 16px; border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    /* ============================
+       TICKER
+    ============================ */
+    .ticker-wrap {
+      background: var(--gold);
+      overflow: hidden;
+      padding: 9px 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 30s linear infinite;
+    }
+
+    .ticker-track:hover { animation-play-state: paused; }
+
+    .ticker-item {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0 36px;
+    }
+
+    .ticker-dot {
+      display: inline-block;
+      width: 4px; height: 4px;
+      background: var(--navy);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 36px;
+      opacity: 0.4;
+    }
+
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ============================
+       SHARED HELPERS
+    ============================ */
+    .section-label {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .section-label.light { color: rgba(255,255,255,0.45); }
+    .section-label.gold  { color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .btn-primary    { background: var(--gold);  color: var(--navy); border-color: var(--gold); }
+    .btn-primary:hover { background: var(--navy-soft); border-color: var(--navy-soft); transform: translateY(-1px); }
+
+    .btn-gold       { background: var(--gold);  color: var(--navy); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline    { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
+
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    .section { padding: 80px 32px; }
+    .section-alt  { background: var(--off-white); }
+    .section-dark { background: var(--navy); color: var(--white); }
+
+    .section-inner    { max-width: 1120px; margin: 0 auto; }
+    .section-inner-sm { max-width: 820px;  margin: 0 auto; }
+
+    /* ============================
+       HERO
+    ============================ */
+    .hero {
+      background: var(--deep-navy);
+      color: var(--white);
+      padding: 90px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      opacity: 0.04;
+      background: repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hero-breadcrumb a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .hero-breadcrumb a:hover { color: var(--white); }
+    .hero-breadcrumb span { opacity: 0.4; }
+
+    .hero h1 {
+      font-size: clamp(44px, 6.5vw, 88px);
+      font-weight: 700;
+      line-height: 1.04;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .hero-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ============================
+       ABOUT THE JOURNEY
+    ============================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: var(--white);
+      border: 1px solid var(--navy);
+      border-radius: 12px;
+      padding: 22px 18px;
+    }
+
+    .mini-card .mc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .mini-card .mc-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ============================
+       SEASON STATUS
+    ============================ */
+    .status-banner {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 40px 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .status-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: var(--gold);
+      pointer-events: none;
+    }
+
+    .status-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .status-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .status-content p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(200,169,110,0.18);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .status-tag .blink {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: blink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .season-phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+
+    .phase-block {
+      background: var(--white);
+      padding: 22px 20px;
+    }
+
+    .phase-block.active { background: var(--navy); }
+
+    .phase-block .ph-period {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .phase-block.active .ph-period { color: var(--gold); }
+
+    .phase-block h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .phase-block.active h4 { color: var(--white); }
+
+    .phase-block p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .phase-block.active p { color: rgba(255,255,255,0.55); }
+
+    /* ============================
+       TIMELINE
+    ============================ */
+    .timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .timeline-group { margin-bottom: 40px; }
+
+    .tl-group-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tl-group-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .tl-items { display: flex; flex-direction: column; gap: 10px; }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .tl-item:hover { border-color: var(--gold); }
+
+    .tl-item.past { opacity: 0.65; }
+
+    .tl-item.current {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200,169,110,0.1);
+    }
+
+    .tl-date {
+      background: var(--navy);
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .tl-item.current .tl-date { background: var(--gold); }
+
+    .tl-date .month {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2px;
+    }
+
+    .tl-item.current .tl-date .month { color: rgba(15,28,46,0.6); }
+
+    .tl-date .day {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .tl-item.current .tl-date .day { color: var(--navy); }
+
+    .tl-body {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .tl-body h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .tl-body p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .tl-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px 9px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-top: 2px;
+    }
+
+    .tl-tag.soty  { background: rgba(15,28,46,0.06); color: var(--navy); border-color: rgba(15,28,46,0.15); }
+    .tl-tag.aoty  { background: rgba(200,169,110,0.12); color: #8a6f3a; border-color: rgba(200,169,110,0.3); }
+    .tl-tag.both  { background: rgba(37,99,235,0.07); color: #1d4ed8; border-color: rgba(37,99,235,0.2); }
+
+    /* ============================
+       ANNOUNCEMENTS
+    ============================ */
+    .announce-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .announce-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .announce-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(200,169,110,0.1);
+    }
+
+    .announce-card.featured {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      border-color: transparent;
+    }
+
+    .announce-card .an-date {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .announce-card.featured .an-date { color: rgba(255,255,255,0.4); }
+
+    .announce-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .announce-card.featured h3 {
+      font-size: 1.4rem;
+      color: var(--white);
+    }
+
+    .announce-card p {
+      font-size: 0.86rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    .announce-card.featured p { color: rgba(255,255,255,0.6); }
+
+    .an-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .an-badge.planning { background: rgba(200,169,110,0.18); color: var(--gold); border: 1px solid rgba(200,169,110,0.3); }
+    .an-badge.upcoming { background: rgba(15,28,46,0.07); color: var(--navy); border: 1px solid rgba(15,28,46,0.15); }
+
+    /* ============================
+       HIGHLIGHTS
+    ============================ */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .highlight-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 30px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .hl-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .highlight-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .highlight-card p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    .highlight-card .hl-story {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ============================
+       PAST JOURNEY ARCHIVE
+    ============================ */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .archive-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .archive-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,169,110,0.12);
+    }
+
+    .archive-cover {
+      aspect-ratio: 1;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .archive-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .archive-card:hover .archive-cover img { transform: scale(1.04); }
+
+    .archive-cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,28,46,0.75) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .archive-year-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      width: fit-content;
+    }
+
+    .archive-cover-overlay h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .archive-body {
+      padding: 18px 18px 20px;
+    }
+
+    .archive-body .season-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .archive-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .archive-body p {
+      font-size: 0.81rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    .archive-body .archive-winners {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .archive-winners .aw-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+    }
+
+    .aw-row .aw-label {
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 32px;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .aw-row .aw-name { color: var(--navy); font-weight: 600; }
+    .aw-row .aw-sub  { color: var(--text-light); }
+
+    /* ============================
+       INSTAGRAM CTA
+    ============================ */
+    .ig-cta {
+      background: var(--navy);
+      padding: 80px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ig-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 110%, rgba(200,169,110,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ig-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ig-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .ig-cta p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .ig-cta-socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================
+       FOOTER CTA
+    ============================ */
+    .footer-cta {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .footer-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .footer-cta p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    footer {
+      background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 64px 48px 32px;
+    }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+    padding-bottom: 40px; margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .footer-brand-logo img { height: 32px; }
+  .footer-brand-logo span { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .footer-brand-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.3); max-width: 280px; margin-bottom: 18px; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.45); font-size: 12px; font-weight: 600;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: rgba(255,255,255,0.38);
+    text-decoration: none; margin-bottom: 9px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-col p { font-size: 13px; color: rgba(255,255,255,0.28); line-height: 1.7; margin-bottom: 5px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
+  .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1024px) {
+      .highlights-grid  { grid-template-columns: 1fr 1fr; }
+      .archive-grid     { grid-template-columns: 1fr 1fr; }
+      .season-phases    { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 60px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { top: 60px; }
+      .nav-logo-text { font-size: 14px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .announce-grid { grid-template-columns: 1fr; }
+      .announce-card.featured { grid-column: 1; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links   { display: none; }
+      .nav-hamburger { display: flex; }
+      .section { padding: 56px 20px; }
+      .hero { padding: 64px 20px 60px; }
+      .highlights-grid  { grid-template-columns: 1fr; }
+      .archive-grid     { grid-template-columns: 1fr; }
+      .season-phases    { grid-template-columns: 1fr; }
+      .tl-item { grid-template-columns: 90px 1fr; }
+      .about-cards { grid-template-columns: 1fr 1fr; }
+      .status-banner { flex-direction: column; gap: 16px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-buttons, .cta-btn-group { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAV
+  ============================ -->
+  <nav>
+  <a href="soty-index.html" class="nav-logo">
+    <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
+    <div>
+      <span class="nav-logo-text">Buddies SOTY & AOTY</span>
+      <span class="nav-logo-sub">Annual Competitions</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="soty-about.html">About</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="follow-journey.html" class="active">Follow the Journey</a>
+    <a href="soty-2025.html">SOTY 2025</a>
+    <a href="aoty-2025.html">AOTY 2025</a>
+    <a href="https://episodebuddies.netlify.app" class="nav-cta">Main Site</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="soty-about.html">About</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="follow-journey.html">Follow the Journey</a>
+  <a href="soty-2025.html">SOTY 2025</a>
+  <a href="aoty-2025.html">AOTY 2025</a>
+  <a href="https://episodebuddies.netlify.app" class="nav-cta">← Main Site</a>
+</div>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-breadcrumb">
+        <a href="https://episodebuddiessoty.netlify.app/soty-index.html">Home</a>
+        <span>/</span>
+        <span>Follow the Journey</span>
+      </div>
+      <span class="section-label light">Buddies SOTY &amp; AOTY</span>
+      <h1>Follow the <em>Journey</em></h1>
+      <p>Every season tells a story of its own. From the first nomination call to the final winner reveal; follow every stage of SOTY &amp; AOTY 2026 as it unfolds.</p>
+      <div class="hero-buttons">
+        <a href="#timeline" class="btn btn-gold">View the Timeline</a>
+        <a href="https://www.instagram.com/episode_buddies/" target="_blank" class="btn btn-outline-white">Follow on Instagram</a>
+      </div>
+      <div class="hero-pills">
+        <div class="hero-pill"><div class="dot"></div> 2026 Season</div>
+        <div class="hero-pill"><div class="dot"></div> Planning from Late April</div>
+        <div class="hero-pill"><div class="dot"></div> Season Opens October 1st</div>
+        <div class="hero-pill"><div class="dot"></div> 4th Year Running</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       TICKER
+  ============================ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">SOTY &amp; AOTY 2026</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Planning Starts Late April</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Season Opens October 2026</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Qualification is Open Now</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Follow The Journey · @episode_buddies</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Only Pretend · 2025 SOTY Winner</span><span class="ticker-dot"></span>
+      <span class="ticker-item">R. Lewis · 2025 AOTY Winner</span><span class="ticker-dot"></span>
+      <!-- duplicate -->
+      <span class="ticker-item">SOTY &amp; AOTY 2026</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Planning Starts Late April</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Season Opens October 2026</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Qualification is Open Now</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Follow The Journey · @episode_buddies</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Only Pretend · 2025 SOTY Winner</span><span class="ticker-dot"></span>
+      <span class="ticker-item">R. Lewis · 2025 AOTY Winner</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+
+  <!-- ============================
+       ABOUT THE JOURNEY
+  ============================ -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label">About The Journey</span>
+          <h2>More than a competition. <em>A season.</em></h2>
+          <p>SOTY and AOTY aren't decided in a single vote. The journey spans months; from the earliest qualification contests in February, through a structured season of community voting, judge evaluations, and elimination stages, all the way to a winner reveal in late December.</p>
+          <p>This page is your front-row seat to the entire process. We document every stage, every announcement, and every milestone as SOTY &amp; AOTY 2026 takes shape.</p>
+          <p>Whether you're a qualifier, a supporter, or just someone who loves great stories, the journey is for everyone.</p>
+        </div>
+        <div class="about-cards">
+          <div class="mini-card">
+            <div class="mc-num">4th</div>
+            <div class="mc-label">Year of SOTY &amp; AOTY</div>
+          </div>
+          <div class="mini-card">
+            <div class="mc-num">Oct–Dec</div>
+            <div class="mc-label">Competition Season</div>
+          </div>
+          <div class="mini-card">
+            <div class="mc-num">4+</div>
+            <div class="mc-label">Qualification Pathways</div>
+          </div>
+          <div class="mini-card">
+            <div class="mc-num">Free</div>
+            <div class="mc-label">Always, For Everyone</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CURRENT SEASON STATUS
+  ============================ -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header" style="margin-bottom:36px;">
+        <span class="section-label">2026 Season</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);margin-bottom:10px;">Current Season <em>Status</em></h2>
+        <p style="color:var(--text-mid);font-size:0.95rem;max-width:520px;line-height:1.7;">Here's exactly where SOTY &amp; AOTY 2026 stands right now and what's coming next.</p>
+      </div>
+
+      <div class="status-banner">
+        <div class="status-icon">📋</div>
+        <div class="status-content">
+          <div class="status-tag"><div class="blink"></div> Current Status</div>
+          <h3>Planning begins late April 2026</h3>
+          <p>The 2026 season is in its pre-planning phase. Qualification is already open and running through our monthly contests and story reviews. Formal season planning, including the event structure, judging panel selection, and schedule begins in late April. The competition season itself opens October 1st, 2026.</p>
+        </div>
+      </div>
+
+      <div class="season-phases">
+        <div class="phase-block past">
+          <div class="ph-period">Feb – Present</div>
+          <h4>Qualification Open</h4>
+          <p>Monthly contests &amp; story reviews running now. Score 90+ to qualify.</p>
+        </div>
+        <div class="phase-block active">
+          <div class="ph-period">Late April 2026</div>
+          <h4>Planning Begins</h4>
+          <p>Season structure, judging panel &amp; event schedule take shape.</p>
+        </div>
+        <div class="phase-block">
+          <div class="ph-period">Sep 2026</div>
+          <h4>Pre-Season Events</h4>
+          <p>Qualifier announcements, Q&amp;A rounds &amp; popularity votes.</p>
+        </div>
+        <div class="phase-block">
+          <div class="ph-period">Oct – Dec 2026</div>
+          <h4>Competition Season</h4>
+          <p>Feed votes, poll votes, judging &amp; stage eliminations through to the winner reveal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       TIMELINE
+  ============================ -->
+  <section class="section" id="timeline">
+    <div class="section-inner">
+      <div class="section-header" style="margin-bottom:40px;">
+        <span class="section-label">2026 Season Timeline</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);margin-bottom:10px;">The full <em>roadmap.</em></h2>
+        <p style="color:var(--text-mid);font-size:0.95rem;max-width:520px;line-height:1.7;">Every milestone from qualification through to the winner announcement. Based on the 2025 season structure, subject to update as planning progresses.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+        <div class="timeline">
+
+          <div class="timeline-group">
+            <div class="tl-group-label">Qualification Phase</div>
+            <div class="tl-items">
+              <div class="tl-item past">
+                <div class="tl-date"><div class="month">Feb</div><div class="day">01</div></div>
+                <div class="tl-body">
+                  <h4>Qualification Window Opens</h4>
+                  <p>Monthly contests &amp; story reviews begin counting toward 2026 SOTY qualification.</p>
+                  <span class="tl-tag both">SOTY &amp; AOTY</span>
+                </div>
+              </div>
+              <div class="tl-item past">
+                <div class="tl-date"><div class="month">Feb–Sep</div><div class="day">—</div></div>
+                <div class="tl-body">
+                  <h4>Monthly Contests Running</h4>
+                  <p>Score 90+ in any Buddies monthly contest to earn automatic SOTY qualification.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item current">
+                <div class="tl-date"><div class="month">Apr</div><div class="day">Late</div></div>
+                <div class="tl-body">
+                  <h4>Season Planning Begins</h4>
+                  <p>Event structure, schedule, and judging panel selection gets underway.</p>
+                  <span class="tl-tag both">Planning</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep</div><div class="day">15</div></div>
+                <div class="tl-body">
+                  <h4>Qualification Closes</h4>
+                  <p>Last chance to earn a qualification spot before the competition season opens.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-group">
+            <div class="tl-group-label">Pre-Season</div>
+            <div class="tl-items">
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep</div><div class="day">01</div></div>
+                <div class="tl-body">
+                  <h4>Qualifier Announcements</h4>
+                  <p>SOTY qualifiers revealed across two Instagram posts — Group A &amp; Group B.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep</div><div class="day">03</div></div>
+                <div class="tl-body">
+                  <h4>SOTY Popularity Vote Opens</h4>
+                  <p>Community vote on the official Buddies website. Opens Sep 3 – Sep 13.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep</div><div class="day">05</div></div>
+                <div class="tl-body">
+                  <h4>Authors Q&amp;A Round</h4>
+                  <p>Qualifying authors answer community questions. Runs Sep 5 – Sep 24.</p>
+                  <span class="tl-tag aoty">AOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep</div><div class="day">14</div></div>
+                <div class="tl-body">
+                  <h4>AOTY Popularity Vote Opens</h4>
+                  <p>Community vote for Author of the Year. Opens Sep 14 – Sep 24.</p>
+                  <span class="tl-tag aoty">AOTY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-group">
+            <div class="tl-group-label">Competition Season</div>
+            <div class="tl-items">
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Sep 26</div><div class="day">—</div></div>
+                <div class="tl-body">
+                  <h4>SOTY 1st Feed Vote</h4>
+                  <p>Stories go head to head in group Instagram feed votes. Runs Sept 26 – Oct 15.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Oct</div><div class="day">16</div></div>
+                <div class="tl-body">
+                  <h4>AOTY 1st Feed Vote</h4>
+                  <p>Authors compete in Instagram feed vote groups. Runs Oct 16 – Nov 4.</p>
+                  <span class="tl-tag aoty">AOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Nov</div><div class="day">06</div></div>
+                <div class="tl-body">
+                  <h4>SOTY 1st Poll Vote</h4>
+                  <p>Instagram Story poll vote for SOTY. Runs Nov 6 – Nov 15.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Nov</div><div class="day">17</div></div>
+                <div class="tl-body">
+                  <h4>AOTY 1st Poll Vote</h4>
+                  <p>Instagram Story poll vote for AOTY. Runs Nov 17 – Nov 26.</p>
+                  <span class="tl-tag aoty">AOTY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-group">
+            <div class="tl-group-label">Finals &amp; Announcement</div>
+            <div class="tl-items">
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Dec</div><div class="day">—</div></div>
+                <div class="tl-body">
+                  <h4>Stage Eliminations</h4>
+                  <p>Top 24 → Top 12 → Top 8 → Top 4 through judging, S2S &amp; head-to-head votes.</p>
+                  <span class="tl-tag soty">SOTY</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date"><div class="month">Dec</div><div class="day">Late</div></div>
+                <div class="tl-body">
+                  <h4>Winners Announced</h4>
+                  <p>SOTY &amp; AOTY champions revealed. Both winners inducted into the Hall of Fame.</p>
+                  <span class="tl-tag both">SOTY &amp; AOTY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p style="margin-top:28px;font-size:0.82rem;color:var(--text-light);text-align:center;">Timeline is based on the 2025 season structure and will be updated once planning begins in late April 2026.</p>
+    </div>
+  </section>
+
+  <!-- ============================
+       ANNOUNCEMENTS
+  ============================ -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header" style="margin-bottom:36px;">
+        <span class="section-label">Announcements</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);margin-bottom:10px;">What's <em>happening</em> now.</h2>
+        <p style="color:var(--text-mid);font-size:0.95rem;max-width:520px;line-height:1.7;">The latest updates from the SOTY &amp; AOTY 2026 season.</p>
+      </div>
+      <div class="announce-grid">
+
+        <div class="announce-card featured">
+          <div class="an-badge planning">● Planning Phase</div>
+          <div class="an-date">March 2026</div>
+          <h3>SOTY &amp; AOTY 2026 — Planning begins <em>late April</em></h3>
+          <p>The 2026 competition season is in its early pre-planning phase. We're wrapping up the 2025 season documentation while qualification continues to run through our monthly contests and story reviews. Detailed 2026 season planning; including the judging panel, event structure, and voting schedule will begin in late April. All updates will be posted here and on our Instagram.</p>
+        </div>
+
+        <div class="announce-card">
+          <div class="an-badge upcoming">Open Now</div>
+          <div class="an-date">February – September 2026</div>
+          <h3>Qualification is open right now</h3>
+          <p>Four pathways to SOTY 2026 qualification are active. Enter a monthly contest, apply for a story review, apply through the special opportunity slot, or receive an honorable mention from our team. Score 90+ and you're in.</p>
+        </div>
+
+        <div class="announce-card">
+          <div class="an-badge upcoming">Coming Up</div>
+          <div class="an-date">October 1st, 2026</div>
+          <h3>Season opens October 2026</h3>
+          <p>The competition window opens October 1st. Qualifier announcements, the Popularity Vote, and the Q&amp;A round will all kick off from that date. Stay close to our Instagram for the exact dates.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       HIGHLIGHTS
+  ============================ -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header" style="margin-bottom:36px;">
+        <span class="section-label">Season Highlights</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);margin-bottom:10px;">What makes this journey <em>worth following.</em></h2>
+      </div>
+      <div class="highlights-grid">
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 01</div>
+          <h3>The Popularity Vote</h3>
+          <p>Before the judging even begins, the community gets its say. The story with the most votes earns a fast-track directly into the Top 12, bypassing Stage 1 and 2.</p>
+          <div class="hl-story">2025: Only Pretend won the Popularity Vote</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 02</div>
+          <h3>The Authors Q&amp;A Round</h3>
+          <p>One of the most personal events of the season. AOTY qualifiers open up to the community answering questions about their craft, their stories, and their journey. It's where authors become more than a username.</p>
+          <div class="hl-story">2025: Eysenck stood out in this round</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 03</div>
+          <h3>Save-2-Stories</h3>
+          <p>Stories are paired and voting for one saves both. It's one of the competition's most unique events, rewarding stories that build genuine community support rather than just individual votes.</p>
+          <div class="hl-story">2025: Artemis And The Aetherist &amp; Painted Tension earned Fast Track</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 04</div>
+          <h3>The Head-to-Head Challenge</h3>
+          <p>At the Top 12 stage, every vote counts exclusively. Supporting one story in a pair does nothing for the other. The 6 direct matchups that determine the Top 8 are always the most intense events of the season.</p>
+          <div class="hl-story">2025: Only Pretend took 1st in Head-to-Head</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 05</div>
+          <h3>Special Awards</h3>
+          <p>Throughout the competition, our judging panel awards Best Directing, Best Plot, Best Interactivity, and Best Story Cover. Each award winner earns a Fast Track spot to advance a full stage, changing the competitive landscape.</p>
+          <div class="hl-story">2025: The Clique won Best Directing</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="hl-num">Highlight 06</div>
+          <h3>The Winner Reveal</h3>
+          <p>The season always ends with a moment the community remembers. The SOTY and AOTY champions are crowned, special awards are announced, and both winners are permanently inducted into the Buddies Laureates Hall of Fame.</p>
+          <div class="hl-story">2025: Only Pretend · R. Lewis award champions</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PAST JOURNEY ARCHIVE
+  ============================ -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header" style="margin-bottom:36px;">
+        <span class="section-label">Past Journey Archive</span>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);margin-bottom:10px;">Three seasons. <em>Three stories.</em></h2>
+        <p style="color:var(--text-mid);font-size:0.95rem;max-width:540px;line-height:1.7;">Every season of SOTY &amp; AOTY has produced its own defining moments and champions. Revisit the journeys that came before.</p>
+      </div>
+
+      <div class="archive-grid">
+
+        <!-- 2025 -->
+        <div class="archive-card">
+          <div class="archive-cover">
+            <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/605053254_1183961070108699_2679766466385616435_n.jpg" alt="Only Pretend — SOTY 2025 Winner" />
+            <div class="archive-cover-overlay">
+              <div class="archive-year-badge">2025</div>
+              <h4>The Echoes of Impact Season</h4>
+            </div>
+          </div>
+          <div class="archive-body">
+            <div class="season-label">4th Season · SOTY &amp; AOTY</div>
+            <h3>Sept – Dec 2025</h3>
+            <p>38 qualifying stories. The most competitive season to date. A intense Top 4 finish decided across feed votes, poll votes, and a head-to-head challenge.</p>
+            <div class="archive-winners">
+              <div class="aw-row">
+                <span class="aw-label">SOTY</span>
+                <span class="aw-name">Only Pretend</span>
+                <span class="aw-sub">— Charlie Seb</span>
+              </div>
+              <div class="aw-row">
+                <span class="aw-label">AOTY</span>
+                <span class="aw-name">R. Lewis</span>
+                <span class="aw-sub">— The Clique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="archive-card">
+          <div class="archive-cover">
+            <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/494887709_696011059960560_617938641463955832_n.png" alt="Polaroids — SOTY 2024 Winner" />
+            <div class="archive-cover-overlay">
+              <div class="archive-year-badge">2024</div>
+              <h4>Exceptional Skill in Literary Fiction</h4>
+            </div>
+          </div>
+          <div class="archive-body">
+            <div class="season-label">3rd Season · SOTY &amp; AOTY</div>
+            <h3>Oct – Dec 2024</h3>
+            <p>A mystery thriller claimed the award in a season that expanded the competition's reach and brought in a broader field of genres than ever before.</p>
+            <div class="archive-winners">
+              <div class="aw-row">
+                <span class="aw-label">SOTY</span>
+                <span class="aw-name">Polaroids</span>
+                <span class="aw-sub">— Ryan Graye</span>
+              </div>
+              <div class="aw-row">
+                <span class="aw-label">AOTY</span>
+                <span class="aw-name">Ryan Graye</span>
+                <span class="aw-sub">— Most Popular</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="archive-card">
+          <div class="archive-cover">
+            <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/462563027_1187181382368426_1392740360208236542_n.png" alt="Symphony — SOTY 2023 Winner" />
+            <div class="archive-cover-overlay">
+              <div class="archive-year-badge">2023</div>
+              <h4>Where It All Began</h4>
+            </div>
+          </div>
+          <div class="archive-body">
+            <div class="season-label">2nd Season · SOTY &amp; AOTY</div>
+            <h3>Oct – Dec 2023</h3>
+            <p>The season that established the SOTY journey as one of the community's most anticipated annual events. A period romance set the standard for what SOTY excellence looks like.</p>
+            <div class="archive-winners">
+              <div class="aw-row">
+                <span class="aw-label">SOTY</span>
+                <span class="aw-name">Symphony</span>
+                <span class="aw-sub">— Fern</span>
+              </div>
+              <div class="aw-row">
+                <span class="aw-label">AOTY</span>
+                <span class="aw-name">Fern</span>
+                <span class="aw-sub">— First AOTY Ever</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:32px;">
+        <a href="https://episodebuddies.netlify.app/hall-of-fame.html" class="btn btn-outline">View the Full Hall of Fame →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       INSTAGRAM / SOCIAL CTA
+  ============================ -->
+  <section class="ig-cta">
+    <div class="ig-cta-inner">
+      <span class="section-label gold">Stay Connected</span>
+      <h2>Every update lives on <em>Instagram.</em></h2>
+      <p>Every qualifier announcement, event post, voting call, and winner reveal happens first on @episode_buddies. Follow us so you never miss a moment of the 2026 journey.</p>
+      <div class="ig-cta-socials">
+        <a href="https://www.instagram.com/episode_buddies/" target="_blank" class="btn btn-gold">Follow @episode_buddies</a>
+        <a href="https://www.threads.net/@episode_buddies" target="_blank" class="btn btn-outline-white">Threads</a>
+        <a href="mailto:episodebuddies3@gmail.com" class="btn btn-outline-white">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER CTA
+  ============================ -->
+  <section class="footer-cta">
+    <div class="footer-cta-inner">
+      <span class="section-label">SOTY 2026</span>
+      <h2>Your story could be the <em>next winner.</em></h2>
+      <p>Qualification is open right now. Enter a monthly contest or apply for a story review — score 90 or above and your story earns its place in the 2026 season.</p>
+      <div class="cta-btn-group">
+        <a href="https://episodebuddies.netlify.app/services" class="btn btn-primary">View All Services</a>
+        <a href="index.html" class="btn btn-outline">SOTY &amp; AOTY Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+  <footer>
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
+          <span>Buddies SOTY & AOTY</span>
+        </div>
+        <p class="footer-brand-desc">The official home of the Buddies Support Hub Story of the Year and Author of the Year competitions. Est. 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/episode_buddies/" target="_blank">IG</a>
+          <a href="https://www.threads.net/@episode_buddies" target="_blank">TH</a>
+          <a href="mailto:episodebuddies3@gmail.com">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>This Site</h4>
+        <a href="soty-about.html">About SOTY & AOTY</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+        <a href="follow-journey.html">Follow the Journey</a>
+        <a href="soty-2025.html">SOTY 2025</a>
+        <a href="aoty-2025.html">AOTY 2025</a>
+      </div>
+      <div class="footer-col">
+        <h4>Main Hub</h4>
+        <a href="https://episodebuddies.netlify.app" target="_blank">Episode Buddies</a>
+        <a href="https://episodebuddies.netlify.app/services.html" target="_blank">Services</a>
+        <a href="https://episodebuddies.netlify.app/drive.html" target="_blank">Contest Records</a>
+        <a href="https://episodebuddies.netlify.app/library.html" target="_blank">Buddies Library</a>
+        <p style="margin-top:16px;">episodebuddies3@gmail.com</p>
+        <p>Sun – Sat · 6AM – 10PM GMT+1</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Buddies Support Hub · Community-organized. Not affiliated with Episode Interactive.</span>
+      <span class="footer-tagline">"They are visionaries. They are The Buddies Laureates."</span>
+    </div>
+  </div>
+</footer>
+
+  <!-- ============================
+       SCRIPTS
+  ============================ -->
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navMobile  = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMobile.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
