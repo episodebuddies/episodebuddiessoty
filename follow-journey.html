@@ -198,6 +198,8 @@
     .section-alt  { background: var(--off-white); }
     .section-dark { background: var(--navy); color: var(--white); }
 
+    #timeline { scroll-margin-top: 68px; }
+
     .section-inner    { max-width: 1120px; margin: 0 auto; }
     .section-inner-sm { max-width: 820px;  margin: 0 auto; }
 
@@ -1051,11 +1053,11 @@
   <div class="nav-links">
     <a href="soty-about.html">About</a>
     <a href="faqs.html">FAQs</a>
-    <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
     <a href="follow-journey.html" class="active">Follow the Journey</a>
     <a href="soty-2025.html">SOTY 2025</a>
     <a href="aoty-2025.html">AOTY 2025</a>
-    <a href="https://episodebuddies.netlify.app" class="nav-cta">Main Site</a>
+    <a href="https://episodebuddies.vercel.app" class="nav-cta">Main Site</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1066,11 +1068,11 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="soty-about.html">About</a>
   <a href="faqs.html">FAQs</a>
-  <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
   <a href="follow-journey.html">Follow the Journey</a>
   <a href="soty-2025.html">SOTY 2025</a>
   <a href="aoty-2025.html">AOTY 2025</a>
-  <a href="https://episodebuddies.netlify.app" class="nav-cta">← Main Site</a>
+  <a href="https://episodebuddies.vercel.app" class="nav-cta">← Main Site</a>
 </div>
 
   <!-- ============================
@@ -1079,7 +1081,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-breadcrumb">
-        <a href="https://episodebuddiessoty.netlify.app/soty-index.html">Home</a>
+        <a href="index.html">Home</a>
         <span>/</span>
         <span>Follow the Journey</span>
       </div>
@@ -1557,7 +1559,7 @@
       </div>
 
       <div style="text-align:center;margin-top:32px;">
-        <a href="https://episodebuddies.netlify.app/hall-of-fame.html" class="btn btn-outline">View the Full Hall of Fame →</a>
+        <a href="https://episodebuddies.vercel.app/hall-of-fame.html" class="btn btn-outline">View the Full Hall of Fame →</a>
       </div>
     </div>
   </section>
@@ -1587,7 +1589,7 @@
       <h2>Your story could be the <em>next winner.</em></h2>
       <p>Qualification is open right now. Enter a monthly contest or apply for a story review — score 90 or above and your story earns its place in the 2026 season.</p>
       <div class="cta-btn-group">
-        <a href="https://episodebuddies.netlify.app/services" class="btn btn-primary">View All Services</a>
+        <a href="https://episodebuddies.vercel.app/services" class="btn btn-primary">View All Services</a>
         <a href="index.html" class="btn btn-outline">SOTY &amp; AOTY Home</a>
       </div>
     </div>
@@ -1615,17 +1617,17 @@
         <h4>This Site</h4>
         <a href="soty-about.html">About SOTY & AOTY</a>
         <a href="faqs.html">FAQs</a>
-        <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+        <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
         <a href="follow-journey.html">Follow the Journey</a>
         <a href="soty-2025.html">SOTY 2025</a>
         <a href="aoty-2025.html">AOTY 2025</a>
       </div>
       <div class="footer-col">
         <h4>Main Hub</h4>
-        <a href="https://episodebuddies.netlify.app" target="_blank">Episode Buddies</a>
-        <a href="https://episodebuddies.netlify.app/services.html" target="_blank">Services</a>
-        <a href="https://episodebuddies.netlify.app/drive.html" target="_blank">Contest Records</a>
-        <a href="https://episodebuddies.netlify.app/library.html" target="_blank">Buddies Library</a>
+        <a href="https://episodebuddies.vercel.app" target="_blank">Episode Buddies</a>
+        <a href="https://episodebuddies.vercel.app/services.html" target="_blank">Services</a>
+        <a href="https://episodebuddies.vercel.app/drive.html" target="_blank">Contest Records</a>
+        <a href="https://episodebuddies.vercel.app/library.html" target="_blank">Buddies Library</a>
         <p style="margin-top:16px;">episodebuddies3@gmail.com</p>
         <p>Sun – Sat · 6AM – 10PM GMT+1</p>
       </div>
@@ -1643,10 +1645,22 @@
   <script>
     // Hamburger
     const hamburger = document.getElementById('hamburger');
-    const navMobile  = document.getElementById('nav-mobile');
+    const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
-      navMobile.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      }
     });
   </script>
 

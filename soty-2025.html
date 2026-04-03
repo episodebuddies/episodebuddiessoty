@@ -450,7 +450,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="soty-index.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/03/buddies-logo.png?w=300" alt="Episode Buddies">
     <div>
       <span class="nav-logo-text">Buddies SOTY & AOTY</span>
@@ -460,10 +460,10 @@
   <div class="nav-links">
     <a href="soty-about.html">About</a>
     <a href="faqs.html">FAQs</a>
-    <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
     <a href="soty-2025.html" class="active">SOTY 2025</a>
     <a href="aoty-2025.html">AOTY 2025</a>
-    <a href="https://episodebuddies.netlify.app/" class="nav-cta">Main Site</a>
+    <a href="https://episodebuddies.vercel.app/" class="nav-cta">Main Site</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -472,10 +472,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="soty-about.html">About</a>
   <a href="faqs.html">FAQs</a>
-  <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
   <a href="soty-2025.html">SOTY 2025</a>
   <a href="aoty-2025.html">AOTY 2025</a>
-  <a href="https://episodebuddies.netlify.app/" target="_blank" rel="noopener noreferrer">← Main Site</a>
+  <a href="https://episodebuddies.vercel.app/" target="_blank" rel="noopener noreferrer">← Main Site</a>
 </div>
 
 <!-- PAGE HEADER -->
@@ -1297,11 +1297,11 @@
     <div class="sidebar-card">
       <div class="sidebar-card-header">Quick Navigation</div>
       <div class="sidebar-card-body">
-        <a href="https://episodebuddies.netlify.app/hall-of-fame.html" class="quick-nav-link">Hall of Fame</a>
+        <a href="https://episodebuddies.vercel.app/hall-of-fame.html" class="quick-nav-link">Hall of Fame</a>
         <a href="aoty-2025.html" class="quick-nav-link">AOTY 2025</a>
         <a href="index.html" class="quick-nav-link">SOTY Homepage</a>
         <a href="faqs.html" class="quick-nav-link">FAQs</a>
-        <a href="https://episodebuddies.netlify.app/" class="quick-nav-link">Main Buddies Site</a>
+        <a href="https://episodebuddies.vercel.app/" class="quick-nav-link">Main Buddies Site</a>
       </div>
     </div>
 
@@ -1315,7 +1315,7 @@
     <span class="footer-copy">© 2025 Buddies Support Hub · Not affiliated with Episode Interactive.</span>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="https://episodebuddies.netlify.app/hall-of-fame.html">Hall of Fame</a>
+      <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
       <a href="https://www.instagram.com/episode_buddies/" target="_blank">Instagram</a>
     </div>
   </div>
@@ -1333,6 +1333,14 @@
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
   }));
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  });
 
   // Main accordion toggle
   function toggleAcc(btn) {
