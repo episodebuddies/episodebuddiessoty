@@ -271,7 +271,7 @@
   .facts-section { background: var(--off-white); }
   .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .fact-card { background: var(--white); border-radius: 8px; padding: 24px 20px; border: 1px solid rgba(27,42,74,0.07); border-top: 3px solid var(--gold); }
-  .fact-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+  .fact-num { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
   .fact-label { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
 
   /* ── CONNECT ── */
@@ -356,6 +356,194 @@
     .marquee-inner span { font-size: 10px; padding: 0 20px; }
     .soty-slide { flex: 0 0 170px; }
     .aoty-slide { flex: 0 0 160px; }
+  }
+
+/* ── Author trigger ── */
+  .author-trigger {
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+  }
+  .author-trigger:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(201,168,76,0.35);
+    filter: brightness(1.05);
+  }
+
+  /* ── Modal overlay ── */
+  .am-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(15,27,51,0.88);
+    align-items: center; justify-content: center;
+    padding: 20px;
+    animation: amFadeIn 0.25s ease;
+    overflow-y: auto;
+  }
+  .am-overlay.open { display: flex; }
+  @keyframes amFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ── Modal box ── */
+  .am-box {
+    background: var(--white, #fff);
+    border-radius: 12px;
+    width: 100%; max-width: 680px;
+    position: relative;
+    animation: amSlideUp 0.3s ease;
+    overflow: hidden;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  @keyframes amSlideUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
+  /* Scrollbar inside modal */
+  .am-box::-webkit-scrollbar { width: 4px; }
+  .am-box::-webkit-scrollbar-track { background: rgba(27,42,74,0.05); }
+  .am-box::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.4); border-radius: 2px; }
+
+  /* ── Close button ── */
+  .am-close {
+    position: sticky; top: 0; float: right;
+    margin: 14px 14px -14px 0;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(27,42,74,0.08); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: #4A5568; z-index: 10;
+    transition: background 0.2s, color 0.2s; line-height: 1;
+  }
+  .am-close:hover { background: var(--deep-navy, #0F1B33); color: #fff; }
+
+  /* ── Header ── */
+  .am-header {
+    background: var(--deep-navy, #0F1B33);
+    padding: 32px 32px 28px;
+    display: flex; align-items: flex-start; gap: 24px;
+    position: relative; overflow: hidden;
+  }
+  .am-header::before {
+    content: ''; position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  }
+  .am-pfp {
+    width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+    object-fit: cover; border: 3px solid rgba(201,168,76,0.5);
+    position: relative; z-index: 1;
+  }
+  .am-header-text { position: relative; z-index: 1; padding-top: 4px; }
+  .am-name {
+    font-family: var(--serif, 'Playfair Display', serif);
+    font-size: 26px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 6px;
+  }
+  .am-handle {
+    font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px;
+  }
+  .am-title-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .am-badge {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); color: var(--gold, #C9A84C);
+  }
+  .am-badge.gold-fill {
+    background: var(--gold, #C9A84C); color: var(--deep-navy, #0F1B33); border-color: var(--gold, #C9A84C);
+  }
+
+  /* ── Body ── */
+  .am-body { padding: 28px 32px; }
+
+  /* Bio */
+  .am-bio {
+    font-size: 14px; line-height: 1.8; color: #4A5568;
+    margin-bottom: 24px; font-style: italic;
+    border-left: 3px solid var(--gold, #C9A84C);
+    padding-left: 16px;
+  }
+
+  /* Quote */
+  .am-quote {
+    background: var(--off-white, #F7F5F0);
+    border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;
+    font-size: 13px; line-height: 1.75; color: #4A5568; font-style: italic;
+  }
+  .am-quote cite { display: block; font-size: 11px; font-style: normal; font-weight: 600; color: var(--text-light, #8896A6); margin-top: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* Info table */
+  .am-info-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    border-radius: 8px; overflow: hidden; border: 1px solid rgba(27,42,74,0.08);
+    margin-bottom: 24px;
+  }
+  .am-info-label {
+    background: var(--navy, #1B2A4A); padding: 10px 16px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold, #C9A84C); display: flex; align-items: center;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .am-info-value {
+    background: rgba(27,42,74,0.03); padding: 10px 16px;
+    font-size: 13px; color: var(--text-dark, #0F1B33);
+    display: flex; align-items: center;
+    border-bottom: 1px solid rgba(27,42,74,0.05);
+  }
+  .am-info-label:nth-last-child(2), .am-info-value:last-child { border-bottom: none; }
+
+  /* Section title inside modal */
+  .am-section-title {
+    font-family: var(--serif, 'Playfair Display', serif);
+    font-size: 16px; font-weight: 700; color: var(--navy, #1B2A4A);
+    margin-bottom: 14px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(27,42,74,0.08);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .am-section-title::before { content: ''; display: block; width: 20px; height: 2px; background: var(--gold, #C9A84C); flex-shrink: 0; }
+
+  /* Stories */
+  .am-stories { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .am-story {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--off-white, #F7F5F0); border-radius: 8px;
+    padding: 14px; border: 1px solid rgba(27,42,74,0.07);
+    text-decoration: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .am-story:hover { border-color: rgba(201,168,76,0.4); background: #fff; }
+  .am-story-cover { width: 52px; height: 68px; border-radius: 5px; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(27,42,74,0.1); }
+  .am-story-info { flex: 1; }
+  .am-story-title { font-family: var(--serif, 'Playfair Display', serif); font-size: 14px; font-weight: 700; color: var(--navy, #1B2A4A); margin-bottom: 4px; }
+  .am-story-blurb { font-size: 12px; color: #4A5568; line-height: 1.6; }
+  .am-story-read { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold, #C9A84C); margin-top: 6px; display: block; }
+
+  /* Achievements */
+  .am-achievements { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+  .am-achievement {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13px; color: #4A5568; line-height: 1.5;
+  }
+  .am-achievement::before { content: '◆'; color: var(--gold, #C9A84C); font-size: 8px; margin-top: 5px; flex-shrink: 0; }
+
+  /* Footer CTA */
+  .am-footer {
+    border-top: 1px solid rgba(27,42,74,0.08);
+    padding: 20px 32px 24px;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .am-btn {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 20px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, color 0.2s; border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .am-btn-gold { background: var(--gold, #C9A84C); color: var(--deep-navy, #0F1B33); border-color: var(--gold, #C9A84C); }
+  .am-btn-gold:hover { background: var(--gold-light, #E8C97A); border-color: var(--gold-light, #E8C97A); }
+  .am-btn-outline { background: transparent; color: var(--navy, #1B2A4A); border-color: rgba(27,42,74,0.3); }
+  .am-btn-outline:hover { background: var(--navy, #1B2A4A); color: #fff; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .am-header { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px 20px; }
+    .am-title-badges { justify-content: center; }
+    .am-body, .am-footer { padding-left: 20px; padding-right: 20px; }
+    .am-info-grid { grid-template-columns: 1fr; }
+    .am-info-label { border-bottom: none; }
   }
 </style>
 </head>
@@ -618,7 +806,7 @@
       <div class="winners-slideshow" id="aotySlideshow">
 
         <div class="aoty-slide winner-slide">
-          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/r.-lewis.png" alt="R. Lewis">
+          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/r.-lewis.png" alt="R. Lewis" class="author-trigger" data-author="rlewis">
           <div class="aoty-slide-info">
             <div class="aoty-slide-year">2025 AOTY Winner</div>
             <div class="aoty-slide-name">R. Lewis</div>
@@ -628,7 +816,7 @@
         </div>
 
         <div class="aoty-slide">
-          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/543706905_17931080721092952_1077996096989603726_n.jpg" alt="Ryan Graye">
+          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/543706905_17931080721092952_1077996096989603726_n.jpg" alt="Ryan Graye" class="author-trigger" data-author="ryangraye">
           <div class="aoty-slide-info">
             <div class="aoty-slide-year">2024 AOTY Winner</div>
             <div class="aoty-slide-name">Ryan Graye</div>
@@ -638,9 +826,9 @@
         </div>
 
         <div class="aoty-slide">
-          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/475662045_1655350498397602_9013583581196842109_n.jpg" alt="Fern">
+          <img src="https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/475662045_1655350498397602_9013583581196842109_n.jpg" alt="Fern" class="author-trigger" data-author="fern">
           <div class="aoty-slide-info">
-            <div class="aoty-slide-year">2023 AOTY Winner — Inaugural</div>
+            <div class="aoty-slide-year">2023 AOTY Winner</div>
             <div class="aoty-slide-name">Fern</div>
             <div class="aoty-slide-handle">@fern.episode</div>
             <div class="aoty-slide-note">First AOTY Ever · Symphony</div>
@@ -940,6 +1128,260 @@
 
   initSlideshow('sotySlideshow', 'sotyDots');
   initSlideshow('aotySlideshow', 'aotyDots');
+  function amOpen(key) {
+  const a = AM_AUTHORS[key];
+  if (!a) return;
+
+  const box = document.getElementById('am-box');
+
+  // Build badges
+  const badges = a.titles.map((t, i) =>
+    `<span class="am-badge${i === 0 ? ' gold-fill' : ''}">${t}</span>`
+  ).join('');
+
+  // Build info table rows
+  const infoRows = (a.info || []).map(([label, value]) => {
+    const linkHref = a.infoLinks && a.infoLinks[label];
+    const valHtml  = linkHref
+      ? `<a href="${linkHref}" target="_blank" style="color:var(--gold,#C9A84C);">${value}</a>`
+      : value;
+    return `<div class="am-info-label">${label}</div><div class="am-info-value">${valHtml}</div>`;
+  }).join('');
+
+  // Build stories
+  const storiesHtml = (a.stories || []).map(s => `
+    <a href="${s.link || '#'}" target="_blank" class="am-story" ${!s.link || s.link === '#' ? 'onclick="return false"' : ''}>
+      ${s.cover ? `<img class="am-story-cover" src="${s.cover}" alt="${s.title}" loading="lazy">` : ''}
+      <div class="am-story-info">
+        <div class="am-story-title">${s.title}</div>
+        ${s.blurb ? `<div class="am-story-blurb">${s.blurb}</div>` : '<div class="am-story-blurb" style="color:var(--text-light,#8896A6);font-style:italic;">Description coming soon.</div>'}
+        ${s.link && s.link !== '#' ? '<span class="am-story-read">Read Story →</span>' : ''}
+      </div>
+    </a>`).join('');
+
+  // Build achievements
+  const achieveHtml = (a.achievements || []).map(ach =>
+    `<div class="am-achievement">${ach}</div>`
+  ).join('');
+
+  box.innerHTML = `
+    <button class="am-close" onclick="amClose()" aria-label="Close">✕</button>
+
+    <div class="am-header">
+      <img class="am-pfp" src="${a.pfp}" alt="${a.name}">
+      <div class="am-header-text">
+        <div class="am-name">${a.name}</div>
+        <div class="am-handle">${a.handle}</div>
+        <div class="am-title-badges">${badges}</div>
+      </div>
+    </div>
+
+    <div class="am-body">
+      ${a.bio ? `<p class="am-bio">${a.bio}</p>` : ''}
+      ${a.quote ? `<div class="am-quote">${a.quote}<cite>${a.quoteBy}</cite></div>` : ''}
+
+      ${infoRows ? `
+        <div class="am-section-title">Author Details</div>
+        <div class="am-info-grid">${infoRows}</div>` : ''}
+
+      ${storiesHtml ? `
+        <div class="am-section-title">Published Stories</div>
+        <div class="am-stories">${storiesHtml}</div>` : ''}
+
+      ${achieveHtml ? `
+        <div class="am-section-title">Achievements</div>
+        <div class="am-achievements">${achieveHtml}</div>` : ''}
+    </div>
+
+    <div class="am-footer">
+      <a href="${a.igLink}" target="_blank" class="am-btn am-btn-gold">Follow on Instagram →</a>
+      <button class="am-btn am-btn-outline" onclick="amClose()">Close</button>
+    </div>`;
+
+  document.getElementById('am-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function amClose() {
+  document.getElementById('am-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function amHandleOverlayClick(e) {
+  // Close if clicking the dark backdrop, not the box itself
+  if (e.target === document.getElementById('am-overlay')) amClose();
+}
+
+const AM_AUTHORS = {
+
+  rlewis: {
+    name:    'R. Lewis',
+    handle:  '@rlewiswrites',
+    igLink:  'https://www.instagram.com/rlewiswrites',
+    pfp:     'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/12/r.-lewis.png',
+    titles:  ['Author of the Year 2025', 'Creative Excellence Award 2025'],
+    goldBadge: 'AOTY 2025 Winner',
+    bio: 'R. Lewis is an American co-author duo on Episode, born on January 11th and March 8th, whose collaborative storytelling has earned them widespread recognition. Their creative partnership is marked by strong narrative cohesion, polished execution, and a shared vision that translates seamlessly onto the screen.',
+    quote: '"The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression."',
+    quoteBy: '— Buddies Team',
+    info: [
+      ['Birthday',          '11th January & 8th March'],
+      ['Nationality',       'American'],
+      ['Zodiac',            'Capricorn & Pisces'],
+      ['Active on Episode', '2024 – present'],
+      ['Stories Published', '3'],
+      ['Website',           'storiesbyrlewis.site'],
+    ],
+    infoLinks: {
+      'Website': 'https://sites.google.com/view/storiesbyrlewis/home',
+    },
+    stories: [
+      {
+        title:  'The Clique (Season 1)',
+        blurb:  '"The Clique" loses one of their members in a sudden tragedy. A writer observes their tight-knit group — unexpectedly, he becomes far too intrigued with one member: Denise Evergreen.',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/01/594470693_2391844074587314_2366897739741645666_n.jpg',
+        link:   'https://episodeinteractive.com/r/s/5722486796648448',
+      },
+      {
+        title:  'Once, In December',
+        blurb:  'Doris White, a gifted dancer on a famous country singer\'s wartime Christmas tour, vows to resist his charms — but perhaps he\'s more than his reputation suggests.',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/01/609318755_928143413182834_1844295479427693173_n.png',
+        link:   'https://episodeinteractive.com/r/s/5063910778765312',
+      },
+      {
+        title:  'The Clique (Season 2)',
+        blurb:  'With a successful novel written about them, "The Clique" tries to navigate life in New York with new fears, new lessons, and new members.',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/01/609434427_1419088693189321_5073231280695755853_n.png',
+        link:   'https://episodeinteractive.com/r/s/5419283473793024',
+      },
+    ],
+    achievements: [
+      'Author of the Year 2025 (Buddies Support Hub)',
+      'Creative Excellence Award 2025 (Buddies Support Hub)',
+      '2nd Runner-Up — Story of the Year 2025 (The Clique)',
+      'Best Directing Award 2025 (The Clique)',
+      'Most Innovative Concept Award 2025 (The Clique)',
+    ],
+  },
+
+  ryangraye: {
+    name:    'Ryan Graye',
+    handle:  '@ryanwrites.epi',
+    igLink:  'https://www.instagram.com/ryanwrites.epi',
+    pfp:     'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/543706905_17931080721092952_1077996096989603726_n.jpg',
+    titles:  ['Author of the Year 2024', 'Most Popular Author 2024'],
+    goldBadge: 'AOTY 2024 Winner',
+    bio: 'Ryan Graye is an Austrian Episode author, born on July 17th, who joined the community in November 2023. Known for her suspenseful storytelling and polished writing style, she quickly gained recognition through her debut story, Polaroids, which resonated strongly with readers. Beyond writing, she is also appreciated for supporting fellow authors through her custom backgrounds and overlays, showcasing both her creativity and versatility within the community.',
+    quote: '"Ryan Graye\'s debut story Polaroids has taken the Episode community by storm. With its heartfelt narrative and captivating characters, it’s clear she has made an unforgettable entrance as an author."',
+    quoteBy: '— Buddies Team',
+    info: [
+      ['Birthday',          '17th July'],
+      ['Nationality',       'Austrian'],
+      ['Zodiac',            'Cancer'],
+      ['Active on Episode', '2024 – present'],
+      ['Stories Published', '3'],
+      ['Website',           'ryangraye.carrd.co'],
+    ],
+    infoLinks: {
+      'Website': 'https://ryangraye.carrd.co/',
+    },
+    stories: [
+      {
+        title:  'Polaroids',
+        blurb:  'You are a criminology freshman who stumbles across an ominous polaroid of a missing girl, which unravels a dangerous chain of events...',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/494887709_696011059960560_617938641463955832_n.png',
+        link:   'http://episodeinteractive.com/r/s/6265867834785792',
+      },
+      {
+        title:  'Amplified Affection',
+        blurb:  'As a London based music producer, you catch the eye of LA singer SOUL through a viral open mic performance. As you grow closer through collaborations, love faces the distance test.',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/494888680_1392214765472085_486050304610828373_n.png',
+        link:   'https://episodeinteractive.com/r/s/5564586432954368',
+      },
+      {
+        title:  'Moonlight Sonata',
+        blurb:  'At a once prestigious school for the musically gifted, Anya uncovers a cursed sonata, and a love doomed to repeat the past. What would you sacrifice for the chance to rewrite fate?',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2026/04/662652433_2009782889976069_1405281385515620437_n.jpg',
+        link:   '#',
+      },
+    ],
+    achievements: [
+      'Author of the Year 2024 (Buddies Support Hub)',
+      'Most Popular Author 2024 (Buddies Support Hub)',
+      'Story of the Year 2024 (Polaroids)',
+      'Most Popular Story 2024 (Polaroids)',
+      'Readers Choice Award 2024 (Polaroids)',
+      'Hidden Gem Shelf - Q1 2024 (Episode shelf)'
+    ],
+  },
+
+  fern: {
+    name:    'Fern',
+    handle:  '@fern.episode',
+    igLink:  'https://www.instagram.com/fern.episode',
+    pfp:     'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/475662045_1655350498397602_9013583581196842109_n.jpg',
+    titles:  ['Author of the Year 2023', 'Inaugural AOTY Winner'],
+    goldBadge: 'AOTY 2023 Winner',
+    bio: 'Fern is a Brazilian Episode author, born on January 31st, who joined the community in 2018 as a reader. Known for her remarkable directing skills and her ability to craft words into compelling narratives, she steadily built her presence through stories that reflect both creativity and precision. From her debut story, Inventions of C. Christopher, to later works that brought her wider recognition, Fern has become admired for the immersive and memorable storytelling she brings to the community.',
+    quote: '"After publishing her first story, ‘Inventions of C. Christopher,’ Fern anticipated the success that would come with crafting Symphony. Her continued growth has propelled her to new heights where her talent will always shine brightly."',
+    quoteBy: '— Buddies Team',
+    info: [
+      ['Birthday',          '31st January'],
+      ['Nationality',       'Brazilian'],
+      ['Zodiac',            'Aquarius'],
+      ['Active on Episode', '2018 – present'],
+      ['Stories Published', '2'],
+      ['Website',           'fernepisode.carrd.co'],
+    ],
+    infoLinks: {
+      'Website': 'https://fernepisode.carrd.co/',
+    },
+    stories: [
+      {
+        title:  'Symphony',
+        blurb:  'In 1946 New York, the worlds of an aspiring violinist and a World War II veteran collide in an unexpected symphony of emotions, as both struggle to overcome hardships of their own.',
+        cover:  'https://episodebuddiessotyaoty.wordpress.com/wp-content/uploads/2025/10/462563027_1187181382368426_1392740360208236542_n.png',
+        link:   'http://episodeinteractive.com/r/s/6046021552898048',
+      },
+      {
+        title:  'Inventions of C. Christopher',
+        blurb:  'A young woman with a knack for inventing goes on a dangerous quest to rescue her kidnapped little sister. With the help of a witty American along the way, will she succeed?',
+        cover:  'https://episodebuddies3.wordpress.com/wp-content/uploads/2024/10/1000038320-edited.webp',
+        link:   'http://episodeinteractive.com/r/s/6693747829440512',
+      },
+    ],
+    achievements: [
+      'Author of the Year 2023 (Buddies Support Hub)',
+      'Inaugural AOTY Winner (Buddies Support Hub)',
+      'Story of the Year 2023 (Symphony)',
+      'Best Story Cover Award 2023 (Symphony)',
+      'Best Directing Award 2023 (Symphony)',
+      'June Editors Pick 2023 (Episode shelf)'
+    ],
+  },
+};
+
+// Wire up all images with class "author-trigger"
+document.querySelectorAll('.author-trigger').forEach(img => {
+  const key = img.getAttribute('data-author');
+  if (!key || !AM_AUTHORS[key]) return;
+  img.addEventListener('click', () => amOpen(key));
+  img.setAttribute('role', 'button');
+  img.setAttribute('tabindex', '0');
+  img.setAttribute('aria-label', 'View ' + AM_AUTHORS[key].name + ' profile');
+  img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') amOpen(key); });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') amClose();
+});
 </script>
+<div class="am-overlay" id="am-overlay" onclick="amHandleOverlayClick(event)">
+  <div class="am-box" id="am-box">
+    <button class="am-close" onclick="amClose()" aria-label="Close">✕</button>
+    <!-- Content is injected by JS -->
+  </div>
+</div>
 </body>
 </html>
