@@ -177,6 +177,7 @@
     position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,34,0.7) 0%, transparent 50%);
     opacity: 0; transition: opacity 0.3s;
     display: flex; align-items: flex-end; padding: 20px;
+    pointer-events: none;
   }
   .soty-cover-link:hover .soty-cover-overlay { opacity: 1; }
   .soty-cover-cta {
@@ -241,6 +242,7 @@
     position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,34,0.7) 0%, transparent 55%);
     opacity: 0; transition: opacity 0.3s;
     display: flex; align-items: flex-end; padding: 20px;
+    pointer-events: none;
   }
   .aoty-photo-link:hover .aoty-photo-overlay { opacity: 1; }
   .aoty-photo-cta { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-navy); background: var(--gold); padding: 8px 18px; border-radius: 4px; }
@@ -298,7 +300,7 @@
   .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   .page-header-inner > * { animation: fadeUp 0.7s both; }
   .page-eyebrow    { animation-delay: 0.08s; }
   .page-header h1  { animation-delay: 0.18s; }
@@ -332,12 +334,14 @@
     .toggle-btn { padding: 10px 20px; font-size: 12px; }
     .year-section { padding: 48px 20px; }
     .year-num { font-size: clamp(36px, 10vw, 60px); }
-    .soty-winner-block { grid-template-columns: 1fr; }
-    .soty-cover-link img { min-height: 280px; aspect-ratio: 3/2; object-fit: cover; }
-    .soty-info { padding: 24px 22px; }
+    .soty-winner-block { grid-template-columns: 130px 1fr; border-radius: 10px; }
+    .soty-cover-link img { min-height: unset; aspect-ratio: 3/4; height: 100%; }
+    .soty-info { padding: 18px 16px; }
+    .soty-info-title { font-size: clamp(16px, 4vw, 22px); }
+    .soty-info-desc { font-size: 13px; margin-bottom: 16px; }
     .aoty-winner-block { grid-template-columns: 1fr; }
     .aoty-photo-link img { min-height: 260px; aspect-ratio: 4/3; object-fit: cover; object-position: top; }
-    .aoty-info { padding: 24px 22px; }
+    .aoty-info { padding: 22px 20px; }
     .footer-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
     footer { padding: 44px 20px 24px; }
     .footer-bottom { flex-direction: column; text-align: center; }
@@ -381,7 +385,7 @@
   .am-box::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.4); border-radius: 2px; }
 
   .am-close {
-    position: absolute; top: 0; float: right; margin: 14px 14px -14px 0;
+    position: sticky; top: 0; float: right; margin: 14px 14px -14px 0;
     width: 32px; height: 32px; border-radius: 50%;
     background: rgba(27,42,74,0.08); border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
@@ -503,7 +507,7 @@
     <a href="follow-journey.html">Follow the Journey</a>
     <a href="soty-2025.html">SOTY 2025</a>
     <a href="aoty-2025.html">AOTY 2025</a>
-    <a href="index.html" class="nav-cta">Main Site</a>
+    <a href="https://episodebuddies.vercel.app" class="nav-cta">Main Site</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -516,7 +520,7 @@
   <a href="follow-journey.html">Follow the Journey</a>
   <a href="soty-2025.html">SOTY 2025</a>
   <a href="aoty-2025.html">AOTY 2025</a>
-  <a href="index.html">← Main Site</a>
+  <a href="https://episodebuddies.vercel.app" class="nav-cta">← Main Site</a>
 </div>
 
 <!-- PAGE HEADER -->
@@ -578,7 +582,7 @@
           <div class="year-num">2025</div>
           <div class="year-info">
             <span class="year-label">Story of the Year</span>
-            <span class="year-season">4th Annual Season · Theme: Echoes of Impact</span>
+            <span class="year-season">4th Annual Season </span>
           </div>
         </div>
         <div class="current-badge"><div class="current-dot"></div><span>Most Recent</span></div>
@@ -606,7 +610,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Only Pretend dominated the 2025 season in a way that left little room for debate. From the Popularity Vote all the way through to the Final, Charlie Seb's story led or placed top-two in every single voting event — Poll Vote, Feed Vote, Head-to-Head, and Reader's Choice. It swept nearly every community-driven award that season, which speaks to something deeper than a story that judges rate highly: this was a story that readers fell in love with and refused to let go. The amnesia premise felt fresh rather than clichéd, and the emotional tension between the leads had readers genuinely invested in the outcome. The dialogue and characterization — winners of their own special award — were consistently praised for feeling authentic rather than performative. In a competitive field of 38, Only Pretend emerged as the undeniable choice of both the judges and the community.
+            Only Pretend dominated the 2025 season in a way that left little room for debate. From the Popularity Vote all the way through to the Final, Charlie Seb's story led or placed top-two in every single voting event; Poll Vote, Feed Vote, Head-to-Head, and Reader's Choice. It swept nearly every community-driven award that season, which speaks to something deeper than a story that judges rate highly: this was a story that readers fell in love with and refused to let go. The amnesia premise felt fresh rather than clichéd, and the emotional tension between the leads had readers genuinely invested in the outcome. The dialogue and characterization; winners of their own special award - were consistently praised for feeling authentic rather than performative. In a competitive field of 38, Only Pretend emerged as the undeniable choice of both the judges and the community.
           </div>
         </div>
       </div>
@@ -647,7 +651,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Polaroids stood out in 2024 as a debut story that somehow carried the confidence and polish of a seasoned author. Ryan Graye introduced a mystery concept — the criminology freshman and the ominous polaroid — that felt immediately cinematic, the kind of opening that pulls you in before you've even tapped past the first scene. The story won both Most Popular Story and Reader's Choice, reflecting not just strong directing or plotting, but a genuine connection with readers who kept coming back. For a debut entry to win SOTY is remarkable in itself; to do it by sweeping the community-voted awards as well made it one of the most memorable season outcomes in the competition's history.
+            Polaroids stood out in 2024 as a debut story that somehow carried the confidence and polish of a seasoned author. Ryan Graye introduced a mystery concept; the criminology freshman and the ominous polaroid that felt immediately cinematic, the kind of opening that pulls you in before you've even tapped past the first scene. The story won both Most Popular Story and Reader's Choice, reflecting not just strong directing or plotting, but a genuine connection with readers who kept coming back. For a debut entry to win SOTY is remarkable in itself; to do it by sweeping the community-voted awards as well made it one of the most memorable season outcomes in the competition's history.
           </div>
         </div>
       </div>
@@ -688,7 +692,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Symphony stood out in 2023 for setting an entirely different register from what the Episode community had come to expect from top-performing stories. A 1946 New York period romance built around classical music and wartime trauma — this was not a story that played safe. Fern's attention to historical atmosphere and visual direction was immediately apparent, and the story swept both Best Directing and Best Story Cover in the same season, recognizing the craft at every level of its presentation. The emotional weight of its premise — two people defined by their wounds trying to find common ground — resonated far beyond the competition, and Fern went on to win AOTY the same year, a double achievement that remains unmatched in the competition's history.
+            Symphony stood out in 2023 for setting an entirely different register from what the Episode community had come to expect from top-performing stories. A 1946 New York period romance built around classical music and wartime trauma; this was not a story that played safe. Fern's attention to historical atmosphere and visual direction was immediately apparent, and the story swept both Best Directing and Best Story Cover in the same season, recognizing the craft at every level of its presentation. The emotional weight of its premise, two people defined by their wounds trying to find common ground resonated far beyond the competition, and Fern went on to win AOTY the same year, a double achievement that remains unmatched in the competition's history.
           </div>
         </div>
       </div>
@@ -728,7 +732,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Boarding Incomplete holds a unique place in Buddies history as the very first story to win SOTY — and it earned that distinction by offering something the competition has always valued: a story that felt genuinely original. The LGBTQ+ premise was handled with warmth and authenticity rather than as a gimmick, and the airport setting gave the narrative an instant sense of momentum and possibility. Nadi's story launched the competition with a clear statement about what kind of storytelling Buddies wanted to celebrate — inclusive, character-driven, and full of heart. Every SOTY winner since has been measured, in some way, against the tone it set.
+            Boarding Incomplete holds a unique place in Buddies history as the very first story to win SOTY, and it earned that distinction by offering something the competition has always valued: a story that felt genuinely original. The LGBTQ+ premise was handled with warmth and authenticity rather than as a gimmick, and the airport setting gave the narrative an instant sense of momentum and possibility. Nadi's story launched the competition with a clear statement about what kind of storytelling Buddies wanted to celebrate; inclusive, character-driven, and full of heart. Every SOTY winner since has been measured, in some way, against the tone it set.
           </div>
         </div>
       </div>
@@ -751,7 +755,7 @@
           <div class="year-num">2025</div>
           <div class="year-info">
             <span class="year-label">Author of the Year</span>
-            <span class="year-season">3rd Annual Season · Theme: Legacy in Motion</span>
+            <span class="year-season">3rd Annual Season</span>
           </div>
         </div>
         <div class="current-badge"><div class="current-dot"></div><span>Most Recent</span></div>
@@ -785,7 +789,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            R. Lewis stood out in 2025 as an author who excelled across every dimension AOTY measures. The Poll Vote win demonstrated widespread community appeal, the Creative Excellence Award recognized a standard of craft consistently applied across their work, and the Judges' Best PFP choice reflected a professional visual identity that matched the quality of the stories themselves. The Clique placed 2nd Runner Up in SOTY the same season — making R. Lewis one of a small group of authors to be in serious contention for both titles simultaneously. What ultimately separated them from a strong field was consistency: across Q&A responses, aesthetics, community presence, and on-page storytelling, there was no weak area. The judges and the community arrived at the same conclusion independently.
+            R. Lewis stood out in 2025 as an author who excelled across every dimension AOTY measures. The Poll Vote win demonstrated widespread community appeal, the Creative Excellence Award recognized a standard of craft consistently applied across their work, and the Judges' Best PFP choice reflected a professional visual identity that matched the quality of the stories themselves. The Clique placed 2nd Runner Up in SOTY the same season, making R. Lewis one of a small group of authors to be in serious contention for both titles simultaneously. What ultimately separated them from a strong field was consistency: across Q&A responses, aesthetics, community presence, and on-page storytelling, there was no weak area. The judges and the community arrived at the same conclusion independently.
           </div>
         </div>
       </div>
@@ -831,7 +835,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Ryan Graye achieved something in 2024 that almost never happens: winning both SOTY and AOTY in the same season. For a debut author to accomplish this double is extraordinary, and it speaks to how comprehensively Polaroids and the person behind it resonated with everyone who encountered them. In AOTY, Ryan brought the same quality that made Polaroids compelling — clarity of vision, strong instincts for what readers connect with, and an authentic presence that came through both in the Q&A round and across Instagram. The community that had fallen in love with Polaroids showed up just as strongly when it came time to vote for its author.
+            Ryan Graye achieved something in 2024 that almost never happens: winning both SOTY and AOTY in the same season. For a debut author to accomplish this double is extraordinary, and it speaks to how comprehensively Polaroids and the person behind it resonated with everyone who encountered them. In AOTY, Ryan brought the same quality that made Polaroids compelling; clarity of vision, strong instincts for what readers connect with, and an authentic presence that came through both in the Q&A round and across Instagram. The community that had fallen in love with Polaroids showed up just as strongly when it came time to vote for its author.
           </div>
         </div>
       </div>
@@ -860,7 +864,7 @@
         <div class="aoty-info">
           <div class="aoty-info-season">AOTY 2023 — Inaugural Winner & First Laureate</div>
           <div class="aoty-info-name">Fern</div>
-          <div class="aoty-info-handle">@fables_by_fern</div>
+          <div class="aoty-info-handle">@fern.episode</div>
           <div class="aoty-info-story">SOTY Entry: Symphony · Romance</div>
           <div class="aoty-quote">
             <p>"After publishing her first story, 'Inventions of C. Christopher,' Fern anticipated the success that would come with crafting Symphony. Her continued growth has propelled her to new heights where her talent will always shine brightly."</p>
@@ -878,7 +882,7 @@
             <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="stood-out-body">
-            Fern became the first ever AOTY Laureate in 2023, and the standard she set for the title remains the benchmark against which every subsequent winner is measured. Like Ryan Graye after her, Fern won both SOTY and AOTY in the same season — an extraordinary achievement that reflects not just a great story, but an author whose entire presence was at a level the community recognized and rewarded. Symphony swept Best Directing and Best Story Cover in SOTY; in AOTY, Fern's Q&A responses, her Instagram presence, and her reputation as a community contributor made her an obvious and deserving first Laureate. The permanence of the AOTY title means Fern's name is etched into Buddies history in a way no future winner can displace.
+            Fern became the first ever AOTY Laureate in 2023, and the standard she set for the title remains the benchmark against which every subsequent winner is measured. Fern won both SOTY and AOTY in the same season, an extraordinary achievement that reflects not just a great story, but an author whose entire presence was at a level the community recognized and rewarded. Symphony swept Best Directing and Best Story Cover in SOTY; in AOTY, Fern's Q&A responses, her Instagram presence, and her reputation as a community contributor made her an obvious and deserving first Laureate. The permanence of the AOTY title means Fern's name is etched into Buddies history in a way no future winner can displace.
           </div>
         </div>
       </div>
@@ -1041,38 +1045,38 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') amClose(); });
 
   // ── Author data ──
-const AM_AUTHORS = {
+  const AM_AUTHORS = {
 
-  rlewis: {
-    name: 'R. Lewis', handle: '@rlewiswrites',
-    igLink: 'https://www.instagram.com/rlewiswrites/',
-    pfp: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776323142/R._Lewis_vfuysw.png',
-    titles: ['Author of the Year 2025', 'Creative Excellence Award 2025'],
-    bio: 'R. Lewis is an American co-author duo on Episode, born on January 11th and March 8th, whose collaborative storytelling has earned them widespread recognition. Their creative partnership is marked by strong narrative cohesion, polished execution, and a shared vision that translates seamlessly onto the screen.',
-    quote: '"The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression."',
-    quoteBy: '— Buddies Team',
-    info: [
-      ['Birthday', '11th January & 8th March'],
-      ['Nationality', 'American'],
-      ['Zodiac', 'Capricorn & Pisces'],
-      ['Active on Episode', '2024 – present'],
-      ['Stories Published', '3'],
-      ['Website', 'storiesbyrlewis.site'],
-    ],
-    infoLinks: { 'Website': 'https://sites.google.com/view/storiesbyrlewis/home' },
-    stories: [
-      { title: 'The Clique (Season 1)', blurb: '"The Clique" loses one of their members in a sudden tragedy. A writer observes their tight-knit group — unexpectedly, he becomes far too intrigued with one member: Denise Evergreen.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776317320/604747421_1569149994229651_1668515451481797075_n_1_bup4of.jpg', link: 'https://episodeinteractive.com/r/s/5722486796648448' },
-      { title: 'Once, In December', blurb: 'Doris White, a gifted dancer on a famous country singer\'s wartime Christmas tour, vows to resist his charms — but perhaps he\'s more than his reputation suggests.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325536/609318755_928143413182834_1844295479427693173_n_wn8htq.png', link: 'https://episodeinteractive.com/r/s/5063910778765312' },
-      { title: 'The Clique (Season 2)', blurb: 'With a successful novel written about them, "The Clique" tries to navigate life in New York with new fears, new lessons, and new members.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325533/609434427_1419088693189321_5073231280695755853_n_lr6aoj.png', link: 'https://episodeinteractive.com/r/s/5419283473793024' },
-    ],
-    achievements: [
-      'Author of the Year 2025 (Buddies Support Hub)',
-      'Creative Excellence Award 2025 (Buddies Support Hub)',
-      '2nd Runner-Up — Story of the Year 2025 (The Clique)',
-      'Best Directing Award 2025 (The Clique)',
-      'Most Innovative Concept Award 2025 (The Clique)',
-    ],
-  },
+    rlewis: {
+      name: 'R. Lewis', handle: '@rlewiswrites',
+      igLink: 'https://www.instagram.com/rlewiswrites/',
+      pfp: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776323142/R._Lewis_vfuysw.png',
+      titles: ['Author of the Year 2025', 'Creative Excellence Award 2025'],
+      bio: 'R. Lewis is an American co-author duo on Episode, born on January 11th and March 8th, whose collaborative storytelling has earned them widespread recognition. Their creative partnership is marked by strong narrative cohesion, polished execution, and a shared vision that translates seamlessly onto the screen.',
+      quote: '"The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression."',
+      quoteBy: '— Buddies Team',
+      info: [
+        ['Birthday', '11th January & 8th March'],
+        ['Nationality', 'American'],
+        ['Zodiac', 'Capricorn & Pisces'],
+        ['Active on Episode', '2024 – present'],
+        ['Stories Published', '3'],
+        ['Website', 'storiesbyrlewis.site'],
+      ],
+      infoLinks: { 'Website': 'https://sites.google.com/view/storiesbyrlewis/home' },
+      stories: [
+        { title: 'The Clique (Season 1)', blurb: '"The Clique" loses one of their members in a sudden tragedy. A writer observes their tight-knit group — unexpectedly, he becomes far too intrigued with one member: Denise Evergreen.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776317320/604747421_1569149994229651_1668515451481797075_n_1_bup4of.jpg', link: 'https://episodeinteractive.com/r/s/5722486796648448' },
+        { title: 'Once, In December', blurb: 'Doris White, a gifted dancer on a famous country singer\'s wartime Christmas tour, vows to resist his charms — but perhaps he\'s more than his reputation suggests.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325536/609318755_928143413182834_1844295479427693173_n_wn8htq.png', link: 'https://episodeinteractive.com/r/s/5063910778765312' },
+        { title: 'The Clique (Season 2)', blurb: 'With a successful novel written about them, "The Clique" tries to navigate life in New York with new fears, new lessons, and new members.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325533/609434427_1419088693189321_5073231280695755853_n_lr6aoj.png', link: 'https://episodeinteractive.com/r/s/5419283473793024' },
+      ],
+      achievements: [
+        'Author of the Year 2025 (Buddies Support Hub)',
+        'Creative Excellence Award 2025 (Buddies Support Hub)',
+        '2nd Runner-Up — Story of the Year 2025 (The Clique)',
+        'Best Directing Award 2025 (The Clique)',
+        'Most Innovative Concept Award 2025 (The Clique)',
+      ],
+    },
 
     ryangraye: {
       name: 'Ryan Graye', handle: '@ryanwrites.epi',
@@ -1148,7 +1152,6 @@ const AM_AUTHORS = {
     img.setAttribute('aria-label', 'View ' + AM_AUTHORS[key].name + ' profile');
     img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') amOpen(key); });
   });
-
 </script>
 
 <!-- Author Modal -->
