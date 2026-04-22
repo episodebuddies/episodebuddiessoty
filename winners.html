@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Winners — Buddies SOTY & AOTY</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:       #1B2A4A;
+    --deep-navy:  #0F1B33;
+    --blue:       #2E75B6;
+    --light-blue: #D5E8F0;
+    --gold:       #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale:  #FDF6E3;
+    --white:      #FFFFFF;
+    --off-white:  #F7F5F0;
+    --text-dark:  #0F1B33;
+    --text-mid:   #4A5568;
+    --text-light: #8896A6;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--deep-navy); color: var(--text-dark); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,18,34,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 34px; width: 34px; object-fit: contain; }
+  .nav-logo-text { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .nav-logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    padding: 7px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+  .nav-cta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--deep-navy); background: var(--gold);
+    padding: 8px 18px; border-radius: 4px; text-decoration: none; margin-left: 10px;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+  }
+  .nav-hamburger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8); transition: transform 0.3s, opacity 0.3s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2);
+    flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    padding: 12px 16px; border-radius: 4px; transition: color 0.2s, background 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--deep-navy); padding: 140px 48px 80px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-header-bg {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  }
+  .header-ring { position: absolute; border-radius: 50%; pointer-events: none; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .header-ring-1 { width: 800px; height: 800px; border: 1px solid rgba(201,168,76,0.05); }
+  .header-ring-2 { width: 560px; height: 560px; border: 1px solid rgba(201,168,76,0.07); }
+  .header-ring-3 { width: 340px; height: 340px; border: 1px solid rgba(201,168,76,0.1); }
+  .page-header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+  .page-eyebrow { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 22px; }
+  .page-eyebrow::before, .page-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  .page-eyebrow span { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .page-header h1 { font-family: var(--serif); font-size: clamp(40px, 5.5vw, 70px); font-weight: 700; line-height: 1.06; color: var(--white); margin-bottom: 20px; }
+  .page-header h1 em { color: var(--gold); font-style: italic; }
+  .page-header-sub { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 44px; max-width: 580px; margin-left: auto; margin-right: auto; }
+
+  /* ── TOGGLE ── */
+  .toggle-wrap { display: flex; justify-content: center; }
+  .toggle {
+    display: flex; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 4px; gap: 4px;
+  }
+  .toggle-btn {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 12px 36px; border-radius: 5px; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.5); background: transparent;
+    transition: all 0.25s;
+  }
+  .toggle-btn.active {
+    background: var(--gold); color: var(--deep-navy);
+  }
+  .toggle-btn:not(.active):hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+  /* Header stats */
+  .header-stats { display: flex; gap: 40px; justify-content: center; margin-top: 40px; padding-top: 36px; border-top: 1px solid rgba(201,168,76,0.12); }
+  .h-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .h-stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+  /* ── MARQUEE ── */
+  .marquee-strip { background: var(--gold); overflow: hidden; height: 40px; display: flex; align-items: center; }
+  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 36s linear infinite; }
+  .marquee-inner span { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--deep-navy); padding: 0 28px; }
+  .marquee-inner span::after { content: '◆'; margin-left: 28px; opacity: 0.5; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── WINNERS PANEL ── */
+  .winners-panel { display: none; }
+  .winners-panel.active { display: block; }
+
+  /* ── YEAR SECTION ── */
+  .year-section {
+    padding: 80px 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .year-section:last-child { border-bottom: none; }
+  .year-section.current { background: rgba(201,168,76,0.03); }
+  .inner { max-width: 1100px; margin: 0 auto; }
+
+  /* Year label */
+  .year-divider { display: flex; align-items: center; gap: 24px; margin-bottom: 48px; }
+  .year-divider::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.12); }
+  .year-tag {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .year-num { font-family: var(--serif); font-size: clamp(48px, 7vw, 80px); font-weight: 700; color: rgba(201,168,76,0.12); line-height: 1; }
+  .year-info { display: flex; flex-direction: column; }
+  .year-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .year-season { font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 3px; }
+  .current-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 20px; padding: 5px 14px; margin-left: 16px;
+  }
+  .current-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: livepulse 2s infinite; }
+  @keyframes livepulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+  .current-badge span { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+
+  /* ── SOTY WINNER CARD ── */
+  .soty-winner-block {
+    display: grid; grid-template-columns: 320px 1fr; gap: 0;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.2);
+    transition: border-color 0.3s;
+  }
+  .soty-winner-block:hover { border-color: rgba(201,168,76,0.45); }
+
+  .soty-cover-link { display: block; position: relative; overflow: hidden; }
+  .soty-cover-link img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.5s; min-height: 380px;
+  }
+  .soty-cover-link:hover img { transform: scale(1.04); }
+  .soty-cover-overlay {
+    position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,34,0.7) 0%, transparent 50%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 20px;
+  }
+  .soty-cover-link:hover .soty-cover-overlay { opacity: 1; }
+  .soty-cover-cta {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white); background: var(--gold); color: var(--deep-navy);
+    padding: 8px 18px; border-radius: 4px;
+  }
+  .soty-cover-year-pip {
+    position: absolute; top: 20px; left: 20px;
+    background: var(--gold); color: var(--deep-navy);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 3px;
+  }
+
+  .soty-info {
+    background: rgba(255,255,255,0.03); padding: 44px 48px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .soty-info-season { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .soty-info-title { font-family: var(--serif); font-size: clamp(28px, 3vw, 44px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 6px; }
+  .soty-info-meta { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .soty-info-desc { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+  .soty-awards { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+  .award-chip { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); color: var(--gold); padding: 4px 10px; border-radius: 3px; }
+
+  /* Why they stood out dropdown */
+  .stood-out-btn {
+    display: flex; align-items: center; gap: 10px;
+    background: none; border: 1px solid rgba(201,168,76,0.2); border-radius: 6px;
+    padding: 11px 16px; cursor: pointer; width: 100%;
+    transition: background 0.2s, border-color 0.2s; margin-bottom: 0;
+  }
+  .stood-out-btn:hover { background: rgba(201,168,76,0.06); border-color: rgba(201,168,76,0.4); }
+  .stood-out-btn.open { background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.4); border-radius: 6px 6px 0 0; }
+  .stood-out-icon { font-size: 14px; }
+  .stood-out-label { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gold); flex: 1; text-align: left; }
+  .stood-out-chevron { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; transition: transform 0.3s; flex-shrink: 0; }
+  .stood-out-btn.open .stood-out-chevron { transform: rotate(180deg); }
+  .stood-out-body {
+    display: none; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); border-top: none;
+    border-radius: 0 0 6px 6px; padding: 16px 18px;
+    font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.55);
+  }
+  .stood-out-body.open { display: block; }
+
+  /* ── AOTY WINNER CARD ── */
+  .aoty-winner-block {
+    display: grid; grid-template-columns: 300px 1fr; gap: 0;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.2);
+    transition: border-color 0.3s;
+  }
+  .aoty-winner-block:hover { border-color: rgba(201,168,76,0.45); }
+
+  .aoty-photo-link { display: block; position: relative; overflow: hidden; }
+  .aoty-photo-link img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+    transition: transform 0.5s; min-height: 340px;
+  }
+  .aoty-photo-link:hover img { transform: scale(1.04); }
+  .aoty-photo-overlay {
+    position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,34,0.7) 0%, transparent 55%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 20px;
+  }
+  .aoty-photo-link:hover .aoty-photo-overlay { opacity: 1; }
+  .aoty-photo-cta { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-navy); background: var(--gold); padding: 8px 18px; border-radius: 4px; }
+  .aoty-year-pip { position: absolute; top: 20px; left: 20px; background: var(--gold); color: var(--deep-navy); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; }
+
+  .aoty-info { background: rgba(255,255,255,0.03); padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; }
+  .aoty-info-season { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .aoty-info-name { font-family: var(--serif); font-size: clamp(28px, 3vw, 44px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 6px; }
+  .aoty-info-handle { font-size: 14px; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+  .aoty-info-story { font-size: 13px; color: rgba(255,255,255,0.3); margin-bottom: 20px; font-style: italic; }
+  .aoty-quote {
+    border-left: 3px solid var(--gold); padding: 14px 18px;
+    background: rgba(201,168,76,0.05); border-radius: 0 6px 6px 0;
+    margin-bottom: 28px;
+  }
+  .aoty-quote p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.55); font-style: italic; }
+  .aoty-quote cite { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 8px; font-style: normal; }
+  .aoty-awards { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 64px 48px 32px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+    padding-bottom: 40px; margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .footer-brand-logo img { height: 32px; }
+  .footer-brand-logo span { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .footer-brand-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.3); max-width: 280px; margin-bottom: 18px; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.45); font-size: 12px; font-weight: 600;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: rgba(255,255,255,0.38);
+    text-decoration: none; margin-bottom: 9px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-col p { font-size: 13px; color: rgba(255,255,255,0.28); line-height: 1.7; margin-bottom: 5px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
+  .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .page-header-inner > * { animation: fadeUp 0.7s both; }
+  .page-eyebrow    { animation-delay: 0.08s; }
+  .page-header h1  { animation-delay: 0.18s; }
+  .page-header-sub { animation-delay: 0.28s; }
+  .toggle-wrap     { animation-delay: 0.38s; }
+  .header-stats    { animation-delay: 0.48s; }
+
+  /* ── TABLET ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 28px; }
+    .page-header { padding: 120px 28px 64px; }
+    .year-section { padding: 64px 28px; }
+    .soty-winner-block { grid-template-columns: 240px 1fr; }
+    .soty-info { padding: 32px 36px; }
+    .aoty-winner-block { grid-template-columns: 220px 1fr; }
+    .aoty-info { padding: 32px 36px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 60px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { top: 60px; }
+    .nav-logo-text { font-size: 14px; }
+    .page-header { padding: 100px 20px 52px; }
+    .page-header h1 { font-size: clamp(32px, 8vw, 48px); }
+    .header-stats { gap: 20px; }
+    .h-stat-num { font-size: 26px; }
+    .toggle-btn { padding: 10px 20px; font-size: 12px; }
+    .year-section { padding: 48px 20px; }
+    .year-num { font-size: clamp(36px, 10vw, 60px); }
+    .soty-winner-block { grid-template-columns: 1fr; }
+    .soty-cover-link img { min-height: 280px; aspect-ratio: 3/2; object-fit: cover; }
+    .soty-info { padding: 24px 22px; }
+    .aoty-winner-block { grid-template-columns: 1fr; }
+    .aoty-photo-link img { min-height: 260px; aspect-ratio: 4/3; object-fit: cover; object-position: top; }
+    .aoty-info { padding: 24px 22px; }
+    .footer-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 24px; padding-bottom: 24px; }
+    footer { padding: 44px 20px 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .toggle-btn { padding: 9px 16px; font-size: 11px; }
+    .header-stats { gap: 14px; }
+    .marquee-inner span { font-size: 10px; padding: 0 20px; }
+  }
+
+  /* ── Author trigger ── */
+  .author-trigger {
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+  }
+  .author-trigger:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(201,168,76,0.35);
+    filter: brightness(1.05);
+  }
+
+  /* ── Modal overlay ── */
+  .am-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(15,27,51,0.88);
+    align-items: center; justify-content: center;
+    padding: 20px; animation: amFadeIn 0.25s ease; overflow-y: auto;
+  }
+  .am-overlay.open { display: flex; }
+  @keyframes amFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .am-box {
+    background: var(--white); border-radius: 12px;
+    width: 100%; max-width: 680px; position: relative;
+    animation: amSlideUp 0.3s ease; overflow: hidden;
+    max-height: 90vh; overflow-y: auto;
+  }
+  @keyframes amSlideUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .am-box::-webkit-scrollbar { width: 4px; }
+  .am-box::-webkit-scrollbar-track { background: rgba(27,42,74,0.05); }
+  .am-box::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.4); border-radius: 2px; }
+
+  .am-close {
+    position: absolute; top: 0; float: right; margin: 14px 14px -14px 0;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(27,42,74,0.08); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: #4A5568; z-index: 10;
+    transition: background 0.2s, color 0.2s; line-height: 1;
+  }
+  .am-close:hover { background: var(--deep-navy); color: #fff; }
+
+  .am-header {
+    background: var(--deep-navy); padding: 32px 32px 28px;
+    display: flex; align-items: flex-start; gap: 24px;
+    position: relative; overflow: hidden;
+  }
+  .am-header::before {
+    content: ''; position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  }
+  .am-pfp {
+    width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+    object-fit: cover; object-position: top; border: 3px solid rgba(201,168,76,0.5);
+    position: relative; z-index: 1;
+  }
+  .am-header-text { position: relative; z-index: 1; padding-top: 4px; }
+  .am-name { font-family: var(--serif); font-size: 26px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 6px; }
+  .am-handle { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .am-title-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .am-badge {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); color: var(--gold);
+  }
+  .am-badge.gold-fill { background: var(--gold); color: var(--deep-navy); border-color: var(--gold); }
+
+  .am-body { padding: 28px 32px; }
+  .am-bio {
+    font-size: 14px; line-height: 1.8; color: #4A5568; margin-bottom: 24px;
+    font-style: italic; border-left: 3px solid var(--gold); padding-left: 16px;
+  }
+  .am-quote {
+    background: var(--off-white); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;
+    font-size: 13px; line-height: 1.75; color: #4A5568; font-style: italic;
+  }
+  .am-quote cite { display: block; font-size: 11px; font-style: normal; font-weight: 600; color: var(--text-light); margin-top: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .am-info-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    border-radius: 8px; overflow: hidden; border: 1px solid rgba(27,42,74,0.08); margin-bottom: 24px;
+  }
+  .am-info-label {
+    background: var(--navy); padding: 10px 16px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); display: flex; align-items: center; border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .am-info-value {
+    background: rgba(27,42,74,0.03); padding: 10px 16px; font-size: 13px; color: var(--text-dark);
+    display: flex; align-items: center; border-bottom: 1px solid rgba(27,42,74,0.05);
+  }
+  .am-section-title {
+    font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy);
+    margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(27,42,74,0.08);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .am-section-title::before { content: ''; display: block; width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; }
+  .am-stories { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .am-story {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--off-white); border-radius: 8px; padding: 14px;
+    border: 1px solid rgba(27,42,74,0.07); text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .am-story:hover { border-color: rgba(201,168,76,0.4); background: #fff; }
+  .am-story-cover { width: 52px; height: 68px; border-radius: 5px; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(27,42,74,0.1); }
+  .am-story-title { font-family: var(--serif); font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .am-story-blurb { font-size: 12px; color: #4A5568; line-height: 1.6; }
+  .am-story-read { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 6px; display: block; }
+  .am-achievements { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+  .am-achievement { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #4A5568; line-height: 1.5; }
+  .am-achievement::before { content: '◆'; color: var(--gold); font-size: 8px; margin-top: 5px; flex-shrink: 0; }
+  .am-footer {
+    border-top: 1px solid rgba(27,42,74,0.08); padding: 20px 32px 24px;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .am-btn {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 20px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, color 0.2s; border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  }
+  .am-btn-gold { background: var(--gold); color: var(--deep-navy); border-color: var(--gold); }
+  .am-btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+  .am-btn-outline { background: transparent; color: var(--navy); border-color: rgba(27,42,74,0.3); }
+  .am-btn-outline:hover { background: var(--navy); color: #fff; }
+
+  @media (max-width: 600px) {
+    .am-header { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px 20px; }
+    .am-title-badges { justify-content: center; }
+    .am-body, .am-footer { padding-left: 20px; padding-right: 20px; }
+    .am-info-grid { grid-template-columns: 1fr; }
+    .am-info-label { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+    <div>
+      <span class="nav-logo-text">Buddies SOTY & AOTY</span>
+      <span class="nav-logo-sub">Annual Competitions</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="soty-about.html">About</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="follow-journey.html">Follow the Journey</a>
+    <a href="soty-2025.html">SOTY 2025</a>
+    <a href="aoty-2025.html">AOTY 2025</a>
+    <a href="index.html" class="nav-cta">Main Site</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="soty-about.html">About</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="follow-journey.html">Follow the Journey</a>
+  <a href="soty-2025.html">SOTY 2025</a>
+  <a href="aoty-2025.html">AOTY 2025</a>
+  <a href="index.html">← Main Site</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="header-ring header-ring-1"></div>
+  <div class="header-ring header-ring-2"></div>
+  <div class="header-ring header-ring-3"></div>
+  <div class="page-header-inner">
+    <div class="page-eyebrow"><span>Buddies Support Hub · A Permanent Record</span></div>
+    <h1>The <em>Winners</em></h1>
+    <p class="page-header-sub">Every story and author to have won SOTY or AOTY since the competitions began in 2022. This page is a permanent archive — winners are never removed as new ones are added.</p>
+
+    <div class="toggle-wrap">
+      <div class="toggle">
+        <button class="toggle-btn active" id="sotyToggle" onclick="showPanel('soty')">Story of the Year</button>
+        <button class="toggle-btn" id="aotyToggle" onclick="showPanel('aoty')">Author of the Year</button>
+      </div>
+    </div>
+
+    <div class="header-stats">
+      <div>
+        <div class="h-stat-num">4</div>
+        <div class="h-stat-label">SOTY Winners</div>
+      </div>
+      <div>
+        <div class="h-stat-num">3</div>
+        <div class="h-stat-label">AOTY Laureates</div>
+      </div>
+      <div>
+        <div class="h-stat-num">Est. 2022</div>
+        <div class="h-stat-label">First Season</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Only Pretend · 2025</span><span>Polaroids · 2024</span><span>Symphony · 2023</span><span>Boarding Incomplete · 2022</span>
+    <span>R. Lewis · AOTY 2025</span><span>Ryan Graye · AOTY 2024</span><span>Fern · AOTY 2023</span>
+    <span>Only Pretend · 2025</span><span>Polaroids · 2024</span><span>Symphony · 2023</span><span>Boarding Incomplete · 2022</span>
+    <span>R. Lewis · AOTY 2025</span><span>Ryan Graye · AOTY 2024</span><span>Fern · AOTY 2023</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     SOTY PANEL
+════════════════════════════════════ -->
+<div class="winners-panel active" id="sotyPanel">
+
+  <!-- 2025 SOTY -->
+  <div class="year-section current">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2025</div>
+          <div class="year-info">
+            <span class="year-label">Story of the Year</span>
+            <span class="year-season">4th Annual Season · Theme: Echoes of Impact</span>
+          </div>
+        </div>
+        <div class="current-badge"><div class="current-dot"></div><span>Most Recent</span></div>
+      </div>
+
+      <div class="soty-winner-block">
+        <a href="https://episodeinteractive.com/r/s/5565870955069440" target="_blank" class="soty-cover-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776317320/605053254_1183961070108699_2679766466385616435_n_hnlcpc.png" alt="Only Pretend">
+          <div class="soty-cover-year-pip">2025 Winner</div>
+          <div class="soty-cover-overlay"><span class="soty-cover-cta">Read on Episode →</span></div>
+        </a>
+        <div class="soty-info">
+          <div class="soty-info-season">SOTY 2025 — Winner</div>
+          <div class="soty-info-title">Only Pretend</div>
+          <div class="soty-info-meta">Drama · Charlie Seb</div>
+          <div class="soty-info-desc">After an accident erases your memories of a failing business marriage, your husband is forced to stay by your side. Given the second chance, can he love you this time?</div>
+          <div class="soty-awards">
+            <span class="award-chip">Most Popular Story</span>
+            <span class="award-chip">Best Dialogue & Characterization</span>
+            <span class="award-chip">Reader's Choice</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Only Pretend stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Only Pretend dominated the 2025 season in a way that left little room for debate. From the Popularity Vote all the way through to the Final, Charlie Seb's story led or placed top-two in every single voting event — Poll Vote, Feed Vote, Head-to-Head, and Reader's Choice. It swept nearly every community-driven award that season, which speaks to something deeper than a story that judges rate highly: this was a story that readers fell in love with and refused to let go. The amnesia premise felt fresh rather than clichéd, and the emotional tension between the leads had readers genuinely invested in the outcome. The dialogue and characterization — winners of their own special award — were consistently praised for feeling authentic rather than performative. In a competitive field of 38, Only Pretend emerged as the undeniable choice of both the judges and the community.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024 SOTY -->
+  <div class="year-section">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2024</div>
+          <div class="year-info">
+            <span class="year-label">Story of the Year</span>
+            <span class="year-season">3rd Annual Season</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soty-winner-block">
+        <a href="http://episodeinteractive.com/r/s/6265867834785792" target="_blank" class="soty-cover-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776319702/IMG_20260416_070259_453_fyjiq5.jpg" alt="Polaroids">
+          <div class="soty-cover-year-pip">2024 Winner</div>
+          <div class="soty-cover-overlay"><span class="soty-cover-cta">Read on Episode →</span></div>
+        </a>
+        <div class="soty-info">
+          <div class="soty-info-season">SOTY 2024 — Winner</div>
+          <div class="soty-info-title">Polaroids</div>
+          <div class="soty-info-meta">Mystery · Ryan Graye</div>
+          <div class="soty-info-desc">You are a criminology freshman who stumbles across an ominous polaroid of a missing girl, which unravels a dangerous chain of events…</div>
+          <div class="soty-awards">
+            <span class="award-chip">Most Popular Story</span>
+            <span class="award-chip">Reader's Choice</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Polaroids stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Polaroids stood out in 2024 as a debut story that somehow carried the confidence and polish of a seasoned author. Ryan Graye introduced a mystery concept — the criminology freshman and the ominous polaroid — that felt immediately cinematic, the kind of opening that pulls you in before you've even tapped past the first scene. The story won both Most Popular Story and Reader's Choice, reflecting not just strong directing or plotting, but a genuine connection with readers who kept coming back. For a debut entry to win SOTY is remarkable in itself; to do it by sweeping the community-voted awards as well made it one of the most memorable season outcomes in the competition's history.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2023 SOTY -->
+  <div class="year-section">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2023</div>
+          <div class="year-info">
+            <span class="year-label">Story of the Year</span>
+            <span class="year-season">2nd Annual Season</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soty-winner-block">
+        <a href="http://episodeinteractive.com/r/s/6046021552898048" target="_blank" class="soty-cover-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776319705/IMG_20260416_070337_931_am5a0o.jpg" alt="Symphony">
+          <div class="soty-cover-year-pip">2023 Winner</div>
+          <div class="soty-cover-overlay"><span class="soty-cover-cta">Read on Episode →</span></div>
+        </a>
+        <div class="soty-info">
+          <div class="soty-info-season">SOTY 2023 — Winner</div>
+          <div class="soty-info-title">Symphony</div>
+          <div class="soty-info-meta">Romance · Fern</div>
+          <div class="soty-info-desc">In 1946 New York, the worlds of an aspiring violinist and a World War II veteran collide in an unexpected symphony of emotions, as both struggle to overcome hardships of their own.</div>
+          <div class="soty-awards">
+            <span class="award-chip">Best Directing</span>
+            <span class="award-chip">Best Story Cover</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Symphony stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Symphony stood out in 2023 for setting an entirely different register from what the Episode community had come to expect from top-performing stories. A 1946 New York period romance built around classical music and wartime trauma — this was not a story that played safe. Fern's attention to historical atmosphere and visual direction was immediately apparent, and the story swept both Best Directing and Best Story Cover in the same season, recognizing the craft at every level of its presentation. The emotional weight of its premise — two people defined by their wounds trying to find common ground — resonated far beyond the competition, and Fern went on to win AOTY the same year, a double achievement that remains unmatched in the competition's history.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2022 SOTY -->
+  <div class="year-section">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2022</div>
+          <div class="year-info">
+            <span class="year-label">Story of the Year</span>
+            <span class="year-season">1st Annual Season — Inaugural Winner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soty-winner-block">
+        <a href="http://episodeinteractive.com/s/6726861078331392" target="_blank" class="soty-cover-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776320142/IMG_20251229_043340_044_jgwfry.jpg" alt="Boarding Incomplete">
+          <div class="soty-cover-year-pip">2022 Winner</div>
+          <div class="soty-cover-overlay"><span class="soty-cover-cta">Read on Episode →</span></div>
+        </a>
+        <div class="soty-info">
+          <div class="soty-info-season">SOTY 2022 — Inaugural Winner</div>
+          <div class="soty-info-title">Boarding Incomplete</div>
+          <div class="soty-info-meta">LGBTQ+ · Nadi</div>
+          <div class="soty-info-desc">Lenny hates to be bossed around by his parents. When he finally decides to do what he wants, he gets stuck at the airport with two handsome guys. An interesting journey begins…</div>
+          <div class="soty-awards">
+            <span class="award-chip">Inaugural SOTY Champion</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Boarding Incomplete stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Boarding Incomplete holds a unique place in Buddies history as the very first story to win SOTY — and it earned that distinction by offering something the competition has always valued: a story that felt genuinely original. The LGBTQ+ premise was handled with warmth and authenticity rather than as a gimmick, and the airport setting gave the narrative an instant sense of momentum and possibility. Nadi's story launched the competition with a clear statement about what kind of storytelling Buddies wanted to celebrate — inclusive, character-driven, and full of heart. Every SOTY winner since has been measured, in some way, against the tone it set.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end sotyPanel -->
+
+
+<!-- ════════════════════════════════════
+     AOTY PANEL
+════════════════════════════════════ -->
+<div class="winners-panel" id="aotyPanel">
+
+  <!-- 2025 AOTY -->
+  <div class="year-section current">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2025</div>
+          <div class="year-info">
+            <span class="year-label">Author of the Year</span>
+            <span class="year-season">3rd Annual Season · Theme: Legacy in Motion</span>
+          </div>
+        </div>
+        <div class="current-badge"><div class="current-dot"></div><span>Most Recent</span></div>
+      </div>
+
+      <div class="aoty-winner-block">
+        <div class="aoty-photo-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776323142/R._Lewis_vfuysw.png" alt="R. Lewis" class="author-trigger" data-author="rlewis">
+          <div class="aoty-year-pip">2025 AOTY</div>
+          <div class="aoty-photo-overlay"><span class="aoty-photo-cta">View Profile →</span></div>
+        </div>
+        <div class="aoty-info">
+          <div class="aoty-info-season">AOTY 2025 — Winner & Laureate</div>
+          <div class="aoty-info-name">R. Lewis</div>
+          <div class="aoty-info-handle">@rlewiswrites</div>
+          <div class="aoty-info-story">SOTY Entry: The Clique · Drama</div>
+          <div class="aoty-quote">
+            <p>"The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression."</p>
+            <cite>— The Buddies Team</cite>
+          </div>
+          <div class="aoty-awards">
+            <span class="award-chip">Creative Excellence Award</span>
+            <span class="award-chip">Best Instagram Aesthetics</span>
+            <span class="award-chip">Poll Vote Winner</span>
+            <span class="award-chip">Qualifier's Choice Winner</span>
+            <span class="award-chip">Best PFP — Judges' Choice</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why R. Lewis stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            R. Lewis stood out in 2025 as an author who excelled across every dimension AOTY measures. The Poll Vote win demonstrated widespread community appeal, the Creative Excellence Award recognized a standard of craft consistently applied across their work, and the Judges' Best PFP choice reflected a professional visual identity that matched the quality of the stories themselves. The Clique placed 2nd Runner Up in SOTY the same season — making R. Lewis one of a small group of authors to be in serious contention for both titles simultaneously. What ultimately separated them from a strong field was consistency: across Q&A responses, aesthetics, community presence, and on-page storytelling, there was no weak area. The judges and the community arrived at the same conclusion independently.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024 AOTY -->
+  <div class="year-section">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2024</div>
+          <div class="year-info">
+            <span class="year-label">Author of the Year</span>
+            <span class="year-season">2nd Annual Season</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aoty-winner-block">
+        <div class="aoty-photo-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325192/ryan_pmcmpl.png" alt="Ryan Graye" class="author-trigger" data-author="ryangraye">
+          <div class="aoty-year-pip">2024 AOTY</div>
+          <div class="aoty-photo-overlay"><span class="aoty-photo-cta">View Profile →</span></div>
+        </div>
+        <div class="aoty-info">
+          <div class="aoty-info-season">AOTY 2024 — Winner & Laureate</div>
+          <div class="aoty-info-name">Ryan Graye</div>
+          <div class="aoty-info-handle">@ryangrayewrites</div>
+          <div class="aoty-info-story">SOTY Entry: Polaroids · Mystery</div>
+          <div class="aoty-quote">
+            <p>"Ryan Graye's debut story Polaroids has taken the Episode community by storm. With its heartfelt narrative and captivating characters, it's clear she has made an unforgettable entrance as an author."</p>
+            <cite>— The Buddies Team</cite>
+          </div>
+          <div class="aoty-awards">
+            <span class="award-chip">SOTY 2024 Winner — Polaroids</span>
+            <span class="award-chip">Most Popular Story</span>
+            <span class="award-chip">Reader's Choice</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Ryan Graye stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Ryan Graye achieved something in 2024 that almost never happens: winning both SOTY and AOTY in the same season. For a debut author to accomplish this double is extraordinary, and it speaks to how comprehensively Polaroids and the person behind it resonated with everyone who encountered them. In AOTY, Ryan brought the same quality that made Polaroids compelling — clarity of vision, strong instincts for what readers connect with, and an authentic presence that came through both in the Q&A round and across Instagram. The community that had fallen in love with Polaroids showed up just as strongly when it came time to vote for its author.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2023 AOTY -->
+  <div class="year-section">
+    <div class="inner">
+      <div class="year-divider">
+        <div class="year-tag">
+          <div class="year-num">2023</div>
+          <div class="year-info">
+            <span class="year-label">Author of the Year</span>
+            <span class="year-season">1st Annual Season — Inaugural Laureate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aoty-winner-block">
+        <div class="aoty-photo-link">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776324866/456570663_1832254113968158_4439371629572199158_n_gmhker.jpg" alt="Fern" class="author-trigger" data-author="fern">
+          <div class="aoty-year-pip">2023 AOTY</div>
+          <div class="aoty-photo-overlay"><span class="aoty-photo-cta">View Profile →</span></div>
+        </div>
+        <div class="aoty-info">
+          <div class="aoty-info-season">AOTY 2023 — Inaugural Winner & First Laureate</div>
+          <div class="aoty-info-name">Fern</div>
+          <div class="aoty-info-handle">@fables_by_fern</div>
+          <div class="aoty-info-story">SOTY Entry: Symphony · Romance</div>
+          <div class="aoty-quote">
+            <p>"After publishing her first story, 'Inventions of C. Christopher,' Fern anticipated the success that would come with crafting Symphony. Her continued growth has propelled her to new heights where her talent will always shine brightly."</p>
+            <cite>— The Buddies Team</cite>
+          </div>
+          <div class="aoty-awards">
+            <span class="award-chip">SOTY 2023 Winner — Symphony</span>
+            <span class="award-chip">Best Directing</span>
+            <span class="award-chip">Best Story Cover</span>
+            <span class="award-chip">Inaugural AOTY Laureate</span>
+          </div>
+          <button class="stood-out-btn" onclick="toggleStoodOut(this)">
+            <span class="stood-out-icon">✦</span>
+            <span class="stood-out-label">Why Fern stood out</span>
+            <svg class="stood-out-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="stood-out-body">
+            Fern became the first ever AOTY Laureate in 2023, and the standard she set for the title remains the benchmark against which every subsequent winner is measured. Like Ryan Graye after her, Fern won both SOTY and AOTY in the same season — an extraordinary achievement that reflects not just a great story, but an author whose entire presence was at a level the community recognized and rewarded. Symphony swept Best Directing and Best Story Cover in SOTY; in AOTY, Fern's Q&A responses, her Instagram presence, and her reputation as a community contributor made her an obvious and deserving first Laureate. The permanence of the AOTY title means Fern's name is etched into Buddies history in a way no future winner can displace.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end aotyPanel -->
+
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+          <span>Buddies SOTY & AOTY</span>
+        </div>
+        <p class="footer-brand-desc">The official home of the Buddies Support Hub Story of the Year and Author of the Year competitions. Est. 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/episode_buddies/" target="_blank">IG</a>
+          <a href="https://www.threads.net/@episode_buddies" target="_blank">TH</a>
+          <a href="mailto:episodebuddies3@gmail.com">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>This Site</h4>
+        <a href="soty-about.html">About SOTY & AOTY</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
+        <a href="follow-journey.html">Follow the Journey</a>
+        <a href="soty-2025.html">SOTY 2025</a>
+        <a href="aoty-2025.html">AOTY 2025</a>
+        <a href="winners.html">The Winners</a>
+      </div>
+      <div class="footer-col">
+        <h4>Main Hub</h4>
+        <a href="https://episodebuddies.vercel.app" target="_blank">Episode Buddies</a>
+        <a href="https://episodebuddies.vercel.app/services.html" target="_blank">Services</a>
+        <a href="https://episodebuddies.vercel.app/drive.html" target="_blank">Contest Records</a>
+        <a href="https://episodebuddies.vercel.app/library.html" target="_blank">Buddies Library</a>
+        <p style="margin-top:16px;">episodebuddies3@gmail.com</p>
+        <p>Sun – Sat · 6AM – 10PM GMT+1</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Buddies Support Hub · Community-organized. Not affiliated with Episode Interactive.</span>
+      <span class="footer-tagline">"They are visionaries. They are The Buddies Laureates."</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Hamburger ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  // ── Panel toggle ──
+  function showPanel(which) {
+    document.getElementById('sotyPanel').classList.toggle('active', which === 'soty');
+    document.getElementById('aotyPanel').classList.toggle('active', which === 'aoty');
+    document.getElementById('sotyToggle').classList.toggle('active', which === 'soty');
+    document.getElementById('aotyToggle').classList.toggle('active', which === 'aoty');
+    document.querySelectorAll('.stood-out-btn.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+  }
+
+  // ── Why they stood out dropdown ──
+  function toggleStoodOut(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    const panel = btn.closest('.winners-panel');
+    panel.querySelectorAll('.stood-out-btn.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      body.classList.add('open');
+    }
+  }
+
+  // ── Author Modal ──
+  function amOpen(key) {
+    const a = AM_AUTHORS[key];
+    if (!a) return;
+    const box = document.getElementById('am-box');
+
+    const badges = a.titles.map((t, i) =>
+      `<span class="am-badge${i === 0 ? ' gold-fill' : ''}">${t}</span>`
+    ).join('');
+
+    const infoRows = (a.info || []).map(([label, value]) => {
+      const linkHref = a.infoLinks && a.infoLinks[label];
+      const valHtml = linkHref
+        ? `<a href="${linkHref}" target="_blank" style="color:var(--gold);">${value}</a>`
+        : value;
+      return `<div class="am-info-label">${label}</div><div class="am-info-value">${valHtml}</div>`;
+    }).join('');
+
+    const storiesHtml = (a.stories || []).map(s => `
+      <a href="${s.link || '#'}" target="_blank" class="am-story" ${!s.link || s.link === '#' ? 'onclick="return false"' : ''}>
+        ${s.cover ? `<img class="am-story-cover" src="${s.cover}" alt="${s.title}" loading="lazy">` : ''}
+        <div class="am-story-info">
+          <div class="am-story-title">${s.title}</div>
+          ${s.blurb ? `<div class="am-story-blurb">${s.blurb}</div>` : '<div class="am-story-blurb" style="color:var(--text-light);font-style:italic;">Description coming soon.</div>'}
+          ${s.link && s.link !== '#' ? '<span class="am-story-read">Read Story →</span>' : ''}
+        </div>
+      </a>`).join('');
+
+    const achieveHtml = (a.achievements || []).map(ach =>
+      `<div class="am-achievement">${ach}</div>`
+    ).join('');
+
+    box.innerHTML = `
+      <button class="am-close" onclick="amClose()" aria-label="Close">✕</button>
+      <div class="am-header">
+        <img class="am-pfp" src="${a.pfp}" alt="${a.name}">
+        <div class="am-header-text">
+          <div class="am-name">${a.name}</div>
+          <div class="am-handle">${a.handle}</div>
+          <div class="am-title-badges">${badges}</div>
+        </div>
+      </div>
+      <div class="am-body">
+        ${a.bio ? `<p class="am-bio">${a.bio}</p>` : ''}
+        ${a.quote ? `<div class="am-quote">${a.quote}<cite>${a.quoteBy}</cite></div>` : ''}
+        ${infoRows ? `<div class="am-section-title">Author Details</div><div class="am-info-grid">${infoRows}</div>` : ''}
+        ${storiesHtml ? `<div class="am-section-title">Published Stories</div><div class="am-stories">${storiesHtml}</div>` : ''}
+        ${achieveHtml ? `<div class="am-section-title">Achievements</div><div class="am-achievements">${achieveHtml}</div>` : ''}
+      </div>
+      <div class="am-footer">
+        <a href="${a.igLink}" target="_blank" class="am-btn am-btn-gold">Follow on Instagram →</a>
+        <button class="am-btn am-btn-outline" onclick="amClose()">Close</button>
+      </div>`;
+
+    document.getElementById('am-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function amClose() {
+    document.getElementById('am-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function amHandleOverlayClick(e) {
+    if (e.target === document.getElementById('am-overlay')) amClose();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') amClose(); });
+
+  // ── Author data ──
+const AM_AUTHORS = {
+
+  rlewis: {
+    name: 'R. Lewis', handle: '@rlewiswrites',
+    igLink: 'https://www.instagram.com/rlewiswrites/',
+    pfp: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776323142/R._Lewis_vfuysw.png',
+    titles: ['Author of the Year 2025', 'Creative Excellence Award 2025'],
+    bio: 'R. Lewis is an American co-author duo on Episode, born on January 11th and March 8th, whose collaborative storytelling has earned them widespread recognition. Their creative partnership is marked by strong narrative cohesion, polished execution, and a shared vision that translates seamlessly onto the screen.',
+    quote: '"The Clique delivers a gripping narrative where contrasting worlds collide and navigate the chaos of life together. With outstanding, movie-style directing and immersive storytelling, R. Lewis captivates readers and leaves a powerful, lasting impression."',
+    quoteBy: '— Buddies Team',
+    info: [
+      ['Birthday', '11th January & 8th March'],
+      ['Nationality', 'American'],
+      ['Zodiac', 'Capricorn & Pisces'],
+      ['Active on Episode', '2024 – present'],
+      ['Stories Published', '3'],
+      ['Website', 'storiesbyrlewis.site'],
+    ],
+    infoLinks: { 'Website': 'https://sites.google.com/view/storiesbyrlewis/home' },
+    stories: [
+      { title: 'The Clique (Season 1)', blurb: '"The Clique" loses one of their members in a sudden tragedy. A writer observes their tight-knit group — unexpectedly, he becomes far too intrigued with one member: Denise Evergreen.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776317320/604747421_1569149994229651_1668515451481797075_n_1_bup4of.jpg', link: 'https://episodeinteractive.com/r/s/5722486796648448' },
+      { title: 'Once, In December', blurb: 'Doris White, a gifted dancer on a famous country singer\'s wartime Christmas tour, vows to resist his charms — but perhaps he\'s more than his reputation suggests.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325536/609318755_928143413182834_1844295479427693173_n_wn8htq.png', link: 'https://episodeinteractive.com/r/s/5063910778765312' },
+      { title: 'The Clique (Season 2)', blurb: 'With a successful novel written about them, "The Clique" tries to navigate life in New York with new fears, new lessons, and new members.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325533/609434427_1419088693189321_5073231280695755853_n_lr6aoj.png', link: 'https://episodeinteractive.com/r/s/5419283473793024' },
+    ],
+    achievements: [
+      'Author of the Year 2025 (Buddies Support Hub)',
+      'Creative Excellence Award 2025 (Buddies Support Hub)',
+      '2nd Runner-Up — Story of the Year 2025 (The Clique)',
+      'Best Directing Award 2025 (The Clique)',
+      'Most Innovative Concept Award 2025 (The Clique)',
+    ],
+  },
+
+    ryangraye: {
+      name: 'Ryan Graye', handle: '@ryanwrites.epi',
+      igLink: 'https://www.instagram.com/ryanwrites.epi/',
+      pfp: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325192/ryan_pmcmpl.png',
+      titles: ['Author of the Year 2024', 'Most Popular Author 2024'],
+      bio: 'Ryan Graye is an Austrian Episode author, born on July 17th, who joined the community in November 2023. Known for her suspenseful storytelling and polished writing style, she quickly gained recognition through her debut story, Polaroids, which resonated strongly with readers. Beyond writing, she is also appreciated for supporting fellow authors through custom backgrounds and overlays.',
+      quote: '"Ryan Graye\'s debut story Polaroids has taken the Episode community by storm. With its heartfelt narrative and captivating characters, it\'s clear she has made an unforgettable entrance as an author."',
+      quoteBy: '— Buddies Team',
+      info: [
+        ['Birthday', '17th July'],
+        ['Nationality', 'Austrian'],
+        ['Zodiac', 'Cancer'],
+        ['Active on Episode', '2024 – present'],
+        ['Stories Published', '3'],
+        ['Website', 'ryangraye.carrd.co'],
+      ],
+      infoLinks: { 'Website': 'https://ryangraye.carrd.co/' },
+      stories: [
+        { title: 'Polaroids', blurb: 'You are a criminology freshman who stumbles across an ominous polaroid of a missing girl, which unravels a dangerous chain of events...', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776319702/IMG_20260416_070259_453_fyjiq5.jpg', link: 'http://episodeinteractive.com/r/s/6265867834785792' },
+        { title: 'Amplified Affection', blurb: 'As a London based music producer, you catch the eye of LA singer SOUL through a viral open mic performance. As you grow closer through collaborations, love faces the distance test.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325632/494888680_1392214765472085_486050304610828373_n_cudyro.png', link: 'https://episodeinteractive.com/r/s/5564586432954368' },
+        { title: 'Moonlight Sonata', blurb: 'At a once prestigious school for the musically gifted, Anya uncovers a cursed sonata, and a love doomed to repeat the past. What would you sacrifice for the chance to rewrite fate?', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776324651/462639757_979786213996666_2546693944806638607_n_big3n4.jpg', link: '#' },
+      ],
+      achievements: [
+        'Author of the Year 2024 (Buddies Support Hub)',
+        'Most Popular Author 2024 (Buddies Support Hub)',
+        'Story of the Year 2024 (Polaroids)',
+        'Most Popular Story 2024 (Polaroids)',
+        'Readers Choice Award 2024 (Polaroids)',
+        'Hidden Gem Shelf — Q1 2024 (Episode shelf)',
+      ],
+    },
+
+    fern: {
+      name: 'Fern', handle: '@fern.episode',
+      igLink: 'https://www.instagram.com/fern.episode/',
+      pfp: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776324866/456570663_1832254113968158_4439371629572199158_n_gmhker.jpg',
+      titles: ['Author of the Year 2023', 'Inaugural AOTY Winner'],
+      bio: 'Fern is a Brazilian Episode author, born on January 31st, who joined the community in 2018 as a reader. Known for her remarkable directing skills and her ability to craft words into compelling narratives, she steadily built her presence through stories that reflect both creativity and precision.',
+      quote: '"After publishing her first story, \'Inventions of C. Christopher,\' Fern anticipated the success that would come with crafting Symphony. Her continued growth has propelled her to new heights where her talent will always shine brightly."',
+      quoteBy: '— Buddies Team',
+      info: [
+        ['Birthday', '31st January'],
+        ['Nationality', 'Brazilian'],
+        ['Zodiac', 'Aquarius'],
+        ['Active on Episode', '2018 – present'],
+        ['Stories Published', '2'],
+        ['Website', 'fernepisode.carrd.co'],
+      ],
+      infoLinks: { 'Website': 'https://fernepisode.carrd.co/' },
+      stories: [
+        { title: 'Symphony', blurb: 'In 1946 New York, the worlds of an aspiring violinist and a World War II veteran collide in an unexpected symphony of emotions, as both struggle to overcome hardships of their own.', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776319705/IMG_20260416_070337_931_am5a0o.jpg', link: 'http://episodeinteractive.com/r/s/6046021552898048' },
+        { title: 'Inventions of C. Christopher', blurb: 'A young woman with a knack for inventing goes on a dangerous quest to rescue her kidnapped little sister. With the help of a witty American along the way, will she succeed?', cover: 'https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776325843/Screenshot_2026-04-16_085011_gpzkxt.png', link: 'http://episodeinteractive.com/r/s/6693747829440512' },
+      ],
+      achievements: [
+        'Author of the Year 2023 (Buddies Support Hub)',
+        'Inaugural AOTY Winner (Buddies Support Hub)',
+        'Story of the Year 2023 (Symphony)',
+        'Best Story Cover Award 2023 (Symphony)',
+        'Best Directing Award 2023 (Symphony)',
+        'June Editors Pick 2023 (Episode shelf)',
+      ],
+    },
+  };
+
+  // Wire up all author-trigger images
+  document.querySelectorAll('.author-trigger').forEach(img => {
+    const key = img.getAttribute('data-author');
+    if (!key || !AM_AUTHORS[key]) return;
+    img.addEventListener('click', () => amOpen(key));
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', 'View ' + AM_AUTHORS[key].name + ' profile');
+    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') amOpen(key); });
+  });
+
+</script>
+
+<!-- Author Modal -->
+<div class="am-overlay" id="am-overlay" onclick="amHandleOverlayClick(event)">
+  <div class="am-box" id="am-box">
+    <button class="am-close" onclick="amClose()" aria-label="Close">✕</button>
+  </div>
+</div>
+
+</body>
+</html>
