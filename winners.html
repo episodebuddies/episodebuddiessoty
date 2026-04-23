@@ -335,9 +335,19 @@
     .year-section { padding: 48px 20px; }
     .year-num { font-size: clamp(36px, 10vw, 60px); }
     .soty-winner-block { grid-template-columns: 1fr; }
-    .soty-cover-link { display: flex; justify-content: center; padding: 24px 24px 0; }
-    .soty-cover-link img { min-height: unset; aspect-ratio: 3/4; width: 160px; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-    .soty-info { padding: 20px 20px 24px; }
+    .soty-cover-link {
+      position: relative; display: block;
+      height: 400px; overflow: hidden;
+    }
+    .soty-cover-link img {
+      min-height: unset; width: 100%; height: 100%;
+      aspect-ratio: unset; object-fit: cover; object-position: top;
+    }
+    .soty-cover-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 50%; pointer-events: none;
+    }
+    .soty-info { padding: 20px 20px 24px; margin-top: -8px; }
     .soty-info-title { font-size: clamp(16px, 4vw, 22px); }
     .soty-info-desc { font-size: 13px; margin-bottom: 16px; }
     .aoty-winner-block { grid-template-columns: 1fr; }
