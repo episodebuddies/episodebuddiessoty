@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — SOTY & AOTY 2026 · Buddies Support Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <link rel="apple-touch-icon" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <!-- Search & social preview -->
+  <meta property="og:image" content="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <meta property="og:title" content="Episode Buddies">
+  <meta property="og:description" content="Uplifting Episode authors through free community services, monthly contests, and the most celebrated annual competitions on the platform.">
+  <meta name="theme-color" content="#0F1B33">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B2A4A; --deep-navy: #0F1B33; --blue: #2E75B6;
+      --gold: #C9A84C; --gold-light: #E8C97A; --gold-pale: #FDF6E3;
+      --white: #FFFFFF; --off-white: #F7F5F0; --light-gray: #F2F3F5;
+      --text-dark: #0F1B33; --text-mid: #4A5568; --text-light: #8896A6;
+      --border: rgba(27,42,74,0.12);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-size: 16px; color: var(--text-dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    h1,h2,h3 { font-family: var(--serif); line-height: 1.2; }
+    em { font-style: italic; color: var(--gold); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+    .nav-logo-text { font-family: var(--serif); font-size: 17px; color: var(--white); letter-spacing: 0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); padding: 8px 14px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+    .nav-cta { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep-navy); background: var(--gold); padding: 9px 20px; border-radius: 4px; transition: background 0.2s; margin-left: 12px; }
+    .nav-cta:hover { background: var(--gold-light); }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8); transition: transform 0.3s, opacity 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99; background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2); flex-direction: column; padding: 16px 24px 24px; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.75); padding: 12px 16px; border-radius: 4px; transition: color 0.2s, background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+    .mobile-menu .mobile-cta { margin-top: 12px; text-align: center; background: var(--gold); color: var(--deep-navy); font-weight: 600; border-radius: 4px; border-bottom: none; }
+
+    /* HERO */
+    .page-hero { background: var(--deep-navy); padding: 120px 32px 72px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px), repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px); pointer-events: none; }
+    .page-hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; }
+    .section-label.light { color: rgba(255,255,255,0.5); }
+    .page-hero h1 { font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .page-hero p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 520px; margin: 0 auto 32px; }
+
+    /* TOGGLE */
+    .comp-toggle { display: inline-flex; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 4px; gap: 4px; }
+    .toggle-btn { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 28px; border-radius: 40px; border: none; cursor: pointer; transition: all 0.25s; background: transparent; color: rgba(255,255,255,0.55); }
+    .toggle-btn.active { background: var(--gold); color: var(--deep-navy); box-shadow: 0 4px 14px rgba(201,168,76,0.35); }
+
+    /* TICKER */
+    .ticker-wrap { background: var(--gold); overflow: hidden; padding: 9px 0; }
+    .ticker-track { display: flex; width: max-content; animation: ticker-scroll 30s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item { font-size: 0.78rem; font-weight: 600; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; padding: 0 40px; }
+    .ticker-dot { display: inline-block; width: 4px; height: 4px; background: var(--navy); border-radius: 50%; vertical-align: middle; margin-right: 40px; opacity: 0.5; }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTIONS */
+    .section { padding: 80px 32px; }
+    .section-alt { background: var(--off-white); }
+    .section-dark { background: var(--navy); color: var(--white); }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { margin-bottom: 44px; }
+    .section-header h2 { font-size: clamp(1.7rem,3vw,2.4rem); color: var(--navy); margin-bottom: 10px; }
+    .section-header.light h2 { color: var(--white); }
+    .section-header p { color: var(--text-mid); font-size: 15px; max-width: 560px; line-height: 1.75; }
+    .section-header.light p { color: rgba(255,255,255,0.65); }
+
+    /* CONTENT PANELS */
+    .comp-panel { display: none; }
+    .comp-panel.active { display: block; animation: fadeUp 0.3s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* SCORE SPLIT */
+    .score-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .score-half { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .score-half-hd { background: var(--navy); padding: 18px 24px; }
+    .score-half-hd h3 { font-family: var(--serif); font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 2px; }
+    .score-half-hd p { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; }
+    .score-half-body { padding: 20px 24px; }
+    .score-cat { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .score-cat:last-child { margin-bottom: 0; }
+    .sc-bar-wrap { flex: 1; }
+    .sc-label { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .sc-label-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .sc-label-pct { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--gold); }
+    .sc-track { height: 7px; background: rgba(27,42,74,0.08); border-radius: 4px; overflow: hidden; }
+    .sc-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    .sc-note { font-size: 11px; color: var(--text-light); margin-top: 4px; }
+    .sc-total-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-top: 1px solid var(--border); margin-top: 14px; }
+    .sc-total-label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+    .sc-total-val { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--navy); }
+
+    /* VOTE COUNTING */
+    .vote-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; }
+    .vote-box-hd { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .vote-box-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--navy); }
+    .vote-box-weight { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; background: rgba(201,168,76,0.12); color: #8a6f3a; border: 1px solid rgba(201,168,76,0.25); white-space: nowrap; }
+    .vote-box p { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+    .points-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .points-table th { background: var(--navy); color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; text-align: left; }
+    .points-table td { padding: 8px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+    .points-table tr:last-child td { border-bottom: none; }
+    .points-table tr:hover td { background: var(--off-white); }
+    .points-strong { font-weight: 700; color: var(--navy); }
+    .benchmark-note { background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #7a6030; line-height: 1.65; margin-top: 12px; }
+    .benchmark-note strong { color: var(--navy); }
+
+    /* STAGES */
+    .stages-flow { display: flex; flex-direction: column; gap: 0; }
+    .stage-item { display: grid; grid-template-columns: 120px 1fr; gap: 24px; position: relative; padding-bottom: 32px; }
+    .stage-item:last-child { padding-bottom: 0; }
+    .stage-item:not(:last-child) .stage-connector { position: absolute; left: 54px; top: 48px; bottom: 0; width: 2px; background: rgba(201,168,76,0.2); }
+    .stage-left { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .stage-num { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 2px solid rgba(201,168,76,0.3); }
+    .stage-num span { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--gold); }
+    .stage-num.gold-num { background: var(--gold); border-color: var(--gold); }
+    .stage-num.gold-num span { color: var(--deep-navy); }
+    .stage-field { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); text-align: center; line-height: 1.3; }
+/*.stage-right {}*/
+    .stage-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .stage-desc { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin-bottom: 10px; }
+    .stage-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .stage-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border); background: var(--light-gray); color: var(--text-mid); }
+    .stage-tag.ft-tag { background: rgba(201,168,76,0.1); color: #8a6f3a; border-color: rgba(201,168,76,0.25); }
+    .stage-tag.vote-tag { background: rgba(46,117,182,0.08); color: var(--blue); border-color: rgba(46,117,182,0.2); }
+
+    /* AWARDS */
+    .awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .award-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.2s; }
+    .award-card:hover { border-color: rgba(201,168,76,0.4); }
+    .award-card.ft-card { border-color: rgba(201,168,76,0.3); background: linear-gradient(135deg,rgba(253,246,227,0.5),var(--white)); }
+    .award-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+    .award-content {font-size: 13px;}
+    .award-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .award-ft-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; background: rgba(201,168,76,0.12); color: #8a6f3a; border: 1px solid rgba(201,168,76,0.25); margin-bottom: 6px; }
+    .award-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+
+    /* PLACEMENTS */
+    .placement-list { display: flex; flex-direction: column; gap: 8px; }
+    .placement-row { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; transition: border-color 0.2s; }
+    .placement-row:hover { border-color: rgba(201,168,76,0.3); }
+    .placement-row.top-row { border-color: rgba(201,168,76,0.35); background: linear-gradient(135deg,rgba(253,246,227,0.4),var(--white)); }
+    .pl-medal { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .pl-medal.m1 { background: linear-gradient(135deg,var(--gold),var(--gold-light)); }
+    .pl-medal.m2 { background: linear-gradient(135deg,#c0c0c0,#e8e8e8); }
+    .pl-medal.m3 { background: linear-gradient(135deg,#cd7f32,#e8a87c); }
+    .pl-medal.mrest { background: var(--light-gray); color: var(--text-mid); font-size: 14px; font-weight: 700; }
+    .pl-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); flex: 1; }
+    .pl-desc { font-size: 12px; color: var(--text-light); margin-top: 1px; }
+    .pl-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: rgba(27,42,74,0.06); color: var(--text-mid); white-space: nowrap; }
+    .pl-badge.special { background: rgba(201,168,76,0.1); color: #8a6f3a; border: 1px solid rgba(201,168,76,0.2); }
+
+    /* QUALIFICATION */
+    .qual-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .qual-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .qual-card:hover { border-color: rgba(201,168,76,0.35); }
+    .qual-num { font-family: var(--serif); font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .qual-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .qual-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+
+    /* INFO BOX */
+    .info-box { background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 18px 22px; font-size: 14px; color: #7a6030; line-height: 1.7; margin-bottom: 20px; }
+    .info-box strong { color: var(--navy); }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+    /* STAT CARDS */
+    .stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 36px; }
+    .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; text-align: center; }
+    .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .stat-label { font-size: 12px; color: var(--text-light); font-weight: 500; letter-spacing: 0.04em; }
+
+    /* CTA */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; }
+    .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* DIVIDER */
+    .section-divider { height: 1px; background: var(--border); margin: 48px 0; }
+
+    /* FOOTER */
+    footer {
+      background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 64px 48px 32px;
+    }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+    padding-bottom: 40px; margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .footer-brand-logo img { height: 32px; }
+  .footer-brand-logo span { font-family: var(--serif); font-size: 16px; color: var(--white); }
+  .footer-brand-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.3); max-width: 280px; margin-bottom: 18px; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.45); font-size: 12px; font-weight: 600;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px; color: rgba(255,255,255,0.38);
+    text-decoration: none; margin-bottom: 9px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-col p { font-size: 13px; color: rgba(255,255,255,0.28); line-height: 1.7; margin-bottom: 5px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
+  .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .score-split, .awards-grid, .qual-grid, .two-col, .stat-row { grid-template-columns: 1fr; }
+      .three-col { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; } .nav-hamburger { display: flex; }
+      nav { padding: 0 20px; height: 60px; } .mobile-menu { top: 60px; }
+      .page-hero { padding: 100px 20px 56px; }
+      .section { padding: 56px 20px; }
+      .toggle-btn { padding: 9px 18px; font-size: 12px; }
+      .stage-item { grid-template-columns: 60px 1fr; gap: 14px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+      footer { padding: 44px 20px 24px; }
+      .three-col { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+    <span class="nav-logo-text">Episode Buddies</span>
+  </a>
+  <div class="nav-links">
+    <a href="soty-about.html">About</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
+    <a href="follow-journey.html">Follow the Journey</a>
+    <a href="soty-2025.html">SOTY 2025</a>
+    <a href="aoty-2025.html">AOTY 2025</a>
+    <a href="how-it-works.html" class="active">How It Works</a>
+    <a href="https://episodebuddies.vercel.app" class="nav-cta">Main Site</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="soty-about.html">About</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="https://episodebuddies.vercel.app/hall-of-fame.html">Hall of Fame</a>
+  <a href="follow-journey.html">Follow the Journey</a>
+  <a href="soty-2025.html">SOTY 2025</a>
+  <a href="aoty-2025.html">AOTY 2025</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="https://episodebuddies.vercel.app" class="nav-cta">← Main Site</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label light">2026 Season</span>
+    <h1>How It <em>Works</em></h1>
+    <p>Everything you need to know about how SOTY and AOTY are run; from how entries qualify and how votes are counted, to awards, fast tracking, and the final placements.</p>
+    <div class="comp-toggle">
+      <button class="toggle-btn active" onclick="switchComp('soty',this)">SOTY</button>
+      <button class="toggle-btn" onclick="switchComp('aoty',this)">AOTY</button>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Story of the Year 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Author of the Year 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Season Opens October 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Hall of Fame · Buddies Laureates</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Story of the Year 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Author of the Year 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Season Opens October 2026</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Hall of Fame · Buddies Laureates</span><span class="ticker-dot"></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!--  SOTY PANEL                            -->
+<!-- ═══════════════════════════════════════ -->
+<div id="panel-soty" class="comp-panel active">
+
+  <!-- WHAT IS SOTY -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="two-col">
+        <div>
+          <span class="section-label">Story of the Year</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);margin-bottom:14px;">The competition that decides Episode's <em>best story</em> of the year.</h2>
+          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;margin-bottom:16px;">SOTY is Buddies Support Hub's flagship annual competition. It identifies and celebrates the most outstanding story on Episode Interactive each season - evaluated not by popularity but by the quality of its craft, creativity, and impact on its readers.</p>
+          <p style="color:var(--text-mid);font-size:14px;line-height:1.75;">Launched in 2022, SOTY uses a structured multi-stage judging process combining an expert panel with community voting, so the winner reflects both genuine quality and reader love.</p>
+        </div>
+        <div class="stat-row" style="grid-template-columns:1fr 1fr;margin-bottom:0;gap:12px;">
+          <div class="stat-card"><div class="stat-num">2022</div><div class="stat-label">First held</div></div>
+          <div class="stat-card"><div class="stat-num">60/40</div><div class="stat-label">Judges / Public split</div></div>
+          <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Judging stages</div></div>
+          <div class="stat-card"><div class="stat-num">Top 8</div><div class="stat-label">Official placements</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFICATION -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Qualification</span>
+        <h2>How stories <em>earn their place</em></h2>
+        <p>Only stories that have cleared a meaningful quality threshold enter SOTY. There are five official routes in.</p>
+      </div>
+      <div class="qual-grid">
+        <div class="qual-card"><div class="qual-num">Route 01</div><div class="qual-title">Win a Monthly Contest</div><div class="qual-desc">Stories that win any official Buddies monthly contest earn automatic SOTY qualification. A win is already proof of a high standard.</div></div>
+        <div class="qual-card"><div class="qual-num">Route 02</div><div class="qual-title">Score 90%+ in a Contest</div><div class="qual-desc">Stories that score 90% or above in a monthly contest, even without winning also qualify. High craft scores are enough.</div></div>
+        <div class="qual-card"><div class="qual-num">Route 03</div><div class="qual-title">Official Story Review</div><div class="qual-desc">Authors can submit their story to the Buddies team for a formal review. Stories that meet the required benchmark are accepted.</div></div>
+        <div class="qual-card"><div class="qual-num">Route 04</div><div class="qual-title">Team Nomination</div><div class="qual-desc">The Buddies team actively watches the community and may nominate standout stories directly, no contest entry needed.</div></div>
+        <div class="qual-card"><div class="qual-num">Route 05</div><div class="qual-title">Special Opportunity Slot</div><div class="qual-desc">A direct application pathway for authors who missed other routes. Applications are reviewed and must meet the standard to be accepted.</div></div>
+        <div class="qual-card" style="background:var(--navy);border-color:var(--navy);">
+          <div class="qual-num" style="color:rgba(201,168,76,0.7)">Note</div>
+          <div class="qual-title" style="color:var(--white)">Read Cap</div>
+          <div class="qual-desc" style="color:rgba(255,255,255,0.6)">Stories with over 500,000 reads at the time the competition opens are not eligible, unless they qualified through a monthly contest.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCORING -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Scoring Structure</span>
+        <h2>How every story is <em>scored</em></h2>
+        <p>Every story's total is made up of two halves; a judge panel score and community voting, combined into a final score out of 100.</p>
+      </div>
+      <div class="score-split">
+        <div class="score-half">
+          <div class="score-half-hd">
+            <h3>Judging Panel — 60%</h3>
+            <p>Scored by 5 judges across Episodes 1–3</p>
+          </div>
+          <div class="score-half-body">
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Directing</span><span class="sc-label-pct">20%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:100%"></div></div>
+                <div class="sc-note">Scene composition, camera work, overlays, transitions</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Plot & Writing</span><span class="sc-label-pct">20%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:100%"></div></div>
+                <div class="sc-note">Hook, pacing, originality, character, dialogue, emotional impact</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Interactivity</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:50%"></div></div>
+                <div class="sc-note">Reader choices, branching paths, tappables, customization</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Story Cover</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:50%"></div></div>
+                <div class="sc-note">Visual quality, composition, relevance, originality</div>
+              </div>
+            </div>
+            <div class="sc-total-row">
+              <span class="sc-total-label">Judge Total</span>
+              <span class="sc-total-val">60 pts</span>
+            </div>
+          </div>
+        </div>
+        <div class="score-half">
+          <div class="score-half-hd">
+            <h3>Community Voting — 40%</h3>
+            <p>Scored using a benchmark system across 4 events</p>
+          </div>
+          <div class="score-half-body">
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Feed Vote</span><span class="sc-label-pct">15%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:75%"></div></div>
+                <div class="sc-note">Instagram feed — likes, comments, shares</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Poll Vote</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:50%"></div></div>
+                <div class="sc-note">Instagram Stories — 2 polls per story, groups of 4</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Popularity Vote</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:50%"></div></div>
+                <div class="sc-note">Website vote — open to everyone, not just followers</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Qualifier's Choice</span><span class="sc-label-pct">5%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:25%"></div></div>
+                <div class="sc-note">Voted on by the competing authors themselves</div>
+              </div>
+            </div>
+            <div class="sc-total-row">
+              <span class="sc-total-label">Voting Total</span>
+              <span class="sc-total-val">40 pts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENCHMARK EXPLANATION -->
+      <div class="benchmark-note">
+        <strong>How voting scores are calculated (Benchmark Method):</strong> The story with the highest raw score in each voting category becomes the benchmark and earns the full points for that category. Every other story is scored proportionally. For example, if the benchmark is 900 votes and a story earns 756 — that's 756 ÷ 900 × 10 = 8.4 out of 10 for that category.
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW VOTES ARE COUNTED -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Voting Events</span>
+        <h2>How votes are <em>counted</em></h2>
+        <p>Each voting event has its own point system. Here's exactly what earns points and how much.</p>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Popularity Vote</div>
+          <span class="vote-box-weight">10% of total score · Pre-competition</span>
+        </div>
+        <p>Held on the official Buddies website before the competition begins. All qualified stories are listed and the community votes freely for their favourite. Runs for approximately 7 days and is open to everyone, not just Instagram followers.</p>
+        <div class="info-box" style="margin-bottom:0">
+          <strong>⚡ Fast Track:</strong> The story with the most votes earns automatic advancement to the Top 12, regardless of their cumulative score. All stories earn points counting toward their total.
+        </div>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Feed Vote</div>
+          <span class="vote-box-weight">15% of total score</span>
+        </div>
+        <p>Each story is posted on the official Buddies Instagram feed. The community engages by liking, commenting, and sharing. Points are weighted by type and by whether the person is a follower of the page, comments carry the most weight, rewarding genuine, active interaction.</p>
+        <table class="points-table">
+          <thead><tr><th>Action</th><th>Follower</th><th>Non-Follower</th></tr></thead>
+          <tbody>
+            <tr><td>👍 Like</td><td class="points-strong">4 points</td><td>1 point</td></tr>
+            <tr><td>💬 Comment</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+            <tr><td>🔁 Share</td><td class="points-strong" colspan="2">3 points (any user)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Poll Vote</div>
+          <span class="vote-box-weight">10% of total score</span>
+        </div>
+        <p>Runs through Instagram Stories. Stories are placed in groups of four and each story appears in three separate polls, giving every entry equal exposure to different audience segments. Voters pick their favourite from each group of four.</p>
+        <table class="points-table">
+          <thead><tr><th>Vote Type</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>Follower Vote</td><td class="points-strong">8 points</td></tr>
+            <tr><td>Non-Follower Vote</td><td class="points-strong">2 points</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Qualifier's Choice Vote</div>
+          <span class="vote-box-weight">5% of total score</span>
+        </div>
+        <p>Decided by the competing authors themselves; not the general public. Every qualifier votes for the story they feel stands out most based on quality, creativity, or impact, excluding their own entry. A smaller weight but a distinct kind of recognition, peer approval from people who've read the same stories.</p>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Save-2-Stories (S2S) Vote</div>
+          <span class="vote-box-weight">Stage 2 · Top 24</span>
+        </div>
+        <p>At Stage 2, all 24 remaining stories are paired into duos and posted on the Instagram feed. The unique mechanic: when a voter supports one story in a pair, their engagement is counted for <strong>both</strong> stories in that pair. This promotes shared visibility between authors at a critical stage.</p>
+        <div class="info-box" style="margin-bottom:0">
+          <strong>⚡ Fast Track:</strong> The two pairs with the highest combined engagement advance directly to the Top 12, regardless of cumulative score. Combined with the Popularity Vote winner, this determines the 3 guaranteed Top 12 spots.
+        </div>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Head-to-Head (H2H) Challenge</div>
+          <span class="vote-box-weight">Stage 3 · Top 12</span>
+        </div>
+        <p>The 12 remaining stories are placed into 6 direct pairs. Unlike S2S, this is exclusive - votes go to one story only and are not shared. Voting runs simultaneously through Instagram feed comments and/or Story polls.</p>
+        <table class="points-table">
+          <thead><tr><th>Vote Type</th><th>Follower</th><th>Non-Follower</th></tr></thead>
+          <tbody>
+            <tr><td>💬 Feed Comment</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+            <tr><td>📊 Story Poll</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:10px;margin-bottom:0;font-size:12px;color:var(--text-light)">Only one vote per person per pair is counted. H2H results add to each story's cumulative total and determine who advances to the Top 8.</p>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Reader's Choice Vote</div>
+          <span class="vote-box-weight">Recognition only · Does not affect score</span>
+        </div>
+        <p>A standalone award presented to the story that earned the highest vote total during the competition. The winner receives a special award but it does not contribute to any story's cumulative score.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Competition Stages</span>
+        <h2>The road from <em>qualifier to winner</em></h2>
+        <p>SOTY runs from October through December across four progressive stages, each narrowing the field further.</p>
+      </div>
+      <div class="stages-flow">
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left">
+            <div class="stage-num"><span>0</span></div>
+            <div class="stage-field">Pre-Competition</div>
+          </div>
+          <div class="stage-right">
+            <div class="stage-title">Qualifier Announcements & Popularity Vote</div>
+            <div class="stage-desc">All qualifying stories are publicly announced. The Popularity Vote opens on the Buddies website for 10 days; open to everyone. The top vote-getter earns a Fast Track directly to the Top 12.</div>
+            <div class="stage-tags">
+              <span class="stage-tag vote-tag">Popularity Vote opens</span>
+              <span class="stage-tag ft-tag">⚡ Fast Track winner → Top 12</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left">
+            <div class="stage-num"><span>1</span></div>
+            <div class="stage-field">Full Field → Top 24</div>
+          </div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 1 — Full Evaluation</div>
+            <div class="stage-desc">Judges read Episodes 1–3 of every qualifying story and score across all four categories. Simultaneously, the Feed Vote, Poll Vote, and Qualifier's Choice Vote run publicly. Four Fast Track awards are decided by the judging panel and grant automatic Top 24 entry.</div>
+            <div class="stage-tags">
+              <span class="stage-tag">Judge scoring opens</span>
+              <span class="stage-tag vote-tag">Feed Vote · Poll Vote · Qualifier's Choice</span>
+              <span class="stage-tag ft-tag">⚡ Best Directing → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best Plot → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best Interactivity → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best Story Cover → Top 24</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left">
+            <div class="stage-num"><span>2</span></div>
+            <div class="stage-field">Top 24 → Top 12</div>
+          </div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 2 — Save-2-Stories Vote</div>
+            <div class="stage-desc">All 24 remaining stories carry their Stage 1 scores forward. The S2S Vote pairs stories into duos on the Instagram feed - engagement counts for both stories in a pair. The two pairs with the highest combined engagement fast-track to the Top 12. All other spots fill by cumulative score.</div>
+            <div class="stage-tags">
+              <span class="stage-tag vote-tag">S2S Vote</span>
+              <span class="stage-tag ft-tag">⚡ Top 2 S2S pairs → Top 12</span>
+              <span class="stage-tag ft-tag">⚡ Popularity Vote winner → Top 12</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left">
+            <div class="stage-num"><span>3</span></div>
+            <div class="stage-field">Top 12 → Top 8</div>
+          </div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 3 — Head-to-Head Challenge</div>
+            <div class="stage-desc">The 12 semifinalists are placed into 6 direct matchups. Voting runs exclusively - no shared points. Feed comments and Story polls run simultaneously. H2H results are added to cumulative scores. Top 8 by overall total advance to the Final.</div>
+            <div class="stage-tags">
+              <span class="stage-tag vote-tag">H2H Feed Comments</span>
+              <span class="stage-tag vote-tag">H2H Story Polls</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left">
+            <div class="stage-num gold-num"><span>4</span></div>
+            <div class="stage-field">Top 8 → Winner</div>
+          </div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 4 — The Final</div>
+            <div class="stage-desc">The Top 8 finalists compete in the final voting round. The Winner and all Runner Ups are announced. The SOTY Winner is inducted into the Buddies Laureates Hall of Fame and receives the full prize package including platform features and ongoing promotion.</div>
+            <div class="stage-tags">
+              <span class="stage-tag">Final Feed Vote</span>
+              <span class="stage-tag">Final Poll Vote</span>
+              <span class="stage-tag ft-tag">🏆 Winner announced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Special Awards</span>
+        <h2>Awards that <em>run alongside</em> the main competition</h2>
+        <p>Four judge-decided awards carry Fast Track spots. Others are standalone recognition for exceptional craft.</p>
+      </div>
+
+      <h3 style="font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Judge-Decided Awards — Fast Track Spots</h3>
+      <div class="awards-grid" style="margin-bottom:24px">
+        <div class="award-card ft-card">
+          <div class="award-icon">🎬</div>
+          <div class="award-content">
+            <div class="award-name">Best Directing</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the story with the most exceptional use of Episode's directing tools — scene composition, camera movement, overlays, and visual rhythm across Episodes 1–3.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">✍</div>
+          <div class="award-content">
+            <div class="award-name">Best Plot & Writing</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the story with the most compelling and well-crafted narrative. Judges evaluate hook, pacing, originality, character development, and emotional impact.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">🎮</div>
+          <div class="award-content">
+            <div class="award-name">Best Interactivity</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the story making the most meaningful use of Episode's interactive features — reader choices, branching paths, tappables, and reader agency.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">🖼</div>
+          <div class="award-content">
+            <div class="award-name">Best Story Cover</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the story with the most visually striking and thematically relevant cover. The Fast Track goes to the Judges' Choice winner. A Voters' Choice version may also run.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Judge-Decided Awards — Recognition Only</h3>
+      <div class="awards-grid" style="margin-bottom:24px">
+        <div class="award-card">
+          <div class="award-icon">💬</div>
+          <div class="award-content">
+            <div class="award-name">Best Dialogue & Characterization</div>
+            <div class="award-desc">Recognizes the story with the most authentic, natural dialogue and multidimensional characters. Selected by the judging committee through deliberation.</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">💡</div>
+          <div class="award-content">
+            <div class="award-name">Most Innovative Concept</div>
+            <div class="award-desc">Awarded to the story that breaks creative boundaries through a unique premise, bold format, or experimental approach to storytelling on Episode.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Community Awards</h3>
+      <div class="awards-grid">
+        <div class="award-card ft-card">
+          <div class="award-icon">🌟</div>
+          <div class="award-content">
+            <div class="award-name">Most Popular Story</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 12</div>
+            <div class="award-desc">Awarded to the story with the most votes in the Popularity Vote on the Buddies website. Also earns Fast Track advancement directly to the semifinals.</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">❤</div>
+          <div class="award-content">
+            <div class="award-name">Reader's Choice</div>
+            <div class="award-desc">Awarded to the story with the most votes across all community voting events. A standalone recognition, does not affect cumulative scores or placements.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENTS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Placements</span>
+        <h2>Official <em>SOTY Placements</em></h2>
+        <p>Every story that competed receives an official placement determined by their cumulative score across all stages.</p>
+      </div>
+      <div class="placement-list">
+        <div class="placement-row top-row">
+          <div class="pl-medal m1">🏆</div>
+          <div><div class="pl-title">SOTY Winner</div><div class="pl-desc">Inducted into the Buddies Laureates Hall of Fame. Featured across Buddies platforms. Full prize package for the season.</div></div>
+          <span class="pl-badge special">Hall of Fame</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m2">🥈</div>
+          <div><div class="pl-title">1st Runner Up</div><div class="pl-desc">Public promotion package · Instagram highlight showcase · Website feature</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m3">🥉</div>
+          <div><div class="pl-title">2nd Runner Up</div><div class="pl-desc">Public promotion package · Instagram highlight showcase · Website feature</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m3">4</div>
+          <div><div class="pl-title">3rd Runner Up</div><div class="pl-desc">Public celebration · Promotional support · Community recognition</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest">5–8</div>
+          <div><div class="pl-title">4th – 7th Runner Up</div><div class="pl-desc">Recognized at the final stage announcement. Promotional support and community recognition.</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">12</div>
+          <div><div class="pl-title">SOTY Top 12</div><div class="pl-desc">Recognized at the semifinal announcement. A confirmed place among the season's best twelve.</div></div>
+          <span class="pl-badge">Semifinalist</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">24</div>
+          <div><div class="pl-title">SOTY Top 24</div><div class="pl-desc">Recognized at the Stage 2 announcement. Reaching the Top 24 already distinguishes a story from the majority of qualifiers.</div></div>
+          <span class="pl-badge">Quarterfinalist</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">Q</div>
+          <div><div class="pl-title">SOTY Qualifier</div><div class="pl-desc">Every story that competed has earned its place through a formal qualification process. Being in the SOTY field is itself a mark of quality.</div></div>
+          <span class="pl-badge">Qualifier</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END SOTY PANEL -->
+
+
+<!-- ═══════════════════════════════════════ -->
+<!--  AOTY PANEL                            -->
+<!-- ═══════════════════════════════════════ -->
+<div id="panel-aoty" class="comp-panel">
+
+  <!-- WHAT IS AOTY -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="two-col">
+        <div>
+          <span class="section-label">Author of the Year</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);margin-bottom:14px;">The competition that celebrates Episode's <em>best author</em> of the year.</h2>
+          <p style="color:var(--text-mid);font-size:15px;line-height:1.8;margin-bottom:16px;">AOTY is a lifetime honor. Where SOTY asks "is this a great story?" - AOTY asks "is this a great author?" It judges the person behind the work: their voice, presence, communication, and impact on the Episode community.</p>
+          <p style="color:var(--text-mid);font-size:14px;line-height:1.75;">Once awarded, the title belongs to its winner for life. Past winners are permanently retired from the competition and inducted into the Buddies Laureates Hall of Fame.</p>
+          <div class="info-box" style="margin-top:16px">
+            <strong>Past AOTY Winners (ineligible to re-enter):</strong><br>
+            2023 — Fern &nbsp;·&nbsp; 2024 — Ryan Graye &nbsp;·&nbsp; 2025 — R. Lewis
+          </div>
+        </div>
+        <div class="stat-row" style="grid-template-columns:1fr 1fr;margin-bottom:0;gap:12px;">
+          <div class="stat-card"><div class="stat-num">2023</div><div class="stat-label">First held</div></div>
+          <div class="stat-card"><div class="stat-num">50/50</div><div class="stat-label">Judges / Public split</div></div>
+          <div class="stat-card"><div class="stat-num">40</div><div class="stat-label">Authors compete</div></div>
+          <div class="stat-card"><div class="stat-num">Lifetime</div><div class="stat-label">Title is permanent</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFICATION -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Qualification</span>
+        <h2>How authors <em>enter</em></h2>
+      </div>
+      <div class="info-box">
+        <strong>One rule, simply stated:</strong> To compete in AOTY, your story must first qualify for the current season's SOTY competition. Every SOTY qualifier is automatically eligible for AOTY. There is no separate application, no extra nomination, and no additional criteria to meet.
+      </div>
+      <p style="color:var(--text-mid);font-size:14px;line-height:1.75;max-width:700px">This also means AOTY draws from the same quality pool as SOTY — every competing author has already cleared a meaningful standard through the SOTY qualification process. The SOTY score from that same story also carries directly into AOTY scoring at 15%, so no extra reading is required.</p>
+    </div>
+  </section>
+
+  <!-- SCORING -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Scoring Structure</span>
+        <h2>How every author is <em>scored</em></h2>
+        <p>AOTY uses an equal 50/50 split between the judging panel and community voting, recognizing that both craft and community connection matter equally.</p>
+      </div>
+      <div class="score-split">
+        <div class="score-half">
+          <div class="score-half-hd">
+            <h3>Judging Panel — 50%</h3>
+            <p>Scored across 4 categories by the panel</p>
+          </div>
+          <div class="score-half-body">
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Author's Interview</span><span class="sc-label-pct">20%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:100%"></div></div>
+                <div class="sc-note">Q&A on writing journey, values, story, and vision; hosted by the Head Judge</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">SOTY Judging Score</span><span class="sc-label-pct">15%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:75%"></div></div>
+                <div class="sc-note">Carried over directly from SOTY; no extra reading needed</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Community Impact Message</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:50%"></div></div>
+                <div class="sc-note">Written message on the author's contribution to the Episode community</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Instagram Aesthetics</span><span class="sc-label-pct">5%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:25%"></div></div>
+                <div class="sc-note">Cohesion, quality, creativity, and professionalism of Instagram page</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name" style="color:var(--text-light)">Profile Picture ★</span><span class="sc-label-pct" style="color:var(--text-light)">Award only</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:0%;background:rgba(27,42,74,0.2)"></div></div>
+                <div class="sc-note">Judged for the Best Profile Picture award and Fast Track only, does not count toward score</div>
+              </div>
+            </div>
+            <div class="sc-total-row"><span class="sc-total-label">Judge Total</span><span class="sc-total-val">50 pts</span></div>
+          </div>
+        </div>
+        <div class="score-half">
+          <div class="score-half-hd">
+            <h3>Community Voting — 50%</h3>
+            <p>Scored using a benchmark system across 4 events</p>
+          </div>
+          <div class="score-half-body">
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Feed Vote</span><span class="sc-label-pct">15%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:100%"></div></div>
+                <div class="sc-note">Instagram feed — likes, comments, shares</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Poll Vote</span><span class="sc-label-pct">15%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:100%"></div></div>
+                <div class="sc-note">Instagram Stories — 2 polls per author, groups of 4</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Popularity Vote</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:67%"></div></div>
+                <div class="sc-note">Website vote — open to everyone</div>
+              </div>
+            </div>
+            <div class="score-cat">
+              <div class="sc-bar-wrap">
+                <div class="sc-label"><span class="sc-label-name">Author's Choice Vote</span><span class="sc-label-pct">10%</span></div>
+                <div class="sc-track"><div class="sc-fill" style="width:67%"></div></div>
+                <div class="sc-note">Voted on by all competing authors; not the public</div>
+              </div>
+            </div>
+            <div class="sc-total-row"><span class="sc-total-label">Voting Total</span><span class="sc-total-val">50 pts</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="benchmark-note">
+        <strong>How voting scores are calculated:</strong> The author with the highest raw score in each voting category is the benchmark and earns the full points. Everyone else is scaled proportionally. For example, if the benchmark is 822 poll votes and an author earns 658, that's 658 ÷ 822 × 15 = 12.01 out of 15 for the Poll Vote.
+      </div>
+    </div>
+  </section>
+
+  <!-- VOTING EVENTS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Voting Events</span>
+        <h2>How votes are <em>counted</em></h2>
+        <p>AOTY uses the same Feed Vote point system as SOTY. Here's a full breakdown of every event.</p>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Popularity Vote</div>
+          <span class="vote-box-weight">10% of total score · Pre-competition</span>
+        </div>
+        <p>Held on the Buddies website before the competition begins. All 40 authors are listed. The community votes for their favourite over approximately 7 days.</p>
+        <div class="info-box" style="margin-bottom:0">
+          <strong>⚡ Fast Track:</strong> The author with the most votes wins the Most Popular Author Award and Fast Tracks directly to the Top 12, bypassing Stage 1 and Stage 2 entirely.
+        </div>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Feed Vote</div>
+          <span class="vote-box-weight">15% of total score</span>
+        </div>
+        <p>Each author is posted on the official Buddies Instagram feed. The community engages through likes, comments, and shares. Comments carry the highest value, active engagement is rewarded.</p>
+        <table class="points-table">
+          <thead><tr><th>Action</th><th>Follower</th><th>Non-Follower</th></tr></thead>
+          <tbody>
+            <tr><td>👍 Like</td><td class="points-strong">4 points</td><td>1 point</td></tr>
+            <tr><td>💬 Comment</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+            <tr><td>🔁 Share</td><td class="points-strong" colspan="2">3 points (any user)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Poll Vote</div>
+          <span class="vote-box-weight">15% of total score</span>
+        </div>
+        <p>Runs through Instagram Stories. Authors are placed in groups of four and each author appears in three separate polls, ensuring equal exposure. Voters pick one from each group.</p>
+        <table class="points-table">
+          <thead><tr><th>Vote Type</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>Follower Vote</td><td class="points-strong">8 points</td></tr>
+            <tr><td>Non-Follower Vote</td><td class="points-strong">2 points</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Author's Choice Vote</div>
+          <span class="vote-box-weight">10% of total score</span>
+        </div>
+        <p>Decided exclusively by the competing authors, not the public. Every qualifier votes for the author they believe stands out most based on quality, creativity, or community impact, excluding their own entry. The author with the most votes also receives the Author's Choice Award.</p>
+      </div>
+
+      <div class="vote-box">
+        <div class="vote-box-hd">
+          <div class="vote-box-title">Head-to-Head Challenge</div>
+          <span class="vote-box-weight">Stage 3 · Top 12 · Both community-voted and judge-scored</span>
+        </div>
+        <p>The 12 remaining authors are paired into 6 matchups. Each author submits a heartfelt message to their readers and the community. Messages are voted on through Instagram feed comments and Story polls — and also evaluated by the judging committee on Impact, Clarity, Originality, and Community Value.</p>
+        <table class="points-table">
+          <thead><tr><th>Vote Type</th><th>Follower</th><th>Non-Follower</th></tr></thead>
+          <tbody>
+            <tr><td>💬 Feed Comment</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+            <tr><td>📊 Story Poll</td><td class="points-strong">8 points</td><td>2 points</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:10px;margin-bottom:0;font-size:12px;color:var(--text-light)">Only one vote per person per pair is counted. The combined H2H total (community + judge scores) is added to each author's cumulative score.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Competition Stages</span>
+        <h2>The path from <em>40 authors to one winner</em></h2>
+      </div>
+      <div class="stages-flow">
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left"><div class="stage-num"><span>0</span></div><div class="stage-field">Pre-Competition</div></div>
+          <div class="stage-right">
+            <div class="stage-title">Popularity Vote & Author Announcements</div>
+            <div class="stage-desc">All 40 AOTY qualifiers are announced. The Popularity Vote opens on the Buddies website for 7 days. The top vote-getter wins the Most Popular Author Award and Fast Tracks directly to the Top 12 — bypassing Stages 1 and 2.</div>
+            <div class="stage-tags"><span class="stage-tag vote-tag">Popularity Vote</span><span class="stage-tag ft-tag">⚡ Most Popular Author → Top 12</span></div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left"><div class="stage-num"><span>1</span></div><div class="stage-field">Full Field → Top 24</div></div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 1 — Full Evaluation</div>
+            <div class="stage-desc">The Interview round opens. All authors answer curated questions hosted by the Head Judge. Judges also evaluate Instagram Aesthetics and Profile Pictures. Feed Vote, Poll Vote, and Author's Choice Vote run publicly. Four judge-decided Fast Track awards guarantee Top 24 spots.</div>
+            <div class="stage-tags">
+              <span class="stage-tag">Author Interviews</span>
+              <span class="stage-tag">IG Aesthetics scoring</span>
+              <span class="stage-tag vote-tag">Feed Vote · Poll Vote · Author's Choice</span>
+              <span class="stage-tag ft-tag">⚡ Best Interview → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best Profile Picture → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best IG Aesthetics → Top 24</span>
+              <span class="stage-tag ft-tag">⚡ Best Impact Message → Top 24</span>
+            </div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left"><div class="stage-num"><span>2</span></div><div class="stage-field">Top 24 → Top 12</div></div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 2 — Top 24 to Top 12</div>
+            <div class="stage-desc">The Top 24 carry their cumulative scores forward. The Popularity Vote winner enters here if not already counted in the Top 24. The Top 12 are determined by overall cumulative score at the end of this stage.</div>
+            <div class="stage-tags"><span class="stage-tag ft-tag">⚡ Popularity Vote winner enters here if not already Top 24</span></div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-connector"></div>
+          <div class="stage-left"><div class="stage-num"><span>3</span></div><div class="stage-field">Top 12 → Top 8</div></div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 3 — Head-to-Head Challenge</div>
+            <div class="stage-desc">The Top 12 are paired into 6 matchups. Each author submits a heartfelt community message. Voting runs through feed comments and Story polls simultaneously. The judging committee also scores each message. The combined H2H total is added to cumulative scores - Top 8 advance.</div>
+            <div class="stage-tags"><span class="stage-tag vote-tag">H2H Community Voting</span><span class="stage-tag">Judge evaluation of messages</span></div>
+          </div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-left"><div class="stage-num gold-num"><span>4</span></div><div class="stage-field">Top 8 → Winner</div></div>
+          <div class="stage-right">
+            <div class="stage-title">Stage 4 — The Final</div>
+            <div class="stage-desc">The Top 8 authors answer one final Interview question — their last opportunity to add points to their cumulative total. All scores are tallied. The AOTY Winner and all special award winners are announced. The AOTY title is a lifetime honor.</div>
+            <div class="stage-tags"><span class="stage-tag">Final Interview round</span><span class="stage-tag ft-tag">🏆 AOTY Winner announced</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Special Awards</span>
+        <h2>Awards that celebrate the <em>author as a person</em></h2>
+      </div>
+
+      <h3 style="font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Fast Track Awards — Judge-Decided</h3>
+      <div class="awards-grid" style="margin-bottom:24px">
+        <div class="award-card ft-card">
+          <div class="award-icon">🎤</div>
+          <div class="award-content">
+            <div class="award-name">Best Interview</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 12</div>
+            <div class="award-desc">Awarded to the author with the most compelling, authentic, and well-crafted Interview responses — scored on Professionalism, Composure, Grammar, Strength, and Overall Appeal.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">📷</div>
+          <div class="award-content">
+            <div class="award-name">Best Profile Picture</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the author with the most striking and identity-relevant profile picture. This award carries the Fast Track spot but the score itself does not count toward the cumulative total.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">✨</div>
+          <div class="award-content">
+            <div class="award-name">Best Instagram Aesthetics</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the author whose Instagram page demonstrates the most visually cohesive, creative, and professional presence — judged against the official Aesthetics rubric.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">💬</div>
+          <div class="award-content">
+            <div class="award-name">Best Impact Message</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Awarded to the author who delivers the most compelling Community Impact Message — scored on Authenticity, Depth of Impact, Clarity, Community Awareness, and Overall Impression.</div>
+          </div>
+        </div>
+      </div>
+      <div class="awards-grid" style="margin-bottom:24px">
+        <div class="award-card ft-card">
+          <div class="award-icon">🌟</div>
+          <div class="award-content">
+            <div class="award-name">Most Popular Author</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 12</div>
+            <div class="award-desc">Awarded to the author with the most votes in the Popularity Vote on the Buddies website. Fast Tracks directly to the Top 12 — bypassing Stages 1 and 2.</div>
+          </div>
+        </div>
+        <div class="award-card ft-card">
+          <div class="award-icon">🌹</div>
+          <div class="award-content">
+            <div class="award-name">Most Devoted Author</div>
+            <div class="award-ft-badge">⚡ Fast Track → Top 24</div>
+            <div class="award-desc">Selected by the judging committee for the author who best demonstrates unwavering dedication and consistency — someone whose love for storytelling shows in every update and interaction.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">Nomination Awards — Judge-Decided · No Fast Track</h3>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-icon">🕊</div>
+          <div class="award-content"><div class="award-name">Rising Star</div><div class="award-desc">A new or emerging author whose debut or breakout story demonstrates exceptional potential, originality, and creativity. The beginning of brilliance.</div></div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🏅</div>
+          <div class="award-content"><div class="award-name">Lifetime Achievement</div><div class="award-desc">Long-standing authors whose continuous contributions, mentorship, and artistic evolution have defined and uplifted the community over the years.</div></div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">💖</div>
+          <div class="award-content"><div class="award-name">Community Service</div><div class="award-desc">Authors who go above and beyond to support, empower, and unite the community through events, initiatives, collaborations, or mentorship.</div></div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">✨</div>
+          <div class="award-content"><div class="award-name">Creative Excellence</div><div class="award-desc">Creators who consistently demonstrate innovation in writing, directing, or visual storytelling, setting new artistic benchmarks on the Episode platform.</div></div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🌺</div>
+          <div class="award-content"><div class="award-name">Honorary Recognition</div><div class="award-desc">Authors whose leadership or dedication behind the scenes has strengthened the creative bonds within the community. Quiet brilliance that helps everyone thrive.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENTS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Placements</span>
+        <h2>Official <em>AOTY Placements</em></h2>
+        <p>Every author who competed receives an official placement. The AOTY title is a lifetime honor — past winners cannot re-enter in future seasons.</p>
+      </div>
+      <div class="placement-list">
+        <div class="placement-row top-row">
+          <div class="pl-medal m1">🏆</div>
+          <div><div class="pl-title">AOTY Winner</div><div class="pl-desc">Permanently inducted into the Buddies Laureates Hall of Fame. A dedicated profile page on the Buddies website. Full prize package. The title is held for life.</div></div>
+          <span class="pl-badge special">Lifetime · Hall of Fame</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m2">🥈</div>
+          <div><div class="pl-title">1st Runner Up</div><div class="pl-desc">Public promotion package · Instagram highlight showcase · Website feature</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m3">🥉</div>
+          <div><div class="pl-title">2nd Runner Up</div><div class="pl-desc">Public promotion package · Instagram highlight showcase · Website feature</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row top-row">
+          <div class="pl-medal m3">4</div>
+          <div><div class="pl-title">3rd Runner Up</div><div class="pl-desc">Public celebration · Promotional support · Community recognition</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest">5–8</div>
+          <div><div class="pl-title">4th – 7th Runner Up</div><div class="pl-desc">Recognized at the final stage announcement. Promotional support and community recognition.</div></div>
+          <span class="pl-badge">Top 8</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">12</div>
+          <div><div class="pl-title">AOTY Top 12</div><div class="pl-desc">Recognized at the semifinal announcement. A confirmed place among the season's best twelve authors.</div></div>
+          <span class="pl-badge">Semifinalist</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">24</div>
+          <div><div class="pl-title">AOTY Top 24</div><div class="pl-desc">Recognized at the Stage 2 announcement. Reaching the Top 24 already distinguishes an author from the majority of the qualifier field.</div></div>
+          <span class="pl-badge">Quarterfinalist</span>
+        </div>
+        <div class="placement-row">
+          <div class="pl-medal mrest" style="font-size:11px">Q</div>
+          <div><div class="pl-title">AOTY Qualifier</div><div class="pl-desc">Being in the AOTY field is itself a mark of community standing. Every competing author has earned their place.</div></div>
+          <span class="pl-badge">Qualifier</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END AOTY PANEL -->
+
+
+<!-- FOOTER CTA -->
+<section style="background:var(--navy);padding:72px 32px;text-align:center">
+  <div style="max-width:540px;margin:0 auto">
+    <span class="section-label light">2026 Season</span>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);color:var(--white);margin-bottom:14px;">Ready to follow the <em>competition</em>?</h2>
+    <p style="color:rgba(255,255,255,0.62);font-size:14px;line-height:1.75;margin-bottom:28px;">All announcements, voting links, and results are posted on our Instagram. Turn on notifications so you never miss a moment.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.instagram.com/episode_buddies/" target="_blank" class="btn btn-gold">Follow on Instagram</a>
+      <a href="winners.html" class="btn btn-outline-white">Past Winners</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+          <span>Buddies SOTY & AOTY</span>
+        </div>
+        <p class="footer-brand-desc">The official home of the Buddies Support Hub Story of the Year and Author of the Year competitions. Est. 2022.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/episode_buddies/" target="_blank">IG</a>
+          <a href="https://www.threads.net/@episode_buddies" target="_blank">TH</a>
+          <a href="mailto:episodebuddies3@gmail.com">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>This Site</h4>
+        <a href="soty-about.html">About SOTY & AOTY</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="follow-journey.html">Follow the Journey</a>
+        <a href="soty-2025.html">SOTY 2025</a>
+        <a href="aoty-2025.html">AOTY 2025</a>
+        <a href="winners.html">The Winners</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="competition-planning.html">2026 Planning</a>
+      </div>
+      <div class="footer-col">
+        <h4>Main Hub</h4>
+        <a href="https://episodebuddies.vercel.app" target="_blank">Episode Buddies</a>
+        <a href="https://episodebuddies.vercel.app/services.html" target="_blank">Services</a>
+        <a href="https://episodebuddies.vercel.app/drive.html" target="_blank">Contest Records</a>
+        <a href="https://episodebuddies.vercel.app/library.html" target="_blank">Buddies Library</a>
+        <p style="margin-top:16px;">episodebuddies3@gmail.com</p>
+        <p>Sun – Sat · 6AM – 10PM GMT+1</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Buddies Support Hub · Community-organized. Not affiliated with Episode Interactive.</span>
+      <span class="footer-tagline">"They are visionaries. They are The Buddies Laureates."</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Toggle
+  function switchComp(comp, btn) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.comp-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + comp).classList.add('active');
+    window.scrollTo({ top: document.querySelector('.page-hero').offsetHeight + document.querySelector('.ticker-wrap').offsetHeight + 64, behavior: 'smooth' });
+  }
+
+  // Nav hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
