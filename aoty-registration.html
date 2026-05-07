@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOTY 2026 Registration Form — Buddies Support Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+<!-- Search & social preview -->
+<meta property="og:image" content="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+<meta property="og:title" content="Episode Buddies">
+<meta property="og:description" content="Uplifting Episode authors through free community services, monthly contests, and the most celebrated annual competitions on the platform.">
+<meta name="theme-color" content="#0F1B33">
+  <style>
+
+    /* =====================
+       RESET & BASE
+    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --deep-navy:  #0F1B33;
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale:  #FDF6E3;
+      --white:      #FFFFFF;
+      --off-white:  #F7F5F0;
+      --text-dark:  #0F1B33;
+      --text-mid:   #4A5568;
+      --text-light: #8896A6;
+      --green:      #16a34a;
+      --red:        #dc2626;
+      --border:     rgba(27, 42, 74, 0.12);
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      color: var(--text-dark);
+      background: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+    em         { font-style: italic; color: var(--gold); }
+    a          { text-decoration: none; color: inherit; }
+    img        { max-width: 100%; display: block; }
+
+
+    /* =====================
+       NAV
+    ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--deep-navy);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+    .nav-logo-text { font-family: var(--serif); font-size: 17px; color: var(--white); letter-spacing: 0.02em; }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); padding: 8px 14px; border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    .nav-cta {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--deep-navy); background: var(--gold); padding: 9px 20px; border-radius: 4px;
+      transition: background 0.2s; margin-left: 12px;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+    }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8); transition: transform 0.3s, opacity 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+    /* =====================
+       MOBILE MENU
+    ===================== */
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2);
+      flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); padding: 12px 16px; border-radius: 4px;
+      transition: color 0.2s, background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+    .mobile-menu .mobile-cta { margin-top: 12px; text-align: center; background: var(--gold); color: var(--deep-navy); font-weight: 600; border-radius: 4px; border-bottom: none; }
+
+
+    /* =====================
+       HERO
+    ===================== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, #1a2d50 100%);
+      padding: 110px 32px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+      height: 48px; background: var(--off-white);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    .page-hero-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 50px; padding: 6px 16px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--white); margin-bottom: 10px; }
+
+    .page-hero-sub { font-family: var(--serif); font-size: 16px; font-style: italic; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+
+    .page-hero p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+
+    /* =====================
+       PROGRESS BAR
+    ===================== */
+    .progress-bar-wrap {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 16px 32px; position: sticky; top: 68px; z-index: 80;
+      box-shadow: 0 2px 8px rgba(15,27,51,0.06);
+    }
+
+    .progress-inner { max-width: 760px; margin: 0 auto; }
+
+    .progress-steps { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+
+    .progress-step { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; position: relative; }
+
+    .progress-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 14px; left: 50%; right: -50%;
+      height: 2px; background: var(--border); z-index: 0;
+    }
+    .progress-step.done:not(:last-child)::after { background: var(--gold); }
+
+    .ps-dot {
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border);
+      background: var(--white); display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--text-light); z-index: 1; transition: all 0.3s;
+    }
+    .progress-step.active .ps-dot { border-color: var(--gold); background: var(--gold); color: var(--deep-navy); }
+    .progress-step.done .ps-dot   { border-color: var(--green); background: var(--green); color: var(--white); }
+
+    .ps-label { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; color: var(--text-light); text-align: center; white-space: nowrap; }
+    .progress-step.active .ps-label { color: var(--gold); }
+    .progress-step.done .ps-label   { color: var(--green); }
+
+
+    /* =====================
+       MAIN LAYOUT
+    ===================== */
+    .page-body { max-width: 760px; margin: 0 auto; padding: 40px 32px 80px; }
+
+
+    /* =====================
+       INTRODUCTION LETTER
+    ===================== */
+    .intro-letter {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(15,27,51,0.06);
+    }
+
+    .intro-letter-header {
+      background: linear-gradient(135deg, var(--deep-navy), #243556);
+      padding: 22px 28px; display: flex; align-items: center; gap: 14px;
+    }
+
+    .intro-letter-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.30);
+      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+
+    .intro-letter-header h2 { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .intro-letter-header p  { font-size: 12px; color: rgba(255,255,255,0.40); }
+
+    .intro-letter-body { padding: 28px; }
+    .intro-letter-body p { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; }
+    .intro-letter-body p:last-child { margin-bottom: 0; }
+
+    .intro-sign { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--navy); margin-top: 8px; }
+    .intro-sign-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+
+    /* =====================
+       FORM SECTIONS
+    ===================== */
+    .form-section {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(15,27,51,0.06);
+      transition: border-color 0.2s;
+    }
+    .form-section:focus-within { border-color: rgba(201,168,76,0.40); box-shadow: 0 2px 12px rgba(201,168,76,0.08); }
+
+    .form-section-header {
+      background: var(--navy); padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    .fsh-badge {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.22);
+      padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+    }
+
+    .form-section-header h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--white); flex: 1; }
+    .form-section-icon { font-size: 19px; }
+
+    .form-section-body { padding: 24px 28px; }
+
+
+    /* =====================
+       FORM FIELDS
+    ===================== */
+    .form-field { margin-bottom: 22px; }
+    .form-field:last-child { margin-bottom: 0; }
+
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+
+    label {
+      display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 7px;
+    }
+
+    .required-star { color: var(--gold); margin-left: 2px; }
+
+    .field-hint { font-size: 12px; color: var(--text-light); margin-bottom: 8px; line-height: 1.55; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%; font-family: var(--sans); font-size: 14px; color: var(--text-dark);
+      background: var(--off-white); border: 1px solid var(--border); border-radius: 8px;
+      padding: 11px 14px; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none; border-color: var(--gold); background: var(--white);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    textarea { resize: vertical; min-height: 120px; line-height: 1.65; }
+    textarea.tall { min-height: 180px; }
+
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238896A6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+    }
+
+    input[type="file"] { padding: 10px 14px; cursor: pointer; }
+    input[type="file"]::file-selector-button {
+      font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--deep-navy); background: var(--gold); border: none; border-radius: 5px;
+      padding: 6px 12px; cursor: pointer; margin-right: 12px; transition: background 0.2s;
+    }
+    input[type="file"]::file-selector-button:hover { background: var(--gold-light); }
+
+    .field-note { font-size: 11px; color: var(--text-light); margin-top: 6px; line-height: 1.5; }
+
+    /* Character counter */
+    .char-count-wrap { position: relative; }
+    .char-count { position: absolute; bottom: 10px; right: 12px; font-size: 11px; color: var(--text-light); pointer-events: none; }
+    .char-count.warn { color: var(--gold); }
+    .char-count.over { color: var(--red); }
+
+
+    /* =====================
+       THEME RADIO CARDS
+    ===================== */
+    .theme-options { display: flex; flex-direction: column; gap: 9px; }
+
+    .theme-option {
+      display: flex; align-items: flex-start; gap: 13px;
+      background: var(--off-white); border: 2px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .theme-option:hover { border-color: rgba(201,168,76,0.40); background: var(--gold-pale); }
+    .theme-option.selected { border-color: var(--gold); background: var(--gold-pale); }
+
+    .theme-option input[type="radio"] { width: 18px; height: 18px; min-width: 18px; accent-color: var(--gold); cursor: pointer; margin-top: 2px; }
+
+    .theme-option-content { flex: 1; }
+    .theme-option-focus { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .theme-option-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .theme-option-sub { font-size: 12px; color: var(--text-light); line-height: 1.55; }
+
+
+    /* =====================
+       TIME PREFERENCE CARDS
+    ===================== */
+    .time-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+    .time-option {
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      background: var(--off-white); border: 2px solid var(--border); border-radius: 10px;
+      padding: 14px 10px; cursor: pointer; transition: all 0.2s; text-align: center;
+    }
+    .time-option:hover { border-color: rgba(201,168,76,0.40); }
+    .time-option.selected { border-color: var(--gold); background: var(--gold-pale); }
+
+    .time-option input[type="radio"] { display: none; }
+
+    .time-icon  { font-size: 22px; }
+    .time-label { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .time-range { font-size: 11px; color: var(--text-light); }
+
+
+    /* =====================
+       CONSENT SECTION
+    ===================== */
+    .rules-link-box {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.25); border-radius: 10px;
+      padding: 16px 20px; margin-bottom: 20px; text-decoration: none; transition: border-color 0.2s;
+    }
+    .rules-link-box:hover { border-color: var(--gold); }
+    .rules-link-icon  { font-size: 26px; flex-shrink: 0; }
+    .rules-link-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .rules-link-sub   { font-size: 12px; color: var(--text-light); }
+    .rules-link-arrow { margin-left: auto; font-size: 16px; color: var(--gold); }
+
+    .consent-checklist { background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; }
+    .consent-checklist-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 12px; }
+
+    .consent-check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-mid); margin-bottom: 9px; line-height: 1.55; }
+    .consent-check-item:last-child { margin-bottom: 0; }
+    .check-bullet { width: 18px; height: 18px; border-radius: 50%; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+
+    .consent-options { display: flex; flex-direction: column; gap: 9px; }
+
+    .consent-option {
+      display: flex; align-items: flex-start; gap: 13px; background: var(--off-white);
+      border: 2px solid var(--border); border-radius: 10px; padding: 14px 18px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .consent-option:hover { border-color: rgba(201,168,76,0.30); }
+    .consent-option.selected-yes { border-color: var(--green); background: rgba(22,163,74,0.05); }
+    .consent-option.selected-no  { border-color: var(--red);   background: rgba(220,38,38,0.04); }
+
+    .consent-option input[type="radio"] { width: 18px; height: 18px; min-width: 18px; accent-color: var(--gold); cursor: pointer; margin-top: 3px; }
+    .consent-label { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .consent-sub   { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+
+    /* =====================
+       CLOSING NOTE
+    ===================== */
+    .closing-note {
+      background: linear-gradient(135deg, var(--deep-navy), #243556);
+      border-radius: 14px; padding: 28px 32px; text-align: center; margin-bottom: 28px;
+    }
+    .closing-icon { font-size: 32px; margin-bottom: 12px; }
+    .closing-note h3 { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .closing-note p  { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 520px; margin: 0 auto; }
+
+
+    /* =====================
+       SUBMIT
+    ===================== */
+    .submit-wrap { text-align: center; }
+
+    .form-submit {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--deep-navy); background: var(--gold); border: none; border-radius: 10px;
+      padding: 16px 40px; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      min-width: 260px;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.30); }
+    .form-submit:active { transform: translateY(0); }
+
+    .submit-note { font-size: 12px; color: var(--text-light); margin-top: 12px; }
+
+
+    /* =====================
+       SUCCESS STATE
+    ===================== */
+    .success-card {
+      display: none; background: var(--white); border: 1px solid rgba(22,163,74,0.25);
+      border-radius: 14px; padding: 48px 32px; text-align: center;
+      box-shadow: 0 2px 12px rgba(22,163,74,0.08);
+    }
+    .success-card.show { display: block; }
+
+    .success-icon-wrap {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(22,163,74,0.10); border: 2px solid rgba(22,163,74,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 32px;
+      margin: 0 auto 20px;
+    }
+
+    .success-card h2 { font-family: var(--serif); font-size: 26px; color: var(--navy); margin-bottom: 12px; }
+    .success-card p  { font-size: 14px; color: var(--text-mid); line-height: 1.75; max-width: 440px; margin: 0 auto 24px; }
+
+    .success-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+    .success-link { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 10px 20px; border-radius: 7px; text-decoration: none; transition: all 0.2s; }
+    .sl-gold { background: var(--gold); color: var(--deep-navy); }
+    .sl-gold:hover { background: var(--gold-light); }
+    .sl-outline { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+    .sl-outline:hover { background: var(--navy); color: var(--white); }
+
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer { background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.20); padding: 56px 48px 32px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; padding-bottom: 40px; margin-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .footer-brand-logo img  { height: 34px; }
+    .footer-brand-logo span { font-family: var(--serif); font-size: 17px; color: var(--white); }
+    .footer-brand-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 22px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.50); font-size: 13px; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .footer-col a  { display: block; font-size: 13px; color: rgba(255,255,255,0.40); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-col p  { font-size: 13px; color: rgba(255,255,255,0.30); line-height: 1.7; margin-bottom: 5px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy    { font-size: 12px; color: rgba(255,255,255,0.20); }
+    .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.45); }
+
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 640px) {
+      nav                 { padding: 0 20px; height: 60px; }
+      .nav-links          { display: none; }
+      .nav-hamburger      { display: flex; }
+      .mobile-menu        { top: 60px; }
+      .progress-bar-wrap  { top: 60px; }
+      .ps-label           { display: none; }
+      .page-hero          { padding: 96px 20px 52px; }
+      .page-body          { padding: 28px 18px 60px; }
+      .form-row-2         { grid-template-columns: 1fr; }
+      .form-section-body  { padding: 20px 18px; }
+      .intro-letter-body  { padding: 22px 20px; }
+      .time-options       { grid-template-columns: 1fr 1fr; }
+      .footer-top         { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom      { flex-direction: column; align-items: flex-start; gap: 6px; }
+      footer              { padding: 40px 20px 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+      <span class="nav-logo-text">Episode Buddies</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://episodebuddies.vercel.app" target="_blank">Main Site</a>
+      <a href="index.html">SOTY &amp; AOTY</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="competition-planning.html">2026 Planning</a>
+      <a href="https://episodebuddies.vercel.app/contact" class="nav-cta">Contact Us</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="https://episodebuddies.vercel.app" target="_blank">Main Site</a>
+    <a href="index.html">SOTY &amp; AOTY</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="competition-planning.html">2026 Planning</a>
+    <a href="https://episodebuddies.vercel.app/contact" class="mobile-cta">Contact Us</a>
+  </div>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Author of the Year 2026
+      </div>
+      <h1>Registration &amp; <em>Profile Form</em></h1>
+      <div class="page-hero-sub">Profile and Consent Form</div>
+      <p>Complete all five sections below to confirm your participation in AOTY 2026.</p>
+    </div>
+  </section>
+
+
+  <!-- ===== PROGRESS BAR ===== -->
+  <div class="progress-bar-wrap">
+    <div class="progress-inner">
+      <div class="progress-steps">
+
+        <div class="progress-step active" id="step-1">
+          <div class="ps-dot">1</div>
+          <div class="ps-label">Basic Info</div>
+        </div>
+
+        <div class="progress-step" id="step-2">
+          <div class="ps-dot">2</div>
+          <div class="ps-label">Author Profile</div>
+        </div>
+
+        <div class="progress-step" id="step-3">
+          <div class="ps-dot">3</div>
+          <div class="ps-label">Impact Message</div>
+        </div>
+
+        <div class="progress-step" id="step-4">
+          <div class="ps-dot">4</div>
+          <div class="ps-label">Q&amp;A Coordination</div>
+        </div>
+
+        <div class="progress-step" id="step-5">
+          <div class="ps-dot">5</div>
+          <div class="ps-label">Rules &amp; Consent</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===== PAGE BODY ===== -->
+  <div class="page-body" id="form-page">
+
+
+    <!-- Introduction letter -->
+    <div class="intro-letter">
+      <div class="intro-letter-header">
+        <div class="intro-letter-icon">&#9997;</div>
+        <div>
+          <h2>A Letter from the Buddies Team</h2>
+          <p>Please read before completing the form</p>
+        </div>
+      </div>
+      <div class="intro-letter-body">
+
+        <p>Dear Author,</p>
+
+        <p>
+          We want to congratulate you on qualifying for this year's prestigious
+          <strong>Story of the Year (SOTY)</strong> and
+          <strong>Author of the Year (AOTY)</strong> competitions, hosted by the Buddies Team!
+          Your remarkable talent has earned you a spot in these celebrated contests,
+          and we are excited to see you shine in the Author of the Year competition
+          taking place this year.
+        </p>
+
+        <p>
+          To ensure your participation, please submit the required information for the
+          AOTY contest by completing this form. Kindly review and provide your consent
+          to the official competition rules before submitting.
+        </p>
+
+        <p>
+          Your entry will help us make the 2026 competition a memorable celebration
+          of storytelling, creativity, and community. We are honoured to have you with us
+          and look forward to showcasing your work and your impact.
+        </p>
+
+        <p>
+          If you have any questions or need assistance, feel free to reach out.
+          Let's make this year's competition one for the books!
+        </p>
+
+        <div class="intro-sign">The Buddies Team</div>
+        <div class="intro-sign-sub">Buddies Support Hub &mdash; SOTY &amp; AOTY 2026</div>
+
+      </div>
+    </div>
+
+
+    <!--
+      =============================================
+      HOW TO LINK THIS FORM TO YOUR EMAIL:
+
+      Option A — Formspree (recommended for Vercel):
+        1. Go to https://formspree.io and create a free account.
+        2. Add a new form. Set the destination to episodebuddies3@gmail.com.
+        3. Copy the form ID shown (e.g. xrgvopqk).
+        4. Replace YOUR_FORM_ID in the action attribute below with that ID.
+        All submissions will be delivered straight to your inbox.
+
+      Option B — Netlify Forms (if hosted on Netlify):
+        Add data-netlify="true" to the form tag and remove the action attribute.
+        Netlify captures all submissions automatically from the dashboard.
+      =============================================
+    -->
+    <form
+      id="aoty-form"
+      action="https://formspree.io/f/mwvyqngv"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="handleFormSubmit(event)"
+    >
+
+
+      <!-- ===== SECTION 1: BASIC INFORMATION ===== -->
+      <div class="form-section" id="section-1">
+
+        <div class="form-section-header">
+          <span class="fsh-badge">Section 1</span>
+          <h3>Basic Information</h3>
+          <span class="form-section-icon">&#128100;</span>
+        </div>
+
+        <div class="form-section-body">
+
+          <div class="form-field">
+            <label for="competition-name">
+              Competition Name <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              The name you would like to use throughout the competition.
+              Your Episode username is generally acceptable.
+            </div>
+            <input
+              type="text"
+              id="competition-name"
+              name="competition_name"
+              placeholder="e.g. Ivy, R. Lewis, AK Gray"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="instagram-handle">
+              Instagram Handle <span class="required-star">*</span>
+            </label>
+            <input
+              type="text"
+              id="instagram-handle"
+              name="instagram_handle"
+              placeholder="@yourhandle"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="author-title">
+              Author Title <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              A short descriptor that will appear under your name on all competition
+              materials. Choose something that reflects your writing identity.
+            </div>
+            <input
+              type="text"
+              id="author-title"
+              name="author_title"
+              placeholder="e.g. Fantasy Writer, Romance Storyteller, Episode Creator"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="email-address">
+              Email Address <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              Used only for competition correspondence. Not shared publicly.
+            </div>
+            <input
+              type="email"
+              id="email-address"
+              name="email_address"
+              placeholder="your@email.com"
+              required
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===== SECTION 2: AUTHOR PROFILE ===== -->
+      <div class="form-section" id="section-2">
+
+        <div class="form-section-header">
+          <span class="fsh-badge">Section 2</span>
+          <h3>Author Profile</h3>
+          <span class="form-section-icon">&#10024;</span>
+        </div>
+
+        <div class="form-section-body">
+
+          <div class="form-field">
+            <label for="author-bio">
+              Tell Us About You <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              This description will appear on your official competition profile for
+              readers and voters. Tell the community who you are as an author —
+              your style, what drives you, and what makes your stories unique.
+            </div>
+            <div class="char-count-wrap">
+              <textarea
+                id="author-bio"
+                name="author_bio"
+                class="tall"
+                placeholder="Describe yourself as an author. What is your writing style? What drives you? What makes your stories stand out? This is how readers will get to know you before they vote..."
+                maxlength="600"
+                oninput="updateCount(this, 'bio-count', 600)"
+                required
+              ></textarea>
+              <span class="char-count" id="bio-count">0 / 600</span>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+
+            <div class="form-field" style="margin-bottom: 0;">
+              <label for="episode-start">
+                When Did You Join Episode? <span class="required-star">*</span>
+              </label>
+              <div class="field-hint">Approximate date or year is fine.</div>
+              <input
+                type="text"
+                id="episode-start"
+                name="episode_start"
+                placeholder="e.g. January 2021, Early 2020"
+                required
+              >
+            </div>
+
+            <div class="form-field" style="margin-bottom: 0;">
+              <label for="favorite-genres">Favourite Genre(s) to Write</label>
+              <input
+                type="text"
+                id="favorite-genres"
+                name="favorite_genres"
+                placeholder="e.g. Romance, Drama, Fantasy"
+              >
+            </div>
+
+          </div>
+
+          <div class="form-field" style="margin-top: 22px;">
+            <label for="pfp-upload">
+              Profile Picture (PFP) <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              Upload a clear, high-quality image of your Episode profile picture.
+              This will be used on all competition materials and results pages.
+            </div>
+            <input
+              type="file"
+              id="pfp-upload"
+              name="profile_picture"
+              accept="image/png, image/jpeg, image/jpg, image/webp"
+            >
+            <div class="field-note">
+              &#128247; Accepted: JPG, PNG, WebP &middot; Max size: 5 MB &middot;
+              Recommended: square image, at least 400 &times; 400 px
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="pfp-url">Or Paste a Link to Your Profile Picture</label>
+            <div class="field-hint">
+              If you prefer, paste a direct image URL, Cloudinary link, or
+              Google Drive share link instead of uploading a file above.
+            </div>
+            <input
+              type="url"
+              id="pfp-url"
+              name="profile_picture_url"
+              placeholder="https://example.com/your-profile-picture.jpg"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===== SECTION 3: COMMUNITY IMPACT MESSAGE ===== -->
+      <div class="form-section" id="section-3">
+
+        <div class="form-section-header">
+          <span class="fsh-badge">Section 3</span>
+          <h3>Community Impact Message</h3>
+          <span class="form-section-icon">&#11088;</span>
+        </div>
+
+        <div class="form-section-body">
+
+          <!-- Theme selection -->
+          <div class="form-field">
+            <label>
+              Choose Your Theme <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              Select the theme that best fits the story you want to tell about your impact.
+              Your message should reflect how you engage with readers, support other authors,
+              and contribute positively to the Episode community.
+            </div>
+
+            <div class="theme-options">
+
+              <label class="theme-option" id="theme-opt-1">
+                <input
+                  type="radio"
+                  name="impact_theme"
+                  value="Your Voice in the Community"
+                  onchange="selectTheme(this)"
+                  required
+                >
+                <div class="theme-option-content">
+                  <div class="theme-option-focus">Theme 1</div>
+                  <div class="theme-option-title">&ldquo;Your Voice in the Community&rdquo;</div>
+                  <div class="theme-option-sub">
+                    How you use your platform &mdash; your influence, your message, and your presence in the Episode space.
+                  </div>
+                </div>
+              </label>
+
+              <label class="theme-option" id="theme-opt-2">
+                <input
+                  type="radio"
+                  name="impact_theme"
+                  value="Beyond the Story: Your Impact"
+                  onchange="selectTheme(this)"
+                >
+                <div class="theme-option-content">
+                  <div class="theme-option-focus">Theme 2</div>
+                  <div class="theme-option-title">&ldquo;Beyond the Story: Your Impact&rdquo;</div>
+                  <div class="theme-option-sub">
+                    What you do outside of writing &mdash; support for others, engagement, and
+                    contributions that go beyond your own stories.
+                  </div>
+                </div>
+              </label>
+
+              <label class="theme-option" id="theme-opt-3">
+                <input
+                  type="radio"
+                  name="impact_theme"
+                  value="Building, Inspiring, Connecting"
+                  onchange="selectTheme(this)"
+                >
+                <div class="theme-option-content">
+                  <div class="theme-option-focus">Theme 3</div>
+                  <div class="theme-option-title">&ldquo;Building, Inspiring, Connecting&rdquo;</div>
+                  <div class="theme-option-sub">
+                    Your community relationships &mdash; how you interact with readers
+                    and fellow authors, and what those connections mean.
+                  </div>
+                </div>
+              </label>
+
+              <label class="theme-option" id="theme-opt-4">
+                <input
+                  type="radio"
+                  name="impact_theme"
+                  value="The Legacy You're Creating"
+                  onchange="selectTheme(this)"
+                >
+                <div class="theme-option-content">
+                  <div class="theme-option-focus">Theme 4</div>
+                  <div class="theme-option-title">&ldquo;The Legacy You&rsquo;re Creating&rdquo;</div>
+                  <div class="theme-option-sub">
+                    Your long-term influence &mdash; what you want to be known for and the
+                    lasting mark you are leaving on the Episode community.
+                  </div>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- The message itself -->
+          <div class="form-field">
+            <label for="impact-message">
+              Your Impact Message <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              Write your message based on the theme you selected above.
+              Be authentic, specific, and reflective. This will be judged by the panel
+              and also shared publicly during the competition.
+            </div>
+            <div class="char-count-wrap">
+              <textarea
+                id="impact-message"
+                name="impact_message"
+                class="tall"
+                placeholder="Share your story. How have you shown up for your readers, your fellow authors, and the Episode community? What do you stand for beyond the pages of your story?..."
+                maxlength="1000"
+                oninput="updateCount(this, 'impact-count', 1000)"
+                required
+              ></textarea>
+              <span class="char-count" id="impact-count">0 / 1000</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===== SECTION 4: Q&A COORDINATION ===== -->
+      <div class="form-section" id="section-4">
+
+        <div class="form-section-header">
+          <span class="fsh-badge">Section 4</span>
+          <h3>Q&amp;A Coordination</h3>
+          <span class="form-section-icon">&#128336;</span>
+        </div>
+
+        <div class="form-section-body">
+
+          <div class="form-row-2">
+
+            <div class="form-field" style="margin-bottom: 0;">
+              <label for="city-timezone">
+                City &amp; Timezone <span class="required-star">*</span>
+              </label>
+              <div class="field-hint">
+                Helps us schedule your Q&amp;A interview at a time that suits you.
+              </div>
+              <input
+                type="text"
+                id="city-timezone"
+                name="city_timezone"
+                placeholder="e.g. London, GMT+1"
+                required
+              >
+            </div>
+
+            <div class="form-field" style="margin-bottom: 0;">
+              <label for="preferred-platform">Preferred Contact Platform</label>
+              <select id="preferred-platform" name="preferred_platform">
+                <option value="" disabled selected>Select a platform&hellip;</option>
+                <option value="Instagram DM">Instagram DM</option>
+                <option value="Email">Email</option>
+                <option value="Threads">Threads</option>
+                <option value="No preference">No preference</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Time preference cards -->
+          <div class="form-field" style="margin-top: 22px;">
+            <label>
+              Preferred Time of Day for Q&amp;A <span class="required-star">*</span>
+            </label>
+            <div class="field-hint">
+              Choose the window that works best for you.
+              All times are relative to your local timezone above.
+            </div>
+            <div class="time-options">
+
+              <label class="time-option" id="time-morning">
+                <input type="radio" name="preferred_time" value="Morning (6 AM – 12 PM)" onchange="selectTime(this)" required>
+                <span class="time-icon">&#127774;</span>
+                <span class="time-label">Morning</span>
+                <span class="time-range">6 AM &ndash; 12 PM</span>
+              </label>
+
+              <label class="time-option" id="time-afternoon">
+                <input type="radio" name="preferred_time" value="Afternoon (12 PM – 6 PM)" onchange="selectTime(this)">
+                <span class="time-icon">&#127780;</span>
+                <span class="time-label">Afternoon</span>
+                <span class="time-range">12 PM &ndash; 6 PM</span>
+              </label>
+
+              <label class="time-option" id="time-evening">
+                <input type="radio" name="preferred_time" value="Evening (6 PM – 10 PM)" onchange="selectTime(this)">
+                <span class="time-icon">&#127769;</span>
+                <span class="time-label">Evening</span>
+                <span class="time-range">6 PM &ndash; 10 PM</span>
+              </label>
+
+              <label class="time-option" id="time-flexible">
+                <input type="radio" name="preferred_time" value="Flexible / Any Time" onchange="selectTime(this)">
+                <span class="time-icon">&#128197;</span>
+                <span class="time-label">Flexible</span>
+                <span class="time-range">Any time works</span>
+              </label>
+
+              <label class="time-option" id="time-weekends">
+                <input type="radio" name="preferred_time" value="Weekends Only" onchange="selectTime(this)">
+                <span class="time-icon">&#127867;</span>
+                <span class="time-label">Weekends</span>
+                <span class="time-range">Sat &amp; Sun only</span>
+              </label>
+
+              <label class="time-option" id="time-custom">
+                <input type="radio" name="preferred_time" value="Custom (see notes)" onchange="selectTime(this)">
+                <span class="time-icon">&#128221;</span>
+                <span class="time-label">Custom</span>
+                <span class="time-range">See notes below</span>
+              </label>
+
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="availability-notes">Additional Availability Notes</label>
+            <textarea
+              id="availability-notes"
+              name="availability_notes"
+              placeholder="Any specific dates or times that do not work, or custom availability details you want us to know..."
+            ></textarea>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===== SECTION 5: RULES & CONSENT ===== -->
+      <div class="form-section" id="section-5">
+
+        <div class="form-section-header">
+          <span class="fsh-badge">Section 5</span>
+          <h3>Competition Rules &amp; Consent</h3>
+          <span class="form-section-icon">&#9878;</span>
+        </div>
+
+        <div class="form-section-body">
+
+          <!-- Rules document link -->
+          <!--
+            Replace the href="#" below with the actual URL of your
+            official rules document (Google Doc, Notion page, etc.)
+          -->
+          <a href="https://docs.google.com/document/d/10AF_AXAwAJ3VtTEVDMEvbaspmk7IfaOcywdsQfrEbxg/edit?usp=sharing" class="rules-link-box" target="_blank">
+            <span class="rules-link-icon">&#128209;</span>
+            <div>
+              <div class="rules-link-title">Official AOTY 2026 Competition Rules</div>
+              <div class="rules-link-sub">
+                Read the full rules document before providing your consent.
+                Replace this link with your actual rules document URL.
+              </div>
+            </div>
+            <span class="rules-link-arrow">&#8599;</span>
+          </a>
+
+          <!-- What they're agreeing to -->
+          <div class="consent-checklist">
+            <div class="consent-checklist-title">By consenting, you confirm that</div>
+
+            <div class="consent-check-item">
+              <div class="check-bullet">&#10003;</div>
+              You have read and understood the official AOTY 2026 competition rules.
+            </div>
+
+            <div class="consent-check-item">
+              <div class="check-bullet">&#10003;</div>
+              All information provided in this form is accurate and truthful.
+            </div>
+
+            <div class="consent-check-item">
+              <div class="check-bullet">&#10003;</div>
+              You agree to participate fully in the AOTY process, including the Q&amp;A round,
+              all voting events, and any additional requirements set by the Buddies Team.
+            </div>
+
+            <div class="consent-check-item">
+              <div class="check-bullet">&#10003;</div>
+              You grant the Buddies Team permission to use your submitted profile information,
+              bio, and image on official competition materials and public posts.
+            </div>
+
+            <div class="consent-check-item">
+              <div class="check-bullet">&#10003;</div>
+              You understand that withdrawing from the competition after registration
+              may affect your eligibility in future seasons.
+            </div>
+
+          </div>
+
+          <!-- Consent answer -->
+          <div style="margin-bottom: 8px;">
+            <label>
+              Consent Agreement <span class="required-star">*</span>
+            </label>
+          </div>
+          <div class="consent-options">
+
+            <label class="consent-option" id="consent-yes">
+              <input
+                type="radio"
+                name="consent"
+                value="Yes, I Consent"
+                onchange="selectConsent(this, 'yes')"
+                required
+              >
+              <div>
+                <div class="consent-label">&#9989; Yes, I Consent</div>
+                <div class="consent-sub">
+                  I have read the rules, confirm all information is accurate,
+                  and agree to participate fully in AOTY 2026.
+                </div>
+              </div>
+            </label>
+
+            <label class="consent-option" id="consent-no">
+              <input
+                type="radio"
+                name="consent"
+                value="No, I Do Not Consent"
+                onchange="selectConsent(this, 'no')"
+              >
+              <div>
+                <div class="consent-label">&#10060; No, I Do Not Consent</div>
+                <div class="consent-sub">
+                  I am not ready to submit or I do not agree to the competition rules.
+                </div>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- Optional additional notes -->
+          <div class="form-field" style="margin-top: 22px;">
+            <label for="additional-notes">Anything Else You Would Like Us to Know</label>
+            <textarea
+              id="additional-notes"
+              name="additional_notes"
+              placeholder="Any additional comments, questions, or information you would like to share with the Buddies Team..."
+            ></textarea>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Closing note -->
+      <div class="closing-note">
+        <div class="closing-icon">&#127942;</div>
+        <h3>Thank You for Being Part of This</h3>
+        <p>
+          Your creativity, dedication, and impact are what make this community thrive.
+          We look forward to celebrating your journey and achievements throughout
+          the 2026 AOTY competition.
+        </p>
+      </div>
+
+      <!-- Submit button -->
+      <div class="submit-wrap">
+        <button type="submit" class="form-submit">
+          <span>Submit Registration</span>
+          <span>&#10148;</span>
+        </button>
+        <div class="submit-note">
+          &#128274; Your information is kept private and used only for competition purposes.
+        </div>
+      </div>
+
+    </form>
+
+
+    <!-- ===== SUCCESS STATE (shown after submission) ===== -->
+    <div class="success-card" id="success-card">
+      <div class="success-icon-wrap">&#127942;</div>
+      <h2>Registration Received!</h2>
+      <p>
+        Thank you for completing your AOTY 2026 registration. The Buddies Team has
+        received your profile and will be in touch regarding your Q&amp;A session
+        and next steps. We are so excited to have you competing this season.
+      </p>
+      <div class="success-links">
+        <a href="competition-planning.html" class="success-link sl-gold">View 2026 Planning</a>
+        <a href="how-it-works.html"         class="success-link sl-outline">How It Works</a>
+        <a href="index.html"                class="success-link sl-outline">Back to Home</a>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- end page-body -->
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-logo">
+            <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+            <span>Episode Buddies</span>
+          </div>
+          <p class="footer-brand-desc">
+            Uplifting Episode authors through free community services,
+            monthly contests, and the most celebrated annual competitions on the platform.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/episode_buddies/" target="_blank">IG</a>
+            <a href="https://www.threads.net/@episode_buddies"   target="_blank">TH</a>
+            <a href="mailto:episodebuddies3@gmail.com">&#9993;</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Main Site</h4>
+          <a href="https://episodebuddies.vercel.app"                    target="_blank">Home</a>
+          <a href="https://episodebuddies.vercel.app/about"              target="_blank">About</a>
+          <a href="https://episodebuddies.vercel.app/services"           target="_blank">Services</a>
+          <a href="https://episodebuddies.vercel.app/contest"            target="_blank">Monthly Contest</a>
+          <a href="https://episodebuddies.vercel.app/contact"            target="_blank">Contact Us</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>SOTY &amp; AOTY Site</h4>
+          <a href="index.html">Home</a>
+          <a href="soty-2025.html">SOTY 2025</a>
+          <a href="aoty-2025.html">AOTY 2025</a>
+          <a href="hall-of-fame.html">Hall of Fame</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="competition-planning.html">2026 Planning</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Buddies Support Hub &middot; All rights reserved.</span>
+        <span class="footer-tagline">&ldquo;Where great stories find the spotlight they deserve.&rdquo;</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+
+    // ─── Hamburger nav ───────────────────────────────────────
+    var hamburger  = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+
+    // ─── Character count ─────────────────────────────────────
+    function updateCount(el, countId, max) {
+      var len     = el.value.length;
+      var counter = document.getElementById(countId);
+      counter.textContent = len + ' / ' + max;
+      counter.className   = 'char-count';
+      if (len > max * 0.90) counter.classList.add('warn');
+      if (len >= max)       counter.classList.add('over');
+    }
+
+
+    // ─── Theme card selection ─────────────────────────────────
+    function selectTheme(radio) {
+      for (var i = 1; i <= 4; i++) {
+        var opt = document.getElementById('theme-opt-' + i);
+        if (opt) opt.classList.remove('selected');
+      }
+      if (radio.parentElement) {
+        radio.parentElement.classList.add('selected');
+      }
+    }
+
+
+    // ─── Time card selection ──────────────────────────────────
+    var timeIds = [
+      'time-morning', 'time-afternoon', 'time-evening',
+      'time-flexible', 'time-weekends', 'time-custom'
+    ];
+
+    function selectTime(radio) {
+      timeIds.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.classList.remove('selected');
+      });
+      if (radio.parentElement) {
+        radio.parentElement.classList.add('selected');
+      }
+    }
+
+
+    // ─── Consent card selection ───────────────────────────────
+    function selectConsent(radio, choice) {
+      var yes = document.getElementById('consent-yes');
+      var no  = document.getElementById('consent-no');
+      yes.classList.remove('selected-yes');
+      no.classList.remove('selected-no');
+
+      if (choice === 'yes') {
+        yes.classList.add('selected-yes');
+      } else {
+        no.classList.add('selected-no');
+      }
+    }
+
+
+    // ─── Scroll-based progress tracker ───────────────────────
+    var sectionIds = ['section-1', 'section-2', 'section-3', 'section-4', 'section-5'];
+    var stepIds    = ['step-1',    'step-2',    'step-3',    'step-4',    'step-5'];
+
+    function updateProgress() {
+      var scrollY      = window.scrollY + 200;
+      var activeIndex  = 0;
+
+      sectionIds.forEach(function (id, i) {
+        var el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) {
+          activeIndex = i;
+        }
+      });
+
+      stepIds.forEach(function (id, i) {
+        var step = document.getElementById(id);
+        if (!step) return;
+        var dot = step.querySelector('.ps-dot');
+        step.classList.remove('active', 'done');
+
+        if (i < activeIndex) {
+          step.classList.add('done');
+          dot.textContent = '✓';
+        } else if (i === activeIndex) {
+          step.classList.add('active');
+          dot.textContent = String(i + 1);
+        } else {
+          dot.textContent = String(i + 1);
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+
+
+    // ─── Form submit handler ──────────────────────────────────
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      var form    = document.getElementById('aoty-form');
+      var action  = form.action;
+      var consent = form.querySelector('input[name="consent"]:checked');
+
+      // Block submission if no consent
+      if (!consent || consent.value !== 'Yes, I Consent') {
+        alert(
+          'Please select "Yes, I Consent" to submit your registration.\n\n' +
+          'If you have questions about the rules, contact us before submitting.'
+        );
+        return;
+      }
+
+      // ── Fallback: Formspree ID not set yet — use mailto ──
+      if (action.includes('YOUR_FORM_ID')) {
+        var name    = document.getElementById('competition-name').value;
+        var handle  = document.getElementById('instagram-handle').value;
+        var title   = document.getElementById('author-title').value;
+        var theme   = (form.querySelector('input[name="impact_theme"]:checked') || {}).value || 'Not selected';
+        var message = document.getElementById('impact-message').value;
+        var city    = document.getElementById('city-timezone').value;
+        var time    = (form.querySelector('input[name="preferred_time"]:checked') || {}).value || 'Not selected';
+
+        var body = encodeURIComponent(
+          'Competition Name: '  + name    + '\n' +
+          'Instagram Handle: '  + handle  + '\n' +
+          'Author Title: '      + title   + '\n' +
+          'City / Timezone: '   + city    + '\n' +
+          'Preferred Q&A Time: '+ time    + '\n' +
+          'Impact Theme: '      + theme   + '\n\n' +
+          'Impact Message:\n'   + message
+        );
+
+        window.location.href =
+          'mailto:episodebuddies3@gmail.com' +
+          '?subject=' + encodeURIComponent('[AOTY 2026 Registration] ' + name) +
+          '&body='    + body;
+
+        showSuccess();
+        return;
+      }
+
+      // ── Formspree submission ──
+      var formData = new FormData(form);
+
+      fetch(action, {
+        method:  'POST',
+        body:    formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (res) {
+        if (res.ok) {
+          showSuccess();
+        } else {
+          alert(
+            'Something went wrong with the submission.\n' +
+            'Please email your registration directly to episodebuddies3@gmail.com'
+          );
+        }
+      })
+      .catch(function () {
+        alert(
+          'A connection error occurred.\n' +
+          'Please email your registration directly to episodebuddies3@gmail.com'
+        );
+      });
+    }
+
+
+    // ─── Show success state ───────────────────────────────────
+    function showSuccess() {
+      document.getElementById('aoty-form').style.display = 'none';
+      var card = document.getElementById('success-card');
+      card.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Mark all progress steps complete
+      stepIds.forEach(function (id) {
+        var step = document.getElementById(id);
+        if (!step) return;
+        step.classList.remove('active');
+        step.classList.add('done');
+        step.querySelector('.ps-dot').textContent = '✓';
+      });
+    }
+
+  </script>
+
+</body>
+</html>
