@@ -643,27 +643,17 @@
 
     <!--
       =============================================
-      HOW TO LINK THIS FORM TO YOUR EMAIL:
-
-      Option A — Formspree (recommended for Vercel):
-        1. Go to https://formspree.io and create a free account.
-        2. Add a new form. Set the destination to episodebuddies3@gmail.com.
-        3. Copy the form ID shown (e.g. xrgvopqk).
-        4. Replace YOUR_FORM_ID in the action attribute below with that ID.
-        All submissions will be delivered straight to your inbox.
-
-      Option B — Netlify Forms (if hosted on Netlify):
-        Add data-netlify="true" to the form tag and remove the action attribute.
-        Netlify captures all submissions automatically from the dashboard.
+      FORM BACKEND — Web3Forms
+      Submissions are delivered to episodebuddies3@gmail.com.
+      Access key is set via the hidden input below.
+      File uploads are supported natively (no extra config needed).
       =============================================
     -->
     <form
       id="aoty-form"
-      action="https://forminit.com/f/mle9trdfnzg"
       method="POST"
       enctype="multipart/form-data"
     >
-
 
       <!-- ===== SECTION 1: BASIC INFORMATION ===== -->
       <div class="form-section" id="section-1">
@@ -806,23 +796,37 @@
           </div>
 
           <div class="form-field" style="margin-top: 22px;">
-            <label for="pfp-upload">
-              Profile Picture (PFP) <span class="required-star">*</span>
+            <label for="pfp-url">
+              Profile Picture Link <span class="required-star">*</span>
             </label>
-            <div class="field-hint">
-              Upload a clear, high-quality image of your Episode profile picture.
-              This will be used on all competition materials and results pages.
-            </div>
-            <input
-              type="file"
-              id="pfp-upload"
-              name="profile_picture"
-              accept="image/png, image/jpeg, image/jpg, image/webp"
-            >
-            <div class="field-note">
-              &#128247; Accepted: JPG, PNG, WebP &middot; Max size: 5 MB &middot;
-              Recommended: square image, at least 400 &times; 400 px
-            </div>
+          <div class="field-hint">
+            Upload your profile picture to any image hosting service and paste the
+            shareable link below. Here are the easiest options:
+          </div>
+
+          <div class="field-note" style="margin-bottom: 10px; line-height: 1.8;">
+            &#128230; <strong>Google Drive:</strong> Upload your image &rarr; right-click it &rarr;
+            <em>Share</em> &rarr; set access to <em>"Anyone with the link"</em> &rarr; copy and paste the link.<br>
+            &#127781; <strong>Cloudinary:</strong> Go to <a href="https://cloudinary.com" target="_blank" style="color: var(--gold);">cloudinary.com</a>,
+            create a free account &rarr; upload your image &rarr; click the image &rarr; copy the <em>URL</em> shown.<br>
+            &#128247; <strong>ImgBB:</strong> Go to <a href="https://imgbb.com" target="_blank" style="color: var(--gold);">imgbb.com</a>
+            (no account needed) &rarr; upload your image &rarr; copy the <em>Direct link</em>.<br>
+            &#128172; <strong>Instagram:</strong> If your profile is public, you may paste your
+            Instagram profile URL and we will use your profile photo.
+          </div>
+
+          <input
+            type="url"
+            id="pfp-url"
+            name="profile_picture_url"
+            placeholder="https://drive.google.com/... or https://res.cloudinary.com/..."
+            required
+          >
+          <div class="field-note">
+            &#9888;&#65039; Make sure the link is publicly accessible —
+            private or restricted links cannot be used on competition materials.
+            Recommended: square image, at least 400 &times; 400 px.
+          </div>
           </div>
 
           <div class="form-field">
@@ -1410,53 +1414,43 @@
   }
 
 
-  // ─── Form submit handler ──────────────────────────────────
-  document.getElementById('aoty-form').addEventListener('submit', function (e) {
+  // ─── Form submit handler (Web3Forms) ────────────────────────────
+  document.getElementById('aoty-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     var form    = this;
     var consent = form.querySelector('input[name="consent"]:checked');
 
-    // Block if no consent
     if (!consent || consent.value !== 'Yes, I Consent') {
-      alert(
-        'Please select "Yes, I Consent" to submit your registration.\n\n' +
-        'If you have questions about the rules, contact us before submitting.'
-      );
+      alert('Please select "Yes, I Consent" to submit your registration.\n\nIf you have questions about the rules, contact us before submitting.');
       return;
     }
 
-    // Disable button to prevent double-submit
     var btn = form.querySelector('.form-submit');
     btn.disabled    = true;
     btn.textContent = 'Submitting…';
 
-    // Submit to Forminit (supports multipart/file uploads)
-    var formData = new FormData(form);
+    try {
+      var formData = new FormData(form);
+      var response = await fetch('https://formspree.io/f/mwvyqngv', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      var data = await response.json();
 
-    fetch('https://forminit.com/f/mle9trdfnzg', {
-      method: 'POST',
-      body:   formData
-      // Do NOT set Content-Type header — browser sets it with the boundary automatically
-    })
-    .then(function (res) {
-      if (res.ok) {
+      if (data.ok) {
         showSuccess();
       } else {
+        alert('Submission failed: ' + (data.message || 'Please try again.'));
         btn.disabled    = false;
         btn.textContent = 'Submit Registration';
-        alert(
-          'Something went wrong. Please try again or email us directly at episodebuddies3@gmail.com'
-        );
       }
-    })
-    .catch(function () {
+    } catch (err) {
+      alert('An error occurred. Please check your connection and try again.');
       btn.disabled    = false;
       btn.textContent = 'Submit Registration';
-      alert(
-        'A connection error occurred. Please try again or email us directly at episodebuddies3@gmail.com'
-      );
-    });
+    }
   });
 
 </script>
