@@ -600,7 +600,7 @@
       <div class="intro-letter-header">
         <div class="intro-letter-icon">&#9997;</div>
         <div>
-          <h2>A Letter from the Buddies Team</h2>
+          <h2>A Message from the Buddies Team</h2>
           <p>Please read before completing the form</p>
         </div>
       </div>
@@ -659,15 +659,10 @@
     -->
     <form
       id="aoty-form"
-      data-netlify="true"
+      action="https://forminit.com/f/mle9trdfnzg"
       method="POST"
       enctype="multipart/form-data"
-      onsubmit="handleFormSubmit(event)"
     >
-
-      <!-- Netlify form handling -->
-      <input type="hidden" name="form-name" value="aoty-registration" />
-      <div data-netlify-recaptcha="true"></div>
 
 
       <!-- ===== SECTION 1: BASIC INFORMATION ===== -->
@@ -693,7 +688,7 @@
               type="text"
               id="competition-name"
               name="competition_name"
-              placeholder="e.g. Tali, Xavier, R. Lewis"
+              placeholder="e.g. Tali, R. Lewis, Xavier"
               required
             >
           </div>
@@ -1301,146 +1296,170 @@
   <!-- ===== SCRIPTS ===== -->
   <script>
 
-    // ─── Hamburger nav ───────────────────────────────────────
-    var hamburger  = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobile-menu');
+  // ─── Hamburger nav ───────────────────────────────────────
+  var hamburger  = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
 
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+
+  // ─── Character count ─────────────────────────────────────
+  function updateCount(el, countId, max) {
+    var len     = el.value.length;
+    var counter = document.getElementById(countId);
+    counter.textContent = len + ' / ' + max;
+    counter.className   = 'char-count';
+    if (len > max * 0.90) counter.classList.add('warn');
+    if (len >= max)       counter.classList.add('over');
+  }
+
+
+  // ─── Theme card selection ─────────────────────────────────
+  function selectTheme(radio) {
+    for (var i = 1; i <= 4; i++) {
+      var opt = document.getElementById('theme-opt-' + i);
+      if (opt) opt.classList.remove('selected');
+    }
+    if (radio.parentElement) {
+      radio.parentElement.classList.add('selected');
+    }
+  }
+
+
+  // ─── Time card selection ──────────────────────────────────
+  var timeIds = [
+    'time-morning', 'time-afternoon', 'time-evening',
+    'time-flexible', 'time-weekends', 'time-custom'
+  ];
+
+  function selectTime(radio) {
+    timeIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('selected');
+    });
+    if (radio.parentElement) {
+      radio.parentElement.classList.add('selected');
+    }
+  }
+
+
+  // ─── Consent card selection ───────────────────────────────
+  function selectConsent(radio, choice) {
+    var yes = document.getElementById('consent-yes');
+    var no  = document.getElementById('consent-no');
+    yes.classList.remove('selected-yes');
+    no.classList.remove('selected-no');
+    if (choice === 'yes') {
+      yes.classList.add('selected-yes');
+    } else {
+      no.classList.add('selected-no');
+    }
+  }
+
+
+  // ─── Scroll-based progress tracker ───────────────────────
+  var sectionIds = ['section-1', 'section-2', 'section-3', 'section-4', 'section-5'];
+  var stepIds    = ['step-1',    'step-2',    'step-3',    'step-4',    'step-5'];
+
+  function updateProgress() {
+    var scrollY     = window.scrollY + 200;
+    var activeIndex = 0;
+
+    sectionIds.forEach(function (id, i) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) activeIndex = i;
     });
 
-
-    // ─── Character count ─────────────────────────────────────
-    function updateCount(el, countId, max) {
-      var len     = el.value.length;
-      var counter = document.getElementById(countId);
-      counter.textContent = len + ' / ' + max;
-      counter.className   = 'char-count';
-      if (len > max * 0.90) counter.classList.add('warn');
-      if (len >= max)       counter.classList.add('over');
-    }
-
-
-    // ─── Theme card selection ─────────────────────────────────
-    function selectTheme(radio) {
-      for (var i = 1; i <= 4; i++) {
-        var opt = document.getElementById('theme-opt-' + i);
-        if (opt) opt.classList.remove('selected');
-      }
-      if (radio.parentElement) {
-        radio.parentElement.classList.add('selected');
-      }
-    }
-
-
-    // ─── Time card selection ──────────────────────────────────
-    var timeIds = [
-      'time-morning', 'time-afternoon', 'time-evening',
-      'time-flexible', 'time-weekends', 'time-custom'
-    ];
-
-    function selectTime(radio) {
-      timeIds.forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.classList.remove('selected');
-      });
-      if (radio.parentElement) {
-        radio.parentElement.classList.add('selected');
-      }
-    }
-
-
-    // ─── Consent card selection ───────────────────────────────
-    function selectConsent(radio, choice) {
-      var yes = document.getElementById('consent-yes');
-      var no  = document.getElementById('consent-no');
-      yes.classList.remove('selected-yes');
-      no.classList.remove('selected-no');
-
-      if (choice === 'yes') {
-        yes.classList.add('selected-yes');
-      } else {
-        no.classList.add('selected-no');
-      }
-    }
-
-
-    // ─── Scroll-based progress tracker ───────────────────────
-    var sectionIds = ['section-1', 'section-2', 'section-3', 'section-4', 'section-5'];
-    var stepIds    = ['step-1',    'step-2',    'step-3',    'step-4',    'step-5'];
-
-    function updateProgress() {
-      var scrollY      = window.scrollY + 200;
-      var activeIndex  = 0;
-
-      sectionIds.forEach(function (id, i) {
-        var el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) {
-          activeIndex = i;
-        }
-      });
-
-      stepIds.forEach(function (id, i) {
-        var step = document.getElementById(id);
-        if (!step) return;
-        var dot = step.querySelector('.ps-dot');
-        step.classList.remove('active', 'done');
-
-        if (i < activeIndex) {
-          step.classList.add('done');
-          dot.textContent = '✓';
-        } else if (i === activeIndex) {
-          step.classList.add('active');
-          dot.textContent = String(i + 1);
-        } else {
-          dot.textContent = String(i + 1);
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateProgress);
-    updateProgress();
-
-
-    // ─── Form submit handler ──────────────────────────────────
-    function handleFormSubmit(e) {
-      var form    = document.getElementById('aoty-form');
-      var consent = form.querySelector('input[name="consent"]:checked');
-
-      // Block submission if no consent
-      if (!consent || consent.value !== 'Yes, I Consent') {
-        e.preventDefault();
-        alert(
-          'Please select "Yes, I Consent" to submit your registration.\n\n' +
-          'If you have questions about the rules, contact us before submitting.'
-        );
-        return;
-      }
-
-      // If consent is yes, allow form to submit to Netlify (don't prevent default)
-      // The form will post to Netlify automatically
-    }
-
-
-    // ─── Show success state ───────────────────────────────────
-    function showSuccess() {
-      document.getElementById('aoty-form').style.display = 'none';
-      var card = document.getElementById('success-card');
-      card.classList.add('show');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Mark all progress steps complete
-      stepIds.forEach(function (id) {
-        var step = document.getElementById(id);
-        if (!step) return;
-        step.classList.remove('active');
+    stepIds.forEach(function (id, i) {
+      var step = document.getElementById(id);
+      if (!step) return;
+      var dot = step.querySelector('.ps-dot');
+      step.classList.remove('active', 'done');
+      if (i < activeIndex) {
         step.classList.add('done');
-        step.querySelector('.ps-dot').textContent = '✓';
-      });
+        dot.textContent = '✓';
+      } else if (i === activeIndex) {
+        step.classList.add('active');
+        dot.textContent = String(i + 1);
+      } else {
+        dot.textContent = String(i + 1);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+
+  // ─── Show success state ───────────────────────────────────
+  function showSuccess() {
+    document.getElementById('aoty-form').style.display = 'none';
+    var card = document.getElementById('success-card');
+    card.classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    stepIds.forEach(function (id) {
+      var step = document.getElementById(id);
+      if (!step) return;
+      step.classList.remove('active');
+      step.classList.add('done');
+      step.querySelector('.ps-dot').textContent = '✓';
+    });
+  }
+
+
+  // ─── Form submit handler ──────────────────────────────────
+  document.getElementById('aoty-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var form    = this;
+    var consent = form.querySelector('input[name="consent"]:checked');
+
+    // Block if no consent
+    if (!consent || consent.value !== 'Yes, I Consent') {
+      alert(
+        'Please select "Yes, I Consent" to submit your registration.\n\n' +
+        'If you have questions about the rules, contact us before submitting.'
+      );
+      return;
     }
 
-  </script>
+    // Disable button to prevent double-submit
+    var btn = form.querySelector('.form-submit');
+    btn.disabled    = true;
+    btn.textContent = 'Submitting…';
+
+    // Submit to Forminit (supports multipart/file uploads)
+    var formData = new FormData(form);
+
+    fetch('https://forminit.com/f/mle9trdfnzg', {
+      method: 'POST',
+      body:   formData
+      // Do NOT set Content-Type header — browser sets it with the boundary automatically
+    })
+    .then(function (res) {
+      if (res.ok) {
+        showSuccess();
+      } else {
+        btn.disabled    = false;
+        btn.textContent = 'Submit Registration';
+        alert(
+          'Something went wrong. Please try again or email us directly at episodebuddies3@gmail.com'
+        );
+      }
+    })
+    .catch(function () {
+      btn.disabled    = false;
+      btn.textContent = 'Submit Registration';
+      alert(
+        'A connection error occurred. Please try again or email us directly at episodebuddies3@gmail.com'
+      );
+    });
+  });
+
+</script>
 
 </body>
 </html>
