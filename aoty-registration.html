@@ -659,11 +659,15 @@
     -->
     <form
       id="aoty-form"
-      action="https://formspree.io/f/mwvyqngv"
+      data-netlify="true"
       method="POST"
       enctype="multipart/form-data"
       onsubmit="handleFormSubmit(event)"
     >
+
+      <!-- Netlify form handling -->
+      <input type="hidden" name="form-name" value="aoty-registration" />
+      <div data-netlify-recaptcha="true"></div>
 
 
       <!-- ===== SECTION 1: BASIC INFORMATION ===== -->
@@ -689,7 +693,7 @@
               type="text"
               id="competition-name"
               name="competition_name"
-              placeholder="e.g. Ivy, R. Lewis, AK Gray"
+              placeholder="e.g. Tali, Xavier, R. Lewis"
               required
             >
           </div>
