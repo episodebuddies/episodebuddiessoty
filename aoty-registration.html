@@ -1405,14 +1405,12 @@
 
     // ─── Form submit handler ──────────────────────────────────
     function handleFormSubmit(e) {
-      e.preventDefault();
-
       var form    = document.getElementById('aoty-form');
-      var action  = form.action;
       var consent = form.querySelector('input[name="consent"]:checked');
 
       // Block submission if no consent
       if (!consent || consent.value !== 'Yes, I Consent') {
+        e.preventDefault();
         alert(
           'Please select "Yes, I Consent" to submit your registration.\n\n' +
           'If you have questions about the rules, contact us before submitting.'
@@ -1420,59 +1418,9 @@
         return;
       }
 
-      // ── Fallback: Formspree ID not set yet — use mailto ──
-      if (action.includes('YOUR_FORM_ID')) {
-        var name    = document.getElementById('competition-name').value;
-        var handle  = document.getElementById('instagram-handle').value;
-        var title   = document.getElementById('author-title').value;
-        var theme   = (form.querySelector('input[name="impact_theme"]:checked') || {}).value || 'Not selected';
-        var message = document.getElementById('impact-message').value;
-        var city    = document.getElementById('city-timezone').value;
-        var time    = (form.querySelector('input[name="preferred_time"]:checked') || {}).value || 'Not selected';
-
-        var body = encodeURIComponent(
-          'Competition Name: '  + name    + '\n' +
-          'Instagram Handle: '  + handle  + '\n' +
-          'Author Title: '      + title   + '\n' +
-          'City / Timezone: '   + city    + '\n' +
-          'Preferred Q&A Time: '+ time    + '\n' +
-          'Impact Theme: '      + theme   + '\n\n' +
-          'Impact Message:\n'   + message
-        );
-
-        window.location.href =
-          'mailto:episodebuddies3@gmail.com' +
-          '?subject=' + encodeURIComponent('[AOTY 2026 Registration] ' + name) +
-          '&body='    + body;
-
-        showSuccess();
-        return;
-      }
-
-      // ── Formspree submission ──
-      var formData = new FormData(form);
-
-      fetch(action, {
-        method:  'POST',
-        body:    formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function (res) {
-        if (res.ok) {
-          showSuccess();
-        } else {
-          alert(
-            'Something went wrong with the submission.\n' +
-            'Please email your registration directly to episodebuddies3@gmail.com'
-          );
-        }
-      })
-      .catch(function () {
-        alert(
-          'A connection error occurred.\n' +
-          'Please email your registration directly to episodebuddies3@gmail.com'
-        );
-      });
+      // If consent is yes, allow form to submit to Netlify (don't prevent default)
+      // The form will post to Netlify automatically
+    }
     }
 
 
