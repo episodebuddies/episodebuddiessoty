@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Rules & Guidelines — Buddies SOTY & AOTY 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <link rel="apple-touch-icon" href="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <meta property="og:image" content="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png">
+  <meta property="og:title" content="Official Rules & Guidelines — Buddies SOTY & AOTY 2026">
+  <meta property="og:description" content="The complete official rules and guidelines for the Buddies Support Hub Story of the Year and Author of the Year competitions.">
+  <meta name="theme-color" content="#0F1B33">
+  <style>
+
+    /* =====================
+       RESET & BASE
+    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --deep-navy:  #0F1B33;
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale:  #FDF6E3;
+      --white:      #FFFFFF;
+      --off-white:  #F7F5F0;
+      --text-dark:  #0F1B33;
+      --text-mid:   #4A5568;
+      --text-light: #8896A6;
+      --green:      #16a34a;
+      --red:        #dc2626;
+      --amber:      #d97706;
+      --border:     rgba(27, 42, 74, 0.12);
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      color: var(--text-dark);
+      background: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+    em         { font-style: italic; color: var(--gold); }
+    a          { text-decoration: none; color: inherit; }
+    img        { max-width: 100%; display: block; }
+
+
+    /* =====================
+       NAV
+    ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--deep-navy);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: 36px; object-fit: contain; }
+    .nav-logo-text { font-family: var(--serif); font-size: 17px; color: var(--white); letter-spacing: 0.02em; }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); padding: 8px 14px; border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.08); }
+
+    .nav-cta {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--deep-navy); background: var(--gold); padding: 9px 20px; border-radius: 4px;
+      transition: background 0.2s; margin-left: 12px;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 8px; background: none; border: none;
+    }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.8); transition: transform 0.3s, opacity 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+    /* =====================
+       MOBILE MENU
+    ===================== */
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--deep-navy); border-bottom: 1px solid rgba(201,168,76,0.2);
+      flex-direction: column; padding: 16px 24px 24px; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); padding: 12px 16px; border-radius: 4px;
+      transition: color 0.2s, background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
+    .mobile-menu .mobile-cta { margin-top: 12px; text-align: center; background: var(--gold); color: var(--deep-navy); font-weight: 600; border-radius: 4px; border-bottom: none; }
+
+
+    /* =====================
+       HERO
+    ===================== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--deep-navy) 0%, #1a2d50 100%);
+      padding: 120px 32px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+      height: 48px; background: var(--off-white);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    .page-hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 50px; padding: 6px 18px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 24px;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .page-hero-sub { font-family: var(--serif); font-size: 17px; font-style: italic; color: rgba(255,255,255,0.45); margin-bottom: 18px; }
+    .page-hero p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 520px; margin: 0 auto 28px; }
+
+    .hero-meta {
+      display: inline-flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center;
+      padding: 12px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+    }
+    .hero-meta-item { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 7px; }
+    .hero-meta-item span { color: var(--gold); }
+
+
+    /* =====================
+       STICKY TOC
+    ===================== */
+    .toc-bar {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0 32px; position: sticky; top: 68px; z-index: 80;
+      box-shadow: 0 2px 8px rgba(15,27,51,0.06); overflow-x: auto;
+    }
+    .toc-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; gap: 0; white-space: nowrap;
+    }
+    .toc-link {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--text-light); padding: 16px 14px; border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s; text-decoration: none; display: block;
+    }
+    .toc-link:hover { color: var(--navy); border-color: rgba(201,168,76,0.4); }
+    .toc-link.active { color: var(--gold); border-color: var(--gold); }
+
+
+    /* =====================
+       PAGE LAYOUT
+    ===================== */
+    .page-body { max-width: 860px; margin: 0 auto; padding: 48px 32px 96px; }
+
+
+    /* =====================
+       DOCUMENT HEADER CARD
+    ===================== */
+    .doc-header {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 28px; box-shadow: 0 1px 6px rgba(15,27,51,0.06);
+    }
+    .doc-header-top {
+      background: linear-gradient(135deg, var(--deep-navy), #243556);
+      padding: 28px 32px; display: flex; align-items: flex-start; gap: 18px;
+    }
+    .doc-seal {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(201,168,76,0.15); border: 2px solid rgba(201,168,76,0.35);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+    }
+    .doc-header-titles h2 { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .doc-header-titles p  { font-size: 12px; color: rgba(255,255,255,0.40); letter-spacing: 0.04em; }
+    .doc-header-body { padding: 24px 32px; }
+    .doc-header-body p { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 14px; }
+    .doc-header-body p:last-child { margin-bottom: 0; }
+    .doc-sign { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--navy); margin-top: 6px; }
+    .doc-sign-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    .doc-meta-strip {
+      display: flex; gap: 0; border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .doc-meta-item {
+      flex: 1; min-width: 160px; padding: 14px 20px;
+      border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px;
+    }
+    .doc-meta-item:last-child { border-right: none; }
+    .doc-meta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
+    .doc-meta-value { font-size: 13px; font-weight: 600; color: var(--navy); }
+
+
+    /* =====================
+       RULE SECTION CARDS
+    ===================== */
+    .rule-section {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(15,27,51,0.06);
+      scroll-margin-top: 130px;
+    }
+
+    .rule-section-header {
+      background: var(--navy); padding: 18px 26px;
+      display: flex; align-items: center; gap: 14px;
+      cursor: pointer; user-select: none;
+      transition: background 0.2s;
+    }
+    .rule-section-header:hover { background: #243556; }
+
+    .rule-num {
+      font-family: var(--serif); font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.22);
+      padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+    }
+    .rule-section-icon { font-size: 20px; flex-shrink: 0; }
+    .rule-section-header h3 { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--white); flex: 1; }
+    .rule-chevron {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s, background 0.2s;
+    }
+    .rule-chevron svg { width: 12px; height: 12px; stroke: rgba(255,255,255,0.6); stroke-width: 2; fill: none; }
+    .rule-section.open .rule-chevron { transform: rotate(180deg); background: rgba(201,168,76,0.15); }
+    .rule-section.open .rule-chevron svg { stroke: var(--gold); }
+
+    .rule-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .rule-section.open .rule-body { max-height: 2000px; }
+
+    .rule-body-inner { padding: 28px 28px 32px; }
+
+    .rule-intro {
+      font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 22px;
+      padding-bottom: 20px; border-bottom: 1px solid var(--border);
+    }
+
+    /* Rule items */
+    .rule-items { display: flex; flex-direction: column; gap: 14px; }
+
+    .rule-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px 18px; border-radius: 10px;
+      background: var(--off-white); border: 1px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .rule-item:hover { border-color: rgba(201,168,76,0.25); background: var(--gold-pale); }
+
+    .rule-item-dot {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; margin-top: 1px;
+    }
+    .dot-gold   { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); color: var(--gold); }
+    .dot-red    { background: rgba(220,38,38,0.08);  border: 1px solid rgba(220,38,38,0.20);  color: var(--red); }
+    .dot-green  { background: rgba(22,163,74,0.08);  border: 1px solid rgba(22,163,74,0.20);  color: var(--green); }
+    .dot-amber  { background: rgba(217,119,6,0.08);  border: 1px solid rgba(217,119,6,0.20);  color: var(--amber); }
+
+    .rule-item-text { flex: 1; }
+    .rule-item-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .rule-item-desc  { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    /* Severity tag */
+    .rule-item-tag {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px; flex-shrink: 0; align-self: flex-start; margin-top: 2px;
+    }
+    .tag-critical   { background: rgba(220,38,38,0.10);  color: var(--red);   border: 1px solid rgba(220,38,38,0.20); }
+    .tag-important  { background: rgba(217,119,6,0.10);  color: var(--amber); border: 1px solid rgba(217,119,6,0.20); }
+    .tag-standard   { background: rgba(27,42,74,0.07);   color: var(--navy);  border: 1px solid rgba(27,42,74,0.15); }
+
+    /* Sub-list within a rule section */
+    .rule-sublist { margin-top: 20px; }
+    .rule-sublist-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .rule-sublist-title::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.15); }
+
+
+    /* =====================
+       CONSEQUENCE SECTION
+    ===================== */
+    .consequences-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px;
+    }
+    .consequence-card {
+      border-radius: 10px; padding: 20px 18px; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .consequence-card.tier-1 { background: rgba(217,119,6,0.06); border: 1px solid rgba(217,119,6,0.20); }
+    .consequence-card.tier-2 { background: rgba(220,38,38,0.06); border: 1px solid rgba(220,38,38,0.20); }
+    .consequence-card.tier-3 { background: rgba(15,27,51,0.05);  border: 1px solid rgba(27,42,74,0.20); }
+    .consequence-icon { font-size: 28px; }
+    .consequence-title {
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .consequence-card.tier-1 .consequence-title { color: var(--amber); }
+    .consequence-card.tier-2 .consequence-title { color: var(--red); }
+    .consequence-card.tier-3 .consequence-title { color: var(--navy); }
+    .consequence-desc { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+
+
+    /* =====================
+       ACKNOWLEDGEMENT CARD
+    ===================== */
+    .ack-card {
+      background: linear-gradient(135deg, var(--deep-navy), #243556);
+      border-radius: 14px; padding: 36px 36px; margin-bottom: 28px;
+      border: 1px solid rgba(201,168,76,0.20); position: relative; overflow: hidden;
+    }
+    .ack-card::before {
+      content: ''; position: absolute; top: -30px; right: -30px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.08);
+    }
+    .ack-card-inner { position: relative; z-index: 1; }
+    .ack-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .ack-card p  { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 22px; }
+    .ack-checks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .ack-check-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55;
+    }
+    .ack-check-bullet {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--gold); margin-top: 1px;
+    }
+    .ack-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .ack-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 11px 22px; border-radius: 7px; transition: all 0.2s; text-decoration: none;
+    }
+    .ack-btn-gold { background: var(--gold); color: var(--deep-navy); }
+    .ack-btn-gold:hover { background: var(--gold-light); }
+    .ack-btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.18); }
+    .ack-btn-outline:hover { background: rgba(255,255,255,0.07); color: var(--white); }
+
+
+    /* =====================
+       QUICK REFERENCE
+    ===================== */
+    .quick-ref {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(15,27,51,0.06);
+    }
+    .quick-ref-header {
+      background: var(--navy); padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .quick-ref-header h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--white); flex: 1; }
+    .quick-ref-body { padding: 22px 24px; }
+    .quick-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .qr-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 14px; border-radius: 8px;
+      background: var(--off-white); border: 1px solid var(--border);
+    }
+    .qr-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .qr-text strong { font-size: 12px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 2px; }
+    .qr-text span   { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer { background: var(--deep-navy); border-top: 1px solid rgba(201,168,76,0.20); padding: 56px 48px 32px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+
+    .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; padding-bottom: 40px; margin-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .footer-brand-logo img  { height: 34px; }
+    .footer-brand-logo span { font-family: var(--serif); font-size: 17px; color: var(--white); }
+    .footer-brand-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 22px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.50); font-size: 13px; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .footer-col a  { display: block; font-size: 13px; color: rgba(255,255,255,0.40); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-col p  { font-size: 13px; color: rgba(255,255,255,0.30); line-height: 1.7; margin-bottom: 5px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy    { font-size: 12px; color: rgba(255,255,255,0.20); }
+    .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.45); }
+
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 768px) {
+      nav                { padding: 0 20px; height: 60px; }
+      .nav-links         { display: none; }
+      .nav-hamburger     { display: flex; }
+      .mobile-menu       { top: 60px; }
+      .toc-bar           { top: 60px; padding: 0 16px; }
+      .page-hero         { padding: 100px 20px 60px; }
+      .page-body         { padding: 32px 16px 64px; }
+      .doc-header-top    { flex-direction: column; gap: 14px; padding: 22px 20px; }
+      .doc-header-body   { padding: 20px; }
+      .rule-body-inner   { padding: 20px; }
+      .consequences-grid { grid-template-columns: 1fr; }
+      .quick-ref-grid    { grid-template-columns: 1fr; }
+      .hero-meta         { gap: 14px; padding: 10px 16px; }
+      .ack-card          { padding: 24px 22px; }
+      .ack-cta-row       { flex-direction: column; }
+      .footer-top        { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom     { flex-direction: column; align-items: flex-start; gap: 6px; }
+      footer             { padding: 40px 20px 24px; }
+      .doc-meta-strip    { flex-direction: column; }
+      .doc-meta-item     { border-right: none; border-bottom: 1px solid var(--border); }
+      .doc-meta-item:last-child { border-bottom: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+      <span class="nav-logo-text">Episode Buddies</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://episodebuddies.vercel.app" target="_blank">Main Site</a>
+      <a href="index.html">SOTY &amp; AOTY</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="judges.html">Judges</a>
+      <a href="guidelines.html" class="active">Guidelines</a>
+      <a href="competition-planning.html">2026 Planning</a>
+      <a href="https://episodebuddies.vercel.app/contact" class="nav-cta">Contact Us</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="https://episodebuddies.vercel.app" target="_blank">Main Site</a>
+    <a href="index.html">SOTY &amp; AOTY</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="judges.html">Judges</a>
+    <a href="guidelines.html">Guidelines</a>
+    <a href="competition-planning.html">2026 Planning</a>
+    <a href="https://episodebuddies.vercel.app/contact" class="mobile-cta">Contact Us</a>
+  </div>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Official Document · SOTY &amp; AOTY 2026
+      </div>
+      <h1>Rules &amp; <em>Guidelines</em></h1>
+      <div class="page-hero-sub">Buddies Support Hub — Official Competition Standards</div>
+      <p>Read all guidelines carefully before registering. By participating in any Buddies competition, you confirm that you have read, understood, and agreed to every rule set forth in this document.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Season <span>2026</span></div>
+        <div class="hero-meta-item">Effective <span>Oct 2026</span></div>
+        <div class="hero-meta-item">Competitions <span>SOTY &amp; AOTY</span></div>
+        <div class="hero-meta-item">Version <span>2.0</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== STICKY TOC ===== -->
+  <div class="toc-bar">
+    <div class="toc-inner">
+      <a class="toc-link active" href="#rule-1">1. Conduct</a>
+      <a class="toc-link" href="#rule-2">2. Originality</a>
+      <a class="toc-link" href="#rule-3">3. Integrity</a>
+      <a class="toc-link" href="#rule-4">4. Professionalism</a>
+      <a class="toc-link" href="#rule-5">5. Submissions</a>
+      <a class="toc-link" href="#rule-6">6. Publicity</a>
+      <a class="toc-link" href="#rule-7">7. Content Standards</a>
+      <a class="toc-link" href="#rule-8">8. Eligibility</a>
+      <a class="toc-link" href="#rule-9">9. Consequences</a>
+      <a class="toc-link" href="#rule-10">10. Agreement</a>
+    </div>
+  </div>
+
+
+  <!-- ===== PAGE BODY ===== -->
+  <div class="page-body">
+
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <div class="doc-header-top">
+        <div class="doc-seal">⚖️</div>
+        <div class="doc-header-titles">
+          <h2>SOTY &amp; AOTY 2026 — Official Rules &amp; Guidelines</h2>
+          <p>Buddies Support Hub · Issued for the 2026 Competition Season</p>
+        </div>
+      </div>
+      <div class="doc-header-body">
+        <p>
+          Dear Participant, to ensure a fair, respectful, and uplifting experience for every author involved,
+          the Buddies Support Hub has established the following official rules and guidelines. These standards
+          govern the <strong>Story of the Year (SOTY)</strong> and <strong>Author of the Year (AOTY)</strong>
+          competitions in their entirety, from the first submission to the final announcement.
+        </p>
+        <p>
+          These rules exist not to restrict creativity, but to protect it. They safeguard every participant's
+          right to a fair, celebrated competition, and to an experience they can look back on with pride.
+          We ask that you approach them with the same spirit of integrity and community that makes
+          Buddies competitions something truly special.
+        </p>
+        <p>
+          Violations at any stage; including after results are announced may result in disqualification,
+          bans, or revocation of titles. If you have any questions before participating, please contact us
+          through the designated channels listed at the bottom of this document.
+        </p>
+        <div class="intro-sign">The Buddies Team</div>
+        <div class="doc-sign-sub">Buddies Support Hub &mdash; SOTY &amp; AOTY 2026</div>
+      </div>
+      <div class="doc-meta-strip">
+        <div class="doc-meta-item">
+          <div class="doc-meta-label">Document Status</div>
+          <div class="doc-meta-value">✅ In Effect</div>
+        </div>
+        <div class="doc-meta-item">
+          <div class="doc-meta-label">Applies To</div>
+          <div class="doc-meta-value">All 2026 Participants</div>
+        </div>
+        <div class="doc-meta-item">
+          <div class="doc-meta-label">Competition Period</div>
+          <div class="doc-meta-value">Oct – Dec 2026</div>
+        </div>
+        <div class="doc-meta-item">
+          <div class="doc-meta-label">Contact</div>
+          <div class="doc-meta-value">episodebuddies3@gmail.com</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Quick Reference -->
+    <div class="quick-ref">
+      <div class="quick-ref-header">
+        <span style="font-size:18px;">📋</span>
+        <h3>Quick Reference — What You Need to Know</h3>
+      </div>
+      <div class="quick-ref-body">
+        <div class="quick-ref-grid">
+          <div class="qr-item">
+            <div class="qr-icon">✍️</div>
+            <div class="qr-text"><strong>Original Work Only</strong><span>All SOTY entries must be your own original story. No AI-generated content beyond grammar correction.</span></div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-icon">⚖️</div>
+            <div class="qr-text"><strong>Judge Decisions Are Final</strong><span>Results cannot be disputed. Feedback may be provided but challenges will not be entertained.</span></div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-icon">🚫</div>
+            <div class="qr-text"><strong>No Vote-Buying or Pressure</strong><span>Ethical vote solicitation only. Spamming, manipulation, or buying votes results in immediate disqualification.</span></div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-icon">📅</div>
+            <div class="qr-text"><strong>Deadlines Are Strict</strong><span>Late submissions will not be accepted under any circumstances. Plan your entry well in advance.</span></div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-icon">🤝</div>
+            <div class="qr-text"><strong>One Entry Per Author</strong><span>Only one story may be submitted per author for SOTY. AOTY profiles must be accurate and complete.</span></div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-icon">📢</div>
+            <div class="qr-text"><strong>Concerns Stay Private</strong><span>All issues must be reported directly to the Buddies team. No public callouts or drama.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 1: RESPECT & CONDUCT ===== -->
+    <div class="rule-section open" id="rule-1">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 1</span>
+        <span class="rule-section-icon">🤝</span>
+        <h3>Respect &amp; Conduct</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">The Buddies Support Hub was built on community. Everything you do; including how you compete must reflect the respect, kindness, and professionalism that this community represents. These standards apply from the moment you register until long after results are announced.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Respect for Organisers</div>
+                <div class="rule-item-desc">Participants must treat all members of the Buddies Support Hub team with respect at all times. Harassment, rudeness, threatening behaviour, or public defamation of any team member will result in immediate disqualification.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Respect for Fellow Participants</div>
+                <div class="rule-item-desc">Healthy, encouraging competition is welcome and celebrated. However, any form of disrespect, trash-talking, public mockery, or negative commentary directed at other participants in any space, public or private will not be tolerated.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Respect for Sponsors &amp; Supporters</div>
+                <div class="rule-item-desc">Participants must refrain from making negative, dismissive, or inflammatory comments about any sponsors, collaborators, or entities supporting the competitions. Their contributions are valued and essential to making this all possible.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Conduct in Public Spaces</div>
+                <div class="rule-item-desc">Your behaviour on Instagram, Threads, Discord, and any other platform where you are identifiable as a Buddies participant reflects on the community. Conduct unbecoming of the competition; even outside official Buddies spaces is subject to review.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 2: ORIGINALITY ===== -->
+    <div class="rule-section" id="rule-2">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 2</span>
+        <span class="rule-section-icon">✍️</span>
+        <h3>Originality &amp; Ownership</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">The SOTY competition celebrates original storytelling. Every entry must be a genuine expression of the author's creative vision. Shortcuts that undermine that authenticity; whether through AI generation, plagiarism, or misrepresentation of authorship are taken very seriously.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Original Works Only</div>
+                <div class="rule-item-desc">All stories submitted for SOTY must be original works created solely by the submitting author. Co-written stories are eligible only if both or all co-authors are listed and consent is confirmed.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Rights Confirmation</div>
+                <div class="rule-item-desc">By entering, authors confirm that they hold all necessary rights to their story, its visuals, overlays, character art, and all other content included. Using art, music, or written content without permission from the creator is prohibited.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Plagiarism</div>
+                <div class="rule-item-desc">Submitting another person's story as your own, or lifting substantial plot, dialogue, or directing elements from another work without credit, constitutes plagiarism. All credible reports will be thoroughly investigated and may result in immediate disqualification.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Restricted AI Use</div>
+                <div class="rule-item-desc">The use of artificial intelligence for purposes beyond basic grammar or spell-checking is prohibited. This includes, but is not limited to: AI-generated written content, AI-generated artwork, and AI-produced backgrounds. Any AI involvement beyond proofreading is treated as a disqualifying factor.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 3: COMPETITION INTEGRITY ===== -->
+    <div class="rule-section" id="rule-3">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 3</span>
+        <span class="rule-section-icon">⚖️</span>
+        <h3>Competition Integrity</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">The legitimacy of the SOTY and AOTY titles depends entirely on the integrity of the process. Any attempt to gain an unfair advantage; whether through influencing judges, vote manipulation, or any other means betrays every participant who competed fairly.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Unfair Advantage</div>
+                <div class="rule-item-desc">Participants must not engage in any actions that may be viewed as gaining an unfair advantage. This includes but is not limited to: attempting to influence, contact, or pressure judges regarding scores, forming vote-exchange agreements with other participants, or manipulating any competition metric.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Judge Decisions Are Final</div>
+                <div class="rule-item-desc">The decisions of the judging panel are final and binding. Constructive feedback may be provided to participants after the competition, but disputes, score challenges, or demands for re-evaluation will not be entertained under any circumstances.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Vote-Buying</div>
+                <div class="rule-item-desc">Offering incentives - whether monetary, creative services, shoutouts, or any other form of exchange - in return for votes is strictly prohibited. This is considered one of the most serious integrity violations and will result in immediate disqualification.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-amber">!</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Ethical Vote Campaigning</div>
+                <div class="rule-item-desc">Public campaigning for votes is permitted within respectful limits. You may share your entry, ask your audience to vote, and promote your participation. However, spamming, mass DMs to strangers, vote-pressure tactics, or any form of manipulation constitute misconduct.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 4: PROFESSIONAL BEHAVIOUR ===== -->
+    <div class="rule-section" id="rule-4">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 4</span>
+        <span class="rule-section-icon">🌟</span>
+        <h3>Professional Behaviour</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">Participating in a Buddies competition carries a degree of responsibility. As part of one of the most celebrated author competitions in the Episode community, participants are expected to behave in ways that honour the Episode platform.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Inclusive &amp; Supportive Environment</div>
+                <div class="rule-item-desc">Participants are expected to actively foster a supportive, inclusive environment throughout the competition. Celebrating others' achievements, cheering on fellow competitors, and uplifting the community are all encouraged.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Alternate Accounts</div>
+                <div class="rule-item-desc">The use of secondary, anonymous, or alternate accounts to vote, influence outcomes, or circumvent any competition rule is strictly forbidden. Any participant found using alternate accounts will face immediate disqualification from all competitions.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Misinformation or Drama</div>
+                <div class="rule-item-desc">Creating, spreading, or amplifying misinformation or drama about the competition, its structure, results, judges, participants, or the Buddies team is grounds for disqualification. This includes both direct statements and implied or suggestive content.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Private Complaint Process</div>
+                <div class="rule-item-desc">All concerns, complaints, or suspected violations must be submitted privately to the Buddies Support Hub team through the designated contact channels. Public callouts, accusations, or venting sessions about competition issues, regardless of how valid the concern may be, are not the appropriate route and may be treated as misconduct.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 5: SUBMISSION GUIDELINES ===== -->
+    <div class="rule-section" id="rule-5">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 5</span>
+        <span class="rule-section-icon">📝</span>
+        <h3>Submission Guidelines</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">All submissions must follow the official guidelines precisely. Incomplete, incorrectly formatted, or late entries cannot be accepted - no exceptions. These requirements ensure a fair and consistent process for every participant.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Follow All Official Guidelines</div>
+                <div class="rule-item-desc">Participants must follow all official submission guidelines in full, including formatting requirements, platform specifications, chapter requirements, and any category-specific instructions published for SOTY or AOTY.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">One Entry Per Author (SOTY)</div>
+                <div class="rule-item-desc">Only one story may be submitted per author for the Story of the Year competition. If multiple entries are received from the same author, only the earliest confirmed submission will be considered and all others will be withdrawn or the author will have to choose which one to keep.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Accurate AOTY Information</div>
+                <div class="rule-item-desc">For the Author of the Year competition, all submitted profile information; including author name, Instagram handle, story links, and personal statements - must be accurate, truthful, and representative of the author's genuine work and identity.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Strict Deadlines</div>
+                <div class="rule-item-desc">Submissions received after the published deadline will not be considered, reviewed, or added to the competition. No extensions will be granted. We strongly recommend submitting at least 24 hours before any deadline to account for technical issues.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Story Must Be Published &amp; Accessible</div>
+                <div class="rule-item-desc">SOTY entries must be publicly accessible on Episode at the time of submission and throughout the entire competition period. Stories that are removed, hidden, or made inaccessible after submission will be withdrawn from consideration.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 6: PUBLICITY ===== -->
+    <div class="rule-section" id="rule-6">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 6</span>
+        <span class="rule-section-icon">📢</span>
+        <h3>Publicity &amp; Promotion</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">The Buddies competitions are a celebration, and we want to celebrate you. By participating, you grant us the ability to share your story and achievements; but we always do so with care and respect for your work.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Promotional Rights Granted</div>
+                <div class="rule-item-desc">By participating, authors grant Buddies Support Hub the non-exclusive right to use their name, likeness, Instagram handle, and submitted work (or excerpts thereof) for promotional purposes across social media platforms, the Buddies website, and related publications. This right is limited to competition-related promotion only.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Post-Competition Activities</div>
+                <div class="rule-item-desc">Winners and finalists may be invited to participate in post-event publicity activities; including interviews, features, Q&amp;A sessions, and spotlights - coordinated by the Buddies Support Hub. Participation in these activities is encouraged but not compulsory.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Author Credit Always Given</div>
+                <div class="rule-item-desc">Buddies Support Hub will always credit the author when sharing their work, profile, or story excerpts. We will never misrepresent, alter, or use your work in a manner that could be considered damaging to your reputation or creative integrity.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 7: CONTENT STANDARDS ===== -->
+    <div class="rule-section" id="rule-7">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 7</span>
+        <span class="rule-section-icon">🛡️</span>
+        <h3>Content Standards</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">Buddies competitions are open to the entire Episode community, including younger readers. All submitted content; stories, profiles, promotional materials, and public communications - must meet the content standards outlined below.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Inappropriate Content</div>
+                <div class="rule-item-desc">The presence of sensitive or inappropriate content; including but not limited to explicit sexual material, graphic violence, gore, or hate speech that may not have been identified or filtered by Episode's review team is not permitted in any SOTY submission.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Discriminatory Content</div>
+                <div class="rule-item-desc">Stories or public communications that promote, normalise, or celebrate discrimination based on race, ethnicity, gender, sexual orientation, religion, disability, or any other protected characteristic will be disqualified. Inclusive storytelling is a Buddies value.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-amber">!</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Sensitive Topics — Handled with Care</div>
+                <div class="rule-item-desc">Stories that explore sensitive themes (mental health, trauma, abuse, grief) are welcome and valued, provided they are handled responsibly and with appropriate context. The Buddies team reserves the right to flag entries that approach sensitive topics in a manner deemed harmful or exploitative.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 8: ELIGIBILITY ===== -->
+    <div class="rule-section" id="rule-8">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 8</span>
+        <span class="rule-section-icon">🏅</span>
+        <h3>Eligibility Requirements</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">To maintain the fairness and prestige of the competitions, all participants must meet the following eligibility requirements at the time of entry and throughout the competition period.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Active Episode Author</div>
+                <div class="rule-item-desc">All SOTY participants must have a published story on Episode Interactive at the time of submission. All AOTY participants must be active authors within the Episode community with a verifiable presence and published stories.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Community Qualification</div>
+                <div class="rule-item-desc">AOTY participants must have qualified through the official Buddies monthly contest pathway or another officially designated qualification route for the 2026 season. Self-nomination outside of official channels will not be accepted.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-red">🚫</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Good Standing Required</div>
+                <div class="rule-item-desc">Participants who have been previously disqualified or banned from any Buddies competition are not eligible to re-enter unless an official reinstatement has been granted by the Buddies team. Prior violations are taken into account during eligibility review.</div>
+              </div>
+              <span class="rule-item-tag tag-important">Important</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">No Current Buddies Team Members</div>
+                <div class="rule-item-desc">Active members of the Buddies Support Hub organising team and judging panel are not eligible to participate as competitors in either SOTY or AOTY during seasons in which they hold an active team role. This includes all planning committee members.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 9: CONSEQUENCES ===== -->
+    <div class="rule-section" id="rule-9">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 9</span>
+        <span class="rule-section-icon">⚠️</span>
+        <h3>Consequences for Misconduct</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">Violations of these rules are taken seriously and handled with care, consistency, and fairness. The Buddies team investigates all credible reports before acting. Consequences are applied proportionally to the severity of the violation.</p>
+
+          <div class="consequences-grid">
+            <div class="consequence-card tier-1">
+              <div class="consequence-icon">⚠️</div>
+              <div class="consequence-title">Tier 1 — Warning</div>
+              <div class="consequence-desc">Issued for first-time or minor violations. The participant is notified privately and given the opportunity to correct their conduct. Repeated minor violations escalate to Tier 2.</div>
+            </div>
+            <div class="consequence-card tier-2">
+              <div class="consequence-icon">🚫</div>
+              <div class="consequence-title">Tier 2 — Disqualification</div>
+              <div class="consequence-desc">Applied for serious or repeated violations. The participant is removed from the current competition. Disqualification may be immediate for critical violations such as vote-buying, plagiarism, or judge interference.</div>
+            </div>
+            <div class="consequence-card tier-3">
+              <div class="consequence-icon">🔒</div>
+              <div class="consequence-title">Tier 3 — Permanent Ban</div>
+              <div class="consequence-desc">Reserved for the most severe violations or repeated misconduct across multiple seasons. The participant is permanently banned from all future Buddies competitions and events. All existing titles may also be revoked.</div>
+            </div>
+          </div>
+
+          <div class="rule-sublist" style="margin-top:24px;">
+            <div class="rule-sublist-title">All violations may also result in</div>
+            <div class="rule-items">
+              <div class="rule-item">
+                <div class="rule-item-dot dot-red">!</div>
+                <div class="rule-item-text">
+                  <div class="rule-item-title">Revocation of Awards &amp; Titles</div>
+                  <div class="rule-item-desc">Awards, badges, titles, and recognition; including the SOTY and AOTY titles, may be revoked even after the competition has ended if a violation is discovered retrospectively. The runner-up or next qualifying participant may be elevated in their place.</div>
+                </div>
+                <span class="rule-item-tag tag-critical">Critical</span>
+              </div>
+              <div class="rule-item">
+                <div class="rule-item-dot dot-red">!</div>
+                <div class="rule-item-text">
+                  <div class="rule-item-title">Removal from Hall of Fame</div>
+                  <div class="rule-item-desc">In cases of serious misconduct, a participant's name and record may be removed from the Buddies Hall of Fame and all historical competition records maintained by the Hub.</div>
+                </div>
+                <span class="rule-item-tag tag-critical">Critical</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== RULE 10: ACKNOWLEDGEMENT ===== -->
+    <div class="rule-section" id="rule-10">
+      <div class="rule-section-header" onclick="toggleRule(this)">
+        <span class="rule-num">Rule 10</span>
+        <span class="rule-section-icon">✅</span>
+        <h3>Acknowledgement &amp; Agreement</h3>
+        <div class="rule-chevron"><svg viewBox="0 0 12 8"><polyline points="1,1 6,7 11,1"/></svg></div>
+      </div>
+      <div class="rule-body">
+        <div class="rule-body-inner">
+          <p class="rule-intro">These rules are not designed to intimidate, they are designed to protect every participant equally. By entering the competition, you acknowledge that you have read, understood, and agreed to abide by all rules set forth by the Buddies Support Hub.</p>
+          <div class="rule-items">
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Full Agreement Required</div>
+                <div class="rule-item-desc">Participation in any Buddies competition constitutes full agreement with these guidelines. There are no partial acceptances; entering means you agree to every rule in this document in its entirety.</div>
+              </div>
+              <span class="rule-item-tag tag-critical">Critical</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-gold">★</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Rules May Be Updated</div>
+                <div class="rule-item-desc">The Buddies Support Hub reserves the right to update or amend these guidelines before the competition season begins. Participants will be notified of any significant changes. The most current version of this document always takes precedence.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+            <div class="rule-item">
+              <div class="rule-item-dot dot-green">✓</div>
+              <div class="rule-item-text">
+                <div class="rule-item-title">Questions Welcome</div>
+                <div class="rule-item-desc">If any rule is unclear or you have a question before registering, please contact the Buddies team privately at episodebuddies3@gmail.com or through the designated Instagram DM. We are always happy to clarify.</div>
+              </div>
+              <span class="rule-item-tag tag-standard">Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Acknowledgement CTA Card -->
+    <div class="ack-card">
+      <div class="ack-card-inner">
+        <h3>Ready to Register?</h3>
+        <p>By submitting your registration, you confirm that you have read and fully agreed to all the rules and guidelines on this page. Make sure you understand every section before proceeding.</p>
+        <div class="ack-checks">
+          <div class="ack-check-item">
+            <div class="ack-check-bullet">✓</div>
+            I have read all 10 sections of the official guidelines.
+          </div>
+          <div class="ack-check-item">
+            <div class="ack-check-bullet">✓</div>
+            I understand that judge decisions are final and binding.
+          </div>
+          <div class="ack-check-item">
+            <div class="ack-check-bullet">✓</div>
+            I commit to competing with integrity, respect, and originality.
+          </div>
+          <div class="ack-check-item">
+            <div class="ack-check-bullet">✓</div>
+            I understand that violations may result in disqualification or a permanent ban.
+          </div>
+        </div>
+        <div class="ack-cta-row">
+          <a href="aoty-registration.html" class="ack-btn ack-btn-gold">📋 Register for AOTY 2026</a>
+          <a href="how-it-works.html" class="ack-btn ack-btn-outline">How It Works →</a>
+          <a href="https://episodebuddies.vercel.app/contact" class="ack-btn ack-btn-outline">✉ Questions? Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- end page-body -->
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-logo">
+            <img src="https://res.cloudinary.com/dgsv4chsi/image/upload/q_auto/f_auto/v1776315572/buddies-logo_t71aki.png" alt="Episode Buddies">
+            <span>Episode Buddies</span>
+          </div>
+          <p class="footer-brand-desc">
+            Uplifting Episode authors through free community services,
+            monthly contests, and the most celebrated annual competitions on the platform.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/episode_buddies/" target="_blank">IG</a>
+            <a href="https://www.threads.net/@episode_buddies"   target="_blank">TH</a>
+            <a href="mailto:episodebuddies3@gmail.com">&#9993;</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Main Site</h4>
+          <a href="https://episodebuddies.vercel.app"                    target="_blank">Home</a>
+          <a href="https://episodebuddies.vercel.app/about"              target="_blank">About</a>
+          <a href="https://episodebuddies.vercel.app/services"           target="_blank">Services</a>
+          <a href="https://episodebuddies.vercel.app/contest"            target="_blank">Monthly Contest</a>
+          <a href="https://episodebuddies.vercel.app/contact"            target="_blank">Contact Us</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>SOTY &amp; AOTY Site</h4>
+          <a href="index.html">Home</a>
+          <a href="soty-2025.html">SOTY 2025</a>
+          <a href="aoty-2025.html">AOTY 2025</a>
+          <a href="judges.html">Judges</a>
+          <a href="guidelines.html">Rules & Guidelines</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="competition-planning.html">2026 Planning</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Buddies Support Hub &middot; All rights reserved.</span>
+        <span class="footer-tagline">&ldquo;Where great stories find the spotlight they deserve.&rdquo;</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+
+    // ─── Hamburger nav ────────────────────────────────────────
+    var hamburger  = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+
+    // ─── Accordion toggle ─────────────────────────────────────
+    function toggleRule(header) {
+      var section = header.parentElement;
+      var isOpen  = section.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.rule-section').forEach(function(s) {
+        s.classList.remove('open');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        section.classList.add('open');
+      }
+    }
+
+
+    // ─── TOC active link on scroll ────────────────────────────
+    var tocLinks = document.querySelectorAll('.toc-link');
+    var ruleSections = document.querySelectorAll('.rule-section');
+
+    function updateToc() {
+      var scrollY = window.scrollY + 160;
+      var activeId = null;
+
+      ruleSections.forEach(function(section) {
+        if (section.offsetTop <= scrollY) {
+          activeId = section.id;
+        }
+      });
+
+      tocLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (activeId && link.getAttribute('href') === '#' + activeId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateToc);
+    updateToc();
+
+
+    // ─── TOC smooth scroll + auto-open section ────────────────
+    tocLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = link.getAttribute('href').replace('#', '');
+        var target   = document.getElementById(targetId);
+        if (!target) return;
+
+        // Open the section
+        document.querySelectorAll('.rule-section').forEach(function(s) {
+          s.classList.remove('open');
+        });
+        target.classList.add('open');
+
+        // Scroll to it
+        setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      });
+    });
+
+  </script>
+
+</body>
+</html>
