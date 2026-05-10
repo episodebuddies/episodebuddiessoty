@@ -302,6 +302,17 @@
 
   /* Genre tags */
   .genre-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: var(--light-blue); color: var(--blue); }
+  .genre-tag.romance { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; background: #fce8f0; color: #9c3060; border-color: rgba(156,48,96,0.2); }
+  .genre-tag.fantasy { background: #ede8fc; color: #5040a0; border-color: rgba(80,64,160,0.2); }
+  .genre-tag.horror { background: #f0e8e8; color: #8a2020; border-color: rgba(138,32,32,0.2); }
+  .genre-tag.mystery { background: #e8f0e8; color: #206020; border-color: rgba(32,96,32,0.2); }
+  .genre-tag.lgbtq { background: #e8f4fc; color: #1060a0; border-color: rgba(16,96,160,0.2); }
+  .genre-tag.thriller { background: #f0ece8; color: #443c03; border-color: rgba(128,64,32,0.2); }
+  .genre-tag.drama { background: #eff0e8; color: #7f8e0a; border-color: rgba(128,64,32,0.2); }
+  .genre-tag.comedy { background: #e9e8f0; color: #0a0447; border-color: rgba(128,64,32,0.2); }
+  .genre-tag.action { background: #f0e9e8; color: #a62b09; border-color: rgba(128,64,32,0.2); }
+  .genre-tag.adventure { background: #e9e8f0; color: #af0ce0; border-color: rgba(128, 32, 120, 0.2); }
+  .genre-tag.sci-fi { background: #f0e9e8; color: #3e0101; border-color: rgba(128, 32, 32, 0.092); }
   .moq-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; background: rgba(27,42,74,0.07); color: var(--text-light); padding: 2px 7px; border-radius: 3px; }
 
   /* ── SIDEBAR ── */
@@ -1082,33 +1093,33 @@
           <div class="ac-callout">MOQ = Method of Qualification · NORBC = Number of Reads Before Competition<br>TN = Team Nomination · SR = Story Review · SO = Special Opportunity · LITA = Love In The Air · HS,HP = Her Story, Her Power · HG1 = Hidden Gems (1) · HG2 = Hidden Gem (2) · EU = Enigma Unveiled · COP = Colours Of Pride · SS = Sunshine Stories · TOS = The Open Stage · BTV = Beyond The Veil</div>
           <div class="ac-table-wrap">
             <table class="ac-table">
-              <thead><tr><th style="min-width:200px;">Story</th><th>Genre</th><th>Author</th><th class="hide-mobile">MOQ</th><th class="hide-mobile">Reads</th></tr></thead>
+              <thead><tr><th style="min-width:200px;">Story</th><th>Genre</th><th style="min-width:120px;">Author</th><th class="hide-mobile">MOQ</th><th class="hide-mobile">Reads</th></tr></thead>
               <tbody>
-                <tr><td>All The Ways To Fall</td><td><span class="genre-tag">Drama</span></td><td>Caylie</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Bitter Sweet</td><td><span class="genre-tag">Drama</span></td><td>Ivy</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Bring It Closer</td><td><span class="genre-tag">Drama</span></td><td>Lara</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Cashed Love</td><td><span class="genre-tag">Drama</span></td><td>Pearl</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Casting Shadows</td><td><span class="genre-tag">Drama</span></td><td>Laine</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Daisy</td><td><span class="genre-tag">Thriller</span></td><td>Amara</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Daylight Savings</td><td><span class="genre-tag">Thriller</span></td><td>Scarlet-Rune</td><td class="hide-mobile"><span class="moq-tag">HS,HP</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Deposed</td><td><span class="genre-tag">Thriller</span></td><td>Myst</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Electric Love</td><td><span class="genre-tag">Romance</span></td><td>Emily</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Flare Of Fate</td><td><span class="genre-tag">Fantasy</span></td><td>Little Duck</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Halfway Down</td><td><span class="genre-tag">Drama</span></td><td>Samee</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Invitably Yours</td><td><span class="genre-tag">Comedy</span></td><td>Saffalily</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Jagdhund</td><td><span class="genre-tag">Thriller</span></td><td>May Jailer</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Mafia's Burning Obsession</td><td><span class="genre-tag">Drama</span></td><td>Anjali Soni</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Off The Market</td><td><span class="genre-tag">Comedy</span></td><td>Ariel C.</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Out Of Tone</td><td><span class="genre-tag">Adventure</span></td><td>Olivia Rose</td><td class="hide-mobile"><span class="moq-tag">HS,HP</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Scratch That</td><td><span class="genre-tag">Drama</span></td><td>Alessandra</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>The Bad Boy Game</td><td><span class="genre-tag">Drama</span></td><td>JC</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>The Challenge</td><td><span class="genre-tag">Thriller</span></td><td>Leah</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>The Price Of Touch</td><td><span class="genre-tag">Drama</span></td><td>Junini</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Unrest</td><td><span class="genre-tag">Horror</span></td><td>Sparrow</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Warner's Song</td><td><span class="genre-tag">Romance</span></td><td>Tay</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Wicked Grace</td><td><span class="genre-tag">Fantasy</span></td><td>Valkyrie</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>Without Limits</td><td><span class="genre-tag">Drama</span></td><td>Joanie J.</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
-                <tr><td>You Wreck Me</td><td><span class="genre-tag">Drama</span></td><td>Kerli</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>All The Ways To Fall</td><td><span class="genre-tag drama">Drama</span></td><td>Caylie</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Bitter Sweet</td><td><span class="genre-tag drama">Drama</span></td><td>Ivy</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Bring It Closer</td><td><span class="genre-tag drama">Drama</span></td><td>Lara</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Cashed Love</td><td><span class="genre-tag drama">Drama</span></td><td>Pearl</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Casting Shadows</td><td><span class="genre-tag drama">Drama</span></td><td>Laine</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Daisy</td><td><span class="genre-tag thriller">Thriller</span></td><td>Amara</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Daylight Savings</td><td><span class="genre-tag thriller">Thriller</span></td><td>Scarlet-Rune</td><td class="hide-mobile"><span class="moq-tag">HS,HP</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Deposed</td><td><span class="genre-tag thriller">Thriller</span></td><td>Myst</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Electric Love</td><td><span class="genre-tag romance">Romance</span></td><td>Emily</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Flare Of Fate</td><td><span class="genre-tag fantasy">Fantasy</span></td><td>Little Duck</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Halfway Down</td><td><span class="genre-tag drama">Drama</span></td><td>Samee</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Inevitably Yours</td><td><span class="genre-tag comedy">Comedy</span></td><td>Saffalily</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Jagdhund</td><td><span class="genre-tag thriller">Thriller</span></td><td>May Jailer</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Mafia's Burning Obsession</td><td><span class="genre-tag drama">Drama</span></td><td>Anjali Soni</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Off The Market</td><td><span class="genre-tag comedy">Comedy</span></td><td>Ariel C.</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Out Of Tone</td><td><span class="genre-tag adventure">Adventure</span></td><td>Olivia Rose</td><td class="hide-mobile"><span class="moq-tag">HS,HP</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Scratch That</td><td><span class="genre-tag drama">Drama</span></td><td>Alessandra</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>The Bad Boy Game</td><td><span class="genre-tag drama">Drama</span></td><td>JC</td><td class="hide-mobile"><span class="moq-tag">SO</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>The Challenge</td><td><span class="genre-tag thriller">Thriller</span></td><td>Leah</td><td class="hide-mobile"><span class="moq-tag">TN</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>The Price Of Touch</td><td><span class="genre-tag drama">Drama</span></td><td>Junini</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Unrest</td><td><span class="genre-tag horror">Horror</span></td><td>Sparrow</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Warner's Song</td><td><span class="genre-tag romance">Romance</span></td><td>Tay</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Wicked Grace</td><td><span class="genre-tag fantasy">Fantasy</span></td><td>Valkyrie</td><td class="hide-mobile"><span class="moq-tag">HG1</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>Without Limits</td><td><span class="genre-tag drama">Drama</span></td><td>Joanie J.</td><td class="hide-mobile"><span class="moq-tag">HG2</span></td><td class="hide-mobile">TBA</td></tr>
+                <tr><td>You Wreck Me</td><td><span class="genre-tag drama">Drama</span></td><td>Kerli</td><td class="hide-mobile"><span class="moq-tag">LITA</span></td><td class="hide-mobile">TBA</td></tr>
               </tbody>
             </table>
           </div>
@@ -1131,7 +1142,7 @@
         <div class="accordion-body-inner">
           <div class="ac-table-wrap">
             <table class="ac-table">
-              <thead><tr><th>Date</th><th>Event</th><th>Platform</th></tr></thead>
+              <thead><tr><th style="min-width:120px;">Date</th><th style="min-width:200px;">Event</th><th>Platform</th></tr></thead>
               <tbody>
                 <tr><td>Oct 1 - Oct 14</td><td>Registration & Orientation</td><td>Instagram Group</td></tr>
                 <tr><td>Oct 15</td><td>Qualifiers Announcement</td><td>Instagram Feed</td></tr>
@@ -1896,7 +1907,7 @@
       <div class="accordion-body-inner">
         <div class="ac-table-wrap">
           <table class="ac-table">
-            <thead><tr><th>Date</th><th>Event</th><th class="hide-mobile">Platform</th></tr></thead>
+            <thead><tr><th style="min-width: 120px;">Date</th><th style="min-width: 200px;">Event</th><th class="hide-mobile">Platform</th></tr></thead>
             <tbody>
               <tr><td>Oct 1 - Oct 14</td><td>Registration & Orientation</td><td>Instagram Group</td></tr>
               <tr><td>Oct 15</td><td>Qualifiers Announcement</td><td>Instagram Feed</td></tr>
