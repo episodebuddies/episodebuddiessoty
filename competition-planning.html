@@ -1044,6 +1044,85 @@
       footer                { padding: 40px 20px 24px; }
     }
 
+  
+    /* =====================
+       QUALIFIER COVER / PFP
+    ===================== */
+    /* Thumbnail in collapsed toggle row */
+    .q-thumb-wrap {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* SOTY: 3:4 story cover thumbnail */
+    .q-cover-thumb {
+      width: 36px;
+      height: 48px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid rgba(27,42,74,0.12);
+      display: block;
+      transition: transform 0.2s;
+    }
+    .q-item:hover .q-cover-thumb,
+    .q-item.open .q-cover-thumb { transform: scale(1.04); }
+
+    /* AOTY: circular PFP thumbnail */
+    .q-pfp-thumb {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid rgba(201,168,76,0.35);
+      display: block;
+      transition: border-color 0.2s;
+    }
+    .q-item:hover .q-pfp-thumb,
+    .q-item.open .q-pfp-thumb { border-color: var(--gold); }
+
+    /* Expanded body: larger images */
+    .q-body-image-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    /* SOTY body: tall story cover */
+    .q-cover-full {
+      width: 90px;        /* 3 units */
+      height: 120px;      /* 4 units  →  3:4 ratio */
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(27,42,74,0.14);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
+
+    /* AOTY body: larger circular PFP */
+    .q-pfp-full {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      border: 3px solid rgba(201,168,76,0.45);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
+
+    /* The text block next to the body image */
+    .q-body-text { flex: 1; min-width: 0; }
+
+    @media (max-width: 480px) {
+      .q-cover-thumb { width: 30px; height: 40px; }
+      .q-pfp-thumb   { width: 34px; height: 34px; }
+      .q-cover-full  { width: 72px; height: 96px; }
+      .q-pfp-full    { width: 60px; height: 60px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1434,6 +1513,7 @@
         <div class="q-item" id="sq0" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq0')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Artemis+%26+The+Aetherist" alt="Artemis And The Aetherist cover" loading="lazy"></div>
               <span class="q-num">01</span>
               <div>
                 <div class="q-title">Artemis And The Aetherist</div>
@@ -1446,9 +1526,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A sweeping fantasy following Artemis, a young aetherist navigating a world where magic is currency and trust is the rarest resource of all.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Artemis+%26+The+Aetherist" alt="Artemis And The Aetherist cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A sweeping fantasy following Artemis, a young aetherist navigating a world where magic is currency and trust is the rarest resource of all.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @artemis_author</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1457,6 +1542,7 @@
         <div class="q-item" id="sq1" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq1')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Ashborn" alt="Ashborn cover" loading="lazy"></div>
               <span class="q-num">02</span>
               <div>
                 <div class="q-title">Ashborn</div>
@@ -1469,9 +1555,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Born from ash and reborn through fire — an epic fantasy about identity, legacy, and the cost of power in a fractured kingdom.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Ashborn" alt="Ashborn cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Born from ash and reborn through fire — an epic fantasy about identity, legacy, and the cost of power in a fractured kingdom.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @ashborn.epi</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1480,6 +1571,7 @@
         <div class="q-item" id="sq2" data-genre="Adventure">
           <button class="q-toggle" onclick="toggleQ('sq2')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/0891b2/ffffff?text=Beat+The+Heat" alt="Beat The Heat cover" loading="lazy"></div>
               <span class="q-num">03</span>
               <div>
                 <div class="q-title">Beat The Heat</div>
@@ -1492,9 +1584,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Two rival street dancers, one summer, and an underground competition neither of them planned to enter together.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/0891b2/ffffff?text=Beat+The+Heat" alt="Beat The Heat cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Two rival street dancers, one summer, and an underground competition neither of them planned to enter together.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @beattheheat.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1503,6 +1600,7 @@
         <div class="q-item" id="sq3" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq3')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=Between+Silk+Sheets" alt="Between Silk Sheets And School Ties cover" loading="lazy"></div>
               <span class="q-num">04</span>
               <div>
                 <div class="q-title">Between Silk Sheets And School Ties</div>
@@ -1515,9 +1613,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A boarding school romance that blurs the line between rivals and lovers with sharp dialogue and perfectly timed chaos.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=Between+Silk+Sheets" alt="Between Silk Sheets And School Ties cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A boarding school romance that blurs the line between rivals and lovers with sharp dialogue and perfectly timed chaos.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @silksheets.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1526,6 +1629,7 @@
         <div class="q-item" id="sq4" data-genre="LGBTQ+">
           <button class="q-toggle" onclick="toggleQ('sq4')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/059669/ffffff?text=Blurring+The+Lines" alt="Blurring The Lines cover" loading="lazy"></div>
               <span class="q-num">05</span>
               <div>
                 <div class="q-title">Blurring The Lines</div>
@@ -1538,9 +1642,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A coming-of-age story about a girl who thought she had everything figured out until a chance encounter rewrote every line she had drawn.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/059669/ffffff?text=Blurring+The+Lines" alt="Blurring The Lines cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A coming-of-age story about a girl who thought she had everything figured out until a chance encounter rewrote every line she had drawn.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @blurringthelines_ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1549,6 +1658,7 @@
         <div class="q-item" id="sq5" data-genre="LGBTQ+">
           <button class="q-toggle" onclick="toggleQ('sq5')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/059669/ffffff?text=Conning+Royalty" alt="Conning Royalty cover" loading="lazy"></div>
               <span class="q-num">06</span>
               <div>
                 <div class="q-title">Conning Royalty</div>
@@ -1561,9 +1671,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">She was hired to steal from the crown. She was not supposed to fall for the princess. A witty layered heist romance.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/059669/ffffff?text=Conning+Royalty" alt="Conning Royalty cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">She was hired to steal from the crown. She was not supposed to fall for the princess. A witty layered heist romance.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @conningroyalty</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1572,6 +1687,7 @@
         <div class="q-item" id="sq6" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq6')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Cut+Like+A+Knife" alt="Cut Like A Knife cover" loading="lazy"></div>
               <span class="q-num">07</span>
               <div>
                 <div class="q-title">Cut Like A Knife</div>
@@ -1584,9 +1700,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">The things we say in anger leave the deepest scars. A raw emotional drama about two childhood friends and a broken trust.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Cut+Like+A+Knife" alt="Cut Like A Knife cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">The things we say in anger leave the deepest scars. A raw emotional drama about two childhood friends and a broken trust.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @cutlikeaknife.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1595,6 +1716,7 @@
         <div class="q-item" id="sq7" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq7')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Disgraced" alt="Disgraced cover" loading="lazy"></div>
               <span class="q-num">08</span>
               <div>
                 <div class="q-title">Disgraced</div>
@@ -1607,9 +1729,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A disgraced senator's daughter returns home with nothing but a plan to clear her family name and a secret that could destroy everything.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Disgraced" alt="Disgraced cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A disgraced senator's daughter returns home with nothing but a plan to clear her family name and a secret that could destroy everything.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @disgraced.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1618,6 +1745,7 @@
         <div class="q-item" id="sq8" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq8')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Elyndor" alt="Elyndor cover" loading="lazy"></div>
               <span class="q-num">09</span>
               <div>
                 <div class="q-title">Elyndor</div>
@@ -1630,9 +1758,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A richly built fantasy world where the fate of an ancient empire rests on a cartographer who can see the dead.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Elyndor" alt="Elyndor cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A richly built fantasy world where the fate of an ancient empire rests on a cartographer who can see the dead.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @elyndor.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1641,6 +1774,7 @@
         <div class="q-item" id="sq9" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq9')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Enchanted+Hearts" alt="Enchanted Hearts cover" loading="lazy"></div>
               <span class="q-num">10</span>
               <div>
                 <div class="q-title">Enchanted Hearts</div>
@@ -1653,9 +1787,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A fairy tale retold from the villain's point of view — charming, morally grey, and far more romantic than the original.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Enchanted+Hearts" alt="Enchanted Hearts cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A fairy tale retold from the villain's point of view — charming, morally grey, and far more romantic than the original.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @enchantedheartsep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1664,6 +1803,7 @@
         <div class="q-item" id="sq10" data-genre="Mystery">
           <button class="q-toggle" onclick="toggleQ('sq10')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/6d28d9/ffffff?text=Final+Act" alt="Final Act cover" loading="lazy"></div>
               <span class="q-num">11</span>
               <div>
                 <div class="q-title">Final Act</div>
@@ -1676,9 +1816,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">The night before opening night, the lead actress vanishes. The understudy has 24 hours to find her or take her place.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/6d28d9/ffffff?text=Final+Act" alt="Final Act cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">The night before opening night, the lead actress vanishes. The understudy has 24 hours to find her or take her place.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @finalact.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1687,6 +1832,7 @@
         <div class="q-item" id="sq11" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq11')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=Knock-Out" alt="Knock-Out cover" loading="lazy"></div>
               <span class="q-num">12</span>
               <div>
                 <div class="q-title">Knock-Out</div>
@@ -1699,9 +1845,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A pro boxer and a sports journalist agree to hate each other. It does not go as planned. Fast-paced, funny, genuinely swoon-worthy.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=Knock-Out" alt="Knock-Out cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A pro boxer and a sports journalist agree to hate each other. It does not go as planned. Fast-paced, funny, genuinely swoon-worthy.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @knockout.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1710,6 +1861,7 @@
         <div class="q-item" id="sq12" data-genre="Sci-Fi">
           <button class="q-toggle" onclick="toggleQ('sq12')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/0284c7/ffffff?text=Last+Line" alt="Last Line cover" loading="lazy"></div>
               <span class="q-num">13</span>
               <div>
                 <div class="q-title">Last Line</div>
@@ -1722,9 +1874,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">On a dying space station, the last communications officer receives a transmission from Earth — a planet officially declared gone.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/0284c7/ffffff?text=Last+Line" alt="Last Line cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">On a dying space station, the last communications officer receives a transmission from Earth — a planet officially declared gone.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @lastline.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1733,6 +1890,7 @@
         <div class="q-item" id="sq13" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq13')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=Love+Potions" alt="Love Potions Do Not Work! cover" loading="lazy"></div>
               <span class="q-num">14</span>
               <div>
                 <div class="q-title">Love Potions Do Not Work!</div>
@@ -1745,9 +1903,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">An amateur witch, a very skeptical barista, and a potion gone spectacularly wrong. Comedy romance equal parts chaotic and heartwarming.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=Love+Potions" alt="Love Potions Do Not Work! cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">An amateur witch, a very skeptical barista, and a potion gone spectacularly wrong. Comedy romance equal parts chaotic and heartwarming.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @lovepotions.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1756,6 +1919,7 @@
         <div class="q-item" id="sq14" data-genre="Adventure">
           <button class="q-toggle" onclick="toggleQ('sq14')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/0891b2/ffffff?text=Love+Rewritten" alt="Love Rewritten cover" loading="lazy"></div>
               <span class="q-num">15</span>
               <div>
                 <div class="q-title">Love Rewritten</div>
@@ -1768,9 +1932,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A time traveler goes back to fix one mistake. What she finds instead is a whole life she never knew she had missed.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/0891b2/ffffff?text=Love+Rewritten" alt="Love Rewritten cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A time traveler goes back to fix one mistake. What she finds instead is a whole life she never knew she had missed.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @loverewritten</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1779,6 +1948,7 @@
         <div class="q-item" id="sq15" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq15')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Midnight+Vigilante" alt="Midnight Vigilante cover" loading="lazy"></div>
               <span class="q-num">16</span>
               <div>
                 <div class="q-title">Midnight Vigilante</div>
@@ -1791,9 +1961,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">By day she is an office assistant. By night she is the only person in the city willing to do something about it.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Midnight+Vigilante" alt="Midnight Vigilante cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">By day she is an office assistant. By night she is the only person in the city willing to do something about it.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @midnightvigilante</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1802,6 +1977,7 @@
         <div class="q-item" id="sq16" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq16')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=One+Latte" alt="One Latte At A Time cover" loading="lazy"></div>
               <span class="q-num">17</span>
               <div>
                 <div class="q-title">One Latte At A Time</div>
@@ -1814,9 +1990,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A cosy coffee shop romance with genuine chemistry, real conversations, and the kind of slow burn that feels like a warm drink.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=One+Latte" alt="One Latte At A Time cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A cosy coffee shop romance with genuine chemistry, real conversations, and the kind of slow burn that feels like a warm drink.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @onelatte.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1825,6 +2006,7 @@
         <div class="q-item" id="sq17" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq17')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Only+Pretend" alt="Only Pretend cover" loading="lazy"></div>
               <span class="q-num">18</span>
               <div>
                 <div class="q-title">Only Pretend</div>
@@ -1837,9 +2019,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Two estranged siblings fake their way through a family reunion. What starts as performance becomes something neither expected.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Only+Pretend" alt="Only Pretend cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Two estranged siblings fake their way through a family reunion. What starts as performance becomes something neither expected.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @onlypretend.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1848,6 +2035,7 @@
         <div class="q-item" id="sq18" data-genre="Comedy">
           <button class="q-toggle" onclick="toggleQ('sq18')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/d97706/ffffff?text=Painted+Tension" alt="Painted Tension cover" loading="lazy"></div>
               <span class="q-num">19</span>
               <div>
                 <div class="q-title">Painted Tension</div>
@@ -1860,9 +2048,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A famous artist. A terrible art critic. One apartment building. Enemies-to-lovers with the best banter on Episode.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/d97706/ffffff?text=Painted+Tension" alt="Painted Tension cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A famous artist. A terrible art critic. One apartment building. Enemies-to-lovers with the best banter on Episode.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @paintedtension</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1871,6 +2064,7 @@
         <div class="q-item" id="sq19" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq19')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Prelude+To+Forever" alt="Prelude To Forever cover" loading="lazy"></div>
               <span class="q-num">20</span>
               <div>
                 <div class="q-title">Prelude To Forever</div>
@@ -1883,9 +2077,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A musician discovers her compositions can alter the fabric of time. A lyrical visually stunning fantasy that reads like a song.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Prelude+To+Forever" alt="Prelude To Forever cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A musician discovers her compositions can alter the fabric of time. A lyrical visually stunning fantasy that reads like a song.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @preludetoforever</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1894,6 +2093,7 @@
         <div class="q-item" id="sq20" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq20')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=Put+It+On+Me" alt="Put It On Me cover" loading="lazy"></div>
               <span class="q-num">21</span>
               <div>
                 <div class="q-title">Put It On Me</div>
@@ -1906,9 +2106,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A fashion designer and her difficult new client have absolutely nothing in common — which is exactly why this works so well.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=Put+It+On+Me" alt="Put It On Me cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A fashion designer and her difficult new client have absolutely nothing in common — which is exactly why this works so well.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @putitonme.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1917,6 +2122,7 @@
         <div class="q-item" id="sq21" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq21')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Rock%27n+Stardust" alt="Rock'n Stardust cover" loading="lazy"></div>
               <span class="q-num">22</span>
               <div>
                 <div class="q-title">Rock'n Stardust</div>
@@ -1929,9 +2135,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A rockstar who can see the future and a producer who can alter the past collide in this genre-defying fantasy about music and fate.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Rock%27n+Stardust" alt="Rock'n Stardust cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A rockstar who can see the future and a producer who can alter the past collide in this genre-defying fantasy about music and fate.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @rockn_stardust</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1940,6 +2151,7 @@
         <div class="q-item" id="sq22" data-genre="Comedy">
           <button class="q-toggle" onclick="toggleQ('sq22')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/d97706/ffffff?text=Second+Shot" alt="Second Shot cover" loading="lazy"></div>
               <span class="q-num">23</span>
               <div>
                 <div class="q-title">Second Shot</div>
@@ -1952,9 +2164,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A retired professional athlete opens a youth sports club and immediately regrets it. Hilarious, warm, and unexpectedly moving.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/d97706/ffffff?text=Second+Shot" alt="Second Shot cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A retired professional athlete opens a youth sports club and immediately regrets it. Hilarious, warm, and unexpectedly moving.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @secondshot.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1963,6 +2180,7 @@
         <div class="q-item" id="sq23" data-genre="Horror">
           <button class="q-toggle" onclick="toggleQ('sq23')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/374151/ffffff?text=Shiver" alt="Shiver cover" loading="lazy"></div>
               <span class="q-num">24</span>
               <div>
                 <div class="q-title">Shiver</div>
@@ -1975,9 +2193,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">The house has been in the family for generations. No one talks about what happened in the east wing. No one comes back unchanged.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/374151/ffffff?text=Shiver" alt="Shiver cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">The house has been in the family for generations. No one talks about what happened in the east wing. No one comes back unchanged.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @shiver.episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1986,6 +2209,7 @@
         <div class="q-item" id="sq24" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq24')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Signature+Love" alt="Signature Love cover" loading="lazy"></div>
               <span class="q-num">25</span>
               <div>
                 <div class="q-title">Signature Love</div>
@@ -1998,9 +2222,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A contract marriage between a CEO and an artist that was supposed to be simple. Gorgeous directing and a slow burn worth every page.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Signature+Love" alt="Signature Love cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A contract marriage between a CEO and an artist that was supposed to be simple. Gorgeous directing and a slow burn worth every page.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @signaturelove.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2009,6 +2238,7 @@
         <div class="q-item" id="sq25" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq25')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=Stolen+Destiny" alt="Stolen Destiny cover" loading="lazy"></div>
               <span class="q-num">26</span>
               <div>
                 <div class="q-title">Stolen Destiny</div>
@@ -2021,9 +2251,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Her fate was written for someone else. Now she must decide whether to live the life stolen from her or forge one truly her own.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=Stolen+Destiny" alt="Stolen Destiny cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Her fate was written for someone else. Now she must decide whether to live the life stolen from her or forge one truly her own.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @stolendestiny.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2032,6 +2267,7 @@
         <div class="q-item" id="sq26" data-genre="Romance">
           <button class="q-toggle" onclick="toggleQ('sq26')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=Sunkissed+Letters" alt="Sunkissed Letters cover" loading="lazy"></div>
               <span class="q-num">27</span>
               <div>
                 <div class="q-title">Sunkissed Letters</div>
@@ -2044,9 +2280,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A summer pen pal romance spanning three years, two continents, and one very brave confession. Sweet, emotional, beautifully crafted.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=Sunkissed+Letters" alt="Sunkissed Letters cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A summer pen pal romance spanning three years, two continents, and one very brave confession. Sweet, emotional, beautifully crafted.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @sunkissedletters</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2055,6 +2296,7 @@
         <div class="q-item" id="sq27" data-genre="Comedy">
           <button class="q-toggle" onclick="toggleQ('sq27')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/d97706/ffffff?text=The+Bully+Diaries" alt="The Bully Diaries cover" loading="lazy"></div>
               <span class="q-num">28</span>
               <div>
                 <div class="q-title">Test Me</div>
@@ -2067,9 +2309,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A study group, a teacher who is definitely not flirting back, and campus comedy that knows exactly what it is and delivers it.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/d97706/ffffff?text=The+Bully+Diaries" alt="The Bully Diaries cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A study group, a teacher who is definitely not flirting back, and campus comedy that knows exactly what it is and delivers it.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @testme.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2078,6 +2325,7 @@
         <div class="q-item" id="sq28" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq28')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Flame+Accord" alt="The Flame Accord cover" loading="lazy"></div>
               <span class="q-num">29</span>
               <div>
                 <div class="q-title">The Clique</div>
@@ -2090,9 +2338,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Inside the most exclusive social circle at an elite school, loyalty means everything — until it means nothing.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Flame+Accord" alt="The Flame Accord cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Inside the most exclusive social circle at an elite school, loyalty means everything — until it means nothing.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @theclique.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2101,6 +2354,7 @@
         <div class="q-item" id="sq29" data-genre="Thriller">
           <button class="q-toggle" onclick="toggleQ('sq29')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/C9A84C/0F1B33?text=The+Gilded+Cage" alt="The Gilded Cage cover" loading="lazy"></div>
               <span class="q-num">30</span>
               <div>
                 <div class="q-title">The Detour</div>
@@ -2113,9 +2367,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A road trip, a wrong turn, five friends who discover the person in the back seat has been lying since the very first mile.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/C9A84C/0F1B33?text=The+Gilded+Cage" alt="The Gilded Cage cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A road trip, a wrong turn, five friends who discover the person in the back seat has been lying since the very first mile.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @thedetour.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2124,6 +2383,7 @@
         <div class="q-item" id="sq30" data-genre="Mystery">
           <button class="q-toggle" onclick="toggleQ('sq30')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/db2777/ffffff?text=The+Heart+Files" alt="The Heart Files cover" loading="lazy"></div>
               <span class="q-num">31</span>
               <div>
                 <div class="q-title">The Invisible String</div>
@@ -2136,9 +2396,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Three strangers connected by an impossible coincidence realize someone has been watching them for years.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/db2777/ffffff?text=The+Heart+Files" alt="The Heart Files cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Three strangers connected by an impossible coincidence realize someone has been watching them for years.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @invisiblestring</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2147,6 +2412,7 @@
         <div class="q-item" id="sq31" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq31')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Last+Dawn" alt="The Last Dawn cover" loading="lazy"></div>
               <span class="q-num">32</span>
               <div>
                 <div class="q-title">The Last Dawn</div>
@@ -2159,9 +2425,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">The sun rises for the last time in seven days. The only person who can stop it is the one who caused it.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Last+Dawn" alt="The Last Dawn cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">The sun rises for the last time in seven days. The only person who can stop it is the one who caused it.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @lastdawn.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2170,6 +2441,7 @@
         <div class="q-item" id="sq32" data-genre="Fantasy">
           <button class="q-toggle" onclick="toggleQ('sq32')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Witch%27s+Task" alt="The Witch's Task cover" loading="lazy"></div>
               <span class="q-num">33</span>
               <div>
                 <div class="q-title">The Witch's Task</div>
@@ -2182,9 +2454,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">An ordinary girl is given an impossible task by a witch who refuses to explain why. Whimsical, strange, and quietly profound.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/7c3aed/ffffff?text=The+Witch%27s+Task" alt="The Witch's Task cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">An ordinary girl is given an impossible task by a witch who refuses to explain why. Whimsical, strange, and quietly profound.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @witchstask.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2193,6 +2470,7 @@
         <div class="q-item" id="sq33" data-genre="Comedy">
           <button class="q-toggle" onclick="toggleQ('sq33')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/d97706/ffffff?text=To+The+Boldest+Liar" alt="To The Boldest Liar cover" loading="lazy"></div>
               <span class="q-num">34</span>
               <div>
                 <div class="q-title">To The Boldest Liar</div>
@@ -2205,9 +2483,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A competitive card game, a cash prize, and a table full of people with secrets. Comedy thriller as clever as it is funny.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/d97706/ffffff?text=To+The+Boldest+Liar" alt="To The Boldest Liar cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A competitive card game, a cash prize, and a table full of people with secrets. Comedy thriller as clever as it is funny.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @boldestliar.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2216,6 +2499,7 @@
         <div class="q-item" id="sq34" data-genre="Adventure">
           <button class="q-toggle" onclick="toggleQ('sq34')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/0891b2/ffffff?text=Under+Your+Enchantment" alt="Under Your Enchantment cover" loading="lazy"></div>
               <span class="q-num">35</span>
               <div>
                 <div class="q-title">Under Your Enchantment</div>
@@ -2228,9 +2512,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A cursed knight and a sorcerer with no memory of casting it are forced to travel together. Beautifully directed adventure romance.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/0891b2/ffffff?text=Under+Your+Enchantment" alt="Under Your Enchantment cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A cursed knight and a sorcerer with no memory of casting it are forced to travel together. Beautifully directed adventure romance.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @underyourenchantment</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2239,6 +2528,7 @@
         <div class="q-item" id="sq35" data-genre="Thriller">
           <button class="q-toggle" onclick="toggleQ('sq35')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/dc2626/ffffff?text=Urban+Underworld" alt="Urban Underworld: Werewolves cover" loading="lazy"></div>
               <span class="q-num">36</span>
               <div>
                 <div class="q-title">Urban Underworld: Werewolves</div>
@@ -2251,9 +2541,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">Modern city. Ancient supernatural order. A detective who just discovered she has been tracking the wrong predator her whole career.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/dc2626/ffffff?text=Urban+Underworld" alt="Urban Underworld: Werewolves cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">Modern city. Ancient supernatural order. A detective who just discovered she has been tracking the wrong predator her whole career.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @urbanunderworld</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2262,6 +2557,7 @@
         <div class="q-item" id="sq36" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq36')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Veiled+Vengeance" alt="Veiled Vengeance cover" loading="lazy"></div>
               <span class="q-num">37</span>
               <div>
                 <div class="q-title">Veiled Vengeance</div>
@@ -2274,9 +2570,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A wedding planner discovers her latest client is the man who ruined her family. She has six months. So does he.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Veiled+Vengeance" alt="Veiled Vengeance cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A wedding planner discovers her latest client is the man who ruined her family. She has six months. So does he.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @veiledvengeance</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2285,6 +2586,7 @@
         <div class="q-item" id="sq37" data-genre="Action">
           <button class="q-toggle" onclick="toggleQ('sq37')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/ea580c/ffffff?text=Whispers+of+Betrayal" alt="Whispers Of Betrayal cover" loading="lazy"></div>
               <span class="q-num">38</span>
               <div>
                 <div class="q-title">Whispers Of Betrayal</div>
@@ -2297,9 +2599,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A spy handler realizes her most trusted operative may be the mole she has been hunting. High-stakes action with a surprising final act.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/ea580c/ffffff?text=Whispers+of+Betrayal" alt="Whispers Of Betrayal cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A spy handler realizes her most trusted operative may be the mole she has been hunting. High-stakes action with a surprising final act.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @whispersofbetrayal</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2308,6 +2615,7 @@
         <div class="q-item" id="sq38" data-genre="LGBTQ+">
           <button class="q-toggle" onclick="toggleQ('sq38')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/059669/ffffff?text=Writing+Her" alt="Writing Her cover" loading="lazy"></div>
               <span class="q-num">39</span>
               <div>
                 <div class="q-title">Writing Her</div>
@@ -2320,9 +2628,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A novelist writing a love story realizes she has been writing about the same woman for years — her best friend.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/059669/ffffff?text=Writing+Her" alt="Writing Her cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A novelist writing a love story realizes she has been writing about the same woman for years — her best friend.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @writingher.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2331,6 +2644,7 @@
         <div class="q-item" id="sq39" data-genre="Drama">
           <button class="q-toggle" onclick="toggleQ('sq39')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-cover-thumb" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Story+Forty" alt="Story Forty cover" loading="lazy"></div>
               <span class="q-num">40</span>
               <div>
                 <div class="q-title">Story Forty</div>
@@ -2343,9 +2657,14 @@
             </div>
           </button>
           <div class="q-body">
-            <p class="q-desc">A compelling qualifier whose story left a lasting impression on readers and the judging panel alike. Details updated when registration opens.</p>
-            <div class="q-footer">
+            <div class="q-body-image-row">
+              <img class="q-cover-full" src="https://placehold.co/300x400/1d4ed8/ffffff?text=Story+Forty" alt="Story Forty cover" loading="lazy">
+              <div class="q-body-text">
+                <p class="q-desc">A compelling qualifier whose story left a lasting impression on readers and the judging panel alike. Details updated when registration opens.</p>
+                <div class="q-footer">
               <span class="q-author-tag">&#9998; @storyfifteen.ep</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3443,6 +3762,7 @@
         <div class="q-item" id="aq0">
           <button class="q-toggle" onclick="toggleQ('aq0')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=AKG" alt="AK Gray" loading="lazy"></div>
               <span class="q-num">01</span>
               <div>
                 <div class="q-title">AK Gray</div>
@@ -3455,7 +3775,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=AKG" alt="AK Gray profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">AK Gray is a passionate storyteller whose stories explore love, heartbreak and growth.</p>
@@ -3473,8 +3796,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @alistoriez</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3483,6 +3808,7 @@
         <div class="q-item" id="aq1">
           <button class="q-toggle" onclick="toggleQ('aq1')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=ALE" alt="Alessandra" loading="lazy"></div>
               <span class="q-num">02</span>
               <div>
                 <div class="q-title">Alessandra</div>
@@ -3495,7 +3821,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=ALE" alt="Alessandra profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Emotionally honest stories wrapped in just enough chaos to keep things interesting.</p>
@@ -3513,8 +3842,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @alessandra.write</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3523,6 +3854,7 @@
         <div class="q-item" id="aq2">
           <button class="q-toggle" onclick="toggleQ('aq2')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=AUG" alt="Augen" loading="lazy"></div>
               <span class="q-num">03</span>
               <div>
                 <div class="q-title">Augen</div>
@@ -3535,7 +3867,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=AUG" alt="Augen profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Dark, immersive worlds where every detail is intentional and every character earns their place.</p>
@@ -3553,8 +3888,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @night_black_episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3563,6 +3900,7 @@
         <div class="q-item" id="aq3">
           <button class="q-toggle" onclick="toggleQ('aq3')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=BD" alt="BD" loading="lazy"></div>
               <span class="q-num">04</span>
               <div>
                 <div class="q-title">BD</div>
@@ -3575,7 +3913,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=BD" alt="BD profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Raw, fast-paced stories with emotional stakes that actually land.</p>
@@ -3593,8 +3934,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#ea580c20; color:#ea580c; border-color:#ea580c40">Action</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @xbr.eex</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3603,6 +3946,7 @@
         <div class="q-item" id="aq4">
           <button class="q-toggle" onclick="toggleQ('aq4')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=BH" alt="Blackhearts" loading="lazy"></div>
               <span class="q-num">05</span>
               <div>
                 <div class="q-title">Blackhearts</div>
@@ -3615,7 +3959,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=BH" alt="Blackhearts profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Stories centered on voices that deserve the spotlight.</p>
@@ -3633,8 +3980,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#05966920; color:#059669; border-color:#05966940">LGBTQ+</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @heartsepi.write</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3643,6 +3992,7 @@
         <div class="q-item" id="aq5">
           <button class="q-toggle" onclick="toggleQ('aq5')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=BL" alt="Bunny Lin" loading="lazy"></div>
               <span class="q-num">06</span>
               <div>
                 <div class="q-title">Bunny Lin</div>
@@ -3655,7 +4005,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=BL" alt="Bunny Lin profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Witty, warm stories that feel like a good conversation with your best friend.</p>
@@ -3673,8 +4026,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @bunnylin.episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3683,6 +4038,7 @@
         <div class="q-item" id="aq6">
           <button class="q-toggle" onclick="toggleQ('aq6')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=CN" alt="Chanel N" loading="lazy"></div>
               <span class="q-num">07</span>
               <div>
                 <div class="q-title">Chanel N</div>
@@ -3695,7 +4051,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=CN" alt="Chanel N profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Slow-burn suspense with emotionally complex characters at the centre.</p>
@@ -3713,8 +4072,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#6d28d920; color:#6d28d9; border-color:#6d28d940">Mystery</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @chanel.stories</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3723,6 +4084,7 @@
         <div class="q-item" id="aq7">
           <button class="q-toggle" onclick="toggleQ('aq7')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=CS" alt="Charlie Seb" loading="lazy"></div>
               <span class="q-num">08</span>
               <div>
                 <div class="q-title">Charlie Seb</div>
@@ -3735,7 +4097,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=CS" alt="Charlie Seb profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Dialogue-driven stories where the real drama lives between the lines.</p>
@@ -3753,8 +4118,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @charlieseb.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3763,6 +4130,7 @@
         <div class="q-item" id="aq8">
           <button class="q-toggle" onclick="toggleQ('aq8')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/ea580c/ffffff?text=CW" alt="Chriswrite_episode" loading="lazy"></div>
               <span class="q-num">09</span>
               <div>
                 <div class="q-title">Chriswrite_episode</div>
@@ -3775,7 +4143,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/ea580c/ffffff?text=CW" alt="Chriswrite_episode profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">High-stakes plots with directing that matches the energy of every scene.</p>
@@ -3793,8 +4164,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#ea580c20; color:#ea580c; border-color:#ea580c40">Action</span><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @chriswrites_episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3803,6 +4176,7 @@
         <div class="q-item" id="aq9">
           <button class="q-toggle" onclick="toggleQ('aq9')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=DDC" alt="Daphne De Carter" loading="lazy"></div>
               <span class="q-num">10</span>
               <div>
                 <div class="q-title">Daphne De Carter</div>
@@ -3815,7 +4189,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=DDC" alt="Daphne De Carter profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Enchanting worlds where magic and love are equally unpredictable.</p>
@@ -3833,8 +4210,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @daphnedecarter.episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3843,6 +4222,7 @@
         <div class="q-item" id="aq10">
           <button class="q-toggle" onclick="toggleQ('aq10')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/059669/ffffff?text=DM" alt="Daze Meadly" loading="lazy"></div>
               <span class="q-num">11</span>
               <div>
                 <div class="q-title">Daze Meadly</div>
@@ -3855,7 +4235,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/059669/ffffff?text=DM" alt="Daze Meadly profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Authentic, grounded LGBTQ+ stories told with care and specificity.</p>
@@ -3873,8 +4256,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#05966920; color:#059669; border-color:#05966940">LGBTQ+</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @dazemeadly.epi</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3883,6 +4268,7 @@
         <div class="q-item" id="aq11">
           <button class="q-toggle" onclick="toggleQ('aq11')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=ELA" alt="Ela" loading="lazy"></div>
               <span class="q-num">12</span>
               <div>
                 <div class="q-title">Em_stories14</div>
@@ -3895,7 +4281,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=ELA" alt="Ela profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Charming, joyful stories that feel like falling in love with reading all over again.</p>
@@ -3913,8 +4302,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @em_stories14</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3923,6 +4314,7 @@
         <div class="q-item" id="aq12">
           <button class="q-toggle" onclick="toggleQ('aq12')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=EH" alt="Elodie Harte" loading="lazy"></div>
               <span class="q-num">13</span>
               <div>
                 <div class="q-title">Eysenck</div>
@@ -3935,7 +4327,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=EH" alt="Elodie Harte profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Suspenseful, precise storytelling where every detail is a clue.</p>
@@ -3953,8 +4348,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#6d28d920; color:#6d28d9; border-color:#6d28d940">Mystery</span><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @eys.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3963,6 +4360,7 @@
         <div class="q-item" id="aq13">
           <button class="q-toggle" onclick="toggleQ('aq13')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/d97706/ffffff?text=EMI" alt="Emi" loading="lazy"></div>
               <span class="q-num">14</span>
               <div>
                 <div class="q-title">Fern</div>
@@ -3975,7 +4373,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/d97706/ffffff?text=EMI" alt="Emi profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Lyrical, atmospheric stories where prose and visual storytelling meet perfectly.</p>
@@ -3993,8 +4394,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @fables_by_fern</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4003,6 +4406,7 @@
         <div class="q-item" id="aq14">
           <button class="q-toggle" onclick="toggleQ('aq14')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/059669/ffffff?text=FTH" alt="Faith" loading="lazy"></div>
               <span class="q-num">15</span>
               <div>
                 <div class="q-title">Harly</div>
@@ -4015,7 +4419,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/059669/ffffff?text=FTH" alt="Faith profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Slow-burn romance with real emotional texture and genuine payoffs.</p>
@@ -4033,8 +4440,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @harlywritess</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4043,6 +4452,7 @@
         <div class="q-item" id="aq15">
           <button class="q-toggle" onclick="toggleQ('aq15')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=GM" alt="Gigi Monroe" loading="lazy"></div>
               <span class="q-num">16</span>
               <div>
                 <div class="q-title">Honey</div>
@@ -4055,7 +4465,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=GM" alt="Gigi Monroe profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Bright, funny stories that feel like a warm sunny afternoon.</p>
@@ -4073,8 +4486,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @episode.honeyy</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4083,6 +4498,7 @@
         <div class="q-item" id="aq16">
           <button class="q-toggle" onclick="toggleQ('aq16')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=HG" alt="Hannah Gale" loading="lazy"></div>
               <span class="q-num">17</span>
               <div>
                 <div class="q-title">Ivy</div>
@@ -4095,7 +4511,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=HG" alt="Hannah Gale profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Bold, unapologetic stories that push boundaries and demand to be read.</p>
@@ -4113,8 +4532,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#05966920; color:#059669; border-color:#05966940">LGBTQ+</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @ivy.epiwrites</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4123,6 +4544,7 @@
         <div class="q-item" id="aq17">
           <button class="q-toggle" onclick="toggleQ('aq17')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/0891b2/ffffff?text=JB" alt="Jan B" loading="lazy"></div>
               <span class="q-num">18</span>
               <div>
                 <div class="q-title">Janb</div>
@@ -4135,7 +4557,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/0891b2/ffffff?text=JB" alt="Jan B profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Epic world-building with leads who feel worthy of the journey.</p>
@@ -4153,8 +4578,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#0891b220; color:#0891b2; border-color:#0891b240">Adventure</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @janb.stories</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4163,6 +4590,7 @@
         <div class="q-item" id="aq18">
           <button class="q-toggle" onclick="toggleQ('aq18')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=JM" alt="Jmstoriesxx" loading="lazy"></div>
               <span class="q-num">19</span>
               <div>
                 <div class="q-title">Jmstoriesxx</div>
@@ -4175,7 +4603,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=JM" alt="Jmstoriesxx profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Complex love stories with emotional depth that builds slowly and pays off beautifully.</p>
@@ -4193,8 +4624,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @jmstoriesxx</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4203,6 +4636,7 @@
         <div class="q-item" id="aq19">
           <button class="q-toggle" onclick="toggleQ('aq19')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/6d28d9/ffffff?text=KTH" alt="Kath" loading="lazy"></div>
               <span class="q-num">20</span>
               <div>
                 <div class="q-title">Kath</div>
@@ -4215,7 +4649,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/6d28d9/ffffff?text=KTH" alt="Kath profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Elegant, intelligent stories that trust the reader to keep up.</p>
@@ -4233,8 +4670,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#6d28d920; color:#6d28d9; border-color:#6d28d940">Mystery</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @kath.stories</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4243,6 +4682,7 @@
         <div class="q-item" id="aq20">
           <button class="q-toggle" onclick="toggleQ('aq20')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=KV" alt="Kimberly V." loading="lazy"></div>
               <span class="q-num">21</span>
               <div>
                 <div class="q-title">Kimberly V.</div>
@@ -4255,7 +4695,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=KV" alt="Kimberly V. profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Fairy tale romance for grown-ups — magic, longing, and love that actually costs something.</p>
@@ -4273,8 +4716,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @k.v.stories</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4283,6 +4728,7 @@
         <div class="q-item" id="aq21">
           <button class="q-toggle" onclick="toggleQ('aq21')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=LK" alt="L. Kennedy" loading="lazy"></div>
               <span class="q-num">22</span>
               <div>
                 <div class="q-title">L. Kennedy</div>
@@ -4295,7 +4741,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=LK" alt="L. Kennedy profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Cinematic, character-driven drama with moral complexity at its core.</p>
@@ -4313,8 +4762,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @l.kennedy_episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4323,6 +4774,7 @@
         <div class="q-item" id="aq22">
           <button class="q-toggle" onclick="toggleQ('aq22')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=LR" alt="Lana Ray" loading="lazy"></div>
               <span class="q-num">23</span>
               <div>
                 <div class="q-title">Lisa Melz</div>
@@ -4335,7 +4787,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=LR" alt="Lana Ray profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">The perfect escape — funny, heartwarming, and beautifully crafted.</p>
@@ -4353,8 +4808,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @lisa.writess</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4363,6 +4820,7 @@
         <div class="q-item" id="aq23">
           <button class="q-toggle" onclick="toggleQ('aq23')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/dc2626/ffffff?text=LS" alt="Lila Storm" loading="lazy"></div>
               <span class="q-num">24</span>
               <div>
                 <div class="q-title">Lulu Majestic</div>
@@ -4375,7 +4833,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/dc2626/ffffff?text=LS" alt="Lila Storm profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Lush, visually stunning stories where directing and narrative are inseparable.</p>
@@ -4393,8 +4854,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @lulu_majestic</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4403,6 +4866,7 @@
         <div class="q-item" id="aq24">
           <button class="q-toggle" onclick="toggleQ('aq24')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=LW" alt="Luna Writes" loading="lazy"></div>
               <span class="q-num">25</span>
               <div>
                 <div class="q-title">Lum0s</div>
@@ -4415,7 +4879,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=LW" alt="Luna Writes profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Quiet, powerful stories that feel quietly revolutionary.</p>
@@ -4433,8 +4900,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#05966920; color:#059669; border-color:#05966940">LGBTQ+</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @lum0s_writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4443,6 +4912,7 @@
         <div class="q-item" id="aq25">
           <button class="q-toggle" onclick="toggleQ('aq25')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/d97706/ffffff?text=MDS" alt="Mads" loading="lazy"></div>
               <span class="q-num">26</span>
               <div>
                 <div class="q-title">Lumiere</div>
@@ -4455,7 +4925,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/d97706/ffffff?text=MDS" alt="Mads profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Gorgeous, sweeping stories where visuals and emotion always serve each other.</p>
@@ -4473,8 +4946,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @vers_de_lumiere</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4483,6 +4958,7 @@
         <div class="q-item" id="aq26">
           <button class="q-toggle" onclick="toggleQ('aq26')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=MB" alt="Mara Belle" loading="lazy"></div>
               <span class="q-num">27</span>
               <div>
                 <div class="q-title">Nadi</div>
@@ -4495,7 +4971,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=MB" alt="Mara Belle profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Love stories with real texture — complicated feelings, real stakes, genuine resolution.</p>
@@ -4513,8 +4992,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @nadi_stories</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4523,6 +5004,7 @@
         <div class="q-item" id="aq27">
           <button class="q-toggle" onclick="toggleQ('aq27')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/059669/ffffff?text=MYA" alt="Maya" loading="lazy"></div>
               <span class="q-num">28</span>
               <div>
                 <div class="q-title">Nas</div>
@@ -4535,7 +5017,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/059669/ffffff?text=MYA" alt="Maya profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Explosive, high-energy storytelling where every chapter raises the stakes higher.</p>
@@ -4553,8 +5038,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span><span class="g-badge" style="background:#ea580c20; color:#ea580c; border-color:#ea580c40">Action</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @nxx._epy</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4563,6 +5050,7 @@
         <div class="q-item" id="aq28">
           <button class="q-toggle" onclick="toggleQ('aq28')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=NC" alt="Nadia C." loading="lazy"></div>
               <span class="q-num">29</span>
               <div>
                 <div class="q-title">Nelly</div>
@@ -4575,7 +5063,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=NC" alt="Nadia C. profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Stories you read twice just to relive the best moments.</p>
@@ -4593,8 +5084,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @nellyy.epi</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4603,6 +5096,7 @@
         <div class="q-item" id="aq29">
           <button class="q-toggle" onclick="toggleQ('aq29')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=NVA" alt="Nova" loading="lazy"></div>
               <span class="q-num">30</span>
               <div>
                 <div class="q-title">Nelson</div>
@@ -4615,7 +5109,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=NVA" alt="Nova profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Precise, emotionally intelligent stories that linger long after the last chapter.</p>
@@ -4633,8 +5130,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#6d28d920; color:#6d28d9; border-color:#6d28d940">Mystery</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @nelsonepisode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4643,6 +5142,7 @@
         <div class="q-item" id="aq30">
           <button class="q-toggle" onclick="toggleQ('aq30')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=ODE" alt="Odessa" loading="lazy"></div>
               <span class="q-num">31</span>
               <div>
                 <div class="q-title">Odessa</div>
@@ -4655,7 +5155,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=ODE" alt="Odessa profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Worlds that feel fully alive with characters you would follow anywhere.</p>
@@ -4673,8 +5176,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @odessa_episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4683,6 +5188,7 @@
         <div class="q-item" id="aq31">
           <button class="q-toggle" onclick="toggleQ('aq31')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/d97706/ffffff?text=PHB" alt="Phoebe" loading="lazy"></div>
               <span class="q-num">32</span>
               <div>
                 <div class="q-title">R. Lewis</div>
@@ -4695,7 +5201,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/d97706/ffffff?text=PHB" alt="Phoebe profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Complete, intentional storytelling where every element serves the whole.</p>
@@ -4713,8 +5222,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @rlewiswrites</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4723,6 +5234,7 @@
         <div class="q-item" id="aq32">
           <button class="q-toggle" onclick="toggleQ('aq32')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/dc2626/ffffff?text=RW" alt="Rae Winters" loading="lazy"></div>
               <span class="q-num">33</span>
               <div>
                 <div class="q-title">Rumi</div>
@@ -4735,7 +5247,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/dc2626/ffffff?text=RW" alt="Rae Winters profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Quietly powerful stories that carry the weight of real human experience.</p>
@@ -4753,8 +5268,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#05966920; color:#059669; border-color:#05966940">LGBTQ+</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @rumiwritess</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4763,6 +5280,7 @@
         <div class="q-item" id="aq33">
           <button class="q-toggle" onclick="toggleQ('aq33')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=RMI" alt="Rumi" loading="lazy"></div>
               <span class="q-num">34</span>
               <div>
                 <div class="q-title">Sarai</div>
@@ -4775,7 +5293,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=RMI" alt="Rumi profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Joyful, witty stories full of the kind of love that makes you smile.</p>
@@ -4793,8 +5314,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#d9770620; color:#d97706; border-color:#d9770640">Comedy</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @saraii.episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4803,6 +5326,7 @@
         <div class="q-item" id="aq34">
           <button class="q-toggle" onclick="toggleQ('aq34')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/db2777/ffffff?text=SRI" alt="Sarai" loading="lazy"></div>
               <span class="q-num">35</span>
               <div>
                 <div class="q-title">Song</div>
@@ -4815,7 +5339,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/db2777/ffffff?text=SRI" alt="Sarai profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Concept-driven stories with innovative directing and genuine world-building.</p>
@@ -4833,8 +5360,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#0284c720; color:#0284c7; border-color:#0284c740">Sci-Fi</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @song.epi</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4843,6 +5372,7 @@
         <div class="q-item" id="aq35">
           <button class="q-toggle" onclick="toggleQ('aq35')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/059669/ffffff?text=SNG" alt="Song" loading="lazy"></div>
               <span class="q-num">36</span>
               <div>
                 <div class="q-title">Tali</div>
@@ -4855,7 +5385,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/059669/ffffff?text=SNG" alt="Song profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Stories that build slowly and pay off completely.</p>
@@ -4873,8 +5406,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @taliberry.scripted</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4883,6 +5418,7 @@
         <div class="q-item" id="aq36">
           <button class="q-toggle" onclick="toggleQ('aq36')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/1d4ed8/ffffff?text=TLI" alt="Tali" loading="lazy"></div>
               <span class="q-num">37</span>
               <div>
                 <div class="q-title">Veni</div>
@@ -4895,7 +5431,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/1d4ed8/ffffff?text=TLI" alt="Tali profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Atmospheric, clever stories where the reader is always one step behind.</p>
@@ -4913,8 +5452,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#6d28d920; color:#6d28d9; border-color:#6d28d940">Mystery</span><span class="g-badge" style="background:#dc262620; color:#dc2626; border-color:#dc262640">Thriller</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @veni.writes</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4923,6 +5464,7 @@
         <div class="q-item" id="aq37">
           <button class="q-toggle" onclick="toggleQ('aq37')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/7c3aed/ffffff?text=VNI" alt="Veni" loading="lazy"></div>
               <span class="q-num">38</span>
               <div>
                 <div class="q-title">Viper</div>
@@ -4935,7 +5477,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/7c3aed/ffffff?text=VNI" alt="Veni profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">Intense, cinematic storytelling with real style and real substance.</p>
@@ -4953,8 +5498,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#ea580c20; color:#ea580c; border-color:#ea580c40">Action</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @viper.episode</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4963,6 +5510,7 @@
         <div class="q-item" id="aq38">
           <button class="q-toggle" onclick="toggleQ('aq38')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/d97706/ffffff?text=VDL" alt="Vers De Lumiere" loading="lazy"></div>
               <span class="q-num">39</span>
               <div>
                 <div class="q-title">Author Thirty-Nine</div>
@@ -4975,7 +5523,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/d97706/ffffff?text=VDL" alt="Vers De Lumiere profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">A passionate storyteller whose debut qualifier has already made waves in the community.</p>
@@ -4993,8 +5544,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#db277720; color:#db2777; border-color:#db277740">Romance</span><span class="g-badge" style="background:#1d4ed820; color:#1d4ed8; border-color:#1d4ed840">Drama</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @authorthirtynine</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -5003,6 +5556,7 @@
         <div class="q-item" id="aq39">
           <button class="q-toggle" onclick="toggleQ('aq39')">
             <div class="q-toggle-left">
+              <div class="q-thumb-wrap"><img class="q-pfp-thumb" src="https://placehold.co/400x400/dc2626/ffffff?text=VPR" alt="Viper" loading="lazy"></div>
               <span class="q-num">40</span>
               <div>
                 <div class="q-title">Author Forty</div>
@@ -5015,7 +5569,10 @@
             </div>
           </button>
           <div class="q-body">
-            <div class="q-author-grid">
+            <div class="q-body-image-row">
+              <img class="q-pfp-full" src="https://placehold.co/400x400/dc2626/ffffff?text=VPR" alt="Viper profile picture" loading="lazy">
+              <div class="q-body-text">
+                <div class="q-author-grid">
               <div class="q-author-section">
                 <div class="q-section-label">Title</div>
                 <p class="q-desc">A creative force bringing fresh energy and bold ideas to the 2026 competition.</p>
@@ -5033,8 +5590,10 @@
                 <div class="genre-list"><span class="g-badge" style="background:#7c3aed20; color:#7c3aed; border-color:#7c3aed40">Fantasy</span><span class="g-badge" style="background:#0891b220; color:#0891b2; border-color:#0891b240">Adventure</span></div>
               </div>
             </div>
-            <div class="q-footer">
+                <div class="q-footer">
               <span class="q-author-tag">&#128241; @authorforty</span>
+            </div>
+              </div>
             </div>
           </div>
         </div>
