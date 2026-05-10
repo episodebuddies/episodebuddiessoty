@@ -1005,7 +1005,17 @@
   .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   .footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
   .footer-tagline { font-family: var(--serif); font-size: 13px; font-style: italic; color: rgba(201,168,76,0.4); }
-
+  .footer-legal {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px;
+  }
+  .footer-legal a {
+    color: rgba(255,255,255,0.28); text-decoration: none;
+    transition: color 0.2s; padding: 2px 0;
+  }
+  .footer-legal a:hover { color: var(--gold); }
+  .footer-legal a.active { color: var(--gold); }
+  .footer-legal-sep { color: rgba(255,255,255,0.12); user-select: none; }
 
     /* =====================
        RESPONSIVE
@@ -6590,6 +6600,11 @@
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2025 Buddies Support Hub · Community-organized. Not affiliated with Episode Interactive.</span>
+      <div class="footer-legal">
+        <a href="privacy-terms.html?doc=privacy" id="footerPrivacyLink" onclick="handleFooterLink(event,'privacy')">Privacy Policy</a>
+        <span class="footer-legal-sep">·</span>
+        <a href="privacy-terms.html?doc=terms" id="footerTermsLink" onclick="handleFooterLink(event,'terms')">Terms of Use</a>
+      </div>
       <span class="footer-tagline">"They are visionaries. They are The Buddies Laureates."</span>
     </div>
   </div>
